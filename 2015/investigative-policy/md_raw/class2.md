@@ -14,7 +14,7 @@
 
 - #### Leigh - [Water's Edge: The Crisis Of Rising Sea Levels](http://www.reuters.com/investigates/special-report/waters-edge-the-crisis-of-rising-sea-levels/)
 
-- #### James - [On Shaky Ground](http://www.reuters.com/investigates/special-report/waters-edge-the-crisis-of-rising-sea-levels/)
+- #### James - [On Shaky Ground](http://californiawatch.org/earthquakes)
 
 - #### Nala - [Profit Trumps Preservation For Boy Scout Councils Nationwide](http://web.archive.org/web/20090309064225/http://seattlepi.nwsource.com/specials/scoutslogging/397864_loggingmain29.html)
 
