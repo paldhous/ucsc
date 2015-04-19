@@ -320,9 +320,7 @@ Kimono can also scrape pages that populate with more data as you scroll down the
 
 ![](./img/kimono_9.jpg)
 
-Kimono can also be used to scrape data from a series of separate pages, like the individual links giving the details of each disciplinary action from the above example. In such cases, first set up an API to capture of those links, and then set up a second API to grab the data from each page using the urls in the first API, as explained [here](https://help.kimonolabs.com/hc/en-us/articles/203438300-Source-URLs-to-crawl-from-another-kimono-API), and in this video:
-
-@[](https://vimeo.com/118196792)
+Kimono can also be used to scrape data from a series of separate pages, like the individual links giving the details of each disciplinary action from the above example. In such cases, first set up an API to capture of those links, and then set up a second API to grab the data from each page using the urls in the first API, as explained [here](https://help.kimonolabs.com/hc/en-us/articles/203438300-Source-URLs-to-crawl-from-another-kimono-API), and in [this video](https://vimeo.com/118196792).
 
 To access your Kimono APIs over the web, you will need an API key, which you will find at your `Account` page.
 
