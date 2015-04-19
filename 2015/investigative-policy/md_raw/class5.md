@@ -16,10 +16,15 @@ The SQLite Manager add-on allows you to work with any SQLite database. Open SQLi
 
 ![](./img/class5_1.jpg)
 
-### Data
+### The data we will use
 
-In this class, we will work initially with data used in reporting [this news story](http://www.newscientist.com/article/dn18806-revealed-pfizers-payments-to-censured-doctors.html), about the drug company Pfizer’s payments to doctors. Download from [here](./data/pfizer.zip).
+Download from here, unzip the folder and place on your desktop. Contains the following:
 
+`pzifer` Folder containing:
+
+- `pfizer.sqlite` SQLite database detailing payments by the drug company Pfizer to doctors
+- `pfizer.txt` Tab-delimited text file containing the same data
+- `fda.txt` Tab-delimited text file documenting warning letters from the Food and Drug Administration to doctors involved in research on experimental drugs or medical devices.
 
 ### Open database and examine its contents
 

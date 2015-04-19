@@ -1,27 +1,43 @@
 # Datasets
 
-These links include datasets that we will use in class, and others you may find interesting to explore. Click on the title links to download the data. Please [contact me](mailto:peter@peteraldhous.com) **before the class** in which data will be used if you have any problems downloading!
+Click on the title links to download the data. Please [contact me](mailto:peter@peteraldhous.com) **before the class** in which data will be used if you have any problems downloading!
 
-#### [UK Clinical Trials Gateway](./data/UKCTG.zip)
-Sample of 100 individual clinical trial webpages from which we will extract data using Import.io.
+### [Acquiring and cleaning data](./data/acquiring-cleaning.zip)
 
-#### [California Medicare spending](./data/medicare.zip)
-CSV file documenting reimbursements per enrollee in Medicare, the main U.S. government healthcare programme for retirees, by county in California, for various categories of payment. We will use this data to demonstrate reshaping data from "wide" to "long" format, using Open Refine.
+`cleaning` Folder containing:
+- `CA_counties_medicare.xls` Spreadsheet with data on Medicare reimbursement per enrollee by California county in 2012, from the [Dartmouth Atlas of Healthcare](http://www.dartmouthatlas.org). Includes the following fields:
+ - `enrollees` Medicare enrollees in 2012.
+ - `total` Total Medicare reimbursements per enrollee.
+ - `hospital` Hospital & skilled nursing facility reimbursements per enrollee.
+ - `physician` Physician reimbursements per enrollee.
+ - `outpatient` Outpatient facility reimbursements per enrollee.
+ - `homehealth` Home health agency reimbursements per enrollee.
+ - `hospice` Hospice reimbursements per enrollee.
+ - `medequip` Durable medical equipment reimbursements per enrollee.
 
-#### [UC Berkeley grants](./data/ucb_grants.zip)
-CSV file documenting U.S. federal government grants to the University of California, Berkeley, in 2013, downloaded from [USASpending.gov](http://usaspending.gov/). We will use this data to illustrate data cleaning and processing using Open Refine.
+- `ucb_grants.csv` Data on grants from the U.S. federal government to the University of California, Berkeley, in 2013, from [USASpending.gov](http://usaspending.gov/).
 
-#### [Geocoding](./data/geocoding.zip)
+`geocoding` Folder containing:
 
-A sample of addresses in San Francisco, for use in geocoding exercise, in two text files.
+- `sf_test_addresses.tsv` Text file containing a list of 100 addresses in San Francisco.
+- `sf_addresses_short.tsv` The first 10 addresses from the previous file.
+- `refine-geocoder.json` A script in JSON format that we will use to automate geocoding.
 
-#### [Pfizer payments to doctors](./data/pfizer.zip)
+`UKCTG` Folder containing a samples of web pages detailing clinical trials, downloaded form the [U.K. Clinical Trials Gateway](http://www.ukctg.nihr.ac.uk/trials.aspx).
 
-A series of files for our database class: SQLite database detailing payments by the drug company Pfizer to doctors; tab-delimited text file containing the same data; and tab-delimited text file documenting warning letters from the U.S. Food and Drug Administration to doctors involved in research on experimental drugs or medical devices. Data used in reporting [this news story](http://www.newscientist.com/article/dn18806-revealed-pfizers-payments-to-censured-doctors.html).
+### [Databases](./data/databases.zip)
 
-#### [Nations](./data/nations.zip)
+`pfizer` Folder containing:
 
-This is the main dataset we will use for visualization using Tableau Public.
+- `pfizer.sqlite` SQLite database detailing payments by the drug company Pfizer to doctors
+- `pfizer.txt` Tab-delimited text file containing the same data
+- `fda.txt` Tab-delimited text file documenting warning letters from the Food and Drug Administration to doctors involved in research on experimental drugs or medical devices.
+
+Data used in reporting [this news story](http://www.newscientist.com/article/dn18806-revealed-pfizers-payments-to-censured-doctors.html).
+
+### [Visualizing data](./data/visualizing.zip)
+
+`nations` Folder containing:
 
 - `nations.csv` Data from the [World Bank Indicators](http://data.worldbank.org/indicator/all) portal, which is an incredibly rich resource. Contains the following fields:
  -  `iso_a3` [Three-letter code](http://unstats.un.org/unsd/tradekb/Knowledgebase/Country-Code) for each country, assigned by the [International Organization for Standardization](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=63545).
@@ -35,28 +51,18 @@ This is the main dataset we will use for visualization using Tableau Public.
  - `birth_rate` Number of [live births during the year per 1,000 people](http://data.worldbank.org/indicator/SP.DYN.CBRT.IN), based on mid-year population estimate.
  - `neonat_mortal` [Neonatal mortality rate](http://data.worldbank.org/indicator/SH.DYN.NMRT): number of babies dying before reaching 28 days of age, per 1,000 live births in a given year.
 
+`storms` Folder containing:
+- `storms.csv` contains [data on tropical storms and hurricanes](http://www.aoml.noaa.gov/hrd/hurdat/Data_Storm.html), from 1990 to 2013, compiled by the Hurricane Research Division of the U.S. National Oceanic and Atmospheric Administration. I have processed the [raw data](http://www.aoml.noaa.gov/hrd/hurdat/hurdat2.html) to give the following fields:
+ - `name` Official name for each storm; unnamed storms are listed as `Unnamed` and also numbered.
+ - `year` `month` `day` `hour` `minute` Date and time fields for each observation. For recent storms, observations are recorded every six hours.
+ - `timestamp` Date and time fields combined into a full timestamp for each observation in standard `YYYY-MM-DD HH:MM` format.
+ - `record_ident` The entry `L` indicates the time at which a storm made landfall, defined as the center of the system crossing a coastline, recorded from 1991 onwards. Other entries are explained in the file `newhurdat-format.pdf`.
+ - `status` Options include `HU` for hurricane, `TS` for tropical storm and `TD` for tropical depression. Other entries are explained in `newhurdat-format.pdf`.
+ - `latitude` `longitude` Geographic coordinates for the center of the system at each observation.
+ -  `max_wind_kts` `max_wind_kph` `max_wind_mph` Maximum sustained wind for each observation.
+ - `min_press` Minimum air pressure at the center of the system for each observation.
+- `newhurdat-format.pdf` More explanation of the raw storms data from NOAA, including the full list of storm `status` codes.
 
-#### [North Atlantic storms](./data/storms.zip)
-
-`storms.csv` contains [data on tropical storms and hurricanes](http://www.aoml.noaa.gov/hrd/hurdat/Data_Storm.html) compiled by the Hurricane Research Division of the U.S. National Oceanic and Atmospheric Administration. I have processed the [raw data](http://www.aoml.noaa.gov/hrd/hurdat/hurdat2.html) to give the following fields:
-- `name` Official name for each storm; unnamed storms are listed as `Unnamed` and also numbered.
-- `year` `month` `day` `hour` `minute` Date and time fields for each observation. For recent storms, observations are recorded every six hours.
-- `timestamp` Date and time fields combined into a full timestamp for each observation in standard `YYYY-MM-DD HH:MM` format.
-- `record_ident` The entry `L` indicates the time at which a storm made landfall, defined as the center of the system crossing a coastline, recorded from 1991 onwards. Other entries are explained in the file `newhurdat-format.pdf`.
-- `status` Options include `HU` for hurricane, `TS` for tropical storm and `TD` for tropical depression. Other entries are explained in `newhurdat-format.pdf`.
-- `latitude` `longitude` Geographic coordinates for the center of the system at each observation.
--  `max_wind_kts` `max_wind_kph` `max_wind_mph` Maximum sustained wind for each observation.
-- `min_press` Minimum air pressure at the center of the system for each observation.
-
-We will visualize this data using Tableau Public. The file contains data on storms from 1990 to 2013.
-
-#### [Infectious disease and democracy](.data/disease_democ.zip)
-
-Tab-delimited text file with data from the [Global Infectious Diseases and Epidemiology Network](http://www.gideononline.com) and [Democratization: A Comparative Analysis of 170 Countries](http://www.amazon.com/Democratization-Comparative-Analysis-Countries-Routledge/dp/0415318602), addressing a controversial theory claiming that the extent to which a country has developed a democratic political system is driven largely by the historical prevalence of infectious disease. We will visualize this data using Tableau Public.
-
-#### [Ebola outbreak](https://datamarket.com/topic/1871/ebola-2014-west-africa-outbreak)
-
-You may wish to explore data on the West African ebola virus outbreak compiled by [Caitlin Rivers](http://www.caitlinrivers.com/), a graduate student in computational epidemiology at Virginia Tech in Blacksburg. To view the data, select `Download ZIP` from Rivers' [ebola Github repository](https://github.com/cmrivers/ebola), which also details the data she has compiled.
 
 
 

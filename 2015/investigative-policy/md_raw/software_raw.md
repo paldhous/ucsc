@@ -1,7 +1,5 @@
 # Software and other tools
 
-There is no need to download and install these tools in one go. I will inform you as and when they are needed.
-
 ### [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 Some of the tools we will use are Firefox add-ons. Ensure that you have the latest version of this popular web browser. [Download Firefox](https://www.mozilla.org/en-US/firefox/all/), or if already installed, if necessary update to the latest version [following these instructions](https://support.mozilla.org/en-US/kb/update-firefox-latest-version).
@@ -12,18 +10,18 @@ Two handy Firefox add-ons, which will help you extract data from the web. Instal
 ### [Import.io](https://import.io/)
 A relatively new tool for scraping data from the web, without the need to write code. [Download here](https://import.io/download/osx). You will also need to sign up for an account at the `Sign in` link on the home page.
 
-### [Open Refine](http://openrefine.org/)
-A powerful tool for data cleaning, once owned by Google, now open source. Download the latest **stable version** [from here](http://openrefine.org/download.html). When launched, Open Refine will work in your default web browser; note that your data remains on your computer, and is not uploaded to the web.
+### [Kimono](https://www.kimonolabs.com/)
+Another web scraping tool that works from your web browser. Sign up for a free account, then [install the Bookmarklet](https://www.kimonolabs.com/learn/getstarted). There is also an extension from Google Chrome.
 
-### [Mr. Data Converter](http://shancarter.github.io/mr-data-converter/)
-Allows you to convert tabular (spreadsheet/CSV) data to web-friendly formats including JSON. Web app: no installation required.
+### [Open Refine](http://openrefine.org/)
+A powerful tool for data cleaning, once owned by Google, now open source. Download the latest **stable version** [from here](http://openrefine.org/download.html). When launched, Open Refine will work in your default web browser; note that your data remains on your computer, and is not uploaded to the web. If you have issues installing Open Refine on a Mac, you may need to reset your security settings to allow the installation of third-party applications, see [here](https://github.com/OpenRefine/OpenRefine/issues/590). If you still have problems, try installing Java for OS X from [here](https://support.apple.com/kb/DL1572?locale=en_US).
 
 ### [SQLite Manager](https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/)
 We will manage SQLite databases using this Firefox add-on. Install in Firefox [from here](https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/). There is no need to separately install SQLite.
 
 ### [LibreOffice Calc](http://www.libreoffice.org/discover/calc/)
 
-Our spreadsheet application for this course will be the open-source LibreOffice Calc, not Microsoft Excel. [Download LibreOffice](http://www.libreoffice.org/download/libreoffice-fresh/).
+Open-source spreadsheet application, part of wider office productivity suite. [Download LibreOffice](http://www.libreoffice.org/download/libreoffice-fresh/).
 
 ### [ColorBrewer](http://colorbrewer2.org/)
 Your go-to resource for color schemes to encode data. Web app: no installation required.
