@@ -22,11 +22,11 @@ Tips, tricks and tools for pulling unruly data down from the web: extracting dat
 - ####April 30: [Using databases and SQL](week5.html)
 Lesson: Beyond the spreadsheet: Using databases to interrogate data and find the story. (We will use SQLite and the SQLite Manager add-on for Firefox.)
 
-- ####May 7: [Individual meetings](week6.html)
-Feedback on first drafts, through one-on-one discussions.
-
-- ####May 14: [Backgrounding people, companies and non-profits](week7.html)
+- ####May 7: [Backgrounding people, companies and non-profits](week6.html)
 Guidestar and CitizenAudit.org for researching non-profits; SEC filings and other tools for researching companies. Who sent that email? Who runs this website? Also: The tracks you leave online, and how to cover them, if necessary.
+
+- ####May 14: [Individual meetings](week7.html)
+Feedback on first drafts, through one-on-one discussions.
 
 - ####May 21: [Guest lecturer Ben Welsh, Los Angeles Times Database Producer](week8.html)
 Ben will talk about how the LA Times integrates data journalism into the newsroom. Followed by individual meetings with Ben  to discuss your projects.
