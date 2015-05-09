@@ -26,6 +26,8 @@ Download from here, unzip the folder and place on your desktop. Contains the fol
 - `pfizer.txt` Tab-delimited text file containing the same data
 - `fda.txt` Tab-delimited text file documenting warning letters from the Food and Drug Administration to doctors involved in research on experimental drugs or medical devices.
 
+This data was used in reporting [this story](http://www.newscientist.com/article/dn18806-revealed-pfizers-payments-to-censured-doctors.html).
+
 ### Open database and examine its contents
 
 Open the database `pfizer.sqlite`, by selecting `Database>Connect Database`. Navigate to the database file, and click `Open`.

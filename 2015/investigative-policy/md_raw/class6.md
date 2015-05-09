@@ -18,11 +18,11 @@ Two websites provide a good starting point to search for non-profits and view th
 
 From the homepage, you can search for non-profits by name. The advanced search page is [here](http://www.guidestar.org/AdvancedSearch.aspx). Once on the page for an individual non-profit, for example [here](http://www.guidestar.org/organizations/53-0196572/american-chemical-society.aspx) for the American Chemical Society, who will see a tab for the Forms 990.
 
-You will need to [sign up](https://www.guidestar.org/Login.aspx?ReturnUrl=http://www.guidestar.org/organizations/53-0196572/american-chemical-society.aspx) for a free account to view the most recent three 990s for any organization. You can also pay for access to more reports and certain information extracted from them.
+You will need to [sign up](https://www.guidestar.org/Login.aspx) for a free account to view the most recent three 990s for any organization. You can also pay for access to more reports and certain information extracted from them.
 
 ##### [CitizenAudit](https://www.citizenaudit.org/)
 
-This is a project set up by the data journalist [Luke Rosiak](http://www.lukerosiak.info/), originally with backing from the Sunlight Foundation. It is systematically digitizing Form 990s using Optical Character Recognition, so that they become fully searchable. So not only can you use the search box on the home page search for an organization and its 990s, but you can also look for mentions of people, payments from one non-profit to another, and so on! There is a good write-up of its uses in journalism [here](http://www.icij.org/blog/2013/09/investigating-charities-how-search-finances-nonprofits-and-foundations).
+This is a project set up by the data journalist [Luke Rosiak](http://www.lukerosiak.info/), originally with backing from the Sunlight Foundation. It is systematically digitizing Form 990s using optical character recognition, so that they become fully searchable. So not only can you use the search box on the home page search for an organization and its 990s, but you can also look for mentions of people, payments from one non-profit to another, and so on! There is a good write-up of its uses in journalism [here](http://www.icij.org/blog/2013/09/investigating-charities-how-search-finances-nonprofits-and-foundations).
 
 For comparison with Guidestar, [here](https://www.citizenaudit.org/530196572/) is the page for the American Chemical Society. Note the **Funders and Grantees** section, which lists organizations giving and receiving money to the non-profit in question, and **Searchable form text**, which allows you to search for text within the organization's Form 990s.
 
@@ -30,24 +30,24 @@ When CitizenAudit launched, it was entirely free. It has now become self-support
 
 ##### What's in a Form 990?
 
-**Part I** gives a summary of revenue and expenses over the past two years.
+- **Part I** gives a summary of revenue and expenses over the past two years.
 
-**Part III** gives detail of expenses and revenue on program service -- a major, usually ongoing, activity of an organization that accomplishes its tax-exempt purpose.
+- **Part III** gives detail of expenses and revenue on program service -- a major, usually ongoing, activity of an organization that accomplishes its tax-exempt purpose.
 
-**Parts IV to VI** contain checklists verifying that the charity meets criteria for tax-exempt status, has appropriate governance and policies etc.
+- **Parts IV to VI** contain checklists verifying that the charity meets criteria for tax-exempt status, has appropriate governance and policies etc.
 
-**Part VII** lists and gives compensation for: 
+- **Part VII** lists and gives compensation for: 
 A) Officers, directors and trustees and key employees.
 B) Five current highest compensated employees paid more than $100,000.
 C) Former officers, key employees and highest compensated employees paid more than $100,000.
 D) Former directors and trustees who received more than $10,000.
 E) Five highest paid independent contractors paid more than $100,000.
 
-**Part VIII** gives a breakdown of revenue.
+- **Part VIII** gives a breakdown of revenue.
 
-**Part IX** gives a breakdown of expenses into major functional categories.
+- **Part IX** gives a breakdown of expenses into major functional categories.
 
-**Part X** is the balance sheet (a friendly accountant can help interpret this and other parts of the form).
+- **Part X** is the balance sheet (a friendly accountant can help interpret this and other parts of the form).
 
 **Schedules of interest:**
 
@@ -121,7 +121,7 @@ But be aware that the name a company trades under may not be its registered name
 
 Searching for information on individual people can be difficult, without access to a commercial research tool such as [Accurint](http://www.accurint.com/). In my experience, most online search sites that offer background checks, contact information, and so on, are more effective at parting you with your money than providing good information.
 
-Again, it helps to think about official agencies to which individuals must report information. [Who Is John Doe](http://www.accurint.com/), a site put togther by investigative reporter [Duff Wilson](http://www.journalism.columbia.edu/profile/395-duff-wilson/10), provides a very useful guide to potential sources of information. [Here](http://www.peoplesearchpro.com/journalism/people/) is another site that provides links to various people-searching resources.
+Again, it helps to think about official agencies to which individuals must report information. [Who Is John Doe](http://www.reporter.org/desktop/tips/johndoe.htm), a site put togther by investigative reporter [Duff Wilson](http://www.journalism.columbia.edu/profile/395-duff-wilson/10), provides a very useful guide to potential sources of information. [Here](http://www.peoplesearchpro.com/journalism/people/) is another site that provides links to various people-searching resources.
 
 # Privacy, security and some basic e-sleuthing
 
