@@ -16,11 +16,9 @@ Although Tableau was not designed as a publication tool, the ability to embed fi
 
 ### The data we will use
 
-Download the data for this session from [here](data/tableau.zip), unzip the folder and place it on your desktop. It contains three subfolders, with the following files:
+Download the data for this session from [here](data/tableau.zip), unzip the folder and place it on your desktop. It contains two subfolders, with the following files:
 
 ##### Nations
-
-This is the main dataset we will use to apply the principles from the opening session.
 
 - `nations.csv` Data from the [World Bank Indicators](http://data.worldbank.org/indicator/all) portal, which is an incredibly rich resource. Contains the following fields:
  -  `iso_a3` [Three-letter code](http://unstats.un.org/unsd/tradekb/Knowledgebase/Country-Code) for each country, assigned by the [International Organization for Standardization](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=63545).
@@ -33,8 +31,6 @@ This is the main dataset we will use to apply the principles from the opening se
  - `population` Estimated [total population](http://data.worldbank.org/indicator/SP.POP.TOTL) at mid-year, including all residents apart from refugees.
  - `birth_rate` Number of [live births during the year per 1,000 people](http://data.worldbank.org/indicator/SP.DYN.CBRT.IN), based on mid-year population estimate.
  - `neonat_mortal` [Neonatal mortality rate](http://data.worldbank.org/indicator/SH.DYN.NMRT): number of babies dying before reaching 28 days of age, per 1,000 live births in a given year.
-
-Another dataset provided to practice your Tableau skills after the workshop. Follow the notes to recreate my visualization, and experiment with other views of the data:
 
 ##### Storms
 
