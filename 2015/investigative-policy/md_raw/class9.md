@@ -34,7 +34,7 @@ This is the main dataset we will use to apply the principles from the opening se
  - `birth_rate` Number of [live births during the year per 1,000 people](http://data.worldbank.org/indicator/SP.DYN.CBRT.IN), based on mid-year population estimate.
  - `neonat_mortal` [Neonatal mortality rate](http://data.worldbank.org/indicator/SH.DYN.NMRT): number of babies dying before reaching 28 days of age, per 1,000 live births in a given year.
 
-Two more datasets provided to practice your Tableau skills after the workshop. Follow the notes to recreate my visualizations, and experiment with other views of the data:
+Another dataset provided to practice your Tableau skills after the workshop. Follow the notes to recreate my visualization, and experiment with other views of the data:
 
 ##### Storms
 
@@ -96,8 +96,6 @@ I first approached the dataset with the following questions:
 
 - What is the relationship between a nations' wealth, measured as GDP per capita, and their citizens' life expectancy?
 - How has this relationship changed over time?
-
-You may have realized that these are essentially the same questions asked in the Gapminder video we saw in the opening session -- so our chart will be rather similar.
 
 #### Make a bubble chart to explore the relationship between wealth and life expectancy, and animate over time
 
