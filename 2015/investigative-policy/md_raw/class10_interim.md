@@ -1,7 +1,5 @@
 # Misconduct and ethics in science and journalism
 
-### Scientists behaving badly
-
 ### Case studies in journalistic ethics
 
 1)  A science reporter working on a feature sends an email with his questions to a busy scientist in Asia. The scientist’s assistant says that he is too busy to reply, but sends a document with answers to a different reporter’s questions. Some of the quotes within it are relevant to the reporter’s article.
