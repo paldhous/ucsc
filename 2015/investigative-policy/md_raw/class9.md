@@ -95,7 +95,7 @@ I first approached the dataset with the following questions:
 
 #### Make a bubble chart to explore the relationship between wealth and life expectancy, and animate over time
 
-From the morning session, you will remember that we can investigate relationships using a scatter plot. One would imagine that the people in wealthier countries would live healthier and longer lives. So we will put wealth on the X axis, as the presumed explanatory variable, and life expectancy on the Y.
+From the opening slides, you will remember that we can investigate relationships using a scatter plot. One would imagine that the people in wealthier countries would live healthier and longer lives. So we will put wealth on the X axis, as the presumed explanatory variable, and life expectancy on the Y.
 
 First let's rename these variables, so that their meaning is unambiguous. Hover over `Life Expect`, click on the small downward-pointing triangle that appeats, select `Rename` and call it `Life expectancy at birth (years)`. Similarly, change `Gdp Percap` to `GDP per capita`.
 
@@ -165,7 +165,7 @@ There does indeed seem to be a relationship between wealth and life expectancy, 
 
 ![](./img/chcf_15a.jpg)
 
-Remember from the opening session that the relationship between ealth and life expectancy across nations is logarithmic, but the logarithmic X axis transforms the curve into a straight trend line. However, rather than a single trend line we have one for each region, and confidence bands around each line have also been drawn:
+The relationship between wealth and life expectancy across nations is logarithmic, but the logarithmic X axis transforms the curve into a straight trend line. However, rather than a single trend line we have one for each region, and confidence bands around each line have also been drawn:
 
 ![](./img/chcf_16a.jpg)
 
@@ -205,7 +205,7 @@ Now drag `Country` so it appears at the top of the list of fields in the `Marks`
 
 ![](./img/chcf_21a.jpg)
 
-Take some time to consider how the chart is constructed in relation to the principles covered in this morning's session, especially the perceptual heirarchy of visual cues.
+Take some time to consider how the chart is constructed in relation to the principles covered in the opening slides, especially the perceptual heirarchy of visual cues.
 
 #### Save to the cloud
 
@@ -452,7 +452,7 @@ The final dashboard should look like this:
 
 ![](./img/chcf_59.jpg)
 
-Again, take some time to consider how this visualization of the data works, in relation to the principles we discussed in the opening session.
+Again, take some time to consider how this visualization of the data works, in relation to the principles we discussed in the opening slides.
 
 #### From dashboards to stories
 
