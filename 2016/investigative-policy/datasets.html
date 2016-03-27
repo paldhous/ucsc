@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Datasets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="../../css/custom2.css" rel="stylesheet">
+</head>
+
+<body class="markdown github">
+
+	<header class="navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<nav role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand">Investigating science</a>
+				</div> <!-- /.navbar-header -->
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Class notes<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="week1a.html">Using data in journalism</a></li>
+								<li><a href="week1b.html">Individual meetings</a></li>
+								<li><a href="week2.html">Investigative approaches: articles to discuss</a></li>
+								<li><a href="week3.html">Acquiring and cleaning data</a></li>
+								<li><a href="week4.html">Interviewing data: databases and SQL</a></li>
+								<li><a href="week5.html">Visualizing data</a></li>								
+								<li><a href="week6.html">Backgrounding non-profits, companies, people</a></li>
+								<li><a href="week7.html">Guest lecturer: Ben Welsh</a></li>
+								<li><a href="week8.html">Individual meetings</a></li>
+								<li><a href="week9.html">Privacy, security, and e-sleuthing</a></li>
+								<li><a href="week10.html">Misconduct and ethics in science and journalism</a></li>
+							</ul>
+						</li>
+						<li>
+						<li><a href="software.html">Software</a></li>
+						<li><a href="datasets.html">Data</a></li>
+						<li><a href="mailto:peter@peteraldhous.com">Email instructor</a></li>					
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</div> <!-- /.navbar-header -->
+	</header>
+
+	<div class="container all">
+
+  <h1 id="datasets"><a name="datasets" href="#datasets"></a>Datasets</h1><p>Click on the title links to download the data. Please <a href="mailto:peter@peteraldhous.com">contact me</a> <strong>before the class</strong> in which data will be used if you have any problems downloading!</p><h3 id="[acquiring-and-cleaning-data](./data/acquiring-cleaning.zip)"><a name="[acquiring-and-cleaning-data](./data/acquiring-cleaning.zip)" href="#[acquiring-and-cleaning-data](./data/acquiring-cleaning.zip)"></a><a href="./data/acquiring-cleaning.zip">Acquiring and cleaning data</a></h3><p><code>cleaning</code> Folder containing:</p><ul>
+<li><p><code>CA_counties_medicare.xls</code> Spreadsheet with data on Medicare reimbursement per enrollee by California county in 2012, from the <a href="http://www.dartmouthatlas.org">Dartmouth Atlas of Healthcare</a>. Includes the following fields:</p>
+<ul>
+<li><code>enrollees</code> Medicare enrollees in 2012.</li>
+<li><code>total</code> Total Medicare reimbursements per enrollee.</li>
+<li><code>hospital</code> Hospital &amp; skilled nursing facility reimbursements per enrollee.</li>
+<li><code>physician</code> Physician reimbursements per enrollee.</li>
+<li><code>outpatient</code> Outpatient facility reimbursements per enrollee.</li>
+<li><code>homehealth</code> Home health agency reimbursements per enrollee.</li>
+<li><code>hospice</code> Hospice reimbursements per enrollee.</li>
+<li><code>medequip</code> Durable medical equipment reimbursements per enrollee.</li>
+</ul>
+</li>
+<li><p><code>ucb_grants.csv</code> Data on grants from the U.S. federal government to the University of California, Berkeley, in 2013, from <a href="http://usaspending.gov/">USASpending.gov</a>.</p>
+</li>
+</ul><p><code>geocoding</code> Folder containing:</p><ul>
+<li><code>sf_test_addresses.tsv</code> Text file containing a list of 100 addresses in San Francisco.</li>
+<li><code>sf_addresses_short.tsv</code> The first 10 addresses from the previous file.</li>
+<li><code>refine-geocoder.json</code> A script in JSON format that we will use to automate geocoding.</li>
+</ul><p><code>UKCTG</code> Folder containing a samples of web pages detailing clinical trials, downloaded form the <a href="http://www.ukctg.nihr.ac.uk/trials.aspx">U.K. Clinical Trials Gateway</a>.</p><h3 id="[databases](./data/databases.zip)"><a name="[databases](./data/databases.zip)" href="#[databases](./data/databases.zip)"></a><a href="./data/databases.zip">Databases</a></h3><p><code>pfizer</code> Folder containing:</p><ul>
+<li><code>pfizer.sqlite</code> SQLite database detailing payments by the drug company Pfizer to doctors</li>
+<li><code>pfizer.txt</code> Tab-delimited text file containing the same data</li>
+<li><code>fda.txt</code> Tab-delimited text file documenting warning letters from the Food and Drug Administration to doctors involved in research on experimental drugs or medical devices.</li>
+</ul><p>Data used in reporting <a href="http://www.newscientist.com/article/dn18806-revealed-pfizers-payments-to-censured-doctors.html">this news story</a>.</p><h3 id="[visualizing-data](./data/visualizing.zip)"><a name="[visualizing-data](./data/visualizing.zip)" href="#[visualizing-data](./data/visualizing.zip)"></a><a href="./data/visualizing.zip">Visualizing data</a></h3><p><code>nations</code> Folder containing:</p><ul>
+<li><code>nations.csv</code> Data from the <a href="http://data.worldbank.org/indicator/all">World Bank Indicators</a> portal, which is an incredibly rich resource. Contains the following fields:<ul>
+<li><code>iso_a3</code> <a href="http://unstats.un.org/unsd/tradekb/Knowledgebase/Country-Code">Three-letter code</a> for each country, assigned by the <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=63545">International Organization for Standardization</a>.</li>
+<li><code>country</code> Country name.</li>
+<li><code>year</code></li>
+<li><code>region</code> <code>income_group</code> World Bank <a href="http://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS">regions and current income groups</a>, explained <a href="http://data.worldbank.org/about/country-and-lending-groups">here</a>.</li>
+<li><code>population</code> Estimated <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">total population</a> at mid-year, including all residents apart from refugees.</li>
+<li><code>gdp_percap</code> <a href="http://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Gross Domestic Product per capita</a> in current international dollars, corrected for purchasing power in different territories.</li>
+<li><code>life_expect</code> <a href="http://data.worldbank.org/indicator/SP.DYN.LE00.IN">Life expectancy</a> in years for a child born in the year in question, if prevailing patterns were to stay the same throughout its life.</li>
+<li><code>population</code> Estimated <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">total population</a> at mid-year, including all residents apart from refugees.</li>
+<li><code>birth_rate</code> Number of <a href="http://data.worldbank.org/indicator/SP.DYN.CBRT.IN">live births during the year per 1,000 people</a>, based on mid-year population estimate.</li>
+<li><code>neonat_mortal</code> <a href="http://data.worldbank.org/indicator/SH.DYN.NMRT">Neonatal mortality rate</a>: number of babies dying before reaching 28 days of age, per 1,000 live births in a given year.</li>
+</ul>
+</li>
+</ul><p><code>storms</code> Folder containing:</p><ul>
+<li><code>storms.csv</code> contains <a href="http://www.aoml.noaa.gov/hrd/hurdat/Data_Storm.html">data on tropical storms and hurricanes</a>, from 1990 to 2013, compiled by the Hurricane Research Division of the U.S. National Oceanic and Atmospheric Administration. I have processed the <a href="http://www.aoml.noaa.gov/hrd/hurdat/hurdat2.html">raw data</a> to give the following fields:<ul>
+<li><code>name</code> Official name for each storm; unnamed storms are listed as <code>Unnamed</code> and also numbered.</li>
+<li><code>year</code> <code>month</code> <code>day</code> <code>hour</code> <code>minute</code> Date and time fields for each observation. For recent storms, observations are recorded every six hours.</li>
+<li><code>timestamp</code> Date and time fields combined into a full timestamp for each observation in standard <code>YYYY-MM-DD HH:MM</code> format.</li>
+<li><code>record_ident</code> The entry <code>L</code> indicates the time at which a storm made landfall, defined as the center of the system crossing a coastline, recorded from 1991 onwards. Other entries are explained in the file <code>newhurdat-format.pdf</code>.</li>
+<li><code>status</code> Options include <code>HU</code> for hurricane, <code>TS</code> for tropical storm and <code>TD</code> for tropical depression. Other entries are explained in <code>newhurdat-format.pdf</code>.</li>
+<li><code>latitude</code> <code>longitude</code> Geographic coordinates for the center of the system at each observation.</li>
+<li><code>max_wind_kts</code> <code>max_wind_kph</code> <code>max_wind_mph</code> Maximum sustained wind for each observation.</li>
+<li><code>min_press</code> Minimum air pressure at the center of the system for each observation.</li>
+</ul>
+</li>
+<li><code>newhurdat-format.pdf</code> More explanation of the raw storms data from NOAA, including the full list of storm <code>status</code> codes.</li>
+</ul>
+
+
+
+	</div> <!-- /.container all -->
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>
