@@ -5,25 +5,20 @@ Click on the title links to download the data. Please [contact me](mailto:peter@
 ### [Acquiring and cleaning data](./data/acquiring-cleaning.zip)
 
 `cleaning` Folder containing:
-- `CA_counties_medicare.xls` Spreadsheet with data on Medicare reimbursement per enrollee by California county in 2012, from the [Dartmouth Atlas of Healthcare](http://www.dartmouthatlas.org). Includes the following fields:
- - `enrollees` Medicare enrollees in 2012.
- - `total` Total Medicare reimbursements per enrollee.
- - `hospital` Hospital & skilled nursing facility reimbursements per enrollee.
- - `physician` Physician reimbursements per enrollee.
- - `outpatient` Outpatient facility reimbursements per enrollee.
- - `homehealth` Home health agency reimbursements per enrollee.
- - `hospice` Hospice reimbursements per enrollee.
- - `medequip` Durable medical equipment reimbursements per enrollee.
 
-- `ucb_grants.csv` Data on grants from the U.S. federal government to the University of California, Berkeley, in 2013, from [USASpending.gov](http://usaspending.gov/).
+- `oil_production.csv` Data on oil production by world region from 2000 to 2014, in thousands of barrels per day, from the [U.S. Energy Information Administration](http://www.eia.gov/cfapps/ipdbproject/iedindex3.cfm?tid=5&pid=53&aid=1&cid=regions,&syid=2000&eyid=2014&unit=TBPD).
+
+- `ucb_stanford_2014.csv` Data on federal government grants to UC Berkeley and Stanford University in 2014, downloaded from [USASpending.gov](https://www.usaspending.gov/Pages/Default.aspx).
+
+`scraping` Folder containing:
+
+- `urls.xls` Spreadsheet with a list of urls, for use in web scraping exercise.
 
 `geocoding` Folder containing:
 
 - `sf_test_addresses.tsv` Text file containing a list of 100 addresses in San Francisco.
 - `sf_addresses_short.tsv` The first 10 addresses from the previous file.
 - `refine-geocoder.json` A script in JSON format that we will use to automate geocoding.
-
-`UKCTG` Folder containing a samples of web pages detailing clinical trials, downloaded form the [U.K. Clinical Trials Gateway](http://www.ukctg.nihr.ac.uk/trials.aspx).
 
 ### [Databases](./data/databases.zip)
 

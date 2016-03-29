@@ -8,29 +8,23 @@ In this class, we will cover some tips and tricks for finding the data you need 
 
 ### The data we will use
 
-Download the data for this workshop from [here](data/acquiring-cleaning.zip), unzip the folder and place it on your desktop. It contains the following folders and files:
+Download the data for this class from [here](data/acquiring-cleaning.zip), unzip the folder and place it on your desktop. It contains the following folders and files:
 
 `cleaning` Folder containing:
 
-- `CA_counties_medicare.xls` Spreadsheet with data on Medicare reimbursement per enrollee by California county in 2012, from the [Dartmouth Atlas of Healthcare](http://www.dartmouthatlas.org). Includes the following fields:
- - `enrollees` Medicare enrollees in 2012.
- - `total` Total Medicare reimbursements per enrollee.
- - `hospital` Hospital & skilled nursing facility reimbursements per enrollee.
- - `physician` Physician reimbursements per enrollee.
- - `outpatient` Outpatient facility reimbursements per enrollee.
- - `homehealth` Home health agency reimbursements per enrollee.
- - `hospice` Hospice reimbursements per enrollee.
- - `medequip` Durable medical equipment reimbursements per enrollee.
+- `oil_production.csv` Data on oil production by world region from 2000 to 2014, in thousands of barrels per day, from the [U.S. Energy Information Administration](http://www.eia.gov/cfapps/ipdbproject/iedindex3.cfm?tid=5&pid=53&aid=1&cid=regions,&syid=2000&eyid=2014&unit=TBPD).
 
-- `ucb_grants.csv` Data on grants from the U.S. federal government to the University of California, Berkeley, in 2013, from [USASpending.gov](http://usaspending.gov/).
+- `ucb_stanford_2014.csv` Data on federal government grants to UC Berkeley and Stanford University in 2014, downloaded from [USASpending.gov](https://www.usaspending.gov/Pages/Default.aspx).
+
+`scraping` Folder containing:
+
+- `urls.xls` Spreadsheet with a list of urls, for use in web scraping exercise.
 
 `geocoding` Folder containing:
 
 - `sf_test_addresses.tsv` Text file containing a list of 100 addresses in San Francisco.
 - `sf_addresses_short.tsv` The first 10 addresses from the previous file.
 - `refine-geocoder.json` A script in JSON format that we will use to automate geocoding.
-
-`UKCTG` Folder containing a samples of web pages detailing clinical trials, downloaded form the [U.K. Clinical Trials Gateway](http://www.ukctg.nihr.ac.uk/trials.aspx).
 
 ### Understand common data formats
 
@@ -67,7 +61,7 @@ In XML data is structured by enclosing values within “tags,” similar to thos
 
 ### Search for data on the web
 
-In Week 1 we considered specific data portals relevant to science reporters. Often, however, your starting point in searching for data will be Google. Simply combining a few keywords in a Google search with “data” or “database” may be enough to find what you need, but it can be worth focusing your queries using Google’s [advanced search](http://www.google.com/advanced_search):
+Often, your starting point in searching for data will be Google. Simply combining a few keywords in a Google search with “data” or “database” may be enough to find what you need, but it can be worth focusing your queries using Google’s [advanced search](http://www.google.com/advanced_search):
 
 ![](./img/class4_1.jpg)
 
@@ -119,9 +113,9 @@ Often data doesn't reside in a single searchable database, but instead exists on
 
 To illustrate, go to [Gapminder's data catalog](http://www.gapminder.org/data/), and select `All` indicators. The webpage now includes links to more than 500 downloadable spreadsheets. Right-click and select `DownThemAll!...`.
 
-At the dialog box, you can choose where to save the files, and to filter the links to select just the files you want. In this case, unchecking all the boxes and `Fast Filtering` using the term `xls` will correctly identify the spreadsheet downloads:
+At the dialog box, you can choose where to save the files, and to filter the links to select just the files you want. There are check boxes to download documents or images, and so on. In this case, all the spreadsheet downloads contain the text `xls`, defining the format of the download from Google Sheets, so `Fast Filtering` using the term `xls` will correctly identify these downloads:
 
-![](./img/class4_5.jpg)
+![](./img/class4_3.jpg)
 
 ### Extract data from tables on the web
 
@@ -129,17 +123,17 @@ On other occasions, data may exist in tables on the web. Copying and pasting dat
 
 Before using the add-on, select `Tools>Table2Clipboard` and choose the following options under the `CSV` tab:
 
-![](./img/class4_6.jpg)
+![](./img/class4_4.jpg)
 
 This will ensure that each row in the extracted data is put on a `new line`, and each column is separated by a `tab`.
 
-To illustrate what Table2Clipboard does, go to [The International Disaster Database](http://www.emdat.be/database) and select `Disaster List`. Select `United States` under `Country`, then holding down the `Ctrl` (Windows) or `Command`/`⌘` (Mac) key, select dates from 1990 onwards under `Period` and `Storm` under `Type`. Then click `Search`.
+To illustrate what Table2Clipboard does, go to [The International Disaster Database](http://www.emdat.be/database), and navigate to `Disaster List`. At the search form, select 1990 to 2015 under `Period`, United States of America under `Country`, Storm under `Disaster type`, then holding down the `Ctrl` (Windows) or `Command`/`⌘` (Mac) key, select the three variables giving the number of people affected, and the value of the damage caused. Then click `Search`.
 
-When the table of data appears, right-click anywhere within it and select `Table2Clipboard>Copy whole table`:
-
-![](./img/class4_7.jpg)
+![](./img/class4_5.jpg)
 
 (Source: [The International Disaster Database](http://www.emdat.be/database))
+
+When the table of data appears, right-click anywhere within it and select `Table2Clipboard>Copy whole table`.
 
 You can now paste the data into an empty text file, or into a spreadsheet.
 
@@ -147,7 +141,7 @@ You can now paste the data into an empty text file, or into a spreadsheet.
 
 As you search for data using web query forms, make a habit of looking at what happens to the url. Often it will contain patterns detailing the search you have run, and it will be possible to alter the data provided by manipulating the url. This can be quicker than filling in search forms. In some cases it may even reveal more data than default search options will allow.
 
-To illustrate how this works, go to the [ISRCTN clinical tral registry](http://www.isrctn.com/), and then navigate to the [advanced search page](http://www.isrctn.com/editAdvancedSearch). Enter "cancer" under `Condition` and note that more than 1700 trials are returned.
+To illustrate how this works, go to the [ISRCTN clinical tral registry](http://www.isrctn.com/), and then navigate to the [advanced search page](http://www.isrctn.com/editAdvancedSearch). Enter cancer under `Condition` and note that more than 1,850 trials are returned.
 
 The url should now have changed to the following:
 
@@ -164,27 +158,28 @@ Now change that url to:
 ```HTML
 http://www.isrctn.com/search?pageSize=2000&sort=&page=1&q=&filters=condition%3Acancer&searchType=advanced-search
 ```
-Having done so, all of the registered clinical trials involving cancer should now be displayed on a single page. We can now use DownThemAll! to download all of the individual web pages describing each of these trials. Right-click, select `DownThemAll!...` as before, and notice that each link to a trial page contains `&totalResults`. So `Fast Filtering` using this term will identify the correct links for download.
+Having done so, all of the registered clinical trials involving cancer should now be displayed on a single page. We could now use DownThemAll! to download all of the individual web pages describing each of these trials, or we could use this url as the starting point to scrape data from each of those pages.
+
 
 ### Use application programming interfaces (APIs)
 
 Websites like the ISRCTN clinical trial registry are not expressly designed to be searched by manipulating their urls, but some organizations make their data available through APIs that can be queried by constructing a url in a similar way. This allows websites and apps to call in specific chunks of data as required, and work with it "on the fly."
 
-To see how this works, go to the U.S. Geological Survey's [Earthquake Archive Search & URL Builder](http://earthquake.usgs.gov/earthquakes/search/), where we will search for all earthquakes with a [magnitude](http://www.geo.mtu.edu/UPSeis/magnitude.html) of 5 or greater that occured witin 6,000 kilometers of the geographic center of the contiguous United States, which [this site](http://tools.wmflabs.org/geohack/geohack.php?pagename=Geographic_center_of_the_contiguous_United_States&params=39.828175_N_98.579500_W_region:US_type:landmark) tells us lies at a latitude of `39.828175` degrees and a longitude of `-98.5795` degrees. We will initially ask for the data in a format called [GeoJSON](http://geojson.org/) (a variant of JSON, a common format used to trasmit data over the web, which we will consider later). Enter `1900-01-01T00:00:00` under `Start` for `Date & Time` boxes so that we obtain all recorded earthquakes from the beginning of 1900 onward. The search form should look like this:
+To see how this works, go to the U.S. Geological Survey's [Search Earthquake Archives](http://earthquake.usgs.gov/earthquakes/search/) page, where we will search for all earthquakes with a [magnitude](http://www.geo.mtu.edu/UPSeis/magnitude.html) of 5 or greater that occured witin 6,000 kilometers of the geographic center of the contiguous United States, which [this site](http://tools.wmflabs.org/geohack/geohack.php?pagename=Geographic_center_of_the_contiguous_United_States&params=39.828175_N_98.579500_W_region:US_type:landmark) tells us lies at a latitude of `39.828175` degrees and a longitude of `-98.5795` degrees. We will initially ask for the data in a format called [GeoJSON](http://geojson.org/) (a variant of JSON, a common format used to trasmit data over the web). Enter `1960-01-01T00:00:00` under `Start` for `Date & Time` boxes so that we obtain all recorded earthquakes from the beginning of 1960 onward. The search form should look like this:
 
-![](./img/class4_8.jpg)
+![](./img/class4_6.jpg)
 
 (Source: [U.S. Geological Survey](http://earthquake.usgs.gov/earthquakes/search/))
 
 You should recieve a quantity of data at the following url:
 
 ```
-http://comcat.cr.usgs.gov/fdsnws/event/1/query?starttime=1900-01-01T00:00:00&latitude=39.828175&longitude=-98.5795&maxradiuskm=6000&minmagnitude=5&format=geojson&orderby=time
+http://earthquake.usgs.gov/fdsnws/event/1/query?starttime=1960-01-01T00:00:00&latitude=39.828175&longitude=-98.5795&maxradiuskm=6000&minmagnitude=5&format=geojson&orderby=time
 ```
 
-See what happens if you append `-asc` to the end of that url: This should sort the the earthquakes from oldest to newest, rather than the default of newest to oldest. [Here](http://comcat.cr.usgs.gov/fdsnws/event/1/) is the full documentation for querying the earthquake API by manipulating these urls,
+See what happens if you append `-asc` to the end of that url: This should sort the the earthquakes from oldest to newest, rather than the default of newest to oldest. [Here](http://earthquake.usgs.gov/fdsnws/event/1/) is the full documentation for querying the earthquake API by manipulating these urls,
 
-Now remove the `-asc` and replace `geojson` in the url with `csv`. The data should now download in 	`CSV` format.
+Now remove the `-asc` and replace `geojson` in the url with `csv`. The data should now download in 	CSV format.
 
 ### Scrape data from the web
 
@@ -196,133 +191,87 @@ Web scraping by coding is beyond the scope of this class. However, the underlyin
 
 We have already been performing some of the elements of web scraping, by manipulating urls on web search forms and then downloading the individual links that are returned *en masse*.
 
-There are a number of tools that allow non-programmers to scrape data from the web. These tools include [OutWit Hub](https://www.outwit.com/) and the Windows-only [Helium Scraper](http://www.heliumscraper.com/en/index.php?p=home). However, in today's class, we will use [**Import.io**](https://import.io/) and **[Kimono](https://www.kimonolabs.com/)**. Both allow you to download the scraped data, and also to set it up as an API, so it can be accessed by other applications over the web.
+There are a number of tools that allow non-programmers to scrape data from the web. These include [OutWit Hub](https://www.outwit.com/) and the Windows-only [Helium Scraper](http://www.heliumscraper.com/en/index.php?p=home). In today's class, we will use [**Import.io**](https://import.io/) and **[Kimono](https://www.kimonolabs.com/)**.
 
-To demonstrate webscraping, we will first consider the [U.K. Clinical Trials Gateway](http://www.ukctg.nihr.ac.uk/trials.aspx).
+To demonstrate webscraping, we will download data on disciplinary actions against doctors in the state of New York.
 
-Enter `*a* OR *e* OR *i* OR *o* OR *u*` into the gateway's search box. Through experimentation, I have found that this search seems to return all available trials in the database. Think about why this works: `*` is a wildcard, and using it in this way with `OR` Boolean operators asks the database to return all trials with a keyword containing a vowel.
-
-Having run this search, scroll down and use the two drop-down menus to display `All` results with `Trial Status - All`, so that links to all of the trials are displayed on a single page. At this point, use DownThemAll! to download all of these links, as we did earlier for cancer trials at the ISRCTN registry.
-
-Often it make sense, when scraping, to break the process up into steps: First download all of the individual web pages to your computer, then "parse" them to extract the information you need, saving it into a single file as a table of data.
-
-To demonstrate Import.io, we will work with a small sample of trials from the database in the `UKCTG` folder.
-
-Import.io is intended primarily to scrape pages directly from the web. Making it scrape pages that have been saved on your computer means setting up a local webserver, but that is easy to do.
-
-If you are using a Mac, open a Terminal window (`Applications>Utilities>Terminal`) and navigate to your Desktop by typing `cd Desktop` and hitting return. Then type `python -m SimpleHTTPServer 8000` and again hit return.
-
-Now open your browser, and go to the url: `http://127.0.0.1:8000/`. You should see the contents of your Desktop, displayed as a series of hyperlinks. Navigate to the `UKCTG` folder.
-
-On Windows, you will first need to download the [Mongoose](http://cesanta.com/mongoose.shtml) webserver: You want the free Windows Executable. Launch the application, and it will open your default browser at the url for the local server (on my Windows machine, this is: `http://10.211.55.3:8080/`). A small Mongoose icon will also appear on your Toolbar:
-
-![](./img/class4_8a.jpg)
-
-Click on this icon, and `Set shared directory` to your Desktop. Then refresh your browser, where you should see the contents of your Desktop, displayed as a series of hyperlinks. Navigate to the `UKCTG` folder.
-
-On either platform, you should now be looking at a screen like this:
-
-![](./img/class4_8b.jpg)
-
-Launch Import.io, enter your account details, and then select `New>Crawler`. You should see a screen like this:
-
-![](./img/class4_9.jpg)
-
-Copy the url showing the UKCTG files from your browser into the Import.io
-address bar, then navigate to the first of the links and click `✓ I'm there!` followed by `Detect optimal settings`. When asked if the data you want to extract is still in the browswer, click `Yes`, and at the next dialog box select the `Single` option:
-
-![](./img/class4_10.jpg)
-
-Now we can select the data we want to extract from each page, organizing it into columns.
-
-Click `+ Add column`, call it `title`, make sure it is treated as `Text` and click `✓ Done`. Now highlight the trial title on the webpage and click `Train`. The trial's title should appear in the table at bottom left:
-
-![](./img/class4_11.jpg)
-
-Note, when naming fields in data, use labels that are descriptive but brief; avoid spaces (I use underscores if necessary). This practice will make it easier to query data in a database.
-
-Repeat the process for the "Source of Record URL", which gives a link to the trial at ClinicalTrials.gov, making the data type `Link`:
-
-![](./img/class4_12.jpg)
-
-Repeat for other data as desired, taking care to select the correct data format for each column. Here I have selected all of the available fields:
-
-![](./img/class4_13.jpg)
-
-Having selected the data you want from the page, click `✓ I've got what I need!`.
-
-Now click `Add another page`, navigate to the second trial link, and click `✓ I'm there!`. You may need to click on some of the columns and train to make the data appear.
-
-Repeat the process for at least five webpages: more should give better results. Once you are satisfied that you are obtaining consistent results, click `✓ I'm done training` and then `Upload to import.io`. Enter a name for the crawler and click `✓ OK`, and when you receive the `Success!` message, `Run crawler`.
-
-The next dialog box allows you to select the starting pages for the scrape/crawl, the number of links to follow to find similar pages (`Page depth`) and the format for the data (`CSV` or `JSON`):
-
-![](./img/class4_14.jpg)
-
-In this case we should select the main `UKCTG` folder as the starting page, and we can set `Page depth` to 1, as all the pages we need to scrape link directly from it.
-
-Click `► Go`, and the scrape will now proceed, and you can view its progress in the information bar at the top of the screen:
-
-![](./img/class4_15.jpg)
-
-Once your scrape is complete, click `Upload data`. The data will appear in a table, from which you can `Download` in formats including `CSV` and `JSON`:
-
-![](./img/class4_16.jpg)
-
-Now we will scrape data on all doctors in New York State with disciplinary actions against their record, using Kimono. Navigate to [this page](http://w3.health.state.ny.us/opmc/factions.nsf/byphysician?openview), which is the start of the list. Then click on the `Next Page` link, and see that the url changes to the following:
+Navigate to [this page](http://w3.health.state.ny.us/opmc/factions.nsf/byphysician?openview), which is the start of the list. Then click on the `Next Page` link, and see that the url changes to the following:
 
 ```
 http://w3.health.state.ny.us/opmc/factions.nsf/byphysician?OpenView&Start=30
 ```
-Experiment with different numbers at the end of the url until you find the end of the list.
+Notice that the first entry on this list is actually the last entry on the previous one, so this url is the next page with no duplicates:
 
-We can scrape the entire list by following the `Next Page` links after grabbing all the data on each page. Kimono is particularly good at this task. If you navigate back and forth through the list, you will notice that the first name on each `Next Page` is the last name on the previous page -- which means that the scraped data will contain some duplicates, which will need to be removed before using the data.
 
-Back at the first page, activate the Kimono bookmarklet so that the screen looks like this:
+```
+http://w3.health.state.ny.us/opmc/factions.nsf/byphysician?OpenView&Start=31
+```
 
-![](./img/kimono_1.jpg)
+Experiment with different numbers at the end of the url until you find the end of the list. As of writing, this url exposed the end of the list, revealing that there were 7294 disciplinary actions in the database.
 
-(The first time you use Kimono, you will proably need to click the question mark in the top toolbar to deactivate the help screen.)
+```
+http://w3.health.state.ny.us/opmc/factions.nsf/byphysician?OpenView&Start=7290
+```
 
-Type `name` in the box at top left and then select the first entry under `Physician Name`:
+![](./img/class4_7.jpg)
 
-![](./img/kimono_2.jpg)
+Click on the link for the last doctor's name, and notice that data on each disciplinary action, plus a link to the official documentation as a PDF, are on separate web pages. So we need to cycle through all of these pages to grab data on every disciplinary action.
 
-Then click the check mark for the entry immediately below, and all 30 items in that column should be selected for scraping:
+![](./img/class4_8.jpg)
 
-![](./img/kimono_3.jpg)
+The first step is to cycle through the entire list, grabbing all of the urls for the individual plages.
 
-Now click the `+` symbol in the top toolbar to select a new datatype, and click on the first `License Number`. Click the check mark on the next entry below, and call this field `lic_num`:
+The best way of doing this in Import.io is to set up a scrape from all of the urls that define the list. In a spreadsheet, copy the base url down about 250 rows, then put the numbers that define the first three pages in the first three cells of the next column:
 
-![](./img/kimono_4.jpg)
+![](./img/class4_9.jpg)
 
-Repeat the process to grab all the columns in the data (note if the first row is a null, select the next value), until the screen looks like this:
+Select those three cells, then move the cursor to the bottom right-hand corner until it becomes a cross, and double-click to copy the pattern down the entire column.
 
-![](./img/kimono_5.jpg)
+In the first cell in the third column, type the following formula:
 
-Now click the book, or pagination, icon to the right of the top toolbar:
+```
+=concatenate(A1,B1)
+```
 
-![](./img/kimono_6.jpg)
+Hit return, and copy this formula down the column to give the urls we will use to scrape the list. To save time in class, I have already made this spreadsheet, `urls.xls` for you to use. It is in the folder `cleaning`.
 
-Nagivate to the `Next Page` link and select that, so that the pagination icon changes to a check mark:
+Open Import.io, and you should see a screen like this:
 
-![](./img/kimono_7.jpg)
+![](./img/class4_10.jpg)
 
-Click `Done` in the top toolbar and fill in the next screen as follows:
+Click the pink `New` button to start setting up a scraper, and at the dialog box select `Start Extractor`:
 
-![](./img/kimono_8.jpg)
+![](./img/class4_11.jpg)
 
-Selecting `Weekly` will run the scrape each week to capture new disciplinary actions; 500 pages will be enough to capture the entire list.
+You can close the tutorial video that appears by clicking the `OK, got it!` button. Enter the url for the first page of the list in the search box, and then move the slider on `ON`
 
-Click `Create API` and follow the link and the scrape will start to run.
+Write `name` in the box at top left, replacing the default `my_column`, and click on the first link under `Physician Name`. At the dialog box that appears, tell Import.io that your table will contain `Many rows`.
 
-Kimono can also scrape pages that populate with more data as you scroll down the page, like the list of tweets on your Twitter account. To activate this behavior, use the infinite scrolling icon:
+Import.io will now grab the text and links in a column called name. This is all we need for the first phase of the scrape, so click the `DONE` button and select a name for the API, such as `ny_doctors`, and click `PUBLISH`.
 
-![](./img/kimono_9.jpg)
+At the next window, select `Bulk Extract` under `How would you like to use this API?` and paste into the box the urls from the spreadsheet:
 
-Kimono can also be used to scrape data from a series of separate pages, like the individual links giving the details of each disciplinary action from the above example. In such cases, first set up an API to capture of those links, and then set up a second API to grab the data from each page using the urls in the first API, as explained [here](https://help.kimonolabs.com/hc/en-us/articles/203438300-Source-URLs-to-crawl-from-another-kimono-API), and in [this video](https://vimeo.com/118196792).
+![](./img/class4_12.jpg)
 
-To access your Kimono APIs over the web, you will need an API key, which you will find at your `Account` page.
+Click `Save URLS` and then `Run queries` and the scrape should begin. It will take a couple of minutes to process all 244 urls. If any fail, click on the warning message to retry.
+
+Now click on the `Export` button and select HTML to export as web page, which should look like this. Save it on your desktop, and open in a browser. The column `name` now contains all the urls we need for the second stage of the scrape:
+
+![](./img/class4_13.jpg)
+
+Click the `New` button to set up the second phase of the scrape, and again `Start Extractor`. Enter the second url from your HTML table, to select a named doctor, rather than a practice. Call the column `first name`, click on the doctor's first name, and this time tell Import.io that your scrape will have `Just one row` -- because each of the pages we are about to scrape contains data on one disciplinary action.
+
+Click `+ NEW COLUMN` and repeat for the doctor's last name and the other fields in the data. Make sure to click on the empty box for `License Restrictions`, so the scrape does grab this data where it exists, and the link to the PDF document. When you are done, the screen should look like this:
+
+![](./img/class4_14.jpg)
+
+Click `DONE`, select a name for the API, such as `ny_orders`, and click `PUBLISH`.
+
+Again select `Bulk Extract`, and paste into the box the entire column of urls from your html table. You can do this is Firefox using Table2Clipboard, using its `Select column` option. Remember to delete the column header `name` from the list of urls before clicking `Save URLs` and `Run queries`.
+
+This scrape will take some time to perform, so we will return to it later.
+
+
 
 ### PDFs: the bane of data journalism
 
@@ -331,6 +280,10 @@ Some organizations persist in making data available as PDFs, rather than text fi
 For digital PDFs, **[Tabula](http://tabula.nerdpower.org/)** is a useful data extraction tool -- however it will not work with PDFs created by scanning the original document, which have to be interpreted using Optical Character Recognition (OCR) software.
 
 Also useful is the online service **[Cometdocs](http://www.cometdocs.com/)**. While it is a commercial tool, members of Investigative Reporters and Editors can [obtain a free account](http://ire.org/blog/ire-news/2013/05/22/ire-announces-partnership-cometdocs/). Cometdocs can read scanned PDFs, however its accuracy will vary depending on how well the OCR works on the document in question.
+
+**[Adobe Acrobat Pro](https://acrobat.adobe.com/us/en/products/acrobat-pro.html)** will also perform OCR on scanned PDFs.
+
+[Here](https://github.com/jsfenfen/parsing-prickly-pdfs) is a useful set of resources detailing more advanced tools for dealing with hard-to-parse PDFs.
 
 ### Can I trust this data?
 
@@ -354,7 +307,7 @@ Look for glitches in the alignment of columns, which may cause data to appear in
 
 For people’s names, look for variations in spelling, format, initials and accents, which may cause the same person to appear in multiple guises. Similar glitches may affect addresses, and any other information entered as text.
 
-Some fields offer some obvious checks: if you see a U.K. postal code that starts with a number, for instance, you know it must be wrong.
+Some fields offer some obvious checks: if you see a zip code that contains anoything other than five or nine digits, for instance, you know it must be wrong.
 
 Dates can also be entered incorrectly, so it’s worth scanning for those that fall outside the timeframe that should be covered by the data.
 
@@ -372,124 +325,111 @@ When you launch Open Refine, it opens in your web browser. However, any data you
 
 The opening screen should look like this:
 
+![](./img/class4_15.jpg)
+
+
+#### Reshape data from wide to long format
+
+Click the `Browse` button and navigate to the file `oil_production.csv`. Click `Next>>`, and check that data looks correct:
+
+![](./img/class4_16.jpg)
+
+Open Refine should recognize that the data is in a CSV file, but if not you can use the panel at bottom to specify the correct file type and format for the data. If your file has some initial header lines that need to be ignored, Open Refine can deal with that, too.
+
+Make sure that the box marked `Parse cell text into numbers, dates, ...` is checked. Numbers and dates should appear in green, plain text in black. Also change the `Project name` to remove the `csv`.
+
+When you are satisfied that the data has been read correctly, click the `Create Project >>` button at top right. The screen should now look like this:
+
+![](./img/class4_17.jpg)
+
+As you can see, the data is in wide format, with values for oil production by region organized in columns, one for each year. To convert this to long format, click on the small downward-pointing triangle for the first of these year columns, and select `Transpose>Transpose cells across columns into rows`.
+
+Fill in the dialog box as below, making sure that `From Column` and `To Column` are highlighted correctly, that the `Key column` and `Value column` have been given appropriate names, and that `Fill down in other columns` is checked. (Failing to do check this box will mean that the region names each will only appear once in the reshaped data, rather than being copied down to appear next to the corresponding data for year and oil production.)
+
 ![](./img/class4_18.jpg)
 
-#### Reshape data from wide to long
+Click `Transpose` and then the `50` rows link, to see the first 50 rows of the reshaped data:
 
-First we will use Open Refine to convert data on Medicare spending per enrollee by county in California in 2012, from the [Dartmouth Atlas of Health Care](http://www.dartmouthatlas.org/), form "wide" to "long" format. Download the data from [here](./data/medicare.zip). (Medicare is the main U.S. government healthcare programme for retirees.) In addition to state and country names and codes, the file contains six fields
-detailing Medicare reimbursements per enrollee, in various categories.
-
-Click the `Browse` button and navigate to the file `CA_counties_medicare.xls`. Click `Next>>`, and check that data looks correct:
-
-![](./img/principles_28.jpg)
-
-Open Refine should recognize that the data is in an `.xls` spreadsheet, but if not you can use the panel at bottom to specify the correct file type and format for the data.
-
-When you are statisfied that the data has been read correctly, click the `Create Project >>` button at top right. Click on the `50 rows` link to reveal more of the data, and the screen should look like this:
-
-![](./img/principles_29.jpg)
-
-As you can see, the data is in wide format, with values for different categories of Medicare reimbursement organized in columns. To convert this to long format -- with categories in one field and reimbursement costs in another -- click on the small downward-pointing triangle for the first of these columns, and select `Transpose>Transpose cells across columns into rows`.
-
-Fill in the dialog box as below, making sure that `From Column` and `To Column` are highlighted correctly, that the `Key column` and `Value column` have been given appropriate names, and that `Fill down in other columns` is checked.
-
-![](./img/principles_30.jpg)
-
-Click `Transpose` to see the reshaped data:
-
-![](./img/principles_31.jpg)
+![](./img/class4_19.jpg)
 
 Click the `Export` button at top right and you will see options to export the data in a variety of file types, including `Comma-separated value` and `Excel` spreadsheet.
 
-#### Clean a dirty dataset
+#### Clean and process dirty data
 
-Now we will use Open Refine to process and clean data on grants from the U.S. federal government awarded to the University of California, Berkeley, in 2013.
+Click the Open Refine logo at top left to return to the opening screen. Create a new project from the file `ucb_stanford_2014.csv`:
 
-Create a new project and import the data as before. Open Refine should recognize that the data is in a CSV file.
+![](./img/class4_27.jpg)
 
-Open Refine allows you to create “facets” for each column in a dataset, which provide a powerful way to edit and clean data.
+Again, each field/column has a button with a downward-pointing triangle. Click on these buttons and you get the option to create “facets” for the column, which provide a powerful way to edit and clean data.
 
-Click on the button for the field `recipient_city_name`, and select `Facet>Text facet`. A summary of the various entries now appears in the panel to the left:
+Click on the button for the field `Recipent City`, and select `Facet>Text facet`. A summary of the various entries now appears in the panel to the left:
 
-![](./img/cleaning_6.jpg)
+![](./img/class4_28.jpg)
 
-We can edit entries individually: Select `Berkley`, click on the `Edit` link, and correct the spelling. Notice that the number of entries under the correct spelling increases by one.
+The numbers next to each entry show how many records there are for each value.
 
-One problem is that we have a mixture of cases, with some entried in Title or Proper Case, some in UPPERCASE. We can fix this back in the field itself. Click its button again and select `Edit cells>common transforms>To titlecase`. Notice that `common transforms` also includes options to remove unwanted white space.
+We can edit entries individually: Select `Veterans Bureau Hospi`, which is clearly not a city, click on the `Edit` link, change it to `Unknown`. (If cleaning this data for a real project, we would need to check with an external source to get the actual city for this entry.)
 
-Now create a text facet for the field `recipient_name`. You will see multiple variants of the same name, which should read: `Regents of the University of California`.
+Another problem is that we have a mixture of cases, with some entries in Title or Proper Case, some in UPPERCASE. We can fix this back in the field itself. Click its button again and select `Edit cells>common transforms>To titlecase`.
 
-![](./img/cleaning_7.jpg)
+Now notice that we apparently have duplicate entries for `Berkeley`, `Palo Alto` and `Stanford`. This is the result of trailing white space after the city names for some entries. Select `Edit cells>common transforms>Trim leading and trailing whitespace` and notice how the problem resolves:
 
-Click on the `Cluster` button. Here you can experiment with different clustering algorithms to edit text entries that may be variants of the same thing. In this case, using `key collision` and `metaphone3` will collapse all of the entries into three clusters:
+![](./img/class4_29.jpg)
 
-![](./img/cleaning_8.jpg)
+Having cleaned this field, close the facet by clicking the cross at top left.
 
-To merge the suggested matches, check `Merge?`, enter the correct `New Cell Value` (here `Regents of the University of California`) in each case), then click one of the `Merge Selected` buttons. In this dataset, there was only one correct entry for the `recipient_name` field, so this would have been easy to fix in a spreadsheet by copying the value all down the column. However, in circumstances where there are multiple possibilities and frequent errors in text entry, Open Refine's clustering functions can be a major time saver.
+Now create a text facet for the field `Recipient`:
 
-Open Refine's facets can also be used to inspect columns containing numbers. Click on the button for the field `fed_funding_amount` and select `Facet>numeric facet`. This will create a histogram showing the distribution of numbers in the field:
+![](./img/class4_30.jpg)
 
-![](./img/cleaning_9.jpg)
+What a mess! The only possibilities are Stanford or Berkeley, yet there are multiple variants of each, many including `Board of Trustees` for Stanford and `Regents of` for UC Berkeley.
 
-We can then use the slider controls to filter the data, which is good for examining possible outliers at the top of bottom of the range. Notice that here a small number of grants have negative values. The minus signs might be errors, so those grants would need to be checked out.
+First, manually edit `Interuniveristy Center for Japanese Language` to `Stanford`, which is where this center is based.
 
-If the data is spread over a very wide range, we can switch to a logarithmic scale for the histogram by selecting `change`, entering `log(value)` for the expression and clicking `OK`.
+We could contrinute editing manually, but to illustrate Open Refine's editing functions click on the `Cluster` button. Here you can experiment with different clustering algorithms to edit entries that may be variants of the same thing. Select `key collision` and `metaphone3`, then start checking the clusters and renaming them as `Berkeley` or `Stanford` as appropriate:
 
-Often we may need to convert fields to text, numbers or dates. For example, click on the button for `starting_date` and select `Edit cells>common transforms>To date` and see that it changes from a string of text to a date/time in international standard format: `YYYY-MM-DDTHH:MM:SSZ` (here `T` denotes the start of the time section, and `Z` terminates the entry).
+![](./img/class4_31.jpg)
 
-Having done that, we can then select `Facet>Timeline facet` to look at date outliers, just as for numbers. Notice here that a couple of projects began in 1954, while several more began in the 1970s. If working on this dataset, these entries may need checking out, to make sure that the projects really are as long-running as the data suggests.
+Click `Merge Selected & Close` and the facet can then be quickly edited manually:
 
-Now look for the column `principal_place_zip`, which has been recognized as a number when it should be treated as text. Select `Edit cells>Common transforms>To text` to correct this.
+![](./img/class4_32.jpg)
 
-Notice that some of the codes have five digits, while others have the full nine-digit Zip code. If we are going to use the Zip codes in our analysis, we need to create a new column with five-digit codes.
+Often we may need to convert fields to text, numbers or dates. For example, click on the button for `Award Date` and select `Edit cells>common transforms>To date` and see that it changes from a string of text to a date in standard format.
 
-Click on the button for the `recipient_name` field, select `Edit column>Add column based on this column` and enter the expression `substring(value, 1)`. This should extract all the characters apart from the first. Now try `substring(value, 0, 5)`, which should extract the desired five-digit Zip code. Call the new column `principal_place_zip5` and click `OK`:
+Notice the field `Award amount`, which is a value in dollars. Negative values are given in brackets. Because of these symbols, the field is being
+recognized as a string of text, rather than a number. So to fix this problem, we have to remove the symbols.
 
-![](./img/cleaning_10.jpg)
+Select `Edit colum>Add column based on this column...` and fill in the dialog box as follows:
 
-This is an example of some simple code in Open Refine's expression language. We are "slicing" strings of text based on an index which defines the position of individual characters. The first character is 0, followed by 1, 2, and so on. We can also index from the end of the string: the last character is -1, the second last is -2, and so on.
+![](./img/class4_33.jpg)
 
-If you feed the `substring` function just one number after `value`, it will start at that position, and give you that character and everything else to the end of the string. If you use two numbers, it will start at the first position and give you that character and everything up to (but not including) the second character.
+Here `value` refers to the value in the original column, and `replace` is a function that replaces characters in the value. We can run several `replace` operations by "chaining" them together.
 
-We can also split or merge columns. For example, the column `agency_code` consists of a number, followed by a colon and some text. To put the numbers and text into different fields, click on the column's button, and select `Edit column>Split into several columns` and fill in the dialog box as follows:
+In this expression we are replacing the `$` symbols, the commas separating thousands, and the closing brackets with nothing; we are replacing the opening brackets with a hyphen to designate negative numbers.
 
-![](./img/cleaning_11.jpg)
+Click `OK` and the new column will be created. Note that it is still being treated as text, but that can be corrected by selecting `Edit cells>common transforms>To number`.
 
-Click the `OK` button, and the columns will split.
+This is just one example of many data transformation functions that can be accessed using Open Refine's expression language, called GREL. Learning these functions can make Open Refine into a very powerful data processing tool. Study the "Further reading" links for more.
 
-Now we will merge the columns `receip_addr1` and `receip_addr2` into a single `receip_addr`	field. Click on the button for the first of these columns and select `Edit column>Add column based on this column` and fill in the dialog box as follows:
+Open Refine's facets can also be used to inspect columns containing numbers. Select `Facet>Numeric facet` for the new field. This will create a histogram showing the distribution of numbers in the field:
 
-![](./img/cleaning_12.jpg)
+![](./img/class4_34.jpg)
 
-Study the expression used:
+We can then use the slider controls to filter the data, which is good for examining possible outliers at the top of bottom of the range. Notice that here a small number of grants have negative values, while there is one grant with a value of more than $3 billion from the National Science Foundation. This might need to be checked out to ensure that it is not an error.
 
-```cells["receip_addr1"].value + ", " + cells["receip_addr2"].value```
+While most of the data processing we have explored could also be done in a spreadsheet, the big advantage of Open Refine is that we can extract a "pipeline" for processing data to use when we obtain data in the same format in future.
 
-This code "concatenates" the two text strings into a single string, including a comma followed by a space to separate them. Selecting the option `On error: copy value from original column` ensures that where the second column is blank, the new field will contain the value from the first.
+Select `Undo / Redo` at top left. Notice that clicking on one of the steps detailed at left will transform the data back to that stage in our processing. This means you don't need to worry about making mistakes, as it's always possible to revert to an earlier state, before the error, and pick up from there.
 
-Click `OK` and the new address column will be created.
+Return to the final step, then click the `Extract` button. At the dialog box, check only those operations that you will want to perform in future (typically generic transformations on fields/columns, and not correcting errors for individual entries). Here I have unchecked all of the corrections in the text facets, and selected just those operations that I know I will want to repeat if I obtain data from this source again:
 
-While many of the options we have explored could also be done a spreadsheet, the big advantage of Open Refine is that we can extract a "pipeline" for processing data to use when we obtain data in the same format in future. It also means that all of your steps in processing the data can be retraced by anyone else who wants to check and verify your work. Ensuring reproducibility in data processing is good practice!
+![](./img/class4_35.jpg)
 
-Select `Undo / Redo` and notice that there is a complete record of all the operations performed on the data:
-
-![](./img/cleaning_13.jpg)
-
-Clicking on any of these steps will revert the dataset back to that stage in the process. This that means you don't need to worry about making mistakes in your data processing: You can simply return to the point before the error, and resume your work from there.
-
-Now click `Extract`. At the dialog box, check only those operations that you will want to perform in future (typically generic transformations on fields/columns, not correcting errors for individual entries):
-
-![](./img/cleaning_14.jpg)
-
-This will generate JSON in the right hand panel that can be copied into a blank text file and saved with the extension `json`.
+This will generate JSON in the right hand panel that can be copied into a blank text file and saved.
 
 To process similar data in future. Click the `Apply` button on the `Undo / Redo` tab, paste in the text from this file, and click `Perform Operations`. The data will then be processed automatically.
 
-When you are finished cleaning and processing your data, click the `Export` button at top right to export as a `CSV` file or in other formats.
-
-You can also use facets to filter your data prior to export. Create a text facet for the `agency_name` column, and select `include` for the data you wish to retain, which will appear in red. Here, for example, I am selecting health-related agencies:
-
-![](./img/cleaning_15.jpg)
+When you are finished cleaning and processing your data, click the `Export` button at top right to export as a CSV file or in other formats.
 
 Open Refine is a very powerful tool that will reward efforts to explore its wide range of its functions for manipulating data, and to learn its expression language. See the Further Reading for more.
 
@@ -538,7 +478,10 @@ For a full address, this should return `Address` when the geocoding has been suc
 
 Finally, delete the `bing_json` column by selecting `Edit column>Remove column`.
 
-It is now possible to extract JSON code that will allow you repeat these steps on any data in the same format. [Here](https://github.com/paldhous/refine-geocoder) I have created an Open Refine geocoder that uses both the Bing and Mapquest Open APIs. `Download ZIP` from my Github repository, unzip the folder, and follow the instructions to try it out.
+It is now possible to extract JSON code that will allow you repeat these steps on any data in the same format. 
+
+[Here](https://github.com/paldhous/refine-geocoder) I have created an Open Refine geocoder that uses both the Bing and Mapquest Open APIs, with instructions on how to use it. The `geocoding` folder contains the JSON from my Open Refine geocoder. So you. To use it you will also need a Mapquest API key, which you can obtain from [here](https://developer.mapquest.com/).
+
 
 ### Standardize names with Mr People
 
@@ -571,11 +514,11 @@ To convert data from JSON or XML into text files, use Open Refine. First create 
 Paul Bradshaw. *[Scraping For Journalists](https://leanpub.com/scrapingforjournalists)*
 
 Dan Nguyen. *[The Bastards Book of Ruby](http://ruby.bastardsbook.com/)*
-I use Python rather than Ruby, but this book provides a [good introduction](http://ruby.bastardsbook.com/chapters/web-scraping/) to the practice of web scraping using code, and [using your browser's web inspector](http://ruby.bastardsbook.com/chapters/web-inspecting-html/) to plan your scraping approach.
+I use [R](https://www.r-project.org/) or Python rather than Ruby, but this book provides a [good introduction](http://ruby.bastardsbook.com/chapters/web-scraping/) to the practice of web scraping using code, and [using your browser's web inspector](http://ruby.bastardsbook.com/chapters/web-inspecting-html/) to plan your scraping approach.
 
-[Import.io webinars](https://import.io/webinars)
+[Import.io Tutorials](https://www.import.io/sections/learn/)
 
-[Kimono Help Center](https://help.kimonolabs.com/hc/en-usl)
+[Import.io Knowledge Base](http://support.import.io/knowledgebase)
 
 [Open Refine Wiki](https://github.com/OpenRefine/OpenRefine/wiki)
 
