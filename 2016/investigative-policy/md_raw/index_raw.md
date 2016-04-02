@@ -9,7 +9,7 @@ This class focuses on in-depth and investigative reporting, where science and te
 An introduction to data-driven journalism, with examples; Basic online resources for science reporters: databases of scientific literature, patents, grants, clinical trials etc.
 
 - #### March 31: [Individual meetings](week1b.html)
-Discussion with five students to discuss and refine your reporting plans.
+Discussion with five students to refine your story ideas.
 
 - #### April 7: [Investigative approaches](week2.html)
 Discuss examples of investigative reports selected by students, studying methods employed.

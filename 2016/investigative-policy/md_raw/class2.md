@@ -2,28 +2,27 @@
 
 ### Students' picks:
 
-- #### Leslie - [Sea Change: The Pacific's Perilous Turn](http://apps.seattletimes.com/reports/sea-change/2013/sep/11/pacific-ocean-perilous-turn-overview/) 
+- #### Alison - 
 
-- #### Kerry - [California’s Strawberry Industry Is Hooked On Dangerous Pesticides](http://www.revealnews.org/article/californias-strawberry-industry-is-hooked-on-dangerous-pesticides/)
+- #### Amy - [Scrapping Ships, Sacrificing Men](http://www.pulitzer.org/winners/6863)
 
-- #### Chris - [The Lobotomy Files](http://projects.wsj.com/lobotomyfiles/) 
+- #### Bethany - [The Killing Agency: Wildlife Services' Brutal Methods Leave A Trail Of Animal Death](http://www.sacbee.com/news/investigations/wildlife-investigation/article2574599.html)
 
-- #### Lisa - [Playing With Fire](http://www.pulitzer.org/files/finalists/2013/chictrib2013/chictrib01.pdf) 
+- #### Brendan - [The Price Of Nice Nails](http://www.nytimes.com/2015/05/10/nyregion/at-nail-salons-in-nyc-manicurists-are-underpaid-and-unprotected.html) 
 
-- #### Kim - [The $2.7 Trillion Medical Bill](http://www.nytimes.com/2013/06/02/health/colonoscopies-explain-why-us-leads-the-world-in-health-expenditures.html)
+- #### Emily - [Out Here, No One Can Hear You Scream](http://highline.huffingtonpost.com/articles/en/park-rangers/)
 
-- #### Leigh - [Water's Edge: The Crisis Of Rising Sea Levels](http://www.reuters.com/investigates/special-report/waters-edge-the-crisis-of-rising-sea-levels/)
+- #### Erin - [Failure To Report](https://www.statnews.com/2015/12/13/clinical-trials-investigation/)
 
-- #### James - [On Shaky Ground](http://californiawatch.org/earthquakes)
+- #### Laurel -
 
-- #### Nala - [Profit Trumps Preservation For Boy Scout Councils Nationwide](http://web.archive.org/web/20090309064225/http://seattlepi.nwsource.com/specials/scoutslogging/397864_loggingmain29.html)
+- #### Lindzi - [Hidden Records Show MMR Truth](hidden_records.pdf)
 
-- #### Nicholas - [Elephants Are Dying Out In America's Zoos](http://old.seattletimes.com/html/nationworld/2019809167_elephants02m.html)
+- #### Natalie -
 
-- #### Rex - [The Tree Coroners](http://www.hcn.org/issues/45.21/the-tree-coroners/print_view)
+- #### Ramin - [Dirty South](dirty_south.pdf)
 
-###Thoughts arising from discussion
-
+### Thoughts arising from discussion
 
 #####Think about the human sources who can help you
 
