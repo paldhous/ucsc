@@ -2,7 +2,7 @@
 
 ### Students' picks:
 
-- #### Alison - 
+- #### Alison - [Pesticides In Paradise: Hawaii's Spike In Birth Defects Puts Focus On GM Crops](http://www.theguardian.com/us-news/2015/aug/23/hawaii-birth-defects-pesticides-gmo)
 
 - #### Amy - [Scrapping Ships, Sacrificing Men](http://www.pulitzer.org/winners/6863)
 
@@ -14,11 +14,11 @@
 
 - #### Erin - [Failure To Report](https://www.statnews.com/2015/12/13/clinical-trials-investigation/)
 
-- #### Laurel -
+- #### Laurel - [Before The Law](http://www.newyorker.com/magazine/2014/10/06/before-the-law)
 
 - #### Lindzi - [Hidden Records Show MMR Truth](hidden_records.pdf)
 
-- #### Natalie -
+- #### Natalie - [How Killing Elephants Finances Terror In Africa](http://www.nationalgeographic.com/tracking-ivory/article.html)
 
 - #### Ramin - [Dirty South](dirty_south.pdf)
 
