@@ -127,15 +127,17 @@ Before using the add-on, select `Tools>Table2Clipboard` and choose the following
 
 This will ensure that each row in the extracted data is put on a `new line`, and each column is separated by a `tab`.
 
-To illustrate what Table2Clipboard does, go to [The International Disaster Database](http://www.emdat.be/database), and navigate to `Disaster List`. At the search form, select 1990 to 2015 under `Period`, United States of America under `Country`, Storm under `Disaster type`, then holding down the `Ctrl` (Windows) or `Command`/`⌘` (Mac) key, select the three variables giving the number of people affected, and the value of the damage caused. Then click `Search`.
+To illustrate what Table2Clipboard does, go to [this table](http://www.nih.gov/about-nih/what-we-do/nih-almanac/appropriations-section-1) showing the budget history for components of the National Institutes of Health.
 
 ![](./img/class3_5.jpg)
 
-(Source: [The International Disaster Database](http://www.emdat.be/database))
+(Source: [NIH](http://www.nih.gov/about-nih/what-we-do/nih-almanac/appropriations-section-1))
 
-When the table of data appears, right-click anywhere within it and select `Table2Clipboard>Copy whole table`.
+Right-click anywhere within it and select `Table2Clipboard>Copy whole table`.
 
-You can now paste the data into an empty text file, or into a spreadsheet.
+You can now paste the data into an empty text file, or into a spreadsheet. We'll paste it into a spreadsheet.
+
+This table is in two parts, so click on the `Section 2` link, and repeat the process to grab all the data.
 
 ### Manipulate urls to expose the data you need
 
@@ -189,9 +191,9 @@ Using programming languages such as [Python](https://www.python.org/), it is pos
 
 Web scraping by coding is beyond the scope of this class. However, the underlying process is simple to understand: Identify the patterns you would need to follow if collecting the data manually, then write a program to automate the process and write the results to a data file. That often means experimenting to reveal the most efficient way of exposing all of the data you require.
 
-We have already been performing some of the elements of web scraping, by manipulating urls on web search forms and then downloading the individual links that are returned *en masse*.
+We have already been performing some of the elements of web scraping, by manipulating urls on web search forms and downloading the individual links *en masse*.
 
-There are a number of tools that allow non-programmers to scrape data from the web. These include [OutWit Hub](https://www.outwit.com/) and the Windows-only [Helium Scraper](http://www.heliumscraper.com/en/index.php?p=home). In today's class, we will use [**Import.io**](https://import.io/) and **[Kimono](https://www.kimonolabs.com/)**.
+There are a number of tools that allow non-programmers to scrape data from the web. These include [OutWit Hub](https://www.outwit.com/), the Windows-only [Helium Scraper](http://www.heliumscraper.com/en/index.php?p=home), and **[Kimono](https://www.kimonolabs.com/)**.. In today's class, we will use [**Import.io**](https://import.io/).
 
 To demonstrate webscraping, we will download data on disciplinary actions against doctors in the state of New York.
 
@@ -233,7 +235,7 @@ In the first cell in the third column, type the following formula:
 =concatenate(A1,B1)
 ```
 
-Hit return, and copy this formula down the column to give the urls we will use to scrape the list. To save time in class, I have already made this spreadsheet, `urls.xls` for you to use. It is in the folder `cleaning`.
+Hit return, and copy this formula down the column to give the urls we will use to scrape the list. To save time in class, I have already made this spreadsheet, `urls.xls` for you to use. It is in the folder `scraping`.
 
 Open Import.io, and you should see a screen like this:
 
@@ -269,7 +271,7 @@ Click `DONE`, select a name for the API, such as `ny_orders`, and click `PUBLISH
 
 Again select `Bulk Extract`, and paste into the box the entire column of urls from your html table. You can do this is Firefox using Table2Clipboard, using its `Select column` option. Remember to delete the column header `name` from the list of urls before clicking `Save URLs` and `Run queries`.
 
-Once the scrape has completed, clock the `Export` button and select `Spreadhseet` to export as a CSV file.
+Once the scrape has completed, click the `Export` button and select `Spreadhseet` to export as a CSV file.
 
 
 ### PDFs: the bane of data journalism
@@ -315,6 +317,23 @@ Also scan numbers for any obvious outliers. These values are worth checking out.
 Other common problems are white spaces before and after some entries, which may need to be stripped out.
 
 At all stages of your work, pay attention to zeros. Is each one actually supposed to represent zero, or should the cell in fact be empty? Take particular care exporting data from one software tool and importing to another, and check how empty cells, or "nulls," have been handled.
+
+#### Is your data wide, or long?
+
+Particularly when data shows a time series for a single variable, it is often provided like this data on trends in international oil production by region, in "wide" format:
+
+![](./img/principles_10.jpg)
+
+(Source: Peter Aldhous, from [U.S. Energy Information Administration](http://www.eia.gov/cfapps/ipdbproject/IEDIndex3.cfm?tid=5&pid=53&aid=1) data)
+
+Here, all of the numbers represent the same variable, and there is a column for each year. This is good for people to read, but most software for data analysis and visualization does not play well with data in this format.
+
+So if you receive "wide" data, you will usually need to covert it to "long" format, shown here, with one column for each variable:
+
+![](./img/principles_11.jpg)
+
+(Source: Peter Aldhous, from [U.S. Energy Information Administration](http://www.eia.gov/cfapps/ipdbproject/IEDIndex3.cfm?tid=5&pid=53&aid=1) data)
+
 
 ### Clean and process data with Open Refine
 
