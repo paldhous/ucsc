@@ -24,7 +24,7 @@ Beyond the spreadsheet: Using databases to interrogate data and find the story. 
 Data visualization in reporting and storytelling. After a discussion of basic principles, we will put them into practice using Tableau Public.
 
 - #### May 5: [Backgrounding non-profits, companies and people](week6.html)
-Guidestar and CitizenAudit.org for researching non-profits; SEC filings and other tools for researching companies. Who sent that email? Who runs this website? Also: The tracks you leave online, and how to cover them, if necessary.
+Guidestar and CitizenAudit.org for researching non-profits; SEC filings and other tools for researching companies. Who sent that email? Who runs this website?
 
 - #### May 10: [Guest lecturer Ben Welsh, editor, Los Angeles Times Data Desk](week7.html)
 Ben will talk about how the LA Times integrates data journalism into the newsroom. Preceded and followed by individual meetings with Ben to discuss your projects.
