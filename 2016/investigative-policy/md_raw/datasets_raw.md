@@ -46,18 +46,6 @@ Data used in reporting [this news story](http://www.newscientist.com/article/dn1
  - `birth_rate` Number of [live births during the year per 1,000 people](http://data.worldbank.org/indicator/SP.DYN.CBRT.IN), based on mid-year population estimate.
  - `neonat_mortal` [Neonatal mortality rate](http://data.worldbank.org/indicator/SH.DYN.NMRT): number of babies dying before reaching 28 days of age, per 1,000 live births in a given year.
 
-`storms` Folder containing:
-- `storms.csv` contains [data on tropical storms and hurricanes](http://www.aoml.noaa.gov/hrd/hurdat/Data_Storm.html), from 1990 to 2013, compiled by the Hurricane Research Division of the U.S. National Oceanic and Atmospheric Administration. I have processed the [raw data](http://www.aoml.noaa.gov/hrd/hurdat/hurdat2.html) to give the following fields:
- - `name` Official name for each storm; unnamed storms are listed as `Unnamed` and also numbered.
- - `year` `month` `day` `hour` `minute` Date and time fields for each observation. For recent storms, observations are recorded every six hours.
- - `timestamp` Date and time fields combined into a full timestamp for each observation in standard `YYYY-MM-DD HH:MM` format.
- - `record_ident` The entry `L` indicates the time at which a storm made landfall, defined as the center of the system crossing a coastline, recorded from 1991 onwards. Other entries are explained in the file `newhurdat-format.pdf`.
- - `status` Options include `HU` for hurricane, `TS` for tropical storm and `TD` for tropical depression. Other entries are explained in `newhurdat-format.pdf`.
- - `latitude` `longitude` Geographic coordinates for the center of the system at each observation.
- -  `max_wind_kts` `max_wind_kph` `max_wind_mph` Maximum sustained wind for each observation.
- - `min_press` Minimum air pressure at the center of the system for each observation.
-- `newhurdat-format.pdf` More explanation of the raw storms data from NOAA, including the full list of storm `status` codes.
-
 
 
 
