@@ -18,7 +18,7 @@ The SQLite Manager add-on allows you to work with any SQLite database. Open SQLi
 
 ### The data we will use
 
-Download from here, unzip the folder and place on your desktop. Contains the following:
+Download from [here](data/databases.zip), unzip the folder and place on your desktop. It contains the following:
 
 `pzifer` Folder containing:
 
