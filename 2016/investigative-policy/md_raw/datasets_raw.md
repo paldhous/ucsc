@@ -46,6 +46,11 @@ Data used in reporting [this news story](http://www.newscientist.com/article/dn1
  - `birth_rate` Number of [live births during the year per 1,000 people](http://data.worldbank.org/indicator/SP.DYN.CBRT.IN), based on mid-year population estimate.
  - `neonat_mortal` [Neonatal mortality rate](http://data.worldbank.org/indicator/SH.DYN.NMRT): number of babies dying before reaching 28 days of age, per 1,000 live births in a given year.
 
+### [Mapping](./data/visualizing.zip)
+
+`mapping` Folder containing:
+- `oregon_dams_csv` Data on dams in Oregon, from the state's [dams inventory](http://apps.wrd.state.or.us/apps/misc/dam_inventory/).
+- `oregon_seismic_risk` Data om seismic risk for the state, [calculated by](http://earthquake.usgs.gov/hazards/products/conterminous/) the U.S. Geological Survey.
 
 
 
