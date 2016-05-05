@@ -16,7 +16,7 @@ Two websites provide a good starting point to search for non-profits and view th
 
 ##### [Guidestar](http://www.guidestar.org/)
 
-From the homepage, you can search for non-profits by name. The advanced search page is [here](http://www.guidestar.org/AdvancedSearch.aspx). Once on the page for an individual non-profit, for example [here](http://www.guidestar.org/organizations/53-0196572/american-chemical-society.aspx) for the American Chemical Society, who will see a green bottun to the right to download the three most recent 990s:
+From the homepage, you can search for non-profits by name. The advanced search page is [here](http://www.guidestar.org/AdvancedSearch.aspx). Once on the page for an individual non-profit, for example [here](http://www.guidestar.org/organizations/53-0196572/american-chemical-society.aspx) for the American Chemical Society, who will see a green button to the right to download the three most recent 990s:
 
 ![](img/class6_1.jpg)
 
@@ -65,11 +65,9 @@ E) Five highest paid independent contractors paid more than $100,000.
 - **O** supplemental information, pay attention to this, as it contains the overspill from other parts of the form!
 - **R** Related organizations.
 
-##### An example Form 1990
+##### An example Form 990
 
-Here is the latest (2014) Form 1990 for the American Chemical Society:
-
-
+Here is the latest (2014) Form 990 for the American Chemical Society:
 
 In class, we will use this form to answer the following questions:
 
@@ -85,7 +83,6 @@ In class, we will use this form to answer the following questions:
 
 - How much did the ACS spend on lobbying?
 
-- What was the largest ACS grant awarded, and to which organization?
 
 ### Companies
 
@@ -149,11 +146,11 @@ If you are a local reporter, Squoop also provides the option to [narrow your SEC
 
 Sqoop is currently made freely avilable to journalists, as it tries to expand its user based. It is a for-profit, however, so it is possible that charges will be introduced in future.
 
-##### Privately held companies
+##### Privately-held companies
 
-It is much harder to do background research on privately held companies, which do not have to file reports to the SEC. So think about the agencies (state and federal) that have some oversight or regulatory role. For example, a company running animal experiments will have to file reports about its use of animals to the U.S. Department of Agriculture's Animal and Plant Health Inspection Service, which can be searched [here](https://acissearch.aphis.usda.gov/LPASearch/faces/CustomerSearch.jspx).
+It is much harder to do background research on privately-held companies, which do not have to file reports to the SEC. So think about the agencies (state and federal) that have some oversight or regulatory role. For example, a company running animal experiments will have to file reports about its use of animals to the U.S. Department of Agriculture's Animal and Plant Health Inspection Service, which can be searched [here](https://acissearch.aphis.usda.gov/LPASearch/faces/CustomerSearch.jspx).
 
-While somewhat dated, [here](backgrounding_companies.pdf) is a useful guide to backgrounding privately held companies.
+While somewhat dated, [here](backgrounding_companies.pdf) is a useful guide to backgrounding privately-held companies.
 
 In the U.S., companies are registered with the authorities in the state they call home. You can search for businesses registered in California [here](http://kepler.sos.ca.gov/). You can order basic documents about companies' registration [using this form](http://bpd.cdn.sos.ca.gov/pdf/be-records-requests.pdf).
 
