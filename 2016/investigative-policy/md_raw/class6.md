@@ -60,7 +60,7 @@ E) Five highest paid independent contractors paid more than $100,000.
 - **B** would be of great interest, as it lists major contributors and their donations. But is almost always missing, and if present names can be withheld. But there are often other ways of getting this information -- annual reports, plaques in the lobby etc.
 - **C** documents political campaign and lobbying activities.
 - **I** documents grants awarded.
-- **J** has more details on compensation of directors, officers, key employees etc. 
+- **J** has more details on compensation of directors, officers, key employees etc.
 - **L** Transactions with “interested persons.”
 - **O** supplemental information, pay attention to this, as it contains the overspill from other parts of the form!
 - **R** Related organizations.
@@ -82,6 +82,14 @@ In class, we will use this form to answer the following questions:
 - Who was the highest paid officer/employee, and how much did they earn?
 
 - How much did the ACS spend on lobbying?
+
+##### More resources for repoting on nonprofits
+
+For excellent reporting on charities behaving badly, read [America's Worst Charities](http://cironline.org/americasworstcharities), by the Center for Investigative Reporting and the *Tampa Bay Times*. [Kendall Taggart](https://www.buzzfeed.com/kendalltaggart), now with BuzzFeed News, has a [great slide deck](http://slides.com/kendall/mining-nonprofit-data#/) explaining the resources she used to report these stories. She explains more about how the reporting was done [here](http://cironline.org/reports/how-we-identified-nations-worst-charities-4630).
+
+America's Worst Charities is particularly interesting because the reporters weren't just analyzing the spending of one or two charities: They looked at thousands, focusing on those that used the services of professional fundraising companies, and then highlighting those that spent proportionately the least on their supposed charitable function. To do this, they downloaded [bulk financial data](https://www.irs.gov/uac/SOI-Tax-Stats-Annual-Extract-of-Tax-Exempt-Organization-Financial-Data), extracted from 990s, provided by the IRS. The slide deck explains that they used Open Refine for cleaning this data, and SQLite for analyzing it -- tools we've explored in previous weeks.
+
+The slide deck also recommends resources to track charity finances available in [some states](http://slides.com/kendall/mining-nonprofit-data#/16), and a [database of disciplinary actions](http://charitysearch.apps.cironline.org/) taken by states against charities, compiled by CIR and the *Tampa Bay Times*.
 
 
 ### Companies
@@ -124,9 +132,9 @@ At the page for each company, you will find its filings to the SEC over time. He
 
 - **Form 4 and Schedule 13D** report stock transactions by insiders and key shareholders.
 
-You can search for SEC enforcement actions [here](http://www.sec.gov/litigation.shtml). Try searching for Sequenom and see what you find!
+You can search for SEC enforcement actions [here](http://www.sec.gov/litigation.shtml). Try searching for Sequenom and see what you find! (This [brief story](https://www.newscientist.com/blogs/shortsharpscience/2009/09/claims-for-safer-downs-test-cr.html) will provide some background to why Sequenom got into trouble.)
 
-[Here](https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp) is the SEC's full text search, which can be useful, for example, for finding references to individuals, and privately held companies, in documents filed by publicly traded companies.
+[Here](https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp) is the SEC's full text search, which can be useful, for example, for finding references to individuals, and privately-held companies, in documents filed by publicly-traded companies.
 
 
 ##### Sqoop
@@ -134,7 +142,7 @@ You can search for SEC enforcement actions [here](http://www.sec.gov/litigation.
 
 **[Sqoop](sqoop.com/)** is a new site that aims to provide a one-stop-shop for information on companies. Sign up for a free account [here](http://sqoop.com/users/sign_up).
 
-You can search using the names of companies, individual corporate officers, or keywords, and it will return links to SEC filings, Patents and cases in in federal courts. (You will still need a login for the [PACER](https://www.pacer.gov/) federal court search system to access federal court documents.)
+You can search using the names of companies, individual corporate officers, or keywords, and it will return links to SEC filings, patents and cases in in federal courts. (You will still need a login for the [PACER](https://www.pacer.gov/) federal court search system to access federal court documents.)
 
 Here are the results for a search on Valeant:
 
@@ -144,7 +152,7 @@ You can save a search to receive updates by email of new documents.
 
 If you are a local reporter, Squoop also provides the option to [narrow your SEC filing searches by geography](http://sqoop.com/blog/2016-03-11-geographic-search). Click on the `Locations` button after running your search to activate this option.
 
-Sqoop is currently made freely avilable to journalists, as it tries to expand its user based. It is a for-profit, however, so it is possible that charges will be introduced in future.
+Sqoop is currently made freely avilable to journalists, as it tries to expand its user base. It is a for-profit, however, so it is possible that charges will be introduced in future.
 
 ##### Privately-held companies
 
@@ -157,6 +165,12 @@ In the U.S., companies are registered with the authorities in the state they cal
 But be aware that the name a company trades under may not be its registered name. To find out the registered name, you may need to run a "fictitious business name" search at the county level. [Here](http://sccounty01.co.santa-cruz.ca.us/clerkrecorder/Asp/FBNInquiry.asp) is the search site for Santa Cruz County, and [here](http://www.brbpub.com/) is useful a site from which you can navigate down to all sorts of public records at state and country levels, including fictitious business name searches.
 
 [**OpenCorporates**](https://opencorporates.com/) is an ambitious effort to build a database of information on companies throughout the world, public and private.
+
+### Finding former employees
+
+Any time you are investigating an organization, whether a company or a nonprofit, former employees can be an invaluable resource. (Of course, you need to be wary of embittered ex-employees settling scores.) In recent years, LinkedIn has emerged as the best way of finding them.
+
+If you are a professional journalist (so you may have to wait until you're out in the world of employment!) you can [ask to join](https://www.linkedin.com/groups/3753151/profile) the [LinkedIn for Journalists](https://press.linkedin.com/about-linkedin/linkedin-for-journalists) group. You should then get an invitation to attend a webinar, and once you've done that you'll be granted a free premium account, which allows you to use the sites advanced search functions and send InMail messages to people you want to contact.
 
 ### People
 
