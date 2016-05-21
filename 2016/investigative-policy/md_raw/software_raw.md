@@ -34,4 +34,13 @@ Visualization software designed for exploratory graphic analysis, which also all
 
 The Public version of the software requires you to save your visualizations to the open web. However, members of Investigative Reporters and Editors can obtain a [license for the Professional version](http://www.ire.org/blog/ire-news/2013/06/20/tableau-makes-its-desktop-software-free-ire-member/), which allows you to save workbooks on your machine. In any case, I strongly recommend that students [join IRE](http://www.ire.org/membership/apply/) as a student member: it is a leader for training in data journalism.
 
+### [GPG Suite](https://gpgtools.org/#gpgsuite) for Mac or [GP4Win](http://files.gpg4win.org/gpg4win-2.2.1.exe) for Windows
+
+Download and install this software to encrypt your emails.
+
+### [Thunderbird](https://www.mozilla.org/en-US/thunderbird/) and its [Enigmail](https://enigmail.net/index.php/en/) plugin for encryption.
+
+Download Thunderbird from [here](https://www.mozilla.org/en-US/thunderbird/).
+
+To install Enigmail, select `Tools>Add-ons` from the top menu in Thunderbird, search for Enigmail using the box at top right, and then click `Install`. After installing Enigmail, restart Thunderbird to activate it.
 
