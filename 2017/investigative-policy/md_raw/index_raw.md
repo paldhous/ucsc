@@ -5,7 +5,7 @@ This class focuses on in-depth and investigative reporting, where science and te
 
 ### Schedule
 
-- #### Nov 10: [Sunshine laws and public records requests](foia.html)
+- #### Nov 10: [Sunshine laws and public records requests](public-records.html)
 An introduction to the federal Freedom of Information Act (FOIA), the California Public Records Act, and other sunshine laws. You will all file a public records request after this class.
 
 
