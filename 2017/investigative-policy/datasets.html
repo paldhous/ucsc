@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Policy and Investigative Reporting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="../../css/custom2.css" rel="stylesheet">
+</head>
+
+<body class="markdown github">
+
+	<header class="navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<nav role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand">Investigating science</a>
+				</div> <!-- /.navbar-header -->
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Class notes<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="public-records.html">Sunshine laws and public records requests</a></li>
+								<li><a href="what-is-investigative-journalism.html">Introduction</a></li>
+								<li><a href="indiv-meetings-1.html">Individual meetings 1</a></li>
+								<li><a href="investigative-approaches.html">Investigative approaches</a></li>
+								<li><a href="using-data-in-journalism.html">Using data in journalism</a></li>
+								<li><a href="acquiring-data.html">Acquiring data and documents</a></li>
+								<li><a href="cleaning-data.html">Cleaning data</a></li>
+								<li><a href="databases-and-sql.html">Databases and SQL</a></li>
+								<li><a href="government-center.html">Government center scavenger hunt</a></li>
+								<li><a href="follow-the-money.html">Following the money and goods</a></li>
+								<li><a href="nonprofits-people.html">Backgrounding non-profits and people</a></li>
+								<li><a href="companies.html">Backgrounding companies</a></li>
+								<li><a href="data-viz.html">Visualizing data</a></li>
+								<li><a href="ben-welsh.html">Guest lecturer:Ben Welsh</a></li>
+								<li><a href="indiv-meetings-2.html">Individual meetings 2</a></li>
+								<li><a href="keep-it-legal.html">Keeping it legal:James Chadwick</a></li>
+								<li><a href="privacy-security.html">Privacy, security, and e-sleuthing</a></li>
+								<li><a href="scientific-misconduct.html">Misconduct and ethics in science</a></li>
+								<li><a href="journalism-ethics.html">Ethics in journalism</a></li>
+							</ul>
+						</li>
+						<li>
+						<li><a href="software.html">Software</a></li>
+						<li><a href="datasets.html">Data</a></li>
+						<li><a href="mailto:peter@peteraldhous.com">Email instructor</a></li>					
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</div> <!-- /.navbar-header -->
+	</header>
+
+	<div class="container all">
+
+<h1 id="datasets"><a name="datasets" href="#datasets"></a>Datasets</h1><p>Click on the title links to download the data. Please <a href="mailto:peter@peteraldhous.com">contact me</a> <strong>before the class</strong> in which data will be used if you have any problems downloading!</p><h3 id="[acquiring-data](./data/acquiring-data.zip)"><a name="[acquiring-data](./data/acquiring-data.zip)" href="#[acquiring-data](./data/acquiring-data.zip)"></a><a href="./data/acquiring-data.zip">Acquiring data</a></h3><p>Contains:</p><ul>
+<li><p><code>urls.txt</code> links scraped from State of New York site documenting disciplinary actions against doctors.</p>
+</li><li><p><code>ny_dr_discip_urls.html</code> web page with a table giving links to pages documenting individual disciplinary actions against New York doctors.</p>
+</li></ul><h3 id="[cleaning-data](./data/cleaning-data.zip)"><a name="[cleaning-data](./data/cleaning-data.zip)" href="#[cleaning-data](./data/cleaning-data.zip)"></a><a href="./data/cleaning-data.zip">Cleaning data</a></h3><p><code>cleaning</code> Folder containing:</p><ul>
+<li><p><code>techexports.xls</code> <a href="http://data.worldbank.org/indicator/TX.VAL.TECH.CD">High-technology exports</a> from 1990 to 2015, in current US dollars, from the UN Comtrade database, supplied via the World Bank. High-technology exports include products in aerospace, computers, pharmaceuticals, scientific instruments, and electrical machinery.</p>
+</li><li><p><code>ny_dr_discip_actions.xls</code> The data on disciplinary actions against doctor in New York state, scraped from <a href="https://w3.health.ny.gov/opmc/factions.nsf/byphysician?OpenView">this website</a> in the previous class.</p>
+</li><li><p><code>ucb_stanford_2014.csv</code> Data on federal government grants to UC Berkeley and Stanford University in 2014, downloaded from <a href="https://www.usaspending.gov/Pages/Default.aspx">USASpending.gov</a>.</p>
+</li></ul><p><code>geocoding</code> Folder containing:</p><ul>
+<li><code>sf_test_addresses.tsv</code> Text file containing a list of 100 addresses in San Francisco.</li><li><code>sf_addresses_short.tsv</code> The first 10 addresses from the previous file.</li><li><code>refine-geocoder.json</code> A script in JSON format that we will use to automate geocoding.</li></ul><h3 id="[databases](./data/databases.zip)"><a name="[databases](./data/databases.zip)" href="#[databases](./data/databases.zip)"></a><a href="./data/databases.zip">Databases</a></h3><p><code>pfizer</code> Folder containing:</p><ul>
+<li><code>pfizer.sqlite</code> SQLite database detailing payments by the drug company Pfizer to doctors</li><li><code>pfizer.txt</code> Tab-delimited text file containing the same data</li><li><code>fda.txt</code> Tab-delimited text file documenting warning letters from the Food and Drug Administration to doctors involved in research on experimental drugs or medical devices.</li></ul><p>Data used in reporting <a href="http://www.newscientist.com/article/dn18806-revealed-pfizers-payments-to-censured-doctors.html">this news story</a>.</p><h3 id="[visualizing-data](./data/visualizing.zip)"><a name="[visualizing-data](./data/visualizing.zip)" href="#[visualizing-data](./data/visualizing.zip)"></a><a href="./data/visualizing.zip">Visualizing data</a></h3><p><code>nations</code> Folder containing:</p><ul>
+<li><code>nations.csv</code> Data from the <a href="http://data.worldbank.org/indicator/all">World Bank Indicators</a> portal, which is an incredibly rich resource. Contains the following fields:<ul>
+<li><code>iso_a3</code> <a href="http://unstats.un.org/unsd/tradekb/Knowledgebase/Country-Code">Three-letter code</a> for each country, assigned by the <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=63545">International Organization for Standardization</a>.</li><li><code>country</code> Country name.</li><li><code>year</code></li><li><code>region</code> <code>income_group</code> World Bank <a href="http://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS">regions and current income groups</a>, explained <a href="http://data.worldbank.org/about/country-and-lending-groups">here</a>.</li><li><code>population</code> Estimated <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">total population</a> at mid-year, including all residents apart from refugees.</li><li><code>gdp_percap</code> <a href="http://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Gross Domestic Product per capita</a> in current international dollars, corrected for purchasing power in different territories.</li><li><code>life_expect</code> <a href="http://data.worldbank.org/indicator/SP.DYN.LE00.IN">Life expectancy</a> in years for a child born in the year in question, if prevailing patterns were to stay the same throughout its life.</li><li><code>population</code> Estimated <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">total population</a> at mid-year, including all residents apart from refugees.</li><li><code>birth_rate</code> Number of <a href="http://data.worldbank.org/indicator/SP.DYN.CBRT.IN">live births during the year per 1,000 people</a>, based on mid-year population estimate.</li><li><code>neonat_mortal</code> <a href="http://data.worldbank.org/indicator/SH.DYN.NMRT">Neonatal mortality rate</a>: number of babies dying before reaching 28 days of age, per 1,000 live births in a given year.</li></ul>
+</li></ul>
+
+
+	</div> <!-- /.container all -->
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>
