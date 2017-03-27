@@ -43,21 +43,19 @@ Beyond the spreadsheet: Using databases and structured query language (SQL) to i
 
 ### Week 5
 
-- #### May 2: [Government center scavenger hunt](government-center.html)
-At the Santa Cruz Government Center, we'll learn to look at property records, criminal records, environmental health records, board of supervisor dockets, and courts.
+- #### May 2: [Backgrounding non-profits and people, searching court records](nonprofits-people.html)
+Guidestar and CitizenAudit.org for researching non-profits. Who is John/Jane Doe? Looking for court records.
 
-- #### May 4: [Following the money and goods](follow-the-money.html)
-Financial disclosures, conflict of interest disclosures, campaign contributions, import/export data, and other online reporting resources.
-
+- #### May 4: [Backgrounding companies](companies.html)
+Securities and Exchange Commission filings, Sqoop, and other tools for researching companies.
 
 ### Week 6
 
-- #### May 9: [Backgrounding non-profits and people, searching court records](nonprofits-people.html)
-Guidestar and CitizenAudit.org for researching non-profits. Who is John/Jane Doe? Looking for court records.
+- #### May 9: [Government center scavenger hunt](government-center.html)
+At the Santa Cruz Government Center, we'll learn to look at property records, criminal records, environmental health records, board of supervisor dockets, and courts.
 
-- #### May 11: [Backgrounding companies](companies.html)
-Securities and Exchange Commission filings, Sqoop, and other tools for researching companies.
-
+- #### May 11: [Following the money and goods](follow-the-money.html)
+Financial disclosures, conflict of interest disclosures, campaign contributions, import/export data, and other online reporting resources.
 
 ### Week 7
 
