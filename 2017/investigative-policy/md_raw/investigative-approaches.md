@@ -16,7 +16,7 @@
 
 - #### Teresa - [Law ignored, patients at risk](https://www.statnews.com/2015/12/13/clinical-trials-investigation/)
 
-- #### Ula - []()
+- #### Ula - [Meet the California Couple Who Uses More Water Than Every Home in Los Angeles Combined](http://www.motherjones.com/environment/2016/04/lynda-stewart-resnick-california-water)
 
-- #### Yasemin - []()
+- #### Yasemin - [The Everyman Who Exposed Tainted Toothpaste](http://www.nytimes.com/2007/10/01/world/americas/01panama.html)
 
