@@ -118,7 +118,7 @@ If broad searches on a database keep returning the same number of results, that 
 
 ### Download the entire database
 
-Downloading an entire database, where this is allowed, frees you from the often-limited options given on an online advanced search form: You can then upload the data into your own database software, and query it in any way that you want. We will learn how to do this in Week 5.
+Downloading an entire database, where this is allowed, frees you from the often-limited options given on an online advanced search form: You can then upload the data into your own database software, and query it in any way that you want. We will learn how to do this next week.
 
 So always look for ways to grab all of the data. One trick is to run a search on just the database’s wildcard character, or with the query boxes left blank. If you do the latter at ClinicalTrials.gov, for instance, your search will return all of the trials in the database, which can then be downloaded using the options at the bottom of the results page.
 
@@ -349,6 +349,8 @@ Click `Save`, then switch to `data>tables`. From the top menu in Outwit Hub, sel
 When the file opens, the urls should be in Column 6 of the table. Select the first, then `⌘-A` (Mac) or `Crtl-A` (Windows) to select all the urls in the column:
 
 ![](./img/acquiring_data_18.jpg)
+
+Again, set the two buttons with drop down menus at bottom right to `Catch on Demand` and `Empty on Demand`.
 
 Now right-click, and select `Auto-Explore Pages>Fast Scrape>` and the scraper we just set up:
 
