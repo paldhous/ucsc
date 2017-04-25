@@ -165,7 +165,7 @@ Select `Edit colum>Add column based on this column...` and fill in the dialog bo
 
 This is the expression:
 
-```Javascript
+```JavaScript
 value.replace('$','').replace(',','').replace('(','-').replace(')','')
 ```
 
