@@ -4,7 +4,9 @@ We will meet on the steps of the Santa Cruz County Government Center at 7.30am:
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.340806489168!2d-122.02484068490482!3d36.97779746538238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e40246e9006bd%3A0xadfe6bbfb23e6d75!2sSanta+Cruz+County+Government+Center!5e0!3m2!1sen!2sus!4v1493603366255" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-This is the southern of the two connected buildings, the other (which abuts Water St) is the courthouse.
+This is the southern of the two connected buildings, the other (next to Water St.) is the courthouse.
+
+Do not bring a knife, or any object that could be construed as a weapon, as you will be crossing over into the courthouse, and will need to go through security for that.
 
 Students will divide into groups of three. Using public documents and databases, you will search for the information listed below. Note: there is a large information board just inside the fron door, which should help you locate the offices you need to visit. In some of these offices, you will find (aging) computer terminals that you can use to search for the information you need. In others, you will need to ask the staff. At all points, don't hestitate to ask staff if you need help!
 
