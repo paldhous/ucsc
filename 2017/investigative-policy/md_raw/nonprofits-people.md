@@ -42,7 +42,7 @@ For comparison with Guidestar, [here](https://www.citizenaudit.org/530196572/) i
 
 ![](img/nonprofits_people_2.jpg)
 
-The `Tax Documents (Form 990s)` tab should have links to 990-EO and 990-T documents going back over 15 years. More recent ones should habe searchable **Raw text**, although there is a delay between the documents being posted and the raw text being made available. (You can also download the scanned PDFs and search them directly in a PDF viewer such as Adobe Acrobat or Preview.)
+The `Tax Documents (Form 990s)` tab should have links to 990-EO and 990-T documents going back over 15 years. More recent ones should have searchable **Raw text**, although there is a delay between the documents being posted and the raw text being made available. (You can also download the scanned PDFs and search them directly in a PDF viewer such as Adobe Acrobat or Preview.)
 
 When CitizenAudit launched, it was entirely free. It has now become self-supporting, which means that after [40 searches or page views](https://www.citizenaudit.org/pages/faq/) from a particular IP address, you will be asked to sign up for a [paid account](https://www.citizenaudit.org/accounts/signup/). This limits its utility, however if you have a project for which you need to gather alot of information on non-profits, and particularly if you need to look at how money passes from one to another, buying a 30-day pass for $99 may be a worthwhile option. The full **Funders and Grantees** section, which lists organizations giving and receiving money to the non-profit in question, is only available with a paid account.
 
@@ -68,7 +68,7 @@ Do check to see whether the return is form anything other than a full calendar y
 
 	**6** may be interesting for some charities. It asks whether any donations were not tax deductible, and whether donors were warned about this.
 
-- ** Part V** Checklist for governance and policies etc.
+- ** Part VI** Checklist for governance and policies etc.
 
 	Look out for **2**, which details family or business interests between officers, directors, trustees, or key employees; **5** asks whether the organization became aware of embezzlement; **15** asks about procedures for determining the pay of top employees; **17** lists the states in which the organization is obliged to file a copy of the 1990, useful for determining where it operates.
 
@@ -109,6 +109,12 @@ E) Five highest paid independent contractors paid more than $100,000.
 ##### An example Form 990
 
 [Here](ACS_2015_990.pdf) is the latest (2015) Form 990 for the American Chemical Society:
+
+
+	<object class="pdf" data="ACS_2015_990.pdf" type="application/pdf" width="100%" height="1000px">
+		<p>Your web browser doesn't have a PDF Plugin. Instead you can <a href="ACS_2015_990"> Click
+here to download the PDF</a></p>
+	</object>
 
 In class, we will use this form to answer the following questions:
 

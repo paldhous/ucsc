@@ -1,6 +1,6 @@
 # Public records searches at the Santa Cruz County Government Center
 
-We will meet on the steps of the Santa Cruz County Government Center at 7.30am:
+We will meet on the steps of the Santa Cruz County Government Center at 7.45am:
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.340806489168!2d-122.02484068490482!3d36.97779746538238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e40246e9006bd%3A0xadfe6bbfb23e6d75!2sSanta+Cruz+County+Government+Center!5e0!3m2!1sen!2sus!4v1493603366255" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
