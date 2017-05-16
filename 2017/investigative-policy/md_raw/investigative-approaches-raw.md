@@ -38,13 +38,13 @@ When approaching a source who may not emerge in a good light from your reporting
 To stress what will become a refrain from me: Hitting the phones and talking to as many informed sources and people actually affected by the issue you are investigating as you can is crucial!
 
 #####Personal narratives have enormous power
-I'm a strong advocate of using data and analysis in journalism, but remember that most people don't relate to numbers in the same way that they relate to visceral personal narratives. We had some stark contrasts in the articles discussed, with *STAT*'s piece on clinical trials reporting at one end, and *USA Today*'s child adoption story at the other. Which was more engaging to read?
+I'm a strong advocate of using data and analysis in journalism, but remember that most people don't relate to numbers in the same way that they relate to visceral personal narratives. We had some stark contrasts in the articles discussed, with *STAT'*s piece on clinical trials reporting at one end, and *USA Today'*s child adoption story at the other. Which was more engaging to read?
 
 The sweet spot for this type of journalism when you have the data and documents that make your story watertight, but can you tell it through compelling personal narratives.
 
 #####Enterprise database reporting
 
-Government or other databases can be put to good journalistic uses, and most of the time, this need not involve sophisticated statistical analysis. *STAT*'s clinical trials reporting story, for example, was based on simple counts, calculations of rates, and so on, from [ClinicalTrials.gov](https://clinicaltrials.gov/). But the visualization of such data should be simple to follow, not confusing. STAT definitely failed on that front in this piece.
+Government or other databases can be put to good journalistic uses, and most of the time, this need not involve sophisticated statistical analysis. *STAT'*s clinical trials reporting story, for example, was based on simple counts, calculations of rates, and so on, from [ClinicalTrials.gov](https://clinicaltrials.gov/). But the visualization of such data should be simple to follow, not confusing. STAT definitely failed on that front in this piece.
 
 Note also that if you have a collection of documents, or online posts, it may be possible to systematically extract information from them to create your own datasets, as was done for the *Reuters* adoption story.
 

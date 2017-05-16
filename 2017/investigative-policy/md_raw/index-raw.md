@@ -52,10 +52,10 @@ Securities and Exchange Commission filings, Sqoop, and other tools for researchi
 ### Week 6
 
 - #### May 9: [Government center scavenger hunt](government-center.html)
-At the Santa Cruz Government Center, we'll learn to look at property records, criminal records, environmental health records, board of supervisor dockets, and courts.
+At the Santa Cruz Government Center, we'll search for property records, criminal and civil court records, and more.
 
 - #### May 11: [Following the money and goods](follow-the-money.html)
-Financial disclosures, conflict of interest disclosures, campaign contributions, import/export data, and other online reporting resources.
+Financial disclosures, campaign contributions, import/export data, and other online reporting resources.
 
 ### Week 7
 
@@ -64,7 +64,7 @@ Data visualization in reporting and storytelling. After a discussion of basic pr
 
 - #### May 18: [Guest lecturer: Ben Welsh](ben-welsh.html)
 Ben Welsh, *Los Angeles Times* data desk editor, will explain how the *LA Times* integrates data journalism into the newsroom -- and how data and other reporting grunt work can set you up to win a Pulitzer for breaking news coverage!
-**IMPORTANT: Ben will also meet with each students individually, to discuss their projects.**
+**IMPORTANT: Ben will also meet with students, to discuss their projects.**
 
 
 ### Week 8
@@ -72,8 +72,7 @@ Ben Welsh, *Los Angeles Times* data desk editor, will explain how the *LA Times*
 - #### May 23: [Individual meetings](indiv-meetings-2.html)
 After initial edits and Ben’s feedback, a catch-up to make sure everything is on track to deliver the best article possible
 
-- #### May 25: [Individual meetings](indiv-meetings-2.html)
-As above.
+- #### May 25: 
 
 
 ### Week 9
