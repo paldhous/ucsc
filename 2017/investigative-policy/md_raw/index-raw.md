@@ -72,8 +72,8 @@ Ben Welsh, *Los Angeles Times* data desk editor, will explain how the *LA Times*
 - #### May 23: [Individual meetings](indiv-meetings-2.html)
 After initial edits and Ben’s feedback, a catch-up to make sure everything is on track to deliver the best article possible
 
-- #### May 25: 
-
+- #### May 25: [Mapping](mapping.html)
+We will process geographic data and make maps with Carto.
 
 ### Week 9
 

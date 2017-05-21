@@ -52,6 +52,21 @@ Containing:
  - `neonat_mortal_rate` [Neonatal mortality rate](http://data.worldbank.org/indicator/SH.DYN.NMRT): babies dying before reaching 28 days of age, per 1,000 live births in a given year.
  - `region` `income` World Bank [regions and income groups](http://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS), explained [here](http://data.worldbank.org/about/country-and-lending-groups).
 
+### [Mapping](./data/mapping.zip)
+
+Containing:
+
+- `oregon_dams.csv` Data on dams in Oregon, from the state's [dams inventory](http://apps.wrd.state.or.us/apps/misc/dam_inventory/). Contains fields including `hazard` (H=High, S=Significant, L=Low)   , and `storage`, giving the each dam's capacity in acre feet.
+
+- `seismic_risk.zip` Data on seismic risk for the contiguous US, [calculated by](https://earthquake.usgs.gov/hazards/hazmaps/conterminous/index.php#2014) the US Geological Survey. The risk values are in the field `acc_val`, and represent the peak ground acceleration, expressed as a percentage of the acceleration due to gravity, likely to be experienced with a 2% chance over 50 years. This data is a zipped [shapefile](https://en.wikipedia.org/wiki/Shapefile), a common format for geographic data. Broadly speaking, a shapefile contains a table of data, which is associated with map geometries that can be polygons, lines, or points.
+
+- We will also import data from the USGS earthquakes API, for earthquakes since 1960 with a magitude of 5 and above, within a 2,000km radius of the geographic center of Oregon, using this url:
+
+	```SQL
+http://earthquake.usgs.gov/fdsnws/event/1/query?starttime=1960-01-01T00:00:00&latitude=43.9336&longitude=-120.5583&maxradiuskm=2000&minmagnitude=5&format=csv&orderby=time
+```
+
+
 
 
 
