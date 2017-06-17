@@ -20,6 +20,18 @@
 
 10. A medical reporter has become aware of a problem with the security protocols for a research institute database containing thousands of medical records relating to volunteers in clinical research.
 
+### Resources
+
+Here are the two leading journalism ethics codes:
+
+- [Society of Professional Journalists](https://www.spj.org/ethicscode.asp)
+
+- [Associated Press Media Editors](http://www.apme.com/?page=EthicsStatement)
+
+Remember that these are codes rather than hard-and-fast rules. They won't tell you what to do, but they will help you make decisions that balance benefit and harm for the public good. Also remember that rule of thumb: What would reasonable people think, if my conduct in reporting this story was covered by another reporter?
+
+SPJ also has more case studies [here](https://www.spj.org/ethicscasestudies.asp), and operates a [hotline](https://www.spj.org/ethicshotline.asp) if you need ethics advice.
+
 
 
 
