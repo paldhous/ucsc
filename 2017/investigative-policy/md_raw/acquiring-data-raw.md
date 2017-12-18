@@ -146,11 +146,11 @@ Before using the add-on, select `Tools>Table2Clipboard` and choose the following
 
 This will ensure that each row in the extracted data is put on a `new line`, and each column is separated by a `tab`.
 
-To illustrate what Table2Clipboard does, go to [this table](http://www.nih.gov/about-nih/what-we-do/nih-almanac/appropriations-section-1) showing the budget history for components of the National Institutes of Health.
+To illustrate what Table2Clipboard does, go to [this table](https://www.nih.gov/about-nih/what-we-do/nih-almanac/appropriations-section-1) showing the budget history for components of the National Institutes of Health.
 
 ![](./img/acquiring_data_5.jpg)
 
-(Source: [NIH](http://www.nih.gov/about-nih/what-we-do/nih-almanac/appropriations-section-1))
+(Source: [NIH](https://www.nih.gov/about-nih/what-we-do/nih-almanac/appropriations-section-1))
 
 Right-click anywhere within it and select `Table2Clipboard>Copy whole table`.
 
