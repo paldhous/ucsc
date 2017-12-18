@@ -4,7 +4,7 @@ In this class, we will consider how to recognize and clean “dirty” data.
 
 ### The data we will use
 
-Download the data for this class from [here](data/cleaning-data.zip), unzip the folder and place it on your desktop. It contains the following folders and files:
+Download the data for this class from [here](data/cleaning-data.zip), unzip the folder and place it on your desktop. It contains the following files:
 
 - `techexports.xls` [High-technology exports](http://data.worldbank.org/indicator/TX.VAL.TECH.CD) from 1990 to 2015, in current US dollars, from the UN Comtrade database, supplied via the World Bank. High-technology exports include products in aerospace, computers, pharmaceuticals, scientific instruments, and electrical machinery.
 
