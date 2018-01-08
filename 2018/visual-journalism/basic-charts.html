@@ -51,6 +51,138 @@
 
 	<div class="container all">
 
+<h1 id="basic-charts-with-plotly"><a name="basic-charts-with-plotly" href="#basic-charts-with-plotly"></a>Basic charts with Plotly</h1>
+<h3 id="introducing-plotly"><a name="introducing-plotly" href="#introducing-plotly"></a>Introducing Plotly</h3>
+<p>In today’s class we will make a series of simple charts using <a href="https://plot.ly/"><strong>Plotly</strong></a>, a web application that allows you to upload data and use a point-and-click interface to make online charts, with tooltips and other interactivity. These can be embedded in your web projects, or exported as static images.</p>
+<p>Log in to Plotly by clicking the button at top right:</p>
+<p><img src="./img/basic_charts_1.jpg" alt=""></p>
+<h3 id="the-data-we-will-use-today"><a name="the-data-we-will-use-today" href="#the-data-we-will-use-today"></a>The data we will use today</h3>
+<p>Download the data for this session from <a href="data/basic-charts.zip">here</a>, unzip the folder and place it on your desktop. It contains the following files:</p>
+<ul>
+<li><p><code>food_stamps.csv</code> Contains the following variables:</p>
+<ul>
+<li><code>year</code> From 1969 to 2016.</li><li><code>food_stamps</code> Average number of people participating in the Supplemental Nutrition Assistance Program, in millions, from the <a href="https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap">US Department of Agriculture</a>.</li><li><code>poverty</code> Estimated number of people in poverty, in millions, from the <a href="https://census.gov/content/dam/Census/library/publications/2017/demo/P60-259.pdf">US Census Bureau</a>.</li></ul>
+</li><li><p><code>nations_2015.csv</code> Data from the <a href="http://data.worldbank.org/indicator/all">World Bank Indicators</a> portal, which is an incredibly rich resource. Contains the following fields:</p>
+<ul>
+<li><code>iso2c</code> <code>iso3c</code> Two- and three-letter <a href="http://www.nationsonline.org/oneworld/country_code_list.htm">codes</a> for each country, assigned by the <a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=63545">International Organization for Standardization</a>.</li><li><code>country</code> Country name.</li><li><code>year</code> 2015 for this data.</li><li><code>gdp_percap</code> <a href="http://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD">Gross Domestic Product per capita</a> in current international dollars, corrected for purchasing power in different territories.</li><li><code>life_expect</code> <a href="http://data.worldbank.org/indicator/SP.DYN.LE00.IN">Life expectancy at birth</a>, in years.</li><li><code>population</code> Estimated <a href="http://data.worldbank.org/indicator/SP.POP.TOTL">total population</a> at mid-year, including all residents apart from refugees.</li><li><code>region</code> <code>income</code> World Bank <a href="http://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS">regions and income groups</a>, explained <a href="http://data.worldbank.org/about/country-and-lending-groups">here</a>.</li></ul>
+</li><li><p><code>ca_vacc_counties.csv</code> Data from the <a href="http://www.shotsforschool.org/k-12/reporting-data/">California Department of Public Health</a> on immunization in kindergartens, summarized at the county level, for the intake years 2001 to 2015. Contains the following fields:</p>
+<ul>
+<li><code>county</code></li><li><code>start_year</code> Intake year.</li><li><code>enrolled</code> Number of children enrolled.</li><li><code>complete</code> Number of children with complete vaccinations.</li><li><code>pc_incomplete</code> Percentage of children without complete vaccinations.</li></ul>
+</li><li><p><code>test.html</code> A web page for embedding online charts. It has been set up using <a href="https://getbootstrap.com/">Bootstrap</a> responsive web design framework so that any content will automatically adjust to the size of the browser window in which it is viewed, centered on the page.</p>
+</li></ul>
+<h3 id="make-a-bar-chart-showing-number-of-people-on-food-stamps-over-time"><a name="make-a-bar-chart-showing-number-of-people-on-food-stamps-over-time" href="#make-a-bar-chart-showing-number-of-people-on-food-stamps-over-time"></a>Make a bar chart showing number of people on food stamps over time</h3>
+<p>Having logged in to Plotly, click on the <code>WORKSPACE</code> link on the top navigation menu to see the following screen:</p>
+<p><img src="./img/basic_charts_2.jpg" alt=""></p>
+<p>The <code>Grid</code> table shows the data to be visualized, so first import the file <code>food_stamps.csv</code> by clicking the <code>Import</code> buttom at top right. This will open the following dialog box:</p>
+<p><img src="./img/basic_charts_3.jpg" alt=""></p>
+<p>In the <code>Upload</code> tab, click the <code>Upload</code> button and navigate to the folder containing the file, or drag the file onto the dialog box.</p>
+<p>Your workspace should now look like this, with the imported data in a new <code>Grid</code>:</p>
+<p><img src="./img/basic_charts_4.jpg" alt=""></p>
+<p>The first step in making a chart is to choose the <code>Chart type</code>. The default is a <code>Scatter plot</code>, but if you click on that box, you will see the other possibilities:</p>
+<p><img src="./img/basic_charts_5.jpg" alt=""></p>
+<p>Select <code>Bar chart</code> and map <code>food_stamps</code> onto the Y axis and <code>year</code> onto the <code>X</code> to create the default chart:</p>
+<p><img src="./img/basic_charts_6.jpg" alt=""></p>
+<p><code>Hover Text</code> allows you to select an additional variable to appear in the tooltips. Leave this blank for this chart.</p>
+<p>So far we have been working in the <code>Graph</code> section of the main left-hand menu, under <code>Create</code>. This also contains options to <code>Filter</code> a larger dataset or summarize or <code>Aggregate</code> the data; however, in general I would recommend filtering and summarizing your data before importing to Plotly. We will use <code>Group</code> in a subsequent chart to assign a qualitative color palette to a categorical variable.</p>
+<p>Having made a basic chart, you can customize it by opening up the options in the <code>Style</code> section of the menu.</p>
+<p><code>Traces</code> contains options for customizing the main visual features of the chart. The available options depend on the chart type. Common options include  customizing color and opacity. For bar charts can also change bar widths and the padding around them. We will simply chage the default blue <code>Fill</code> to a bright red, using the HEX value <code>#FF0000</code>:</p>
+<p><img src="./img/basic_charts_7.jpg" alt=""></p>
+<p><code>Layout</code> contains an option to change the size of the chart. I recommend keeping it set to <code>Auto</code>, as this allows the chart to be responsive, altering its size to fit the available space when embedded into a web page. This section also allows you to add a plot title, and to customize the font faces and size. If you don’t wish your chart to have tooltips, switch them off under <code>Hover Interaction</code>.</p>
+<p><code>Notes</code> allows you to annotate the chart in various ways. Click the <code>+ Annotation</code> button to see the options. You can add subtitles or captions, or label individual data points; <code>Automatically Positioned Labels</code> will label data points with their values.</p>
+<p>Add a <code>Source to data</code>, which is USDA (you can also provide a hyperlink to the data source, which is: <code>https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap</code>), and position it at <code>-30%</code> relative to the <code>Canvas</code>.</p>
+<p><img src="./img/basic_charts_8.jpg" alt=""></p>
+<p><code>Axes</code> contains options for customizing the <code>X</code> and <code>Y</code> axes. It contains options to set the <code>Range</code> of each axis, to show or hide grid and zero lines under <code>Lines</code>, and to customize <code>Tick Labels</code> and <code>Tick Markers</code>. <code>Range Slider</code> adds a control to adjust the range shown on the X axis, which can be useful to zoom in on the details for very long time series. Plotly charts by default can be zoomed in and out, but I would recommend disabling this for both axes. You will usually want to adjust the axis <code>Titles</code>; delete the <code>X</code> axis title, and edit the Y axis title to <code>Participants (millions)</code>.</p>
+<p><img src="./img/basic_charts_9.jpg" alt=""></p>
+<p><code>Legend</code> allows you to customize the legend for charts that need them, superfluous here.</p>
+<p><code>Shapes</code> provides options to add reference lines or bands to your chart; use in combination with <code>Notes</code> as required for chart annotation. (If you need to add a trend line to a scatter plot, use <code>Curve fitting</code> under <code>Analysis</code>.)</p>
+<p><code>Images</code> allows you to add images, such as an organization’s logo, to a chart.</p>
+<p><code>Mobile</code> contains options to create Mobile-friendly versions of your chart.</p>
+<p>Having finished customizing your chart, hit the <code>Save</code> button, then save both <code>Plot</code> and <code>Grid</code> as <code>Public</code>:</p>
+<p><img src="./img/basic_charts_10.jpg" alt=""></p>
+<h3 id="export-and-share-the-chart"><a name="export-and-share-the-chart" href="#export-and-share-the-chart"></a>Export and share the chart</h3>
+<p>Having saved your chart, select <code>Export</code> to save it as a PNG image, setting the desired height and width in pixels:</p>
+<p><img src="./img/basic_charts_11.jpg" alt=""></p>
+<p>Click <code>Download</code> to save the PNG image file to you computer. (Saving in PDF, SVG, and EPS formats, which will give a graphic that can edited in a vector graphics editor such as <a href="https://www.adobe.com/products/illustrator.html">Adobe Illustrator</a>, is possible only with a paid account.)</p>
+<p>For a simple embed, click the <code>Share</code> button and switch to the <code>Embed</code> tab to obtain an <a href="https://www.w3schools.com/html/html_iframe.asp"><strong>iframe</strong></a> code:</p>
+<p><img src="./img/basic_charts_12.jpg" alt=""></p>
+<p>Copy the embed code, then open the <code>test.html</code> file in <a href="https://www.sublimetext.com/">Sublime Text</a>. Insert the code into the page and edit as follows:</p>
+<pre><code class="Javascript">  &lt;div class=&quot;container&quot;&gt;
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;450&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;https://plot.ly/~paldhous/307.embed&quot;&gt;&lt;/iframe&gt;
+
+  &lt;/div&gt; &lt;!-- /.container --&gt;
+</code></pre>
+<p>An iframe allows you to embed one web page, here dislplaying your chart on Plotly’s servers, into another. Set its height in pixels, and its width as <code>100%</code>. This will allow the chart width to adjust for different browser window sizes. You may also need to insert <code>https:</code> at the start of the web address.</p>
+<p>A <code>div</code> is a distinct section of a webpage. Insert the iframe into the div with the class <code>container</code>. This is a feature of Bootstrap that will center the embed on you page, optimized for different browser window sizes.</p>
+<p>Save the page and open it in your web browser:</p>
+<p><img src="./img/basic_charts_13.jpg" alt=""></p>
+<p>A default Plotly embed contains an <code>EDIT CHART</code> link, allowing other users to edit the chart using their own Plotly account. When you hover over the chart, various controls appear at top right.</p>
+<p>To obtain an embed without these features, which I would recommend, select <code>Export</code> once more, switch to the <code>HTML</code> tab, and <code>Download as Html file</code>:</p>
+<p><img src="./img/basic_charts_14.jpg" alt=""></p>
+<p>Place the downloaded file in your working folder for this class and rename it as <code>food-stamps-bar.html</code>. Open in Sublime Text, scroll to the bottom of the file, and edit as follows:</p>
+<p><strong>Before:</strong></p>
+<pre><code class="Javascript"> config: {&quot;mapboxAccessToken&quot;: &quot;pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A&quot;, &quot;linkText&quot;: &quot;Export to plot.ly&quot;, &quot;showLink&quot;: true}
+</code></pre>
+<p><strong>After:</strong></p>
+<pre><code class="Javascript"> config: {&quot;mapboxAccessToken&quot;: &quot;pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A&quot;, &quot;linkText&quot;: &quot;Export to plot.ly&quot;, &quot;showLink&quot;: false, &quot;displayModeBar&quot;: false}
+</code></pre>
+<p>Now open <code>test.html</code> once more and edit the iframe to embed the downloaded web page:</p>
+<pre><code class="Javascript">  &lt;div class=&quot;container&quot;&gt;
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;450&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;food-stamps-bar.html&quot;&gt;&lt;/iframe&gt;
+
+  &lt;/div&gt; &lt;!-- /.container --&gt;
+</code></pre>
+<p>You should now have the following clean embed:</p>
+<iframe width="100%" height="450" frameborder="0" scrolling="no" src="food-stamps-bar.html"></iframe>
+
+
+<h3 id="make-a-dot-and-line-chart-comparing-number-of-people-in-poverty-with-number-on-food-stamps-over-time"><a name="make-a-dot-and-line-chart-comparing-number-of-people-in-poverty-with-number-on-food-stamps-over-time" href="#make-a-dot-and-line-chart-comparing-number-of-people-in-poverty-with-number-on-food-stamps-over-time"></a>Make a dot-and-line chart comparing number of people in poverty with number on food stamps over time</h3>
+<p>Click your browswer’s back arrow to return to your account’s home page:</p>
+<p><img src="./img/basic_charts_15.jpg" alt=""></p>
+<p>Now hover over the grid with the food stamps data, and click on the <code>EDIT</code> button to start making a new chart from the same data.</p>
+<p>This time, select <code>Line plot</code> as the chart type, and  put <code>food_stamps</code> on the <code>Y</code> axis and <code>year</code> on the <code>X</code>:</p>
+<p><img src="./img/basic_charts_16.jpg" alt=""></p>
+<p>Now click the <code>+ Trace</code> button to add a second line, and edit so that <code>poverty</code> is mapped to the <code>Y</code> axis.</p>
+<p><img src="./img/basic_charts_17.jpg" alt=""></p>
+<p>In the same way, you can add multiple traces to a make a chart combining different chart types, for example a line chart with a bar chart.</p>
+<p>Switch to <code>Traces</code> in the <code>Style</code> section, and add <code>Points</code> to <code>All Traces</code>. (With multiple traces, you can also use the <code>Individual</code> tab to customize them one at a time.) Once you add points to a line chart, Poltly should automatically adjust the <code>Y</code> axis to start at zero and add a zero line.</p>
+<p>By default, Plotly has chosen a qualitative palette with two colors opposed on the color wheel; you can use the <code>Individual</code> tab to customize the color of each trace individually if you wish.</p>
+<p>Switch to <code>Axes</code>, remove the Title for the <code>X</code> axis and edit the <code>Y</code> axis title to <code>People (millions)</code>:</p>
+<p><img src="./img/basic_charts_18.jpg" alt=""></p>
+<p>Swtich to <code>Legend</code>, and adjust its <code>Positioning</code>, <code>Orientation</code> and <code>Trace Order</code> as desired. You can also directly edit the trace labels on the chart:</p>
+<p><img src="./img/basic_charts_19.jpg" alt=""></p>
+<p>Add source information under <code>Notes</code>, save the chart and then export/share as before.</p>
+<h3 id="make-a-heat-map-showing-the-percentage-of-kindergarten-children-in-california-with-incomplete-immunizations-over-time,-by-county"><a name="make-a-heat-map-showing-the-percentage-of-kindergarten-children-in-california-with-incomplete-immunizations-over-time,-by-county" href="#make-a-heat-map-showing-the-percentage-of-kindergarten-children-in-california-with-incomplete-immunizations-over-time,-by-county"></a>Make a heat map showing the percentage of kindergarten children in California with incomplete immunizations over time, by county</h3>
+<p>Click your browswer’s back arrow to return to your account’s home page, then select <code>WORKSPACE</code> to open a new blank grid. Import the <code>ca_vacc_counties.csv</code> file:</p>
+<p><img src="./img/basic_charts_20.jpg" alt=""></p>
+<p>Select <code>Heatmap</code> under <code>Chart Type</code> and map <code>start_year</code> to the <code>X</code> axis, <code>county</code> to the <code>Y</code>, and <code>pc_incomplete</code> to <code>Z</code>, for color. Then click <code>Flip Vertically</code> to put the counties in alphabetical order:</p>
+<p><img src="./img/basic_charts_21.jpg" alt=""></p>
+<p>Switch to <code>Traces</code> in the <code>Style</code> section and adopt an informative sequential <code>Colorscale</code>:</p>
+<p><img src="./img/basic_charts_22.jpg" alt=""></p>
+<p>Under <code>Axes</code>, remove both axis titles.</p>
+<p>Under <code>Color Bars</code>, add a <code>Title</code> of <code>Incomplete vaccination</code>:</p>
+<p><img src="./img/basic_charts_23.jpg" alt=""></p>
+<p>Then add a <code>Suffix</code> of <code>%</code> to the <code>Labels</code>:</p>
+<p><img src="./img/basic_charts_24.jpg" alt=""></p>
+<p>Add source information under <code>Notes</code>, save the chart, and then export/share as before. For a heat map with this many rows, it will be necessary to make the height greater than for most other types of chart:</p>
+<p><img src="./img/basic_charts_25.png" alt=""></p>
+<h3 id="make-a-bubble-chart-showing-the-relationship-between-gdp-per-capita-and-life-expectancy-for-the-world's-nations-in-2015"><a name="make-a-bubble-chart-showing-the-relationship-between-gdp-per-capita-and-life-expectancy-for-the-world's-nations-in-2015" href="#make-a-bubble-chart-showing-the-relationship-between-gdp-per-capita-and-life-expectancy-for-the-world's-nations-in-2015"></a>Make a bubble chart showing the relationship between GDP per capita and life expectancy for the world’s nations in 2015</h3>
+<p>Click your browswer’s back arrow to return to your account’s home page, then select <code>WORKSPACE</code> to open a new blank grid. Import the <code>nations_2015.csv</code> file:</p>
+<p><img src="./img/basic_charts_26.jpg" alt=""></p>
+<p>Keep the default <code>Scatter plot</code> and map <code>gdp_percap</code> onto the <code>X</code> axis and <code>life_expect</code> onto the <code>Y</code>:</p>
+<p><img src="./img/basic_charts_27.jpg" alt=""></p>
+<p>Now add <code>Country</code> to <code>Hover text</code>, so that the countries are identified in the tooltips, and map <code>population</code> onto <code>Size</code>. This will make the circles enormous, but we will fix that later:</p>
+<p><img src="./img/basic_charts_28.jpg" alt=""></p>
+<p>We want to color the cirles by region, but do not use the <code>Color</code> option, which is for mapping color to a quantitative variable. Instead, under <code>Group</code>, click the <code>+ Group</code> button and group by <code>region</code>, which will apply a categorical color palette to the circles by region:</p>
+<p><img src="./img/basic_charts_29.jpg" alt=""></p>
+<p>Switch to <code>Traces</code> in the <code>Style</code> section and reduce the <code>Maximum Marker Size</code> for an optimal appearance:</p>
+<p><img src="./img/basic_charts_30.jpg" alt=""></p>
+<p>(Notice that Plotly by default correctly scales circles by <code>Area</code>.)</p>
+<p>Under <code>Axes</code>, edit the axis titles, and to mimic the appearance of the chart we saw in the Gapminder video switch the <code>Axis Type</code> to <code>Log</code> for the <code>X</code> axis under <code>Range</code>. Also add a <code>Prefix</code> of <code>$</code> under <code>Tick Labels</code>:</p>
+<p><img src="./img/basic_charts_31.jpg" alt=""></p>
+<p>Again, add source information under <code>Notes</code>, save the chart, and then export/share as before.</p>
+
 	</div> <!-- /.container all -->
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="../../js/bootstrap.min.js"></script>
