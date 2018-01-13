@@ -34,7 +34,7 @@ Making charts with the [ggplot2](http://ggplot2.org/) R package.
 - #### Feb 13: [Interactive charts with R](interactive-charts-r.html)
 We will explore R packages called [htmlwidgets](http://www.htmlwidgets.org/) that allow you to create JavaScript visualizations straight from your data with a minimum of coding.
 
- - **Assignment:** Progress report on your data visualization project. Share your draft charts, explaining how they support your wider story. **Due Sat Feb 15 at 8pm.**
+ - **Assignment:** Progress report on your data visualization project. Share your draft charts, explaining how they support your wider story. **Due Sat Feb 24 at 8pm.**
 
 
 - #### Feb 22: [Animation: GIFs and videos from R](animations-r.html)
