@@ -36,3 +36,29 @@ Contains the following files:
  - `pc_incomplete` Percentage of children without complete vaccinations.
 
 - `test.html` A web page for embedding online charts. It has been set up using [Bootstrap](https://getbootstrap.com/) responsive web design framework so that any content will automatically adjust to the size of the browser window in which it is viewed, centered on the page.
+
+### [Processing data with R](data/data-processing-r.zip)
+
+- `nations1.csv` Data from the [World Bank Indicators](https://data.worldbank.org/indicator/?tab=all) portal. Contains the following fields:
+ -  `iso2c` `iso3c` Two- and Three-letter [codes](https://www.nationsonline.org/oneworld/country_code_list.htm) for each country, assigned by the [International Organization for Standardization](https://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=63545).
+ - `country` Country name.
+ - `year` From 1990 to 2015.
+ - `gdp_percap` [Gross Domestic Product per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD) in current international dollars, corrected for purchasing power in different territories.
+ - `life_expect` [Life expectancy at birth](http://data.worldbank.org/indicator/SP.DYN.LE00.IN), in years.
+ - `population` Estimated [total population](http://data.worldbank.org/indicator/SP.POP.TOTL) at mid-year, including all residents apart from refugees.
+ - `region` `income` World Bank [regions and income groups](https://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS), explained [here](https://data.worldbank.org/about/country-and-lending-groups).
+
+- `nations2.csv` Again from the World Bank Indicators portal. Contains the following fields:
+ - `iso3c` `year` As above.
+ - `co2_percap` [Carbon diozide emissions per capita](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC) metric tonnes.
+
+- `kindergarten.csv` Data from the [California Department of Public Health](https://www.cdph.ca.gov/programs/immunize/Pages/ImmunizationLevels.aspx), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2014. Contains the following variables:
+  - `district` School district.
+  - `sch_code` Unique identifying code for each school.
+  - `pub_priv` Whether school is public or private.
+  - `school` School name.
+  - `enrollment` Number of children enrolled.
+  - `complete` Number of children with complete immunizations.
+  - `start_year` Year of entry (for the 2014-2015 school year, for example, this would be 2014).
+
+- `kindergarten_2015.csv` As above, but data from 2015 only.

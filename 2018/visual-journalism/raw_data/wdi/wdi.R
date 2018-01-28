@@ -11,7 +11,7 @@ indic_list <- c("NY.GDP.PCAP.PP.CD", "SP.DYN.LE00.IN", "SP.POP.TOTL", "EN.ATM.CO
 
 # import indicators into single data frame and rename fields
 indicators <- WDI(indicator=indic_list, country="all", start=1990, end=2015, extra=T, cache=NULL) %>%
-  rename(gdp_percap=NY.GDP.PCAP.PP.CD, life_expect=SP.DYN.LE00.IN, population=SP.POP.TOTL, co2=EN.ATM.CO2E.PC) %>%
+  rename(gdp_percap=NY.GDP.PCAP.PP.CD, life_expect=SP.DYN.LE00.IN, population=SP.POP.TOTL, co2_percap=EN.ATM.CO2E.PC) %>%
   filter(income != "Aggregates") %>%
   select(1,8,2:7,9,13)
 
@@ -25,9 +25,17 @@ nations2015 <- indicators %>%
   filter(year==2015) %>%
   select(-co2)
 
-
 # write to csv
 write.csv(indicators, "nations.csv", na="", row.names = F)
 write.csv(nations2015,"nations_2015.csv", na="", row.names = F)
 
+nations1 <- indicators %>%
+  select(-co2_percap)
+
+nations2 <- indicators %>%
+  select(iso3c,year,co2_percap)
+
+# write to csv
+write.csv(nations1, "nations1.csv", na="", row.names = F)
+write.csv(nations2,"nations2.csv", na="", row.names = F)
 
