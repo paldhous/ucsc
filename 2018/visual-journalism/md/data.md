@@ -62,3 +62,32 @@ Contains the following files:
   - `start_year` Year of entry (for the 2014-2015 school year, for example, this would be 2014).
 
 - `kindergarten_2015.csv` As above, but data from 2015 only.
+
+### [Static charts with R](data/static-charts-r.zip)
+
+- `disease_democ.csv` Data illustrating a controversial theory suggesting that the emergence of democratic political systems has depended largely on nations having low rates of infectious disease. Contains the following variables:
+ - `country` Country name.
+ - `income_group` World Bank [income groups](https://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS), explained [here](https://data.worldbank.org/about/country-and-lending-groups).
+ - `democ_score` Measure of the strength of democratic institutions in each country, from *[Democratization: A Comparative Analysis of 170 Countries](http://www.amazon.com/Democratization-Comparative-Analysis-Countries-Routledge/dp/0415318602)*
+ - `infect_rate` Historical prevalance of infectious disease, from the [Global Infectious Diseases and Epidemiology Network](http://www.gideononline.com/).
+- `food_stamps.csv` Contains the following variables:
+ - `year` From 1969 to 2016.
+ - `food_stamps` Average number of people participating in the Supplemental Nutrition Assistance Program, in millions, from the [US Department of Agriculture](https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap).
+ - `poverty` Estimated number of people in poverty, in millions, from the [US Census Bureau](https://census.gov/content/dam/Census/library/publications/2017/demo/P60-259.pdf).
+- `kindergarten.csv` Data from the [California Department of Public Health](https://data.chhs.ca.gov/dataset/school-immunizations-in-kindergarten-by-academic-year), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2015. Contains the following variables:
+  - `district` School district.
+  - `sch_code` Unique identifying code for each school.
+  - `pub_priv` Whether school is public or private.
+  - `school` School name.
+  - `enrollment` Number of children enrolled.
+  - `complete` Number of children with complete immunizations.
+  - `start_year` Year of entry (for the 2015-2016 school year, for example, this would be 2015).
+- `nations.csv` Data from the [World Bank Indicators](https://data.worldbank.org/indicator/?tab=all) portal. Contains the following fields:
+ -  `iso2c` `iso3c` Two- and Three-letter [codes](https://www.nationsonline.org/oneworld/country_code_list.htm) for each country, assigned by the [International Organization for Standardization](https://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=63545).
+ - `country` Country name.
+ - `year` From 1990 to 2015.
+ - `gdp_percap` [Gross Domestic Product per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD) in current international dollars, corrected for purchasing power in different territories.
+ - `life_expect` [Life expectancy at birth](http://data.worldbank.org/indicator/SP.DYN.LE00.IN), in years.
+ - `population` Estimated [total population](http://data.worldbank.org/indicator/SP.POP.TOTL) at mid-year, including all residents apart from refugees.
+ - `region` `income` World Bank [regions and income groups](https://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS), explained [here](https://data.worldbank.org/about/country-and-lending-groups).
+ - `co2_percap` [Carbon dioxide emissions per capita](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC), in metric tonnes.

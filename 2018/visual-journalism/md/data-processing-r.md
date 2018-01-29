@@ -33,7 +33,7 @@ Download the data for this session from [here](data/data-processing-r.zip), unzi
 
 - `nations2.csv` Again from the World Bank Indicators portal. Contains the following fields:
  - `iso3c` `year` As above.
- - `co2_percap` [Carbon diozide emissions per capita](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC) metric tonnes.
+ - `co2_percap` [Carbon dioxide emissions per capita](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC) metric tonnes.
 
 - `kindergarten.csv` Data from the [California Department of Public Health](https://www.cdph.ca.gov/programs/immunize/Pages/ImmunizationLevels.aspx), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2014. Contains the following variables:
   - `district` School district.
