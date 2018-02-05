@@ -211,7 +211,7 @@ To specify an individual column use the name of the data frame and the column na
 # print values for population in the nations1 data
 nations1$population
 ```
-The output will be the first 10,000 values for that column.
+The output will be the first 1,000 values for that column.
 
 If you need to change the data type for any column, use the following functions:
 
@@ -243,7 +243,27 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	5486 obs. of  9 variables:
  $ region     : chr  "Europe & Central Asia" "Europe & Central Asia" "Europe & Central Asia" "Europe & Central Asia" ...
  $ income     : chr  "High income" "High income" "High income" "High income" ...```
 
+The ````r
+# convert population to integers
+nations1$population <- as.integer(nations1$population)
+str(nations1)
+```
+Notice that the data type for `population` has now changed:
+
+```JSON
+Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	5486 obs. of  9 variables:
+ $ iso2c      : chr  "AD" "AD" "AD" "AD" ...
+ $ iso3c      : chr  "AND" "AND" "AND" "AND" ...
+ $ country    : chr  "Andorra" "Andorra" "Andorra" "Andorra" ...
+ $ year       : int  1994 1995 2006 2007 1996 1993 1997 1998 2008 2009 ...
+ $ gdp_percap : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ life_expect: num  NA NA NA NA NA NA NA NA NA NA ...
+ $ population : int  62677 63850 80991 82683 64360 60971 64327 64142 83861 84462 ...
+ $ region     : chr  "Europe & Central Asia" "Europe & Central Asia" "Europe & Central Asia" "Europe & Central Asia" ...
+ $ income     : chr  "High income" "High income" "High income" "High income" ...```
+
 The `summary` function will run a quick statistical summary of a data frame, calculating mean, median and quartile values for continuous variables:
+summary` function will run a quick statistical summary of a data frame, calculating mean, median and quartile values for continuous variables:
 
 ```r
 # summary of nations1 data
