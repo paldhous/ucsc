@@ -367,7 +367,7 @@ ggplot(immun_top5_year, aes(x = start_year, y = pc_incomplete, color = county)) 
   geom_line(size=1) +
   geom_point(size=3) +
   theme_minimal(base_size = 14, base_family = &quot;Georgia&quot;) +
-  scale_y_continuous(limits = c(0,0.15)) +
+  scale_y_continuous(limits = c(0,15)) +
   scale_x_continuous(breaks = c(2002,2004,2006,2008,2010,2012,2014)) +
   xlab(&quot;&quot;) +
   ylab(&quot;% incomplete&quot;) +

@@ -91,3 +91,12 @@ Contains the following files:
  - `population` Estimated [total population](http://data.worldbank.org/indicator/SP.POP.TOTL) at mid-year, including all residents apart from refugees.
  - `region` `income` World Bank [regions and income groups](https://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS), explained [here](https://data.worldbank.org/about/country-and-lending-groups).
  - `co2_percap` [Carbon dioxide emissions per capita](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC), in metric tonnes.
+
+### [From R to interactive charts and maps](data/interactives-r.zip)
+
+- `disease_democ.csv` Data illustrating a controversial theory suggesting that the emergence of democratic political systems has depended largely on nations having low rates of infectious disease, as used previously.
+- `kindergarten.csv` Data from the [California Department of Public Health](https://data.chhs.ca.gov/dataset/school-immunizations-in-kindergarten-by-academic-year), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2015, as used previously.
+- `nations.csv` Data from the World Bank Indicators portal, as used previously.
+- `food_stamps.csv` [U.S. Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, and costs, in $ billions, of the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
+- `seismic.zip` Zipped shapefile (see below) with data on the annual risk of a damaging earthquake for the continental United States, from the [U.S. Geological Survey](https://earthquake.usgs.gov/hazards/induced/).
+- `test.html` Web page to embed the interactive charts and maps we make today.
