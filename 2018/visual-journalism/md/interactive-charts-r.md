@@ -1,6 +1,6 @@
 # From R to interactive charts and maps
 
-Nowadays, it is possible to make online, interactive charts and maps directly from R/RStudio. This is possible thanks to a group of R packages collectively known as [**htmlwidgets**](http://www.htmlwidgets.org/).
+It is possible to make online, interactive charts and maps directly from R/RStudio, thanks to a group of R packages collectively known as [**htmlwidgets**](http://www.htmlwidgets.org/).
 
 These packages take instructions in R code, and write the JavaScript and HTML necessary to make charts using popular JavaScript visualization libraries. They also allow you to easily export the charts that you create in R as responsively designed web pages, which can be embedded in other projects through simple [**iframes**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
 
@@ -13,8 +13,8 @@ Download the data for this session from [here](data/interactives-r.zip), unzip t
 - `disease_democ.csv` Data illustrating a controversial theory suggesting that the emergence of democratic political systems has depended largely on nations having low rates of infectious disease, as used previously.
 - `kindergarten.csv` Data from the [California Department of Public Health](https://data.chhs.ca.gov/dataset/school-immunizations-in-kindergarten-by-academic-year), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2015, as used previously.
 - `nations.csv` Data from the World Bank Indicators portal, as used previously.
-- `food_stamps.csv` [U.S. Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, and costs, in $ billions, of the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
-- `seismic.zip` Zipped shapefile (see below) with data on the annual risk of a damaging earthquake for the continental United States, from the [U.S. Geological Survey](https://earthquake.usgs.gov/hazards/induced/).
+- `food_stamps.csv` [US Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, in the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
+- `seismic.zip` Zipped shapefile (see below) with data on the annual risk of a damaging earthquake for the continental United States, from the [US Geological Survey](https://earthquake.usgs.gov/hazards/induced/).
 - `test.html` Web page to embed the interactive charts and maps we make today.
 
 #### A note on shapefiles
@@ -32,7 +32,7 @@ There are several optional file types that may also be included, including a `.p
 
 Launch RStudio, create a new RScript, and set the working directory to the downloaded data folder. Save the script as `interactives.R`.
 
-First we will install the package **htmlwidgets**, which will make it possible to save the charts and maps we make as web pages. Then we will a package called **[devtools](https://cran.r-project.org/web/packages/devtools/devtools.pdf)**, which we will in turn use to install the latest development version of **ggplot2**, which is recommended if you want to turn your static **ggplot2** charts into interactive Plotly charts.
+First we will install the package **htmlwidgets**, which makes it possible to save the charts and maps we make as web pages. Then we will a package called **[devtools](https://cran.r-project.org/web/packages/devtools/devtools.pdf)**, which we will in turn use to install the latest development version of **ggplot2**, which is recommended if you want to turn your static **ggplot2** charts into interactive Plotly charts.
 
 ```R
 # install and load htmlwidgets
@@ -90,13 +90,13 @@ food_stamps_interactive <- ggplotly(food_stamps_chart)
 
 <iframe width="100%" height="450" frameborder="0" scrolling="no" src="food_stamps_dot_line1.html"></iframe>
 
-Just like when we made Plotly charts in the web app, the default interactive charts has some controls that appear at top right when you hover over the chart. The default tooltip also contains the abbreviated variable names from the data. 
+Just like when we made Plotly charts in the web app, the default interactive chart has some controls that appear at top right when you hover over the chart. The default tooltip also contains the abbreviated variable names from the data.
 
 But it is fairly easy to fix these problems. This code removes the controls:
 
 ```R
 # remove Plotly controls
-food_stamps_interactive <- ggplotly(food_stamps_chart)  %>% 
+food_stamps_interactive <- ggplotly(food_stamps_chart) %>% 
   config(displayModeBar = FALSE)
 
 print(food_stamps_interactive)
@@ -106,19 +106,15 @@ And this code reformats the tooltips, by editing the tooltip text in the plotly 
 
 ```R
 # edit the tooltips
-food_stamps_interactive$x$data[[1]]$text <- paste("Year:",
-                                                  food_stamps$year,
-                                                  "<br>",
-                                                  "Participants (millions):",
-                                                  food_stamps$food_stamps, 
-                                                  "<br>")
+food_stamps_interactive$x$data[[1]]$text <- paste0("Year: ", food_stamps$year, "<br>",
+                                                  "Participants (millions): ",food_stamps$food_stamps)
 
 print(food_stamps_interactive)
 ```
 
 In class, we will explore why this works by examining the structure of the plotly object using `str(food_stamps_interactive)`
 
-The above uses R's `paste` function to concatenate text, which a space between each item; `<br>` is HTML code for a new line.
+The above uses R's `paste0` function to concatenate text; `<br>` is HTML code for a new line.
 
 We can now save the chart as a standalone web page by selecting `Export>Save as Web Page...` from the `Viewer` tab menu.
 
@@ -135,11 +131,13 @@ So now we can embed the chart in the file `test.html`, just like we did for the 
 
 Open the `test.html` file in Sublime Text. Insert the code into the page and edit as follows:
 
-  <div class="container">
+```JavaScript
+<div class="container">
 
     <iframe width="100%" height="450" frameborder="0" scrolling="no" src="food_stamps_interactive.html"></iframe>
 
   </div> <!-- /.container -->
+```
 
 This should be the result:
 
@@ -162,17 +160,17 @@ disease_democ_chart <- ggplot(disease_democ, aes(x = infect_rate, y = democ_scor
   geom_smooth(method = lm, se = FALSE)
 
 # make interactive version
-disease_democ_interactive <- ggplotly(disease_democ_chart1) %>%
+disease_democ_interactive <- ggplotly(disease_democ_chart) %>%
   config(displayModeBar = FALSE)
 
 # edit the tooltips
 disease_democ_interactive$x$data[[1]]$text <- paste0("Country:", disease_democ$country, "<br>",
                                                      "Disease prevalence score: ", disease_democ$infect_rate, "<br>",
-                                                     "Democratization score: ", disease_democ$democ_score, "<br>")
+                                                     "Democratization score: ", disease_democ$democ_score)
 
 
 disease_democ_interactive$x$data[[2]]$text <- paste0("Disease prevalence score:", disease_democ$infect_rate, "<br>",
-                                                    "Democratization score: ", disease_democ$democ_score, "<br>")
+                                                    "Democratization score: ", disease_democ$democ_score)
 
 # plot the chart
 print(disease_democ_interactive)
@@ -181,7 +179,7 @@ This should be the result:
 
 <iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease_democ1.html"></iframe>
 
-Notice here that we have edited the tooltips for both the `geom_point` and `geom_smooth` layers. For the points layer, we have also added the `country` data to the tooltip, which would not otherwise appear.
+Notice here that we edited the tooltips for both the `geom_point` and `geom_smooth` layers. For the points layer, we have added the `country` data to the tooltip, which would not otherwise appear.
 
 The following code creates the final version of this chart from the previous class, with customization including a qualitative ColorBrewer palette for the points, to color them by the World Bank income group.
 
@@ -207,7 +205,7 @@ disease_democ_chart <- ggplot(disease_democ, aes(x=infect_rate,
                      breaks=c("High income: OECD","High income: non-OECD","Upper middle income","Lower middle income","Low income"))
 
 # make interactive version
-disease_democ_interactive <- ggplotly(disease_democ_chart, tooltip="text")  %>% 
+disease_democ_interactive <- ggplotly(disease_democ_chart, tooltip="text") %>% 
   config(displayModeBar = FALSE)
   
 # plot the chart
@@ -217,7 +215,7 @@ This should be the result:
 
 <iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease_democ2.html"></iframe>
 
-In the code above, we used an `aes` mapping of text, feeding the values to appear in the tooltip into a text string using `paste0`. After doing this, we also added `group = 1` to the `aes` mapping, which ensures there are no problems if one of the variables doesn't appear in any layer: Here, for example, `country` is missing form the `geom_smooth` layer.
+In the code above, we used an `aes` mapping of `text`, feeding the values to appear in the tooltip into a text string by concatenating them using `paste0`. After doing this, we also added `group = 1` to the `aes` mapping. This ensures there are no problems if one of the variables doesn't appear in any layer: Here, for example, `country` is missing form the `geom_smooth` layer.
 
 Having set up the text for the tooltip, it can then be added in the `ggplotly` function using `tooltip = text`.
 
@@ -227,7 +225,7 @@ In class, as time allows, you'll try to create interactive versions of other cha
 
 ### Make a map of seismic risk and earthquakes using Leaflet
 
-[Leaflet](http://leafletjs.com/) is the most widely-used JavaScript library for making interactive online maps. It can be used from R using the [**leaflet**](http://rstudio.github.io/leaflet/) package, another part of the **htmlwidgets** framework. So we need to install and load that, together with a package called **[rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf)**, which makes it possible to load shapefiles and other geodata into R.
+[Leaflet](http://leafletjs.com/) is the most widely-used JavaScript library for making interactive online maps. It can be used from R with the [**leaflet**](http://rstudio.github.io/leaflet/) package, another part of the **htmlwidgets** framework. So we need to install and load that, together with a package called **[rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf)**, which makes it possible to load shapefiles and other geodata into R.
 
 ```R
 # install and load leaflet and rdgal
@@ -271,7 +269,7 @@ The map should now look like this:
 
 The `addProviderTiles` function uses the [Leaflet Providers](https://github.com/leaflet-extras/leaflet-providers) plugin to add various tiles to a map. You can see the available options [here](http://leaflet-extras.github.io/leaflet-providers/preview/).
 
-Now load the data we need to make the earthquakes map, starting with the `seismic` shapefile, using the `readOGR()` function from **rgdal**.
+Now load the data we need to make the earthquakes map, starting with the `seismic` shapefile, using the `readOGR` function from **rgdal**.
 
 ```R
 # load seismic risk shapefile
@@ -281,7 +279,7 @@ The two mentions of `seismic` refer to the folder and the shapefile within it, r
 
 You should now have in your environment an object called `seismic` which is a `SpatialPolygonsDataFrame`.
 
-We can also load data on earthquakes, directly from the U.S. Geological Survey earthquakes API, described in the notes for the class on finding and downloading data:
+We can also load data on earthquakes, directly from the US Geological Survey earthquakes API, described in the notes for the class on finding and downloading data:
 
 ```R
 # load quakes data from USGS earthquakes API
@@ -352,7 +350,7 @@ Data attributes:
  10 - 12: 2 
 ```
 
-Now we will load the seismic risk data into a leaflet map:
+Next we will load the seismic risk data into a leaflet map:
 
 ```R
 # load the seismic risk data into a leaflet map
@@ -400,19 +398,21 @@ This should be the result:
 
 <iframe width="100%" height="450" frameborder="0" scrolling="no" src="earthquakes.html"></iframe>
 
-The function `addPolygons` adds polygons to the map: `stroke = FALSE` gives them no outline; `fillOpacity = 0.7` makes them slightly transparent; `color = ~pal(ValueRange))` uses the color palette and breaks we set up earlier to color the polygons according to values in the `ValueRange` data.
+The function `colorFactor` assigns a named ColorBrewer palette to a categorical variable.
+
+The function `addPolygons` adds polygons to the map: `stroke = FALSE` gives them no outline; `fillOpacity = 0.7` makes them slightly transparent; `color = ~pal(ValueRange))` uses the palette to color the polygons according to values in the `ValueRange` data.
 
 (To see how to set up a color palette for a continuous variable, see [this class](https://paldhous.github.io/ucb/2016/dataviz/week13.html).)
 
-`smoothFactor` controls the extent to which the polygons are simplified. See what happens to the map if you replace `0.1` with `10`. Simplified polygons will load more quickly, but there's a tradeoff with the appearance of the map. Choose an appropriate value for your maps through trial and error.
+`smoothFactor` controls the extent to which the polygons are simplified. See what happens to the map if you replace `0.1` with `10`. Simplified polygons will load more quickly, but there's a trade-off with the appearance of the map. Choose an appropriate value for your maps through trial and error.
 
 `addCircles` adds circles to the map, using the `quakes` data; `color` sets the color for their outlines, while `weight` sets the thickness of these lines; `fillColor` and `fillOpacity` style the circles' interiors.
 
 The size of the circles is set by `radius = sqrt(quakes$mag^10)*30`. Here `30` is simply a scaling factor for all of the circles, set by trial and error to give a reasonable appearance on the map. The size of the circles is set from the variable `mag` in the quakes data, which is their magnitude. We have raised 10 to the power of these magnitude values: This is a quirk of working with earthquake magnitudes, which are on a logarithmic scale, so that a magnitude difference of 1 corresponds to a 10-fold difference in earth movement, as recorded on a seismogram.
 
-When scaling circles to make a Leaflet map, use the values from the data, and then take their square roots, using the `sqrt` function. This is important, to ensure that the circles are scaled correctly, by area, rather than by radius. The code sets the diameter (or twice the radius) of the circles, so the `sqrt` is necessary to correct for the squaring of these values in the equation for the area of a circle: `Area = π * r^2`.
+When scaling circles to make a Leaflet map, use the values from the data, but always take their square roots, using the `sqrt` function. This is important, to ensure that the circles are scaled correctly, by area, rather than by radius. The code sets the diameter (or twice the radius) of the circles, so the `sqrt` is necessary to correct for the squaring of these values in the equation for the area of a circle: `Area = π * r^2`.
 
-`popup` is used to define the HTML code the appears in the popup that appears when any quake is clicked or tapped. The code above uses the R function `paste` to paste together a series of elements, separated by commas, that will write the HTML. They include the `mag` and `time` values from the quakes data, the latter being formatted as an easy-to-read date using R's `format` function for dates. See [here](https://www.statmethods.net/input/dates.html) for more on formatting dates in R.
+`popup` is used to define the HTML code the appears in the popup that appears when any quake is clicked or tapped. The code above uses `paste0` to concatenate a series of elements, separated by commas, that will write the HTML. They include the `mag` and `time` values from the quakes data, the latter being formatted as an easy-to-read date using R's `format` function for dates. See [here](https://www.statmethods.net/input/dates.html) for more on formatting dates in R.
 
 I hope these examples illustrate the potential of **htmlwidgets**. There are many more which we have not covered. Understanding how the code for each will take some time. But if you follow the documentation, the results can be impressive.
 
