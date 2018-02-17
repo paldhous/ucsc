@@ -51,6 +51,247 @@
 
 	<div class="container all">
 
+<h1 id="animation:-making-gifs-and-videos-from-r"><a name="animation:-making-gifs-and-videos-from-r" href="#animation:-making-gifs-and-videos-from-r"></a>Animation: making GIFs and videos from R</h1><p>In today’s class, we will make animated GIFs and videos from charts made in R using <strong>ggplot2</strong>. This depends on connecting R to two software libraries, <a href="http://imagemagick.org/script/index.php"><strong>ImageMagick</strong></a> (for processing images, including GIFs), and <strong><a href="http://ffmpeg.org/">FFmpeg</a></strong> (for processing video). See the <a href="software.html">software</a> page for installation instructions.</p><h3 id="the-data-we-will-use-today"><a name="the-data-we-will-use-today" href="#the-data-we-will-use-today"></a>The data we will use today</h3><p>Download the data for this session from <a href="data/animations-r.zip">here</a>, unzip the folder and place it on your desktop. It contains the following file:</p><ul>
+<li><code>nations.csv</code> Data from the World Bank Indicators portal, as used previously.</li></ul><h3 id="setting-up"><a name="setting-up" href="#setting-up"></a>Setting up</h3><p>Launch RStudio, create a new RScript, and set the working directory to the folder with your downloaded data by selecting <code>Session&gt;Set Working Directory&gt;To Source File Location</code>. Save the script as <code>animations.R</code>.</p><h4 id="install-devtools-and-gganimate-packages"><a name="install-devtools-and-gganimate-packages" href="#install-devtools-and-gganimate-packages"></a>Install devtools and gganimate packages</h4><p>Today, we are going to animate <strong>ggplot2</strong> graphics using the <strong><a href="https://github.com/dgrtwo/gganimate">gganimate</a></strong> package, which is an <a href="http://www.ggplot2-exts.org/">extension</a> to <strong>ggplot2</strong>. It depends upon ImageMagick and FFmpeg to make GIFs and videos.</p><p><strong>gganimate</strong> is available on GitHub. To install from there, you first need to install the <a href="https://github.com/hadley/devtools"><strong>devtools</strong></a> package.</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># load devtools
+library(devtools)
+
+# install gganimate
+install_github(&quot;dgrtwo/gganimate&quot;)
+</code></pre>"><span class="hljs-comment"># load devtools</span>
+<span class="hljs-keyword">library</span>(devtools)
+
+<span class="hljs-comment"># install gganimate</span>
+install_github(<span class="hljs-string">"dgrtwo/gganimate"</span>)
+</code></pre><h4 id="load-the-packages-we-will-use-today"><a name="load-the-packages-we-will-use-today" href="#load-the-packages-we-will-use-today"></a>Load the packages we will use today</h4><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># load required packages
+library(readr)
+library(ggplot2)
+library(gganimate)
+library(scales)
+library(dplyr)
+</code></pre>"><span class="hljs-comment"># load required packages</span>
+<span class="hljs-keyword">library</span>(readr)
+<span class="hljs-keyword">library</span>(ggplot2)
+<span class="hljs-keyword">library</span>(gganimate)
+<span class="hljs-keyword">library</span>(scales)
+<span class="hljs-keyword">library</span>(dplyr)
+</code></pre><p>Apart from <strong>gganimate</strong>, we have encountered all of these packages in previous classes.</p><h3 id="make-a-gapminder-style-animated-bubble-chart"><a name="make-a-gapminder-style-animated-bubble-chart" href="#make-a-gapminder-style-animated-bubble-chart"></a>Make a Gapminder-style animated bubble chart</h3><p>In our first class with <strong>ggplot2</strong>, we made the following chart, showing GDP per capita, life expectancy at birth and population for the world’s nations in 2015:</p><p><img src="img/animations_1.png" alt=""></p><p>This is the code to generate that chart:</p><pre class="r hljs"><code class="r" data-origin="<pre><code class=&quot;r&quot;># load data
+nations &amp;lt;- read_csv(&quot;nations.csv&quot;)
+
+# filter for 2015 data only
+nations2015 &amp;lt;- nations %&amp;gt;%
+  filter(year == 2015)
+
+# make bubble chart
+ggplot(nations2015, aes(x = gdp_percap, y = life_expect)) +
+  xlab(&quot;GDP per capita&quot;) +
+  ylab(&quot;Life expectancy at birth&quot;) +
+  theme_minimal(base_size = 14) +
+  geom_point(aes(size = population, color = region), alpha = 0.7) +
+  scale_size_area(guide = FALSE, max_size = 15) +
+  scale_x_continuous(labels = dollar) +
+  stat_smooth(formula = y ~ log10(x), se = FALSE, size = 0.5, color = &quot;black&quot;, linetype=&quot;dotted&quot;) +
+  scale_color_brewer(name = &quot;&quot;, palette = &quot;Set2&quot;) +
+  theme(legend.position=c(0.8,0.4))
+</code></pre>"><span class="hljs-comment"># load data</span>
+nations &lt;- read_csv(<span class="hljs-string">"nations.csv"</span>)
+
+<span class="hljs-comment"># filter for 2015 data only</span>
+nations2015 &lt;- nations %&gt;%
+  filter(year == <span class="hljs-number">2015</span>)
+
+<span class="hljs-comment"># make bubble chart</span>
+ggplot(nations2015, aes(x = gdp_percap, y = life_expect)) +
+  xlab(<span class="hljs-string">"GDP per capita"</span>) +
+  ylab(<span class="hljs-string">"Life expectancy at birth"</span>) +
+  theme_minimal(base_size = <span class="hljs-number">14</span>) +
+  geom_point(aes(size = population, color = region), alpha = <span class="hljs-number">0.7</span>) +
+  scale_size_area(guide = <span class="hljs-literal">FALSE</span>, max_size = <span class="hljs-number">15</span>) +
+  scale_x_continuous(labels = dollar) +
+  stat_smooth(formula = y ~ log10(x), se = <span class="hljs-literal">FALSE</span>, size = <span class="hljs-number">0.5</span>, color = <span class="hljs-string">"black"</span>, linetype=<span class="hljs-string">"dotted"</span>) +
+  scale_color_brewer(name = <span class="hljs-string">""</span>, palette = <span class="hljs-string">"Set2"</span>) +
+  theme(legend.position=c(<span class="hljs-number">0.8</span>,<span class="hljs-number">0.4</span>))
+</code></pre><p>Some reminders about what this code does:</p><ul>
+<li><p><code>scale_size_area</code> ensures that the size of the circles scales by their area according to the population data, up to the specified <code>max_size</code>; <code>guide = FALSE</code> within the parentheses of this function prevents a legend for size being drawn.</p>
+</li><li><p><code>labels = dollar</code> from <strong>scales</strong> formats the X axis labels as currency in dollars.</p>
+</li><li><p><code>stat_smooth</code> works like <code>geom_smooth</code> but allows you to use a <code>formula</code> to specify the type of curve to use for the trend line fitted to the data, here a logarithmic curve.</p>
+</li></ul><p>Now we will use <strong>gganimate</strong> to generate an animation of the chart, from 1990 to 2015. Here is the code:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;>nations_chart &amp;lt;- ggplot(nations, aes(x = gdp_percap, y = life_expect, frame = year)) +
+  xlab(&quot;GDP per capita&quot;) +
+  ylab(&quot;Life expectancy at birth&quot;) +
+  theme_minimal(base_size = 16) +
+  geom_point(aes(size = population, color = region), alpha = 0.7) +
+  scale_size_area(guide = FALSE, max_size = 20) +
+  scale_x_continuous(labels = dollar) +
+  stat_smooth(aes(group = year), formula = y ~ log10(x), se = FALSE, size = 0.5, color = &quot;black&quot;, linetype=&quot;dotted&quot;) +
+  scale_color_brewer(name = &quot;&quot;, palette = &quot;Set2&quot;) +
+  theme(legend.position=c(0.8,0.4))
+</code></pre>">nations_chart &lt;- ggplot(nations, aes(x = gdp_percap, y = life_expect, frame = year)) +
+  xlab(<span class="hljs-string">"GDP per capita"</span>) +
+  ylab(<span class="hljs-string">"Life expectancy at birth"</span>) +
+  theme_minimal(base_size = <span class="hljs-number">16</span>) +
+  geom_point(aes(size = population, color = region), alpha = <span class="hljs-number">0.7</span>) +
+  scale_size_area(guide = <span class="hljs-literal">FALSE</span>, max_size = <span class="hljs-number">20</span>) +
+  scale_x_continuous(labels = dollar) +
+  stat_smooth(aes(group = year), formula = y ~ log10(x), se = <span class="hljs-literal">FALSE</span>, size = <span class="hljs-number">0.5</span>, color = <span class="hljs-string">"black"</span>, linetype=<span class="hljs-string">"dotted"</span>) +
+  scale_color_brewer(name = <span class="hljs-string">""</span>, palette = <span class="hljs-string">"Set2"</span>) +
+  theme(legend.position=c(<span class="hljs-number">0.8</span>,<span class="hljs-number">0.4</span>))
+</code></pre><p>Running this code will create an R object of type <code>gg</code> called <code>nations_chart</code>.</p><p>Now display it in the <code>Viewer</code> panel by running the following:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;>gganimate(nations_chart)
+</code></pre>">gganimate(nations_chart)
+</code></pre><p>This should be the result:</p><p><img src="img/nations.gif" alt=""></p><h4 id="how-the-code-works"><a name="how-the-code-works" href="#how-the-code-works"></a>How the code works</h4><p>I made a couple of small changes to the <strong>ggplot2</strong> code from the static graphic to optimise the appearance of the animation, increasing both the <code>base_size</code> for the text, and the <code>max_size</code> for the scaled circles.</p><p>The most important change, however, is in the initial <code>ggplot</code> function, which now includes <code>frame = year</code>. In the animation, this is the code that creates a separate chart for each year in the data.</p><p>Also notice that the code that creates the trend line now includes <code>aes(group = year)</code>. This is needed if we want to create a separate trend line for each year. Without this, a single trend line would be calculated for all the data across all the years, and would be static across the animation.</p><h4 id="save-as-a-gif-and-a-video"><a name="save-as-a-gif-and-a-video" href="#save-as-a-gif-and-a-video"></a>Save as a GIF and a video</h4><p>Having made an animation, we can now save it as a GIF or a video:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># save as a GIF
+gganimate(nations_chart, &quot;nations.gif&quot;, ani.width = 750, ani.height = 450, interval = 0.2)
+
+# save as a video 
+gganimate(nations_chart, &quot;nations.mp4&quot;, ani.width = 800, ani.height = 450, interval = 0.1)
+</code></pre>"><span class="hljs-comment"># save as a GIF</span>
+gganimate(nations_chart, <span class="hljs-string">"nations.gif"</span>, ani.width = <span class="hljs-number">750</span>, ani.height = <span class="hljs-number">450</span>, interval = <span class="hljs-number">0.2</span>)
+
+<span class="hljs-comment"># save as a video </span>
+gganimate(nations_chart, <span class="hljs-string">"nations.mp4"</span>, ani.width = <span class="hljs-number">800</span>, ani.height = <span class="hljs-number">450</span>, interval = <span class="hljs-number">0.1</span>)
+</code></pre><p>You can use the options <code>ani.width</code> and <code>ani.height</code> to set the dimensions, in pixels, of the animation; <code>interval</code> sets the interval between the frames, in seconds (the default is 1 second). For the video, I have set the ratio between width and height at 16:9, consistent with YouTube format.</p><p>Here is the video:</p><div class="embed-responsive embed-responsive-16by9"><br>    <iframe class="embed-responsive-item" src="img/nations.mp4"></iframe><br></div><h3 id="add-a-pause-to-the-final-frame-on-a-gif"><a name="add-a-pause-to-the-final-frame-on-a-gif" href="#add-a-pause-to-the-final-frame-on-a-gif"></a>Add a pause to the final frame on a GIF</h3><p>When making GIFs, it is often a good idea to add a longer pause on the final frame before the animation repeats. You can do this with the following code:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># increase delay on final frame
+system(&quot;convert nations.gif \\( +clone -set delay 300 \\) +swap +delete  nations_with_pause.gif&quot;)
+</code></pre>"><span class="hljs-comment"># increase delay on final frame</span>
+system(<span class="hljs-string">"convert nations.gif \\( +clone -set delay 300 \\) +swap +delete  nations_with_pause.gif"</span>)
+</code></pre><p>This code uses the <code>system</code> function to send ImageMagick code to your wider computer system. It has same effect as if you ran the ImageMagick code in the Terminal.</p><p><code>convert</code> is one of the main commands in ImageMagick, used to convert between image formats as well as to manipulate images in a variety of ways. Here, <code>delay 300</code> increases the delay on the final frame to 3 seconds.</p><p>Here is the revised GIF:</p><p><img src="img/nations_with_pause.gif" alt=""></p><h3 id="make-cumulative-animations-of-historical-global-average-temperature"><a name="make-cumulative-animations-of-historical-global-average-temperature" href="#make-cumulative-animations-of-historical-global-average-temperature"></a>Make cumulative animations of historical global average temperature</h3><p>For the Gapminder-style video, we displayed only the data for the year in question in each frame. In some cases, however, you may want to animate by adding data with each frame, and leaving the previously added data in place.</p><p>We will explore that now to make two animations of historical global temperature data from the National Oceanic and Atmospheric Administration (NOAA), similar to the video I made <a href="https://www.buzzfeed.com/peteraldhous/this-is-your-planet-on-co2">here</a>, and the GIF <a href="https://www.buzzfeed.com/peteraldhous/another-hottest-year">here</a>.</p><p>Navigate to NOAA’s Climate at a Glance <a href="https://www.ncdc.noaa.gov/cag/time-series/">time series page</a>, and set the menus like this:</p><p><img src="img/animations_2.jpg" alt=""></p><p>Scroll down to the data table, and hover over this icon:</p><p><img src="img/animations_3.jpg" alt=""></p><p>This is a link to download a CSV, but we can’t load it directly into R if we have its URL, so right-click and <code>Copy Link Address</code>.</p><p>Now we can load the data:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># load data
+global_temp_annual &amp;lt;- read_csv(&quot;https://www.ncdc.noaa.gov/cag/time-series/global/globe/land_ocean/1/12/1880-2017.csv&quot;, skip = 4)
+</code></pre>"><span class="hljs-comment"># load data</span>
+global_temp_annual &lt;- read_csv(<span class="hljs-string">"https://www.ncdc.noaa.gov/cag/time-series/global/globe/land_ocean/1/12/1880-2017.csv"</span>, skip = <span class="hljs-number">4</span>)
+</code></pre><p>The includes <code>skip = 4</code> because there are four rows in the file before the column headers.</p><p>The following code will draw a dot-and-line chart from the data:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># draw chart
+ggplot(global_temp_annual, aes(x = Year, y = Value)) +
+  geom_line(color = &quot;black&quot;) +
+  geom_point(shape = 21, colour=&quot;black&quot;, aes(fill = Value), size=5, stroke=1) +
+  theme_minimal(base_size = 16) +
+  scale_fill_distiller(palette = &quot;RdYlBu&quot;, limits = c(-2,2), guide = FALSE) +
+  xlab(&quot;&quot;) +
+  ylab(&quot;Diff. from 1901-2000 average (ºC)&quot;)
+</code></pre>"><span class="hljs-comment"># draw chart</span>
+ggplot(global_temp_annual, aes(x = Year, y = Value)) +
+  geom_line(color = <span class="hljs-string">"black"</span>) +
+  geom_point(shape = <span class="hljs-number">21</span>, colour=<span class="hljs-string">"black"</span>, aes(fill = Value), size=<span class="hljs-number">5</span>, stroke=<span class="hljs-number">1</span>) +
+  theme_minimal(base_size = <span class="hljs-number">16</span>) +
+  scale_fill_distiller(palette = <span class="hljs-string">"RdYlBu"</span>, limits = c(-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), guide = <span class="hljs-literal">FALSE</span>) +
+  xlab(<span class="hljs-string">""</span>) +
+  ylab(<span class="hljs-string">"Diff. from 1901-2000 average (ºC)"</span>)
+</code></pre><p>This should be the result:</p><p><img src="img/animations_4.png" alt=""></p><p>This code uses ColorBrewer’s <code>RdYlBu</code> palette, which runs from cool blues, through neutral yellows, to warm reds, fitting well to temperature data diverging from a central value.</p><p>The palette is applied with the function <code>scale_fill_distiller</code>. This and the function <code>scale_color_distiller</code> can be used to apply ColorBrewer sequential and diverging palettes in a smooth gradient to continuous variables, see <a href="https://www.rdocumentation.org/packages/ggplot2/versions/2.2.1/topics/scale_colour_brewer">here</a> for more. Setting <code>limits = c(-2,2)</code> applies the palette for values from -2 to +2 degrees C, ensuring that the neutral yellow at the middle of the diverging palette is applied to a value of zero.</p><p>As this is a dot-and-line chart, it includes both <code>geom_line</code> and <code>geom_point</code> layers. Notice that the <code>geom_point</code> function also defines a numbered <code>shape</code>: <code>21</code> is a circle with a filled area, see <a href="http://www.cookbook-r.com/Graphs/Shapes_and_line_types/">here</a> for other options. By using this shape, we can set the outline <code>color</code> to black and then use an <code>aes</code> mapping to <code>fill</code> it with color from the selected palette, according to the values for the <code>annual</code> variable.</p><p>To animate this chart, adding a year of data with each frame, use the following code:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># animation
+global_temp_annual_chart &amp;lt;- ggplot(global_temp_annual, aes(x = Year, 
+                                                           y = Value, 
+                                                           frame = Year, 
+                                                           cumulative = TRUE)) +
+  geom_line(color = &quot;black&quot;) +
+  geom_point(shape = 21, color = &quot;black&quot;, aes(fill = Value), size = 5, stroke = 1) +
+  theme_minimal(base_size = 16) +
+  scale_fill_distiller(palette = &quot;RdYlBu&quot;, limits = c(-2,2), guide = FALSE) +
+  xlab(&quot;&quot;) +
+  ylab(&quot;Diff. from 1901-2000 average (ºC)&quot;)
+
+# save as video
+gganimate(global_temp_annual_chart, &quot;warming_annual.mp4&quot;, ani.width = 800, ani.height = 450, interval = 0.1)
+</code></pre>"><span class="hljs-comment"># animation</span>
+global_temp_annual_chart &lt;- ggplot(global_temp_annual, aes(x = Year, 
+                                                           y = Value, 
+                                                           frame = Year, 
+                                                           cumulative = <span class="hljs-literal">TRUE</span>)) +
+  geom_line(color = <span class="hljs-string">"black"</span>) +
+  geom_point(shape = <span class="hljs-number">21</span>, color = <span class="hljs-string">"black"</span>, aes(fill = Value), size = <span class="hljs-number">5</span>, stroke = <span class="hljs-number">1</span>) +
+  theme_minimal(base_size = <span class="hljs-number">16</span>) +
+  scale_fill_distiller(palette = <span class="hljs-string">"RdYlBu"</span>, limits = c(-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), guide = <span class="hljs-literal">FALSE</span>) +
+  xlab(<span class="hljs-string">""</span>) +
+  ylab(<span class="hljs-string">"Diff. from 1901-2000 average (ºC)"</span>)
+
+<span class="hljs-comment"># save as video</span>
+gganimate(global_temp_annual_chart, <span class="hljs-string">"warming_annual.mp4"</span>, ani.width = <span class="hljs-number">800</span>, ani.height = <span class="hljs-number">450</span>, interval = <span class="hljs-number">0.1</span>)
+</code></pre><p>This time, the initial <code>ggplot</code> function also contains the code <code>cumulative = TRUE</code>, which adds one year of data with each frame, and leaves the previously added data in place.</p><p>This should be the result:</p><div class="embed-responsive embed-responsive-16by9"><br>    <iframe class="embed-responsive-item" src="img/warming_annual.mp4"></iframe><br></div><p>Now we’ll make an animation showing a line for each year, drawn theough the temperature values for each month.</p><p>Back at NOAA’s climate time series page, select these menu options:</p><p><img src="img/animations_5.jpg" alt=""></p><p>Grab the URL for this data, as before, and load:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># load data
+global_temp_annual &amp;lt;- read_csv(&quot;https://www.ncdc.noaa.gov/cag/time-series/global/globe/land_ocean/1/12/1880-2017.csv&quot;, skip = 4)
+</code></pre>"><span class="hljs-comment"># load data</span>
+global_temp_annual &lt;- read_csv(<span class="hljs-string">"https://www.ncdc.noaa.gov/cag/time-series/global/globe/land_ocean/1/12/1880-2017.csv"</span>, skip = <span class="hljs-number">4</span>)
+</code></pre><p>The first few rows should look like this:</p><p><img src="img/animations_6.jpg" alt=""></p><p>To animate this data by year, but plot each by month as if all the months were in the same year, we need to process the data as follows:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># process data
+global_temp_monthly &amp;lt;- global_temp_monthly %&amp;gt;%
+  rename(Yr_Mo = Year) %&amp;gt;%
+  mutate(Year = as.integer(substr(Yr_Mo,1,4)),
+         Date = as.Date(paste0(substr(Yr_Mo,1,4),
+                               &quot;-&quot;,
+                               substr(Yr_Mo,5,6),
+                               &quot;-01&quot;)),
+         Date_2017 = as.Date(paste0(&quot;2017-&quot;,
+                                    substr(Yr_Mo,5,6),
+                                    &quot;-01&quot;)))
+</code></pre>"><span class="hljs-comment"># process data</span>
+global_temp_monthly &lt;- global_temp_monthly %&gt;%
+  rename(Yr_Mo = Year) %&gt;%
+  mutate(Year = as.integer(substr(Yr_Mo,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>)),
+         Date = as.Date(paste0(substr(Yr_Mo,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>),
+                               <span class="hljs-string">"-"</span>,
+                               substr(Yr_Mo,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>),
+                               <span class="hljs-string">"-01"</span>)),
+         Date_2017 = as.Date(paste0(<span class="hljs-string">"2017-"</span>,
+                                    substr(Yr_Mo,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>),
+                                    <span class="hljs-string">"-01"</span>)))
+</code></pre><p>This code renames <code>Year</code>, which actually contains year and numeric month, to <code>Yr_Mo</code>. Then it uses the function <code>substr</code> to pull out the first four digits the create a new <code>Year</code> variable. It then creates two date columns, setting the date to the 1st of each month, and in the second case places all the dates in 2017. This sleight of hand is necessary to plot them as dates and have the lines stack up over one another. We can discuss why in class.</p><p>This code draws a chart with a line for every year:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># draw chart
+ggplot(global_temp_monthly, aes(x=Date_2017, 
+                                y=Value, 
+                                color = Value, 
+                                group = Year)) +
+  geom_line(size = 0.5, alpha = 0.5) + 
+  theme_dark(base_size = 20) +
+  scale_color_distiller(palette = &quot;RdYlBu&quot;, limits = c(-2,2), guide = FALSE) +
+  ylab(&quot;Diff. from C20th average (ºC)&quot;) +
+  xlab(&quot;&quot;) +
+  scale_x_date(date_labels = &quot;%b&quot;,
+               date_breaks = &quot;month&quot;) +
+  theme(panel.grid.minor = element_blank())
+</code></pre>"><span class="hljs-comment"># draw chart</span>
+ggplot(global_temp_monthly, aes(x=Date_2017, 
+                                y=Value, 
+                                color = Value, 
+                                group = Year)) +
+  geom_line(size = <span class="hljs-number">0.5</span>, alpha = <span class="hljs-number">0.5</span>) + 
+  theme_dark(base_size = <span class="hljs-number">20</span>) +
+  scale_color_distiller(palette = <span class="hljs-string">"RdYlBu"</span>, limits = c(-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), guide = <span class="hljs-literal">FALSE</span>) +
+  ylab(<span class="hljs-string">"Diff. from C20th average (ºC)"</span>) +
+  xlab(<span class="hljs-string">""</span>) +
+  scale_x_date(date_labels = <span class="hljs-string">"%b"</span>,
+               date_breaks = <span class="hljs-string">"month"</span>) +
+  theme(panel.grid.minor = element_blank())
+</code></pre><p>In the <code>aes</code> mapping, it is necessary to use <code>group = Year</code> to ensure that a separate line is drawn for each year.</p><p>The code uses another <strong>ggplot2</strong> built-in theme, <code>theme_dark</code>, to make the lightly colored lines show up against a dark background. The second <code>theme</code> function removes some of the grid lines.</p><p><code>scale_x_date</code> sets the breaks for the data as monthly, and formats the date labels as the abbreviated month (Jan, Feb, etc). See what happens if you comment out this part of the code.</p><p>This code will create a cumulative animation of the data:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># animation
+global_temp_monthly_chart &amp;lt;- ggplot(global_temp_monthly, aes(x=Date_2017, 
+                                                             y=Value, 
+                                                             color = Value, 
+                                                             group = Year, 
+                                                             frame = Year, 
+                                                             cumulative = TRUE)) +
+  geom_line(size = 0.5, alpha = 0.5) + 
+  theme_dark(base_size = 20) +
+  scale_color_distiller(palette = &quot;RdYlBu&quot;, limits = c(-2,2), guide = FALSE) +
+  ylab(&quot;Diff. from C20th average (ºC)&quot;) +
+  xlab(&quot;&quot;) +
+  scale_x_date(date_labels = &quot;%b&quot;,
+               date_breaks = &quot;month&quot;) +
+  theme(panel.grid.minor = element_blank())
+
+# save as GIF
+gganimate(global_temp_monthly_chart, &quot;warming_monthly.gif&quot;, ani.width = 750, ani.height = 450,  interval = 0.1)
+</code></pre>"><span class="hljs-comment"># animation</span>
+global_temp_monthly_chart &lt;- ggplot(global_temp_monthly, aes(x=Date_2017, 
+                                                             y=Value, 
+                                                             color = Value, 
+                                                             group = Year, 
+                                                             frame = Year, 
+                                                             cumulative = <span class="hljs-literal">TRUE</span>)) +
+  geom_line(size = <span class="hljs-number">0.5</span>, alpha = <span class="hljs-number">0.5</span>) + 
+  theme_dark(base_size = <span class="hljs-number">20</span>) +
+  scale_color_distiller(palette = <span class="hljs-string">"RdYlBu"</span>, limits = c(-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), guide = <span class="hljs-literal">FALSE</span>) +
+  ylab(<span class="hljs-string">"Diff. from C20th average (ºC)"</span>) +
+  xlab(<span class="hljs-string">""</span>) +
+  scale_x_date(date_labels = <span class="hljs-string">"%b"</span>,
+               date_breaks = <span class="hljs-string">"month"</span>) +
+  theme(panel.grid.minor = element_blank())
+
+<span class="hljs-comment"># save as GIF</span>
+gganimate(global_temp_monthly_chart, <span class="hljs-string">"warming_monthly.gif"</span>, ani.width = <span class="hljs-number">750</span>, ani.height = <span class="hljs-number">450</span>,  interval = <span class="hljs-number">0.1</span>)
+</code></pre><p>Again, we can increase the delay on the final frame of the GIF:</p><pre class="r hljs"><code class="R" data-origin="<pre><code class=&quot;R&quot;># increase delay on final frame
+system(&quot;convert warming_monthly.gif \\( +clone -set delay 300 \\) +swap +delete  warming_monthly_with_pause.gif&quot;)
+</code></pre>"><span class="hljs-comment"># increase delay on final frame</span>
+system(<span class="hljs-string">"convert warming_monthly.gif \\( +clone -set delay 300 \\) +swap +delete  warming_monthly_with_pause.gif"</span>)
+</code></pre><p>This should be the result:</p><p><img src="img/warming_monthly_with_pause.gif" alt=""></p><h3 id="further-reading/resources"><a name="further-reading/resources" href="#further-reading/resources"></a>Further reading/resources</h3><p><a href="http://www.imagemagick.org/Usage/">ImageMagick examples</a></p><p><a href="https://ffmpeg.org/ffmpeg.html">FFmpeg documentation</a></p>
+
 	</div> <!-- /.container all -->
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="../../js/bootstrap.min.js"></script>

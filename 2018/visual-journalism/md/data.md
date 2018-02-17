@@ -100,3 +100,9 @@ Contains the following files:
 - `food_stamps.csv` [U.S. Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, and costs, in $ billions, of the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
 - `seismic.zip` Zipped shapefile (see below) with data on the annual risk of a damaging earthquake for the continental United States, from the [U.S. Geological Survey](https://earthquake.usgs.gov/hazards/induced/).
 - `test.html` Web page to embed the interactive charts and maps we make today.
+
+### [Animation: GIFs and videos from R](data/animations-r.zip)
+
+- `nations.csv` Data from the World Bank Indicators portal, as used previously.
+
+
