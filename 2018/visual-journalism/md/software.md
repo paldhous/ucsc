@@ -50,12 +50,20 @@ xcode-select --install
  sudo port install ImageMagick
  ```
  You will be required to enter your Mac password. The installation will take some time to complete. This is a good time to make a cup of coffee.
+ 
  - When ImageMagick has installed, repeat the process for FFmpeg:
   ```R
  sudo port install ffmpeg
  ```
 
-On **Windows**, you should be able to install ImageMagick from [here](https://www.imagemagick.org/script/download.php#windows) and FFmpeg from [here](https://ffmpeg.zeranoe.com/builds/), installing the 64-bit, Static biuld.
+On **Windows**, you should be able to install ImageMagick and FFmpeg from [here](https://www.imagemagick.org/script/download.php#windows). Unless you have an old Windows 32-bit operating system, click on the HTTP download link to install the "Win64 dynamic at 16 bits-per-pixel component" version.
+
+When you get to the dialog box, make sure that the boxes are checked as follows, to ensure that you also install FFmpeg and the legacy utilities:
+
+![](./img/software_1.png)
+
+
+
 
 
 
