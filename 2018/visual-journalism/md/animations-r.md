@@ -142,7 +142,7 @@ When making GIFs, it is often a good idea to add a longer pause on the final fra
 system("convert nations.gif \\( +clone -set delay 300 \\) +swap +delete  nations_with_pause.gif")
 ```
 
-This code uses the `system` function to send ImageMagick code to your wider computer system. It has same effect as if you ran the ImageMagick code in the Terminal.
+This code uses the `system` function to send ImageMagick code to your wider computer system.
 
 `convert` is one of the main commands in ImageMagick, used to convert between image formats as well as to manipulate images in a variety of ways. Here, `delay 300` increases the delay on the final frame to 3 seconds.
 
@@ -233,7 +233,7 @@ Grab the URL for this data, as before, and load:
 
 ```R
 # load data
-global_temp_annual <- read_csv("https://www.ncdc.noaa.gov/cag/time-series/global/globe/land_ocean/1/12/1880-2017.csv", skip = 4)
+global_temp_monthly <- read_csv("https://www.ncdc.noaa.gov/cag/time-series/global/globe/land_ocean/all/12/1880-2017.csv", skip = 4)
 ```
 
 The first few rows should look like this:
