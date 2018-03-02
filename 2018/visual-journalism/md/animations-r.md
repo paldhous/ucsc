@@ -137,12 +137,21 @@ Here is the video:
 
 When making GIFs, it is often a good idea to add a longer pause on the final frame before the animation repeats. You can do this with the following code:
 
+**On the Mac:**
+
 ```R
 # increase delay on final frame
 system("convert nations.gif \\( +clone -set delay 300 \\) +swap +delete  nations_with_pause.gif")
 ```
 
-This code uses the `system` function to send ImageMagick code to your wider computer system.
+**On Windows:**
+
+```R
+# increase delay on final frame
+shell("convert nations.gif ( +clone -set delay 300 ) +swap +delete  nations_with_pause.gif")
+```
+
+This code uses the `system` or `shell` function to send ImageMagick code to your wider computer system.
 
 `convert` is one of the main commands in ImageMagick, used to convert between image formats as well as to manipulate images in a variety of ways. Here, `delay 300` increases the delay on the final frame to 3 seconds.
 
@@ -305,9 +314,17 @@ gganimate(global_temp_monthly_chart, "warming_monthly.gif", ani.width = 750, ani
 
 Again, we can increase the delay on the final frame of the GIF:
 
+**On the Mac:**
+
 ```R
 # increase delay on final frame
 system("convert warming_monthly.gif \\( +clone -set delay 300 \\) +swap +delete  warming_monthly_with_pause.gif")
+```
+
+**On Windows:**
+```R
+# increase delay on final frame
+shell("convert warming_monthly.gif ( +clone -set delay 300 ) +swap +delete  warming_monthly_with_pause.gif")
 ```
 
 This should be the result:
