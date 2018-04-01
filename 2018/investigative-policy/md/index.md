@@ -7,21 +7,21 @@ This class focuses on in-depth and investigative reporting, where science and te
 
 ### Week 2
 
-- #### Apr 12: [Investigative approaches](investigative-approaches.html)
+- #### Apr 12: [Investigative approaches](approaches.html)
 Discuss examples of investigative reports selected by students, studying methods employed.
 
 ### Week 3
 
-- #### Apr 17: [Using data in journalism](using-data-in-journalism.html)
+- #### Apr 17: [Using data in journalism](using-data.html)
 An introduction to data-driven journalism, with examples. Basic online resources for science reporters: Getting the most out of databases of scientific literature, patents, grants, clinical trials etc.
 
-- #### Apr 19: [Interviewing data](interviewing-data.html)
+- #### Apr 19: [Interviewing data](interview-data.html)
 Beyond the spreadsheet: We’ll use R and the tidyverse, which you worked with last quarter, to ask questons of data and find stories.
 
 ### Week 4
 
 
-- #### Apr 26: [Interviewing data 2](databases-and-sql.html)
+- #### Apr 26: [Interviewing data](interview-data.html)
 A continuation from week 3.
 
 ### Week 5
