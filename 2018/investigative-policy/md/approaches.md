@@ -2,25 +2,25 @@
 
 ### Students' picks:
 
-- #### Alex - 
+- #### Alex - [The killing agency: Wildlife Services' brutal methods leave a trail of animal death](http://www.sacbee.com/news/investigations/wildlife-investigation/article2574599.html)
 
-- #### Annie - 
+- #### Annie - [Unfounded: When Detectives Dismiss Rape Reports Before Investigating Them](https://www.buzzfeed.com/alexcampbell/unfounded)
 
-- #### Jennifer - 
+- #### Jennifer - [How the National Park Service is failing women](https://www.hcn.org/issues/48.21/how-the-park-service-is-failing-women)
 
-- #### Jeremy - 
+- #### Jeremy - [Inside a Secretive Lobbying Effort to Deregulate Federal Levees](https://www.propublica.org/article/deregulate-federal-levees-section-408-permit-secretive-lobbying-effort)
 
-- #### Katrina - 
+- #### Katrina - [Across the U.S., police contracts shield officers from scrutiny and discipline](https://www.reuters.com/investigates/special-report/usa-police-unions/)
 
-- #### Kimber - 
+- #### Kimber - [‘You Want A Description Of Hell?’ Oxycontin’s 12-hour Problem](http://www.latimes.com/projects/oxycontin-part1/)
 
-- #### Kimberly - 
+- #### Kimberly - [Animal trafficking: the $23bn criminal industry policed by a toothless regulator](https://www.theguardian.com/environment/2016/sep/26/animal-trafficking-cites-criminal-industry-policed-toothless-regulator)
 
-- #### Laura - 
+- #### Laura - [Wipeout: Human role in climate change removed from science report](https://www.revealnews.org/article/wipeout-human-role-in-climate-change-removed-from-science-report/)
 
-- #### Nicoletta -
+- #### Nicoletta - [New FDA: How a New Policy Led to Seven Deadly Drugs](http://www.pulitzer.org/winners/david-willman) (First story only.)
 
-- #### Vicky -  
+- #### Vicky - [Beyond Flint: High Lead Levels Found In 2,000 Water Systems Across USA](https://www.sej.org/sites/default/files/Lead-in-Water_unnumbered_R1.pdf)
 
 
 ### Thoughts arising from discussion
