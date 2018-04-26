@@ -39,5 +39,21 @@ Contains the following files:
  - `plicnum` State license number, from the original file.
  - `license` Processed from `pclicnum` to conform to the format of California medical license numbers.
 
+### [Download: Interviewing data 2](data/r-analysis2.zip)
+
+- `pfizer.csv` Payments made by Pfizer to doctors across the United States in the second half on 2009. Contains the following variables:
+ - `org_indiv` Full name of the doctor, or their organization.
+ - `first_plus` Doctor's first and middle names.
+ - `first_name` `last_name`. First and last names.
+ - `city` `state` City and state.
+ - `category of payment` Type of payment, which include `Expert-led Forums`, in which doctors lecture their peers on using Pfizer's drugs, and `Professional Advising.
+ - `cash` Value of payments made in cash.
+ - `other` Value of payments made in-kind, for example puschase of meals.
+ - `total` value of payment, whether cash or in-kind.
+
+- `fda.csv` Data on warning letters sent to doctors by the US Food and Drug Administration, because of problems in the way in which they ran clinical trials testing experimental treatments. Contains the following variables:
+ - `name_last` `name_first` `name_middle` Doctor's last, first, and middle names.
+ - `issued` Date letter was sent.
+ - `office` Office within the FDA that sent the letter.
 
 

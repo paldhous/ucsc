@@ -21,8 +21,8 @@ Beyond the spreadsheet: We’ll use R and the tidyverse, which you worked with l
 ### Week 4
 
 
-- #### Apr 26: [Interviewing data](interview-data.html)
-A continuation from week 3.
+- #### Apr 26: [Interviewing data 2](interview-data2.html)
+More practice with R and gthe tidverse.
 
 ### Week 5
 

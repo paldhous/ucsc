@@ -32,6 +32,7 @@
 								<li><a href="approaches.html">Investigative approaches</a></li>
 								<li><a href="using-data.html">Using data in journalism</a></li>
 								<li><a href="interview-data.html">Interviewing data</a></li>
+								<li><a href="interview-data2.html">Interviewing data 2</a></li>
 								<li><a href="nonprofits-people.html">Backgrounding non-profits, people</a></li>
 								<li><a href="companies.html">Backgrounding companies</a></li>
 								<li><a href="privacy-security.html">Privacy, security, and e-sleuthing</a></li>
@@ -63,6 +64,13 @@
 </li><li><p><code>npi_license.csv</code> Crosswalk file to join NPI identifiers to state license numbers, processed from the download available <a href="http://www.nber.org/data/npi-state-license-crosswalk.html">here</a> to include license numbers potentially matching California doctors. This will provide one way of joining the precription data to the medical board disciplinary data. As we shall see, problems with the data mean that it is not infallible. Contains the following variables:</p>
 <ul>
 <li><code>npi</code> National Provider Identifier, as described above.</li><li><code>plicnum</code> State license number, from the original file.</li><li><code>license</code> Processed from <code>pclicnum</code> to conform to the format of California medical license numbers.</li></ul>
+</li></ul><h3 id="[download:-interviewing-data-2](data/r-analysis2.zip)"><a name="[download:-interviewing-data-2](data/r-analysis2.zip)" href="#[download:-interviewing-data-2](data/r-analysis2.zip)"></a><a href="data/r-analysis2.zip">Download: Interviewing data 2</a></h3><ul>
+<li><p><code>pfizer.csv</code> Payments made by Pfizer to doctors across the United States in the second half on 2009. Contains the following variables:</p>
+<ul>
+<li><code>org_indiv</code> Full name of the doctor, or their organization.</li><li><code>first_plus</code> Doctor’s first and middle names.</li><li><code>first_name</code> <code>last_name</code>. First and last names.</li><li><code>city</code> <code>state</code> City and state.</li><li><code>category of payment</code> Type of payment, which include <code>Expert-led Forums</code>, in which doctors lecture their peers on using Pfizer’s drugs, and `Professional Advising.</li><li><code>cash</code> Value of payments made in cash.</li><li><code>other</code> Value of payments made in-kind, for example puschase of meals.</li><li><code>total</code> value of payment, whether cash or in-kind.</li></ul>
+</li><li><p><code>fda.csv</code> Data on warning letters sent to doctors by the US Food and Drug Administration, because of problems in the way in which they ran clinical trials testing experimental treatments. Contains the following variables:</p>
+<ul>
+<li><code>name_last</code> <code>name_first</code> <code>name_middle</code> Doctor’s last, first, and middle names.</li><li><code>issued</code> Date letter was sent.</li><li><code>office</code> Office within the FDA that sent the letter.</li></ul>
 </li></ul>
 
 	</div> <!-- /.container all -->
