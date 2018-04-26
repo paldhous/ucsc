@@ -22,7 +22,7 @@ Beyond the spreadsheet: We’ll use R and the tidyverse, which you worked with l
 
 
 - #### Apr 26: [Interviewing data 2](interview-data2.html)
-More practice with R and gthe tidverse.
+More practice with R and the tidverse.
 
 ### Week 5
 
