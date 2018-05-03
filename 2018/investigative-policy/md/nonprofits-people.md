@@ -28,27 +28,31 @@ Two websites provide a good starting point to search for nonprofits and view the
 
 ##### [Guidestar](http://www.guidestar.org/)
 
-From the homepage, you can search for non-profits by name. The advanced search page is [here](http://www.guidestar.org/AdvancedSearch.aspx). Once on the page for an individual non-profit, for example [here](http://www.guidestar.org/organizations/53-0196572/american-chemical-society.aspx) for the American Chemical Society, who will see a green button to the right to download the three most recent 990s:
+From the homepage, you can search for non-profits by name. The advanced search page is [here](http://www.guidestar.org/AdvancedSearch.aspx). Once on the page for an individual non-profit, for example [here](http://www.guidestar.org/organizations/53-0196572/american-chemical-society.aspx) for the American Chemical Society, who will see a button to the right to show and download the three most recent 990s:
 
 ![](img/nonprofits_people_1.jpg)
 
-You will need to [sign up](https://www.guidestar.org/Login.aspx) for a free account to view these forms. You can also pay for access to more reports and certain information extracted from them -- however, I have never found any need to do this.
+You will need to [sign up](https://www.guidestar.org/Account/Register) for a free account to view these forms. You can also pay for access to more reports and certain information extracted from them -- however, I have never found any need to do this.
 
 ##### [CitizenAudit](https://www.citizenaudit.org/)
 
 This is a project set up by the data journalist [Luke Rosiak](https://twitter.com/lukerosiak), originally with backing from the Sunlight Foundation. It is systematically digitizing 990s using optical character recognition, so that they become fully searchable. So not only can you use the search box on the home page to search for an organization and its 990s, but you can also search the documents for mentions of people, payments from one non-profit to another, and so on. There is a good write-up of its uses in journalism [here](http://www.icij.org/blog/2013/09/investigating-charities-how-search-finances-nonprofits-and-foundations).
 
-For comparison with Guidestar, [here](https://www.citizenaudit.org/530196572/) is the page for the American Chemical Society:
+For comparison with Guidestar, [here](https://www.citizenaudit.org/organization/530196572/american-chemical-society/) is the page for the American Chemical Society:
 
 ![](img/nonprofits_people_2.jpg)
 
-The `Tax Documents (Form 990s)` tab should have links to 990-EO and 990-T documents going back over 15 years. More recent ones should have searchable **Raw text**, although there is a delay between the documents being posted and the raw text being made available. (You can also download the scanned PDFs and search them directly in a PDF viewer such as Adobe Acrobat or Preview.)
+The `Tax Forms (Form 990s)` tab at left should have links to 990-EO and 990-T documents going back over 15 years. More recent ones should have searchable **Raw text**, although there is a delay between the documents being posted and the raw text being made available. (You can also download the scanned PDFs and search them directly in a PDF viewer such as Adobe Acrobat or Preview.)
 
-When CitizenAudit launched, it was entirely free. It has now become self-supporting, which means that after [40 searches or page views](https://www.citizenaudit.org/pages/faq/) from a particular IP address, you will be asked to sign up for a [paid account](https://www.citizenaudit.org/accounts/signup/). This limits its utility, however if you have a project for which you need to gather alot of information on non-profits, and particularly if you need to look at how money passes from one to another, buying a 30-day pass for $99 may be a worthwhile option. The full **Funders and Grantees** section, which lists organizations giving and receiving money to the non-profit in question, is only available with a paid account.
+When CitizenAudit launched, it was entirely free. It has now become self-supporting, which means that after [40 searches or page views](https://www.citizenaudit.org/pages/faq/) from a particular IP address, you will be asked to sign up for a [paid account](https://www.citizenaudit.org/accounts/signup/). This limits its utility, however if you have a project for which you need to gather alot of information on non-profits, and particularly if you need to look at how money passes from one to another, buying a 30-day pass for $99 may be a worthwhile option.
+
+The other tabs at left allow you to view and download  structured data extracted from the Forms 990. (The download button is only available to paying customers, but you can use the [Chrome Table Capture plugin]((if you have a paid account, but you can also use the Chrome Table Capture Plugin)) as a workaround.)
+
+The `Grants` and `Related & Supported Organizations` tabs are especially usedul at looking for transfers of money in and out of nonprofits. We'll come back and look at these after looking at a sample Form 1990.
 
 ##### What's in a Form 990-EO?
 
-Do check to see whether the return is form anything other than a full calendar year, and for check marks near the top that may identify initial or amended returns.
+Do check to see whether the return is from anything other than a full calendar year, and for check marks near the top that may identify initial or amended returns.
 
 - **Part I** gives a summary of revenue and expenses over the past two years.
 
@@ -72,7 +76,7 @@ Do check to see whether the return is form anything other than a full calendar y
 
 	Look out for **2**, which details family or business interests between officers, directors, trustees, or key employees; **5** asks whether the organization became aware of embezzlement; **15** asks about procedures for determining the pay of top employees; **17** lists the states in which the organization is obliged to file a copy of the 1990, useful for determining where it operates.
 
-- **Part VII** lists and gives compensation for: 
+- **Part VII** lists and gives compensation for:
 
 	A) Officers, directors and trustees and key employees.
 B) Five current highest compensated employees paid more than $100,000.
@@ -96,7 +100,9 @@ E) Five highest paid independent contractors paid more than $100,000.
 
 - **C** documents political campaign and lobbying activities.
 
-- **I** documents grants awarded.
+- **F** documents grants awarded outside the U.S.
+
+- **I** documents grants awarded in the U.S.
 
 - **J** has more details on compensation of directors, officers, key employees etc.
 
@@ -108,17 +114,17 @@ E) Five highest paid independent contractors paid more than $100,000.
 
 ##### An example Form 990
 
-[Here](ACS_2015_990.pdf) is the latest (2015) Form 990 for the American Chemical Society:
+[Here](ACS_2016_990.pdf) is the latest (2016) Form 990 for the American Chemical Society:
 
 
-	<object class="pdf" data="ACS_2015_990.pdf" type="application/pdf" width="100%" height="1000px">
-		<p>Your web browser doesn't have a PDF Plugin. Instead you can <a href="ACS_2015_990"> Click
-here to download the PDF</a></p>
+<object class="pdf" data="ACS_2016_990.pdf" type="application/pdf" width="100%" height="1000px">
+		<p>Your web browser doesn't have a PDF Plugin. Instead you can <a href="ACS_2015_990"> Click here to download the PDF</a></p>
 	</object>
+
 
 In class, we will use this form to answer the following questions:
 
-- What was the ACS's total revenue in 2015?
+- What was the ACS's total revenue in 2016?
 
 - What were its total expenses?
 
@@ -132,23 +138,30 @@ In class, we will use this form to answer the following questions:
 
 ##### More resources for reporting on nonprofits
 
-For excellent reporting on charities behaving badly, read [America's Worst Charities](http://cironline.org/americasworstcharities), by the Center for Investigative Reporting and the *Tampa Bay Times*. [Kendall Taggart](https://www.buzzfeed.com/kendalltaggart), now with BuzzFeed News, has a [great slide deck](http://slides.com/kendall/mining-nonprofit-data#/) explaining the resources she used to report these stories. She explains more about how the reporting was done [here](http://cironline.org/reports/how-we-identified-nations-worst-charities-4630).
+For excellent reporting on charities behaving badly, read [America's Worst Charities](https://www.revealnews.org/topic/charities/), by the Center for Investigative Reporting and the *Tampa Bay Times*. [Kendall Taggart](https://www.buzzfeed.com/kendalltaggart), now with BuzzFeed News, has a [great slide deck](http://slides.com/kendall/mining-nonprofit-data#/) explaining the resources she used to report these stories. She explains more about how the reporting was done [here](https://www.revealnews.org/article/how-we-identified-the-nations-worst-charities/).
 
-America's Worst Charities is particularly interesting because the reporters didn't just analyze the spending of one or two charities: They looked at thousands, focusing on those that used the services of professional fundraising companies, and then highlighting those that spent proportionately the least on their supposed charitable function. To do this, they downloaded [bulk financial data](https://www.irs.gov/uac/SOI-Tax-Stats-Annual-Extract-of-Tax-Exempt-Organization-Financial-Data), extracted from 990s, provided by the IRS. The slide deck explains that they used Open Refine for cleaning this data, and SQLite for analyzing it -- tools we've explored in previous weeks.
+America's Worst Charities is particularly interesting because the reporters didn't just analyze the spending of one or two charities: They looked at thousands, focusing on those that used the services of professional fundraising companies, and then highlighting those that spent proportionately the least on their supposed charitable function. To do this, they downloaded [bulk financial data](https://www.irs.gov/statistics/soi-tax-stats-annual-extract-of-tax-exempt-organization-financial-data), extracted from 990s, provided by the IRS.
 
 The slide deck also recommends resources to track charity finances available in [some states](http://slides.com/kendall/mining-nonprofit-data#/16), and a [database of disciplinary actions](http://charitysearch.apps.cironline.org/) taken by states against charities, compiled by CIR and the *Tampa Bay Times*. The actions underlying this database, which will only be complete up to the publication of America's Worst Charities in 2013, were obtained by public records requests.
 
 ### People
 
-Searching for information on individual people can be difficult, without access to a commercial research tool such as [Accurint](http://www.accurint.com/), or TransUnion's [TLOxp](https://tloxp.tlo.com/). In my experience, most online search sites that offer background checks, contact information, and so on, are more effective at parting you from your money than providing good information.
+Searching for information on individual people can be difficult, without access to a commercial research tool such as [Accurint](http://www.accurint.com/), or TransUnion's [TLOxp](https://tloxp.tlo.com/). I can show you how TLOxp works in class.
+
+In my experience, most online search sites that offer background checks, contact information, and so on, are more effective at parting you from your money than providing good information.
 
 If you don't have access to these resources, it helps to think about official agencies to which individuals must report information. [Who Is John Doe](http://www.reporter.org/desktop/tips/johndoe.htm), a site put together by investigative reporter [Duff Wilson](http://www.journalism.columbia.edu/profile/395-duff-wilson/10), provides a very useful guide to potential sources of information. [Here](http://www.peoplesearchpro.com/journalism/people/) is another site that provides links to various people-searching resources.
 
+Nowadays, I regularly use LinkedIn to find sources, especially when I need to reach people who work or who have worked for particular organizations, and to contact sources who keep their emails and phone numbers out of the public domain. [LinkedIn Premium](https://premium.linkedin.com/) is very useful for finding and communicating with these people. This can be free for [journalists](https://premium.linkedin.com/). It offers some improved search features, but the main benefit is InMail, which allows you to send messages to people who are not in your contacts on LinkedIn.
+
+For regular folks, Facebook is an incredibly useful resource, for finding people, and connections between them.
+
+
 ### Federal courts
 
-Cases in federal courts (district, banruptcy, and appellate) can be searched at **[PACER](https://www.pacer.gov/)** (Public Access to Court Electronic Records). Register for an account [here](https://pacer.psc.uscourts.gov/pscof/regWizard.jsf). Once you have an account, follow the `FIND A CASE` link in the top navigation bar and then `Seach the PACER Case locator` to reach the [search](https://pcl.uscourts.gov/search) page.
+Cases in federal courts (district, banruptcy, and appellate) can be searched at **[PACER](https://www.pacer.gov/)** (Public Access to Court Electronic Records). Register for an account [here](https://pacer.psc.uscourts.gov/pscof/regWizard.jsf). Once you have an account, follow the `FIND A CASE` link in the top navigation bar and then `Search the PACER Case locator` to reach the [landing page](https://pcl.uscourts.gov/pcl/pages/welcome.jsf) for case searches.
 
-You can then search by court type, region, case number and so on. Usually, your starting point will be to search by `Party Name`.
+Usually you will want to search on the `Find cases (Advanced)` if you know the case number or title, or more often `Find parties (Advanced)`, where you can search by the names of parties to a case, court types, dates, and so on.
 
 When you run a search, if any cases are found you will see a screen like this, here showing a search for Contender Farms, a horse breeder that sued the US Department of Agriculture over its animal welfare enforcement, as described in [this story](https://www.buzzfeed.com/peteraldhous/usda-animal-welfare-redacted-documents):
 
