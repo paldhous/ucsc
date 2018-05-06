@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Backgrounding companies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="../../css/custom2.css" rel="stylesheet">
+
+ <style>
+.presentation-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 55%
+}
+
+.presentation-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+</head>
+
+<body class="markdown github">
+
+	<header class="navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<nav role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand">Investigating science</a>
+				</div> <!-- /.navbar-header -->
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Class notes<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="approaches.html">Investigative approaches</a></li>
+								<li><a href="using-data.html">Using data in journalism</a></li>
+								<li><a href="interview-data.html">Interviewing data</a></li>
+								<li><a href="interview-data2.html">Interviewing data 2</a></li>
+								<li><a href="nonprofits-people.html">Backgrounding non-profits, people</a></li>
+								<li><a href="companies.html">Backgrounding companies</a></li>
+								<li><a href="privacy-security.html">Privacy, security, and e-sleuthing</a></li>
+								<li><a href="ben-welsh.html">Guest lecturer: Ben Welsh</a></li>
+								<li><a href="scientific-misconduct.html">Misconduct and ethics in science</a></li>
+								<li><a href="journalism-ethics.html">Ethics in journalism</a></li>
+							</ul>
+						</li>
+						<li>
+						<li><a href="software.html">Software</a></li>
+						<li><a href="datasets.html">Data</a></li>
+						<li><a href="mailto:p.aldhous@gmail.com">Email instructor</a></li>					
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
+		</div> <!-- /.navbar-header -->
+	</header>
+
+	<div class="container all">
+
+<h1 id="backgrounding-companies"><a name="backgrounding-companies" href="#backgrounding-companies"></a>Backgrounding companies</h1><p>If a company is public, meaning that its shares are traded on a stock exchange, then the value of its shares, and the volume of their trading, can provide useful information about its general health, and reveal significant events affecting the company. <a href="https://www.google.com/finance">Google</a> and <a href="https://finance.yahoo.com/">Yahoo</a> both operate finance sites at which you can view these metrics over time.</p><p>In class, we will use Yahoo Finance to explore the history of trading in the stock of companies including Valeant Pharmaceuticals, which became controversial in 2015 after <a href="http://www.businessinsider.com/why-have-valeant-pharmaceuticals-shares-collapsed-2015-11">being accused of price gouging</a>.</p><p>You can search for companies using their names or abbreviated stockmarket ticker symbools( see <a href="https://finance.yahoo.com/lookup">here</a>).</p><p>Search for Valeant or VRX, select its main presence on the New York Stock Exchange (NYSE), and you will end up on <a href="https://finance.yahoo.com/quote/VRX?p=VRX">this page</a>:</p><p><img src="img/companies_1.jpg" alt=""></p><p>Now switch to the <code>Chart</code> tab and select <code>Full screen</code>. The default chart will look something like this, with a line showing the stock price, and the bars at the bottom showing the trading volume for each interval (here one day):</p><p><img src="img/companies_2.jpg" alt=""></p><p>You can set customized date ranges, change the chart types, and add comparisons to the chart. Here I’ve selected the last 5 yearsm added GlaxoSmithKline for a more conventional drug company, and the NYSE index to compare the stock market as a whole:</p><p><img src="img/companies_3.jpg" alt=""></p><p>Go <code>Back</code> from the chart and select the <code>Historical data</code> tab, and you can download data for any search. This can be useful if you want to make your own charts.</p><h3 id="securities-and-exchange-commission"><a name="securities-and-exchange-commission" href="#securities-and-exchange-commission"></a>Securities and Exchange Commission</h3><p>Public companies are regulated by the <a href="https://www.sec.gov/Article/whatwedo.html"><strong>Securities and Exchange Commission</strong></a> (SEC), which describes its role as to “protect investors, maintain fair, orderly, and efficient markets, and facilitate capital formation.” Traded companies are obliged to report certain information to the SEC, which you can view by searching for them at the SEC’s main <a href="https://www.sec.gov/edgar/searchedgar/companysearch.html">company search page</a>.</p><p>At the page for each company, you will find its filings to the SEC over time. Here is a guide to the codes for some of the most important documents:</p><ul>
+<li><p><strong>10-K</strong> is the annual report, giving  year-end financial statements, a history of the company, legal entanglements, insider conflicts of interest and a detailed management discussion of the company’s prospects. The section marked <strong>Risk Factors</strong> is especially informative. It is where a company describes all the things that might harm its prospects. This is where companies speak the truth that otherwise they would never utter — they do this here because it protects them from being accused by the SEC of misleading investors if they get into serious financial trouble. <a href="https://www.sec.gov/Archives/edgar/data/1076481/000119312510057418/d10k.htm">Here</a> is the 10-K filed for 2009 by the diagnostics company Sequenom, in which this section makes for particularly interesting reading!</p>
+</li><li><p><strong>10-Q</strong> is the quarterly financial report.</p>
+</li><li><p><strong>DEF 14A</strong> is the proxy statement, which gives salaries, bonuses and stock holdings of top executives. It also gives biographies of some executives and directors, and lists the largest shareholders.</p>
+</li><li><p><strong>8-K</strong> announces important breaking news that may affect the stock price. Biomedical companies, for example, will report key results from clinical trials here.</p>
+</li><li><p><strong>Form 4 and Schedule 13D</strong> report stock transactions by insiders and key shareholders.</p>
+</li></ul><p>You can search for SEC enforcement actions <a href="http://www.sec.gov/litigation.shtml">here</a>. Try searching for Sequenom and see what you find! (This <a href="https://www.newscientist.com/blogs/shortsharpscience/2009/09/claims-for-safer-downs-test-cr.html">brief story</a> will provide some background to why Sequenom got into trouble.)</p><p><a href="https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp">Here</a> is the SEC’s full text search, which can be useful, for example, for finding references to individuals, and privately-held companies, in documents filed by publicly-traded companies. (<a href="https://www.sec.gov/edgar/searchedgar/edgarfulltextfaq.htm">Here</a> is the FAQ page for that search form, explaining how to use it to best effect.</p><h3 id="sqoop"><a name="sqoop" href="#sqoop"></a>Sqoop</h3><p><strong><a href="https://sqoop.com/">Sqoop</a></strong> is a relatively new site that aims to provide a one-stop-shop for information on companies. Sign up for a free account <a href="https://sqoop.com/users/sign_up">here</a>.</p><p>You can search using the names of companies, individual corporate officers, or keywords, and it will return links to SEC filings, patents, cases in federal courts, and Departmet of Justice press releases. (You will still need a login for the <a href="https://www.pacer.gov/">PACER</a> federal court search system to access federal court documents.)</p><p>Here are the results for a search on Valeant:</p><p><img src="img/companies_4.jpg" alt=""></p><p>You can save a search to receive updates by email of new documents.</p><p>If you are a local reporter, Squoop also provides the option to <a href="https://sqoop.com/blog/2016-03-11-geographic-search">narrow your SEC filing searches by geography</a>. Click on the <code>Locations</code> button after running your search to activate this option.</p><p>Sqoop is currently made freely avilable to journalists, as it tries to expand its user base. It is a for-profit, however, so it is possible that charges will be introduced in future.</p><h3 id="privately-held-companies"><a name="privately-held-companies" href="#privately-held-companies"></a>Privately-held companies</h3><p>It is much harder to do background research on privately-held companies, which do not have to file reports to the SEC. Many of technology companies you are likely to be most interested in as science reporters will be privately held, backed by venture capital.</p><p>An example is Theranos, the blood-testing diagnostics company that became mired in a <a href="https://www.wired.com/2016/05/everything-need-know-theranos-saga-far/">major scandal</a> after a Pulitzer-winning reporter with the <em>Wall Street Journal</em> started to investigate its scientific claims and glowing media coverage. Things have done from <a href="http://www.businessinsider.com/theranos-founder-ceo-elizabeth-holmes-life-story-bio-2018-4">bad to worse</a> since then.</p><p>So think about the agencies (state and federal) that have some oversight or regulatory role. For example, a company running animal experiments will have to file reports about its use of animals to the U.S. Department of Agriculture’s Animal and Plant Health Inspection Service, and will be inspected from time to time, see <a href="https://www.aphis.usda.gov/aphis/ourfocus/animalwelfare/sa_awa/awa-inspection-and-annual-reports">here</a>.</p><p>Does the company, its staff, or facilities, need to be licensed? Doctors and many other professionals do, and their licensing information will usually be searchable online, and will including disciplinary actions. Many types of businesses, from car repair shops to nursing homes, will also have to be licensed, usually at the state level.</p><p>Does the company have a loan from the Small Business Adminstration? Search <a href="http://web.sba.gov/pro-net/search/dsp_dsbs.cfm">here</a>. Does it have a Small Business Innovation Research grant? Search <a href="https://www.sbir.gov/sbirsearch/award/all">here</a>.</p><p>Has the company received any other grants or contracts from the federal government? Search at <a href="https://www.usaspending.gov/Pages/Default.aspx">USASpending.gov.</a></p><p>Does the company have problems with Occupational Safety and Health, either at the <a href="https://www.osha.gov/oshstats/index.html">federal</a> or state (<a href="https://www.dir.ca.gov/dosh/">here</a>, for California) level? (Note, Cal/OSHA files its inspection and enforcement activity in the federal database.)</p><p>Companies’ own press releases can be useful, and are now usually archived online, either on a company’s own website, or through services like <a href="http://www.prnewswire.com/">CISION/PR Newswire</a> and <a href="http://www.marketwired.com/">MarketWired</a>.</p><p>In the U.S., companies are registered with the authorities in the state they call home. You can search for businesses registered in California <a href="https://businesssearch.sos.ca.gov/">here</a>. Find out more about available information <a href="http://www.sos.ca.gov/business-programs/business-entities/information-requests/">here.</a> You can order basic documents about companies’ registration <a href="http://bpd.cdn.sos.ca.gov/pdf/be-records-requests.pdf">using this form</a>.</p><p>But be aware that the name a company trades under may not be its registered name. To find out the registered name, you may need to run a “fictitious business name” search at the county level. <a href="http://sccounty01.co.santa-cruz.ca.us/clerkrecorder/Asp/FBNInquiry.asp">Here</a> is the search site for Santa Cruz County, and <a href="http://www.brbpub.com/">here</a> is useful a site from which you can navigate down to all sorts of public records at state and country levels, including fictitious business name searches.</p><p><a href="https://opencorporates.com/"><strong>OpenCorporates</strong></a> is an ambitious effort to build a database of information on companies throughout the world, public and private.</p><h3 id="lawsuits"><a name="lawsuits" href="#lawsuits"></a>Lawsuits</h3><p>Companies are frequently involved in lawsuits, so use court searches to identify these.</p>
+
+	</div> <!-- /.container all -->
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>
