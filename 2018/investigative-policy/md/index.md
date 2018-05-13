@@ -16,7 +16,7 @@ Discuss examples of investigative reports selected by students, studying methods
 An introduction to data-driven journalism, with examples. Basic online resources for science reporters: Getting the most out of databases of scientific literature, patents, grants, clinical trials etc.
 
 - #### Apr 19: [Interviewing data](interview-data.html)
-Beyond the spreadsheet: We’ll use R and the tidyverse, which you worked with last quarter, to ask questons of data and find stories.
+Beyond the spreadsheet: We’ll use R and the tidyverse, which you worked with last quarter, to ask questions of data and find stories.
 
 ### Week 4
 
@@ -50,7 +50,7 @@ Ben Welsh, *Los Angeles Times* data desk editor, will explain how the *LA Times*
 
 ### Week 9
 
-- #### May 31: [Misconduct and ethics in science](scientific-misconduct.html)
+- #### May 29: [Misconduct and ethics in science](scientific-misconduct.html)
 Reporting on scientific misconduct, research ethics, and other misbehavior by scientists.
 
 
