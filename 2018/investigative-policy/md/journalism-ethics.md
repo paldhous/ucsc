@@ -6,7 +6,7 @@
 
 3. A reporter learns from a source within the semiconductor industry of a company that offers its services to manufacturers facing claims that their workers are suffering from illnesses caused by chemical exposure in the workplace. According to the source, the company will, for a fee, recruit scientists who will attempt to place review, commentary, and correspondence n scientific journals casting doubt on links between the chemical exposure and disease. The source will only talk on condition that he is not quoted by name. But this is not enough on which to base a story, so the reporter poses as a PR consultant representing the CEO of a manufacturer facing similar problems, and approaches the company as a prospective client. In this way, he obtains details of the services the company offers, confirming the original source’s claims.
 
-4. A reporter becomes aware of websites that appear to be offering a form of genetic testing in a country in which these tests are illegal -- the sites have domain names specific to that country (although some actually seem to be hosted elsewhere), and quote prices in the country’s currency. A reporter poses as a customer in that country, sending email queries asking if they will perform tests which he knows are illegal.
+4. A reporter becomes aware of websites that appear to be offering a form of genetic testing in a country in which these tests are illegal -- the sites have domain names specific to that country (although some actually seem to be hosted elsewhere), and quote prices in the country’s currency. The reporter poses as a customer in that country, sending email queries asking if they will perform tests which he knows are illegal.
 
 5. It is the run up to publication of a major scientific project, by two competing teams, in competing journals. While a reporter from one of those journals is working on a story about the projects, a leader of one team casts aspersions about the quality of the other project's work. The team leader says that he is not willing to be quoted by name.
 
@@ -26,7 +26,7 @@ Here are the two leading journalism ethics codes:
 
 - [Society of Professional Journalists](https://www.spj.org/ethicscode.asp)
 
-- [Associated Press Media Editors](http://www.apme.com/?page=EthicsStatement)
+- [Associated Press Media Editors](https://www.apme.com/page/EthicsStatement?)
 
 Remember that these are codes rather than hard-and-fast rules. They won't tell you what to do, but they will help you make decisions that balance benefit and harm for the public good. Also remember that rule of thumb: What would reasonable people think, if my conduct in reporting this story was covered by another reporter?
 
