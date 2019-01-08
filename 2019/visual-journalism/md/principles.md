@@ -229,7 +229,7 @@ So be wary of falling into similar traps when drawing any chart that illustrates
 
 Relationships between variables aren't always best described by straight lines, as we can see from this plot of data from 2016 on GDP per capita against life expectancy.
 
-![](./img/principles_16.jpg)
+![](./img/principles_16.png)
 
 (Source: Peter Aldhous, from [World Bank](http://data.worldbank.org/indicator/all) data)
 
@@ -237,7 +237,7 @@ I have plotted a line of best fit through the data -- which is a curve that firs
 
 So why don't the final frames of the Gapminder video show the countries clustered around a similar curve? Well, here is the same data, now plotted in the same way as in the Gapminder video:
 
-![](./img/principles_17.jpg)
+![](./img/principles_17.png)
 
 (Source: Peter Aldhous, from [World Bank](http://data.worldbank.org/indicator/all) data)
 
