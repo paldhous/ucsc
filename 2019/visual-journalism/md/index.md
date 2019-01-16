@@ -16,7 +16,7 @@ Where and how to find data online. Tips and tricks for downloading unruly data, 
 - #### Jan 14: [Processing and cleaning data](cleaning-data.html)
 We will use [Open Refine](http://openrefine.org/) to process and clean “dirty data,” and learn how to obtain a script to repeat a data processing recipe on data in the same format.
 
- -  **Assignment:** Pitch a data visualization project, placing this in the context of the wider story you are pursuing. This could be your feature, or . Include the data sources you intend to use, the questions you want to ask of the data, and what you want to show. **Due Sat Jan 18 at 8pm.**
+ -  **Assignment:** Pitch a data visualization project, placing this in the context of the wider story you are pursuing. This could be your feature, or it could feed into an unrelated video project. Include the data sources you intend to use, the questions you want to ask of the data, and what you want to show. **Due Sat Jan 18 at 8pm.**
 
 
 - #### Jan 16: [Basic charts with Plotly](basic-charts.html)
