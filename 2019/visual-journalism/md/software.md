@@ -16,8 +16,10 @@ Our spreadsheet application for these classes will be Google Sheets. Use from yo
 ### [Plotly](https://plot.ly/online-chart-maker/)
 A web app for making charts from data. Sign up for a free account [here](https://plot.ly/Auth/login/?action=signup#/).
 
-### [R](https://www.r-project.org/) and [R Studio](https://www.rstudio.com/)
-R is a software environment and programming language for statistical computing, data analysis, and graphics. Think of it as a Swiss Army knife for working with data. Download the latest installer for your operating system from [here](https://cran.rstudio.com/). R Studio provides a user interface that makes it much easier to use. Download the latest **free** version of RStudio Desktop [from here](https://www.rstudio.com/products/rstudio/download/).
+### [R Studio Cloud](https://rstudio.cloud/)
+R is a software environment and programming language for statistical computing, data analysis, and graphics. Think of it as a Swiss Army knife for working with data. RStudio is a user interface that makes it much easier to use. We will use [RStudio Cloud](https://rstudio.cloud/), so we are all working in exactly the same environment. You will receive an email to sign up.
+
+If you continue to work in R after this class, you will probably want to install the software on your own machine. Download the latest R installer for your operating system from [here](https://cran.rstudio.com/), and download the latest **free** version of RStudio Desktop [from here](https://www.rstudio.com/products/rstudio/download/).
 
 ### [Sublime Text](https://www.sublimetext.com/)
 
