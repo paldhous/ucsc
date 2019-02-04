@@ -644,10 +644,13 @@ immun_top5_year <- semi_join(immun_counties_year, top5)
 ```
 Notice the use of `semi_join` to filter the data for just the five counties with the largest kindergarten enrollment.
 
-### End your RStudio session
+### Exporting files from RStudio Cloud
+
+Check the files you want to export in the `Files` tab at bottom right. Then select `More>Export` and at the dialog box click `Download`. This will export the files you have selected to your local machine.
+
+### Clean up and close your RStudio Cloud session
 
 Before you exit RStudio Cloud, save and close your script, save the data in your Environment, and close any data files you have open in `View`. Click the broom icon in the environment to clear the objects in memory. Finally, in the Console, type `Ctrl-L` to clear the console.
-
 
 ### Further reading
 
