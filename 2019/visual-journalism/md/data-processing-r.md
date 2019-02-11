@@ -66,7 +66,7 @@ Download the data for this session from [here](data/data-processing-r.zip). You 
 
 Data journalism should ideally be fully documented and reproducible. R makes this easy, as every operation performed can be saved in a script, and repeated by running that script. Click on the ![](./img/data_processing_r_3.jpg) icon at top left and select `R Script`. A new panel should now open:
 
-![](data_processing_r_4.jpg)
+![](./img/data_processing_r_4.jpg)
 
 Any code we type in here can be run in the console. Hitting `Run` will run the line of code on which the cursor is sitting. To run multiple lines of code, highlight them and click `Run`.
 
@@ -189,7 +189,7 @@ Notice that the `Environment` now contains two objects.
 
 If your enviroment is in the `List` view (look at top right), use the drop-down menu to switch to the `Grid` view.
 
-The two objects will be of type `spec_tbl_df f`, a variety of the standard R object for holding tables of data, known as a **data frame**:
+The two objects will be of type `spec_tbl_df`, a variety of the standard R object for holding tables of data, known as a **data frame**:
 
 ![](./img/data_processing_r_7.jpg)
 
