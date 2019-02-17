@@ -71,17 +71,32 @@ Contains the following files:
   - `start_year` Year of entry (for the 2015-2016 school year, for example, this would be 2015).
 - `nations.csv` Data from World Bank World Development Indicators portal, giving data on population, GDP per capita, life expectancy, birth rate, neonatal mortality rate, region and income group for the world's nations, from 1990 onwards, as used in the previous class.
 
-### [From R to interactive charts and maps](data/interactives-r.zip)
+### [From R to interactive charts and maps](data/interactive-charts-r.zip)
+
+- `food_stamps.csv` [US Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, in the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
 
 - `disease_democ.csv` Data illustrating a controversial theory suggesting that the emergence of democratic political systems has depended largely on nations having low rates of infectious disease, as used previously.
+
 - `kindergarten.csv` Data from the [California Department of Public Health](https://data.chhs.ca.gov/dataset/school-immunizations-in-kindergarten-by-academic-year), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2015, as used previously.
 - `nations.csv` Data from the World Bank Indicators portal, as used previously.
-- `food_stamps.csv` [U.S. Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, and costs, in $ billions, of the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
-- `seismic.zip` Zipped shapefile (see below) with data on the annual risk of a damaging earthquake for the continental United States, from the [U.S. Geological Survey](https://earthquake.usgs.gov/hazards/induced/).
+- `seismic.zip` Zipped [shapefile](https://en.wikipedia.org/wiki/Shapefile) with data on the annual risk of a damaging earthquake for the continental United States, from the [US Geological Survey](https://earthquake.usgs.gov/hazards/induced/).
+
 - `test.html` Web page to embed the interactive charts and maps we make today.
 
 ### [Animation: GIFs and videos from R](data/animations-r.zip)
 
-- `nations.csv` Data from the World Bank Indicators portal, as used previously.
+- `nations.csv` Data from the World Bank Indicators portal, as used in week 3 and subsequently.
+- `warming.csv` [National Oceanic and Atmospheric Administration data](https://www.ncdc.noaa.gov/cag/global/time-series/globe/land_ocean/ytd/12/1880-2017.csv) on the annual average global temperature, from 1880 to 2017.
+  - `year`
+  - `value` Average global temperature, compared to average from 1900-2000.
+- `simulations.csv` Data from NASA simulations of historical temperatures, estimating the effect of natural and human influences on climate, processed from the [raw data](https://www.bloomberg.com/graphics/2015-whats-warming-the-world/data/forcings.csv) used for this [piece from Bloomberg News](https://www.bloomberg.com/graphics/2015-whats-warming-the-world/). Contains the following variables:
+  - `year`
+  - `type` Natural or Human
+  - `value` Global average temperature from the simulation, relative to average simulated value from 1990-2000.
+
+
+
+
+
 
 

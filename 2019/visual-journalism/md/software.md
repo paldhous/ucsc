@@ -28,11 +28,9 @@ For some exercises, you will need a text editor optimized for authoring web page
 ### [ColorBrewer](http://colorbrewer2.org/)
 Your go-to resource for color schemes to encode data. Web app: no installation required.
 
-### [ImageMagick](https://imagemagick.org/script/index.php) and [FFmpeg](https://ffmpeg.org/)
+### [FFmpeg](https://ffmpeg.org/)
 
-ImageMagick is a software library for creating, editing, converting and manipulating images, including animated GIFs. FFmpeg is a software library that records and converts audio and video.
-
-We will use them in conjunction with R to make animated graphics. They take some time to install, so it is important that you do this before class.
+FFmpeg is a software library that records and converts audio and video.
 
 Here are the steps for installation on the **Mac**:
 
@@ -50,16 +48,11 @@ xcode-select --install
  - [Download and install](https://www.macports.org/install.php) the correct version of MacPorts for your Mac OS.
 
  - In the Terminal, enter:
- ```R
- sudo port install ImageMagick
- ```
- You will be required to enter your Mac password. The installation will take some time to complete. This is a good time to make a cup of coffee.
- - When ImageMagick has installed, repeat the process for FFmpeg:
   ```R
  sudo port install ffmpeg
  ```
 
-On **Windows**, you should be able to install ImageMagick and FFmpeg from [here](https://www.imagemagick.org/script/download.php#windows). Unless you have an old Windows 32-bit operating system, click on the HTTP download link to install the "Win64 dynamic at 16 bits-per-pixel component" version.
+On **Windows**, you should be able to install ImageMagick, a softawre library for manipulating images, and FFmpeg from [here](https://www.imagemagick.org/script/download.php#windows). Unless you have an old Windows 32-bit operating system, click on the HTTP download link to install the "Win64 dynamic at 16 bits-per-pixel component" version.
 
 When you get to the dialog box, make sure that the boxes are checked as follows, to ensure that you also install FFmpeg and the legacy utilities:
 
