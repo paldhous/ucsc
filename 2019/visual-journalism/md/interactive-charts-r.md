@@ -10,7 +10,7 @@ This means you can work in a single environment to both process data and make on
 
 Download the data for this session from [here](data/interactive-charts-r.zip), unzip the folder and place it on your desktop. It contains the following files:
 
-- `food_stamps.csv` [US Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, in the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
+- `food_stamps.csv` [US Department of Agriculture data](http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap) on the number of participants, in millions, and costs, in $ billions, of the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.
 
 - `disease_democ.csv` Data illustrating a controversial theory suggesting that the emergence of democratic political systems has depended largely on nations having low rates of infectious disease, as used previously.
 
@@ -49,7 +49,7 @@ food_stamps <- read_csv("interactive-charts-r/food_stamps.csv")
 food_stamps_chart <- ggplot(food_stamps, aes(x = year, y = participants)) +
   xlab("Year") +
   ylab("Participants (millions)") +
-  theme_minimal(base_size = 14, base_family = "Georgia")
+  theme_minimal(base_size = 14, base_family = "Georgia") +
   geom_point() +
   geom_line()
 

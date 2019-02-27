@@ -10,7 +10,7 @@
 </head>
 <body class="markdown github">
 <h1 id="from-r-to-interactive-charts-and-maps"><a name="from-r-to-interactive-charts-and-maps" href="#from-r-to-interactive-charts-and-maps"></a>From R to interactive charts and maps</h1><p>It is possible to make online, interactive charts and maps directly from R/RStudio, thanks to a group of R packages collectively known as <a href="https://www.htmlwidgets.org/"><strong>htmlwidgets</strong></a>.</p><p>These packages take instructions in R code, and write the JavaScript and HTML necessary to make charts using popular JavaScript visualization libraries. They also allow you to easily export the charts that you create in R as responsively designed web pages, which can be embedded in other projects through simple <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"><strong>iframes</strong></a>.</p><p>This means you can work in a single environment to both process data and make online charts. Maintaining a simple, streamlined workflow makes it easier to produce graphics quickly on news deadlines.</p><h3 id="the-data-we-will-use"><a name="the-data-we-will-use" href="#the-data-we-will-use"></a>The data we will use</h3><p>Download the data for this session from <a href="data/interactive-charts-r.zip">here</a>, unzip the folder and place it on your desktop. It contains the following files:</p><ul>
-<li><p><code>food_stamps.csv</code> <a href="http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap">US Department of Agriculture data</a> on the number of participants, in millions, in the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.</p>
+<li><p><code>food_stamps.csv</code> <a href="http://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap">US Department of Agriculture data</a> on the number of participants, in millions, and costs, in $ billions, of the federal Supplemental Nutrition Assistance Program from 1969 to 2016, as used previously.</p>
 </li><li><p><code>disease_democ.csv</code> Data illustrating a controversial theory suggesting that the emergence of democratic political systems has depended largely on nations having low rates of infectious disease, as used previously.</p>
 </li><li><p><code>kindergarten.csv</code> Data from the <a href="https://data.chhs.ca.gov/dataset/school-immunizations-in-kindergarten-by-academic-year">California Department of Public Health</a>, documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2015, as used previously.</p>
 </li><li><code>nations.csv</code> Data from the World Bank Indicators portal, as used previously.</li><li><p><code>seismic.zip</code> Zipped <a href="https://en.wikipedia.org/wiki/Shapefile">shapefile</a> with data on the annual risk of a damaging earthquake for the continental United States, from the <a href="https://earthquake.usgs.gov/hazards/induced/">US Geological Survey</a>.</p>
@@ -32,7 +32,7 @@ food_stamps &amp;lt;- read_csv(&quot;interactive-charts-r/food_stamps.csv&quot;)
 food_stamps_chart &amp;lt;- ggplot(food_stamps, aes(x = year, y = participants)) +
   xlab(&quot;Year&quot;) +
   ylab(&quot;Participants (millions)&quot;) +
-  theme_minimal(base_size = 14, base_family = &quot;Georgia&quot;)
+  theme_minimal(base_size = 14, base_family = &quot;Georgia&quot;) +
   geom_point() +
   geom_line()
 
@@ -44,7 +44,7 @@ food_stamps &lt;- read_csv(<span class="hljs-string">"interactive-charts-r/food_
 food_stamps_chart &lt;- ggplot(food_stamps, aes(x = year, y = participants)) +
   xlab(<span class="hljs-string">"Year"</span>) +
   ylab(<span class="hljs-string">"Participants (millions)"</span>) +
-  theme_minimal(base_size = <span class="hljs-number">14</span>, base_family = <span class="hljs-string">"Georgia"</span>)
+  theme_minimal(base_size = <span class="hljs-number">14</span>, base_family = <span class="hljs-string">"Georgia"</span>) +
   geom_point() +
   geom_line()
 
