@@ -27,7 +27,7 @@ Beyond the spreadsheet: We’ll use R and the tidyverse, which you worked with l
 ### Week 4
 
 - #### Apr 24: [Working with documents](documents.html)
-More practice with R and the tidverse.
+Many investigations depend on systematically analyzing masses of documents. We’ll discuss examples, and explore two tools to help you work with large document sets: DocumentCloud and Overview.
 
 ### Week 5
 
