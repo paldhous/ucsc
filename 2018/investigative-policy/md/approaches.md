@@ -2,25 +2,25 @@
 
 ### Students' picks:
 
-- #### Alex - [The killing agency: Wildlife Services' brutal methods leave a trail of animal death](http://www.sacbee.com/news/investigations/wildlife-investigation/article2574599.html)
+- #### Bailey - [Bullet Proof: Lead bullets still dominate the U.S. ammunition market despite ample evidence showing that they pose real environmental and health risks. Why?](https://undark.org/article/lead-ammunition-bullets-hunting-copper/)
 
-- #### Annie - [Unfounded: When Detectives Dismiss Rape Reports Before Investigating Them](https://www.buzzfeed.com/alexcampbell/unfounded)
+- #### Erika - [WWF's Secret War](https://www.buzzfeednews.com/article/tomwarren/wwf-world-wide-fund-nature-parks-torture-death) (Part 1 only)
 
-- #### Jennifer - [How the National Park Service is failing women](https://www.hcn.org/issues/48.21/how-the-park-service-is-failing-women)
+- #### Erin - [The Uncounted: As ‘superbugs’ strengthen, an alarming lack of new weapons to fight them](https://www.reuters.com/investigates/special-report/usa-uncounted-drugs/)
 
-- #### Jeremy - [Inside a Secretive Lobbying Effort to Deregulate Federal Levees](https://www.propublica.org/article/deregulate-federal-levees-section-408-permit-secretive-lobbying-effort)
+- #### Hannah - [A Tale Of Two Toxic Cities](https://theintercept.com/2019/02/24/epa-response-air-pollution-crisis-toxic-racial-divide/)
 
-- #### Katrina - [Across the U.S., police contracts shield officers from scrutiny and discipline](https://www.reuters.com/investigates/special-report/usa-police-unions/)
+- #### Helen - [Some Called It “Vigilante Justice.” But An Anonymous Campaign Triggered A Real Investigation Into A UC Santa Cruz Professor.](https://www.buzzfeednews.com/article/nidhisubbaraman/gopal-balakrishnan-sexual-harassment-investigation)
 
-- #### Kimber - [‘You Want A Description Of Hell?’ Oxycontin’s 12-hour Problem](http://www.latimes.com/projects/oxycontin-part1/)
+- #### Katie - [In Harm's Way: Gun injuries and deaths among Florida kids have spiked. One child is shot every 17 hours.](https://www.tampabay.com/projects/2017/special-report/florida-guns-children-deaths-harms-way/)
 
-- #### Kimberly - [Animal trafficking: the $23bn criminal industry policed by a toothless regulator](https://www.theguardian.com/environment/2016/sep/26/animal-trafficking-cites-criminal-industry-policed-toothless-regulator)
+- #### Priyanka - [Johnson & Johnson knew for decades that asbestos lurked in its Baby Powder](https://www.reuters.com/investigates/special-report/johnsonandjohnson-cancer/)
 
-- #### Laura - [Wipeout: Human role in climate change removed from science report](https://www.revealnews.org/article/wipeout-human-role-in-climate-change-removed-from-science-report/)
+- #### Rodrigo - [How Hospitals Are Failing Black Mothers](https://www.propublica.org/article/how-hospitals-are-failing-black-mothers)
 
-- #### Nicoletta - [New FDA: How a New Policy Led to Seven Deadly Drugs](http://www.pulitzer.org/winners/david-willman) (First story only.)
+- #### Sofie - [What Becomes Of The Broken-hearted: The untold story of teen suicide in the North](http://features.nzherald.co.nz/teen-suicide-an-untold-story/)
 
-- #### Vicky - [Beyond Flint: High Lead Levels Found In 2,000 Water Systems Across USA](https://www.sej.org/sites/default/files/Lead-in-Water_unnumbered_R1.pdf)
+- #### Tom - [Dubious Diagnosis: The war on ‘prediabetes’ could be a boon for pharma—but is it good medicine?](https://www.sciencemag.org/news/2019/03/war-prediabetes-could-be-boon-pharma-it-good-medicine)
 
 
 ### Thoughts arising from discussion
