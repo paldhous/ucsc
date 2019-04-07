@@ -6,7 +6,7 @@
 
 - #### Erika - [WWF's Secret War](https://www.buzzfeednews.com/article/tomwarren/wwf-world-wide-fund-nature-parks-torture-death) (Part 1 only)
 
-- #### Erin - [The Uncounted: As ‘superbugs’ strengthen, an alarming lack of new weapons to fight them](https://www.reuters.com/investigates/special-report/usa-uncounted-drugs/)
+- #### Erin - [The Uncounted: As ‘superbugs’ strengthen, an alarming lack of new weapons to fight them](https://www.reuters.com/investigates/special-report/usa-uncounted-drugs/) (Part 3 only)
 
 - #### Hannah - [A Tale Of Two Toxic Cities](https://theintercept.com/2019/02/24/epa-response-air-pollution-crisis-toxic-racial-divide/)
 
