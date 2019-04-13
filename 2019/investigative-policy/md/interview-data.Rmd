@@ -1,7 +1,7 @@
 # Interviewing data: R, RStudio, and the tidyverse for data analysis
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(out.width="900px", out.height="500px", dpi=300, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(out.width="750px", out.height="450px", dpi=300, message=FALSE, warning=FALSE)
 knitr::opts_knit$set(root.dir = "../data/r-analysis")
 ```
 
@@ -13,38 +13,40 @@ Last quarter we worked with **[R](http://www.r-project.org/)** and **[RStudio](h
 
 Download the data for these classes from [here](data/r-analysis.zip), unzip the folder and place it on your desktop. It contains the following files:
 
-- `ca_discipline.csv` Disciplinary alerts and actions issued by the Medical Board of California from 2008 to 2017. Processed from downloads available [here](https://www.mbc.ca.gov/Publications/Disciplinary_Actions/). Contains the following variables:
+* `ca_discipline.csv` Disciplinary alerts and actions issued by the Medical Board of California from 2008 to 2017. Processed from downloads available [here](https://www.mbc.ca.gov/Publications/Disciplinary_Actions/). Contains the following variables:
+    + `alert_date` Date alert issued. 
+    + `last_name` Last name of doctor/health care provider.
+    + `first_name` First name of doctor/health care provider.
+    + `middle_name` Middle/other names.
+    + `name_suffix` Name suffix (Jr., II etc)
+    + `city` City of practive location.
+    +`state` State of practice location.
+    + `license` California medical license number.
+    + `action_type` Type of action.
+    + `action_date` Date of action.  
 
-	- `alert_date` Date alert issued.
-	- `last_name` Last name of doctor/health care provider.
-	- `first_name` First name of doctor/health care provider.
-	- `middle_name` Middle/other names.
-	- `name_suffix` Name suffix (Jr., II etc)
-	- `city` City of practive location.
-	- `state` State of practice location.
-	- `license` California medical license number.
-	- `action_type` Type of action.
-	- `action_date` Date of action.
+<!-- -->
 
+* `ca_medicare_opioids.csv` Data on prescriptions of opioid drugs under the Medicare Part D Prescription Drug Program by doctors in California, from 2013 to 2015. Filtered from the national data downloads available [here](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Part-D-Prescriber.html). It contains many variables, including:
+    + `npi` [National Provider Identifier](https://npiregistry.cms.hhs.gov/) (NPI) for the doctor/organization making the claim. This is a unique code for each health care provider.
+    + `nppes_provider_last_org_name` For individual doctors, their last name. For organizations, the organziation name.
+    + `nppes_provider_first_name` First name for individual doctors, blank for organizations.
+    + `nppes_provider_city` City where the provider is located.
+    + `nppes_provider_state` State where the provider is located; "CA" for all of these records.
+    + `specialty_description` Provider's medical speciality, reported on their medicare claims. For providers that have more than one Medicare specialty code reported on their claims, the code associated with the largest number of services.
+    + `drug_name` Includes both brand names (drugs that have a trademarked name) and generic names (drugs that do not have a trademarked name).
+    + `generic_name` The chemical ingredient of a drug rather than the trademarked brand name under which the drug is sold.
+    + `bene_count` Total number of unique Medicare Part D beneficiaries (i.e. patients) with at least one claim for the drug. Counts fewer than 11 are suppressed and are indicated by a blank.
+    + `total_claim_count` Number of Medicare Part D claims; includes original prescriptions and refills. If less than 11, counts are not included in the data file.
+    + `total_drug_cost` Total cost paid for all associated claims; includes ingredient cost, dispensing fee, sales tax, and any applicable fees.
+    + `year` 2013, 2014, or 2015.  
 
-- `ca_medicare_opioids.csv` Data on prescriptions of opioid drugs under the Medicare Part D Prescription Drug Program by doctors in California, from 2013 to 2015. Filtered from the national data downloads available [here](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Part-D-Prescriber.html). It contains many variables, including:
-  - `npi` [National Provider Identifier](https://npiregistry.cms.hhs.gov/) (NPI) for the doctor/organization making the claim. This is a unique code for each health care provider.
-  - `nppes_provider_last_org_name` For individual doctors, their last name. For organizations, the organziation name.
-  - `nppes_provider_first_name` First name for individual doctors, blank for organizations.
-  - `nppes_provider_city` City where the provider is located.
-  - `nppes_provider_state` State where the provider is located; "CA" for all of these records.
-  - `specialty_description` Provider's medical speciality, reported on their medicare claims. For providers that have more than one Medicare specialty code reported on their claims, the code associated with the largest number of services.
-  - `drug_name` Includes both brand names (drugs that have a trademarked name) and generic names (drugs that do not have a trademarked name).
-  - `generic_name` The chemical ingredient of a drug rather than the trademarked brand name under which the drug is sold.
-  - `bene_count` Total number of unique Medicare Part D beneficiaries (i.e. patients) with at least one claim for the drug. Counts fewer than 11 are suppressed and are indicated by a blank.
-  - `total_claim_count` Number of Medicare Part D claims; includes original prescriptions and refills. If less than 11, counts are not included in the data file.
-  - `total_drug_cost` Total cost paid for all associated claims; includes ingredient cost, dispensing fee, sales tax, and any applicable fees.
-  - `year` 2013, 2014, or 2015.
+<!-- -->
 
-- `npi_license.csv` Crosswalk file to join NPI identifiers to state license numbers, processed from the download available [here](https://www.nber.org/data/npi-state-license-crosswalk.html) to include license numbers potentially matching California doctors. This will provide one way of joining the precription data to the medical board disciplinary data. As we shall see, problems with the data mean that it is not infallible. Contains the following variables:
- - `npi` National Provider Identifier, as described above.
- - `plicnum` State license number, from the original file.
- - `license` Processed from `pclicnum` to conform to the format of California medical license numbers.
+* `npi_license.csv` Crosswalk file to join NPI identifiers to state license numbers, processed from the download available [here](https://www.nber.org/data/npi-state-license-crosswalk.html) to include license numbers potentially matching California doctors. This will provide one way of joining the precription data to the medical board disciplinary data. As we shall see, problems with the data mean that it is not infallible. Contains the following variables:
+    + `npi` National Provider Identifier, as described above.
+    + `plicnum` State license number, from the original file.
+    + `license` Processed from `pclicnum` to conform to the format of California medical license numbers.
 
 ### Some words of caution, before we start
 
@@ -54,7 +56,7 @@ Opioids have important medical uses, and just because a doctor prescribes large 
 
 As ProPublica explained, in [the methods](https://www.propublica.org/article/how-we-analyzed-medicares-drug-data-long-methodology) for its stories based on Medicare Part D prescription data:
 
-> The data could not tell us everything. We interviewed many high-volume prescribers to better understand their patients and their practices. Some told us their numbers were high because they were credited with prescriptions by others working in the same practice. In addition, providers who primarily work in long-term care facilities or busy clinics with many patients naturally may write more prescriptions.
+>*"The data could not tell us everything. We interviewed many high-volume prescribers to better understand their patients and their practices. Some told us their numbers were high because they were credited with prescriptions by others working in the same practice. In addition, providers who primarily work in long-term care facilities or busy clinics with many patients naturally may write more prescriptions."*
 
 ### Reminder on R code basics
 
@@ -131,7 +133,7 @@ There are a number of **join** functions in **dplyr** to combine data from two d
 
 OpenRStudio, save a new script in the same folder as the downloaded data and set the working directory to this folder by selecting from the top menu `Session>Set Working Directory>To Source File Location`. (Doing so means we can load the files in this directory without having to refer to the full path for their location, and anything we save will be written to this folder.) 
 
-Also install the [DT](https://rstudio.github.io/DT/) package, which turns R data frames into searchable web tables.
+Also install the [**DT**](https://rstudio.github.io/DT/) package, which turns R data frames into searchable web tables.
 
 Now load the packages we'll use today:
 
@@ -156,7 +158,7 @@ ca_discipline <- read_csv("ca_discipline.csv")
 glimpse(ca_discipline)
 ```
 
-#### Filter, sort, and clean data
+### Filter, sort, and clean data
 
 To get used to working with **dplyr**, we will now start filtering and sorting the data according to the doctors' locations, and the types of disciplinary actions they faced.
 
@@ -175,8 +177,10 @@ Now make a searchable web table to display the data:
 
 ```{r}
 # make a searchable web table
-datatable(types)
+datatable(types, extensions = "Responsive")
 ```
+
+`datatable` is the function from the **DT** that creates a searchable web table from a data frame; `extensions = "Responsive"` means that the table will be condensed to fit the device/screen on which it is viewed -- any columns that don't fit will be hidden, but can be opened up and examined for any row by clicking on a green cross that will appear if the table has been condensed in this way.
 
 Many of the values for `action_types` seem to be subtle variations of the same thing. If we were going to all analyze the types in detail, we may need to group some of these together, after speaking to an expert to understand what they all mean. If you search the table for "reprimand"", however, it's pretty obvious that the four entries containing that word all amount to the same thing. To get a sense of how we could write code to clean up these categories, let's convert those to all say "Reprimand" :
 
@@ -187,7 +191,7 @@ ca_discipline <- ca_discipline %>%
                                  TRUE ~ action_type))
 ```
 
-The `case_when` function allows you to set up conditional statements. Here we are changing the `action_type` variable so that if the text contains the word "reprimand," matched using the `grepl` function, irrespective of the case of the letters, the entry is changed to "Reprimand," otherwise (the `TRUE` condition) it is left with the original `action_type` value. You can strong together multiple conditional statements in a `case_when` function to edit the data as you wish. 
+The `case_when` function allows you to set up conditional statements. Here we are changing the `action_type` variable so that if the text contains the word "reprimand," matched using the `grepl` function, irrespective of the case of the letters, the entry is changed to "Reprimand," otherwise (the `TRUE` condition) it is left with the original `action_type` value. You can string together multiple conditional statements in a `case_when` function to edit the data as you wish. If cleaning a dataset involves a few simple changes like this, I often do it in R rather than using Open Refine, like we did last quarter.
 
 Some of the action types are clear and unambiguous: `Revoked` is the medical board's most severe sanction, which cancels a doctor's license to practise. So let's first **filter** the data to look at those actions:
 
@@ -196,8 +200,10 @@ Some of the action types are clear and unambiguous: `Revoked` is the medical boa
 revoked <- ca_discipline %>%
   filter(action_type == "Revoked")
   
-datatable(revoked)
+datatable(revoked, extensions = "Responsive")
 ```
+
+<br>
 
 Some of these doctors are not actually based in California. Doctors can be licensed to practise in more than one state, and the Medical Board of California typically issues its own sanction if a doctor is disciplined in their home state. So let's now **filter** the data to look only at doctors with revoked licenses who were based in California, and **sort** them by city.
 
@@ -208,12 +214,15 @@ revoked_ca <- ca_discipline %>%
          & state == "CA") %>%
   arrange(city)
 
-datatable(revoked_ca)
+datatable(revoked_ca, extensions = "Responsive")
 ```
+
+<br>
 
 Here, the `filter` combines two conditions with `&`. That means that both have to be met for the data to be included. Then `arrange` **sorts** the data, which for a text variable will be in alphabetical order. If you wanted to sort in reverse alphabetical order, the code would be: `(arrange(desc(city))`.
 
-#### Group and summarize data
+
+### Group and summarize data
 
 Next we will **group** and **summarize** data by counting disciplinary actions by year and by month. But before doing that, we need to use the `year` and `month` functions from the **lubridate** package to extract the year and month from `action_date`.
 
@@ -244,7 +253,7 @@ The code first **filters** the data, as before, then **groups** by the new varia
 This should be the result:
 
 ```{r}
-datatable(revoked_ca_year)
+datatable(revoked_ca_year, extensions = "Responsive")
 ```
 
 Looking at this result and the raw `ca_discipline` data, we only have partial data for 2008. So if we want to count the number of license revocations by month over all the years, we should first **filter** out the data for 2008, which will otherwise skew the result.
@@ -261,6 +270,7 @@ revoked_ca_month <- ca_discipline %>%
 datatable(revoked_ca_month)
 ```
 
+<br>
 
 Notice how we used `>=` to filter for data where the year was 2009 or greater. The following code will achieve the same result:
 
@@ -285,8 +295,10 @@ actions_year_month <- ca_discipline %>%
   summarize(actions = n()) %>%
   arrange(year, month)
 
-datatable(actions_year_month)
+datatable(actions_year_month, extensions = "Responsive")
 ```
+
+<br>
 
 Notice that the `group_by` and `arrange` functions **group** and **sort** the data, respectively, by two variables, separated by commas.
 
@@ -303,7 +315,7 @@ ca_opioids <- read_csv("ca_medicare_opioids.csv")
 glimpse(ca_opioids)
 ```
 
-#### Create a summary, showing the number of opioid prescriptions written by each doctor, the total cost of the opioids prescribed, and the cost per claim
+### Create a summary, showing the number of opioid prescriptions written by each doctor, the total cost of the opioids prescribed, and the cost per claim
 
 ```{r}
 # Create a summary, showing the number of opioid prescriptions written by each provider, the total cost of the opioids prescribed, and the cost per claim
@@ -317,6 +329,8 @@ provider_summary <- ca_opioids %>%
             cost = sum(total_drug_cost)) %>%
   mutate(cost_per_prescription = cost/prescriptions) %>%
   arrange(desc(prescriptions))
+
+datatable(provider_summary, extensions = "Responsive")
 ```
 
 Remember, when summarizing data, any `NA` values will cause the summary to be calculated as `NA`, unless you specify that nulls should be removed. If any of the cost or prescription values had been missing, for example, the `sum` functions would have to be written in this form: `sum(total_claim_count, na.rm = TRUE)`.
@@ -327,7 +341,7 @@ While running data analyses, it's often useful to create charts to look at summa
 
 To make simple charts, we will use **ggplot2**, which we explored in more depth in the previous quarter.
 
-#### ggplot2 and the grammar of graphics
+### ggplot2 and the grammar of graphics
 
 As a reminder, the "gg" in **ggplot2** stands for "[grammar of graphics](http://www.amazon.com/The-Grammar-Graphics-Statistics-Computing/dp/0387245448)," an approach to drawing charts devised by the statistician Leland Wilkinson. Rather than thinking in terms of finished charts like a scatter plot or a column chart, it starts by defining the coordinate system (usually the X and Y axes), maps data onto those coordinates, and then adds layers such as points, bars and so on. This is the logic behind ggplot2 code.
 
@@ -348,7 +362,7 @@ library(scales)
 library(plotly)
 ```
 
-#### Make a histogram of the prescriptions data
+### Make a histogram of the prescriptions data
 
 It's always a good idea to look at the distribution of any quantitative variable.
 
@@ -377,11 +391,11 @@ This is a very skewed distribution. Viewing this, we would conclude that the mea
 median(provider_summary$prescriptions)
 ```
 
-#### Make a scatterplot of prescriptions and costs data
+### Make a scatterplot of prescriptions and costs data
 
-Scatterplots are good for seeing how one variable relates to one another, and also for spotting outliers in data. Here we would expect the total cost of the drugs prescribed to increase with the total number of prescriptions. A scatterplot allows us to see whether all the providers are closely clustered around the trend line, or whether there are some interesting outliers.
+Scatterplots are good for seeing how one variable relates to one another, and also for spotting outliers in data. Here we would expect the total cost of the drugs prescribed to increase with the total number of prescriptions. A scatterplot allows us to confirm whether that is the case, and allows us to spotinteresting outliers.
 
-This is a good case for making a chart interactive, so we can hover over each point to find out who any provider is.
+This is a good case for making a chart interactive, so we can hover over each point to find out who any provider is. (However, on this web page I have only included an image of the static chart.)
 
 ```{r}
 #### Make a scatterplot of prescriptions and costs data
@@ -392,16 +406,20 @@ scatterplot <- ggplot(provider_summary, aes(x = prescriptions,
                                                           "<b>Specialty: </b>",specialty_description,"<br>",
                                                           "<b>NPI: </b>",npi))) +
   geom_point(alpha = 0.3) +
-  geom_smooth(method = lm) +
   theme_minimal() +
   scale_x_continuous(labels = comma) +
   scale_y_continuous(labels = dollar)
 
+plot(scatterplot)
+```
+
+```{r eval=FALSE}
+# make interactive version with tooltip
 ggplotly(scatterplot, tooltip = "text") %>%
   config(displayModeBar = FALSE)
 ```
 
-In this code, we mapped the number of `prescriptions` to the X axis and their total `cost` to the Y or vertical axis. We then used `geom_point` to add the points, and made them partially transparent using `alpha = 0.3` (0 would be completely transparent; 1 would be completely opaque). `geom_smooth` added a trend line through the data; `method = lm` ensured that this is fitted with a "linear model," giving a straight line. `labels = dollar` formatted the Y axis so the numbers were shown in dollars.
+In this code, we mapped the number of `prescriptions` to the X axis and their total `cost` to the Y or vertical axis. We then used `geom_point` to add the points, and made them partially transparent using `alpha = 0.3` (0 would be completely transparent; 1 would be completely opaque). `labels = dollar` formatted the Y axis so the numbers were shown in dollars.
 
 Remember the words of caution: There may be some story leads here, but we would have to find out more about each doctor's practise and patients to determine whether outliers in terms of prescriptions and costs are justified.
 
@@ -427,10 +445,12 @@ By default, **dplyr** will join by any variables with matching names, but you ca
 # join those two data frames
 ca_discipline_npi <- left_join(ca_discipline, npi_license, by = "license")
 
-datatable(ca_discipline_npi)
+datatable(ca_discipline_npi, extensions = "Responsive")
 ```
 
-The first few rows reveal some of the limitations of the `npi_license` data. Some of the doctors have not been joined to an `npi` code, while others appear to have more than one `npi` code (this is why there are 9,680 rows in the joined data, and only 7,651 in the `ca_discipline` data).
+<br>
+
+The data returned reveals some of the limitations of the `npi_license` data. Some of the doctors have not been joined to an `npi` code, while others appear to have more than one `npi` code (this is why there are 9,680 rows in the joined data, and only 7,651 in the `ca_discipline` data).
 
 Having made this join, we can now join to the `provider_summary` data:
 
@@ -439,20 +459,22 @@ Having made this join, we can now join to the `provider_summary` data:
 provider_summary_actions <- inner_join(provider_summary, ca_discipline_npi, by = "npi") %>%
   arrange(desc(prescriptions))
 
-datatable(provider_summary_actions)
+datatable(provider_summary_actions,  extensions = "Responsive")
 ```
+
+<br>
 
 Individual doctors may appear multiple times in the data if they have more than one disciplinary action on their file, because a join will be made to each individual action.
 
 We can search for the disciplinary records and look at public documents at [this site](https://www.breeze.ca.gov/).
 
-The second doctor on our list, Naga Thota, surrendered his California medical license on March 22, 2017. [This public document](http://www2.mbc.ca.gov/BreezePDL/document.aspx?path=%5cDIDOCS%5c20170315%5cDMRAAAFC8%5c&did=AAAFC170315180454982.DID) reveals that he was charged with prescribing excessive quantities of opioids to an addicted patient with whom he also engaged in a sexual relationship. In addition to disciplinary action from the Medical Board of California, he faced a criminal investigation by the federal Drug Enforcement Adminstration. In March 2017 [sentenced to two years](http://www.sandiegouniontribune.com/news/courts/sd-me-thota-sentencing-20170306-story.html), he was sentenced to two years in a federal prison.
+The second doctor on our list, Naga Thota, surrendered his California medical license on March 22, 2017. [This public document](https://www2.mbc.ca.gov/BreezePDL/document.aspx?path=%5cDIDOCS%5c20170315%5cDMRAAAFC8%5c&did=AAAFC170315180454982.DID) reveals that he was charged with prescribing excessive quantities of opioids to an addicted patient with whom he also engaged in a sexual relationship. In addition to disciplinary action from the Medical Board of California, he faced a criminal investigation by the federal Drug Enforcement Adminstration. In March 2017 [sentenced to two years](https://www.sandiegouniontribune.com/news/courts/sd-me-thota-sentencing-20170306-story.html), he was sentenced to two years in a federal prison.
 
 The prescriptions data reveal that, prior to his conviction and the loss of his medical license, Thota was also one of the largest prescribers of opioids in the state of California.
 
 There are likely to be other story leads from this join, which you could follow up through public records and other reporting.
 
-We've already seen that the `npi_license` data has some limitations. Another (less reliable) way to join the data would be by using the doctors' first names, last names, and cities. First, however, we need to convert those variables in the `ca_discipline_npi` data to upper case, so they match the format of the `ca_opioids` data.
+We've already seen that the `npi_license` data has some limitations. Another (less reliable) way to join the data would be by using the doctors' first names, last names, and cities. First, however, we need to convert those variables in the `ca_discipline_npi` data to upper case, so they match the format of the `ca_opioids` data, using the function `toupper`.
 
 ```{r}
 # change case of variables to be used in the join
@@ -476,11 +498,24 @@ Now we can use an `anti_join` to see if this join picked up any doctors who were
 # join disciplinary action data to the opioid prescription data
 provider_summary_actions_extra <- anti_join(provider_summary_actions_2, provider_summary_actions)
 
-datatable(provider_summary_actions_extra)
+datatable(provider_summary_actions_extra, extensions = "Responsive")
 ```
 
+<br>
 
 Whenever making an join in this way, it crucial to verify through further reporting that the individuals matched are the same person. For example, there are several doctors called Peter Lee in Los Angeles. The one with the disciplinary record is [Peter Geon Lee](https://search.dca.ca.gov/details/8002/G/84673/aebacf63f2746d6ce6ac729ebbbe54f5), a plastic surgeon. This is not [Peter Chong Lee](https://search.dca.ca.gov/details/8002/A/47846/e516806f7ff2db771d5b14b7d175c755), the physical medicine and rehabilitation specialist, with the NPI of `1063508786`, listed in the `ca_opioids` data. There may well be other false matches in the data, joined in this way.
+
+### Some more practice
+
+
+* Using the `ca_discipline` data, count the number of revoked licenses in each city in 2017 only, and sort so that the cities with the most revoked licenses appear first. 
+
+* Count the number of disciplinary actions of any type by city and by year, not including the incomplete data for 2008. 
+
+* Find all of the unique drugs, by `generic_name`, in the `ca_opioids` data.
+
+* Make a summary by provider of total prescriptions, total costs pf those prescriptions, and cost per prescriptions, for fentanyl alone. (Look carefully at your list of generic drugs before doing this!)
+
 
 ### Further reading
 
