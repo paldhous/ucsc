@@ -19,12 +19,11 @@ Brainstorm your story ideas.
 - #### Apr 8: [Investigative approaches](approaches.html)
 Discuss investigative reports selected by students, studying the methods employed.
 
-### Week 3
+### Week 4
 
-- #### Apr 17: [Interviewing data](interview-data.html)
+- #### Apr 22: [Interviewing data](interview-data.html)
 Beyond the spreadsheet: We’ll use R and the tidyverse, which you worked with last quarter, to ask questions of data and find story leads.
 
-### Week 4
 
 - #### Apr 24: [Working with documents](documents.html)
 Many investigations depend on systematically analyzing masses of documents. We’ll discuss examples, and explore two tools to help you work with large document sets: DocumentCloud and Overview.
