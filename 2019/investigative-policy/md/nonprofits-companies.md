@@ -14,28 +14,33 @@ There are several versions of this form, with a condensed version, known as [990
 
 Many familiar charitable organizations, such as the Bill and Melinda Gates Foundation, fall under a different category called a Private Foundation, and must fill in a form called a [990-PF](https://www.irs.gov/uac/about-form-990pf). These forms are slightly different, but once you are used to reading regular 990s they should be easy to navigate.
 
-Churches, while being charities, are not required to file Form 990s.
+Churches, while being charities, are not required to file 990s.
 
-Nonprofits *must* provide their three most recent Form 990s. If you cannot find them on the sites below, or get them from the IRS, and the organization refuses to hand them over, you have a story about a misbehaving charity!
+Nonprofits *must* provide their three most recent 990s. If you cannot find them on the sites below, or get them from the IRS, and the organization refuses to hand them over, you have a story about a misbehaving charity!
 
 We will consider the full Form 990, also known as 990-EO, filed by organizations with annual earnings of $200,000 or more, and assets of $500,000 or more.
 
-These forms can be revealing, and it is quite possible to find information that shows problems with a charity's organization or finances. Less then 1% of Form 1990s are actually audited by the IRS.
+These forms can be revealing, and it is quite possible to find information that shows problems with a charity's organization or finances. Less then 1% of 990s are actually audited by the IRS.
 
 A charity should have a defined **program service**: a major, usually ongoing, activity of the organization that accomplishes its tax-exempt purpose.
 
 Two websites provide a good starting point to search for nonprofits and view their 990s:
 
-##### [Guidestar](http://www.guidestar.org/)
+##### [Guidestar](https://www.guidestar.org/)
 
-From the homepage, you can search for non-profits by name. The advanced search page is [here](http://www.guidestar.org/AdvancedSearch.aspx). Once on the page for an individual non-profit, for example [here](http://www.guidestar.org/organizations/53-0196572/american-chemical-society.aspx) for the American Chemical Society, who will see a button to the right to show and download the three most recent 990s:
+From the homepage, you can search for non-profits by name. The search page is [here](https://www.guidestar.org/search). Once on the page for an individual non-profit, for example [here](https://www.guidestar.org/profile/53-0196572) for the American Chemical Society, who will see a button to the right to show and download the three most recent 990s:
 
-![](img/nonprofits_people_1.jpg)
+![](img/nonprofits_companies_1.jpg)
 
-You will need to [sign up](https://www.guidestar.org/Account/Register) for a free account to view these forms. You can also pay for access to more reports and certain information extracted from them -- however, I have never found any need to do this.
+You will need to [sign up](https://www.guidestar.org/Account/Register) for a free account to view these forms. You can also pay for access to more reports, certain information extracted from them, and additional filters for searches -- however, I have never found any need to do this.
 
 ##### [ProPublica Nonprofit Explorer](https://projects.propublica.org/nonprofits/)
 
+ProPublica's Nonprofit Explorer contains summary data processed by the IRS from organization's 990s, and allows you to download a longer time series of 990s. You can search by organization or by people (officers or employees), and [here](https://projects.propublica.org/nonprofits/advanced_search) is the advanced search page with other options.
+
+Here is the page for the American Chemical Society, which has 990s back to 2001:
+
+![](img/nonprofits_companies_2.jpg)
 
 ##### What's in a Form 990-EO?
 
@@ -125,35 +130,34 @@ In class, we will use this form to answer the following questions:
 
 ##### More resources for reporting on nonprofits
 
-For excellent reporting on charities behaving badly, read [America's Worst Charities](https://www.revealnews.org/topic/charities/), by the Center for Investigative Reporting and the *Tampa Bay Times*. [Kendall Taggart](https://www.buzzfeed.com/kendalltaggart), now with BuzzFeed News, has a [great slide deck](http://slides.com/kendall/mining-nonprofit-data#/) explaining the resources she used to report these stories. She explains more about how the reporting was done [here](https://www.revealnews.org/article/how-we-identified-the-nations-worst-charities/).
+For excellent reporting on charities behaving badly, read [America's Worst Charities](https://www.revealnews.org/topic/charities/), by the Center for Investigative Reporting and the *Tampa Bay Times*. [Kendall Taggart](https://www.buzzfeed.com/kendalltaggart), now with BuzzFeed News, has a [great slide deck](https://slides.com/kendall/mining-nonprofit-data#/) explaining the resources she used to report these stories. She explains more about how the reporting was done [here](https://www.revealnews.org/article/how-we-identified-the-nations-worst-charities/).
 
-America's Worst Charities is particularly interesting because the reporters didn't just analyze the spending of one or two charities: They looked at thousands, focusing on those that used the services of professional fundraising companies, and then highlighting those that spent proportionately the least on their supposed charitable function. To do this, they downloaded [bulk financial data](https://www.irs.gov/statistics/soi-tax-stats-annual-extract-of-tax-exempt-organization-financial-data), extracted from 990s, provided by the IRS.
-
-The slide deck also recommends resources to track charity finances available in [some states](http://slides.com/kendall/mining-nonprofit-data#/16), and a [database of disciplinary actions](http://charitysearch.apps.cironline.org/) taken by states against charities, compiled by CIR and the *Tampa Bay Times*. The actions underlying this database, which will only be complete up to the publication of America's Worst Charities in 2013, were obtained by public records requests.
+America's Worst Charities is particularly interesting because the reporters didn't just analyze the spending of one or two charities: They looked at thousands, focusing on those that used the services of professional fundraising companies, and then highlighting those that spent proportionately the least on their supposed charitable function. To do this, they downloaded [bulk financial data](https://www.irs.gov/statistics/soi-tax-stats-annual-extract-of-tax-exempt-organization-financial-data), extracted from 990s, provided by the IRS. The slide deck also recommends resources to track charity finances available in [some states](https://slides.com/kendall/mining-nonprofit-data#/16).
 
 
 ### Companies
 
 If a company is public, meaning that its shares are traded on a stock exchange, then the value of its shares, and the volume of their trading, can provide useful information about its general health, and reveal significant events affecting the company. [Google](https://www.google.com/finance) and [Yahoo](https://finance.yahoo.com/) both operate finance sites at which you can view these metrics over time.
 
-In class, we will use Yahoo Finance to explore the history of trading in the stock of companies including Valeant Pharmaceuticals, which became controversial in 2015 after [being accused of price gouging](http://www.businessinsider.com/why-have-valeant-pharmaceuticals-shares-collapsed-2015-11).
+In class, we will use Yahoo Finance to explore the history of trading in the stock of companies including Biogen.
 
 You can search for companies using their names or abbreviated stockmarket ticker symbools( see [here](https://finance.yahoo.com/lookup)).
 
-Search for Valeant or VRX, select its main presence on the New York Stock Exchange (NYSE), and you will end up on [this page](https://finance.yahoo.com/quote/VRX?p=VRX):
-
-![](img/companies_1.jpg)
+Search for Biogen or BIIB and you will end up on [this page](https://finance.yahoo.com/quote/BIIB?p=BIIB&.tsrc=fin-srch).
 
 Now switch to the `Chart` tab and select `Full screen`. The default chart will look something like this, with a line showing the stock price, and the bars at the bottom showing the trading volume for each interval (here one day):
 
-![](img/companies_2.jpg)
+![](img/nonprofits_companies_3.jpg)
 
-You can set customized date ranges, change the chart types, and add comparisons to the chart. Here I've selected the last 5 yearsm added GlaxoSmithKline for a more conventional drug company, and the NYSE index to compare the stock market as a whole:
+You can set customized date ranges, change the chart types, and add comparisons to the chart. Here I've selected the last year and added Amgen and Celgene, plus the NASDAQ exchange, on which all three companies' stock is traded:
 
-![](img/companies_3.jpg)
+![](img/nonprofits_companies_4.jpg)
 
-Go `Back` from the chart and select the `Historical data` tab, and you can download data for any search. This can be useful if you want to make your own charts.
+Go `Back` from the chart and select the `Historical data` tab, and you can download data for any single search. This can be useful if you want to make your own charts.
 
+So, what happened on Mar 21 that caused Biogen's stock to crash? And why did Celgene's surge in value on Jan 3?
+
+Why didn't I ask you to run a search on Theranos, perhaps the most [infamous biotech company](And why didn't I ask you to search for Theranos) in recent years?
 
 #### Securities and Exchange Commission
 
@@ -171,44 +175,41 @@ At the page for each company, you will find its filings to the SEC over time. He
 
 - **Form 4 and Schedule 13D** report stock transactions by insiders and key shareholders.
 
-You can search for SEC enforcement actions [here](http://www.sec.gov/litigation.shtml). Try searching for Sequenom and see what you find! (This [brief story](https://www.newscientist.com/blogs/shortsharpscience/2009/09/claims-for-safer-downs-test-cr.html) will provide some background to why Sequenom got into trouble.)
+You can search for SEC enforcement actions [here](https://www.sec.gov/litigation.shtml). Try searching for Sequenom and see what you find! (This [brief story](https://web.archive.org/web/20150423102946/https://www.newscientist.com/blogs/shortsharpscience/2009/09/claims-for-safer-downs-test-cr.html) will provide some background to why Sequenom got into trouble.)
 
 [Here](https://searchwww.sec.gov/EDGARFSClient/jsp/EDGAR_MainAccess.jsp) is the SEC's full text search, which can be useful, for example, for finding references to individuals, and privately-held companies, in documents filed by publicly-traded companies. ([Here](https://www.sec.gov/edgar/searchedgar/edgarfulltextfaq.htm) is the FAQ page for that search form, explaining how to use it to best effect.
 
 #### Sqoop
 
+**[Sqoop](https://sqoop.com/)** aims to provide a one-stop-shop for information on companies. Sign up for a free account [here](https://sqoop.com/users/sign_up).
 
-**[Sqoop](https://sqoop.com/)** is a relatively new site that aims to provide a one-stop-shop for information on companies. Sign up for a free account [here](https://sqoop.com/users/sign_up).
+You can search using the names of companies, individual corporate officers, or keywords, and it will return links to SEC filings, patents, cases in federal courts, and Department of Justice press releases. (You will still need a login for the [PACER](https://www.pacer.gov/) federal court search system to access federal court documents.)
 
-You can search using the names of companies, individual corporate officers, or keywords, and it will return links to SEC filings, patents, cases in federal courts, and Departmet of Justice press releases. (You will still need a login for the [PACER](https://www.pacer.gov/) federal court search system to access federal court documents.)
+Here's the result of a search for Biogen:
 
-Here are the results for a search on Valeant:
+![](img/nonprofits_companies_5.jpg)
 
-![](img/companies_4.jpg)
+Now run a search for Theranos.
 
 You can save a search to receive updates by email of new documents.
 
 If you are a local reporter, Squoop also provides the option to [narrow your SEC filing searches by geography](https://sqoop.com/blog/2016-03-11-geographic-search). Click on the `Locations` button after running your search to activate this option.
 
-Sqoop is currently made freely avilable to journalists, as it tries to expand its user base. It is a for-profit, however, so it is possible that charges will be introduced in future.
+Sqoop is currently made freely available to journalists, as it tries to expand its user base. It is a for-profit, however, so it is possible that charges will be introduced in future.
 
 #### Privately-held companies
 
 It is much harder to do background research on privately-held companies, which do not have to file reports to the SEC. Many of technology companies you are likely to be most interested in as science reporters will be privately held, backed by venture capital.
 
-An example is Theranos, the blood-testing diagnostics company that became mired in a [major scandal](https://www.wired.com/2016/05/everything-need-know-theranos-saga-far/) after a Pulitzer-winning reporter with the *Wall Street Journal* started to investigate its scientific claims and glowing media coverage. Things have done from [bad to worse](http://www.businessinsider.com/theranos-founder-ceo-elizabeth-holmes-life-story-bio-2018-4) since then.
-
-So think about the agencies (state and federal) that have some oversight or regulatory role. For example, a company running animal experiments will have to file reports about its use of animals to the U.S. Department of Agriculture's Animal and Plant Health Inspection Service, and will be inspected from time to time, see [here](https://www.aphis.usda.gov/aphis/ourfocus/animalwelfare/sa_awa/awa-inspection-and-annual-reports).
+So think about the agencies (state and federal) that have some oversight or regulatory role. For example, a company running animal experiments will have to file reports about its use of animals to the U.S. Department of Agriculture's Animal and Plant Health Inspection Service, and will be inspected from time to time, see [here](https://acis.aphis.edc.usda.gov/ords/f?p=118:203::::::).
 
 Does the company, its staff, or facilities, need to be licensed? Doctors and many other professionals do, and their licensing information will usually be searchable online, and will including disciplinary actions. Many types of businesses, from car repair shops to nursing homes, will also have to be licensed, usually at the state level.
 
-Does the company have a loan from the Small Business Adminstration? Search [here](http://web.sba.gov/pro-net/search/dsp_dsbs.cfm). Does it have a Small Business Innovation Research grant? Search [here](https://www.sbir.gov/sbirsearch/award/all).
-
-Has the company received any other grants or contracts from the federal government? Search at [USASpending.gov.](https://www.usaspending.gov/Pages/Default.aspx)
+Does the company have a Small Business Innovation Research grant? Search [here](https://www.sbir.gov/sbirsearch/award/all). Has it received any other grants or contracts from the federal government? Search at [USASpending.gov.](https://www.usaspending.gov/)
 
 Does the company have problems with Occupational Safety and Health, either at the [federal](https://www.osha.gov/oshstats/index.html) or state ([here](https://www.dir.ca.gov/dosh/), for California) level? (Note, Cal/OSHA files its inspection and enforcement activity in the federal database.)
 
-Companies' own press releases can be useful, and are now usually archived online, either on a company's own website, or through services like [CISION/PR Newswire](http://www.prnewswire.com/) and [MarketWired](http://www.marketwired.com/).
+Companies' own press releases can be useful, and are now usually archived online, either on a company's own website, or through services like [CISION/PR Newswire](https://www.prnewswire.com/) and [GlobeNewswire](https://w.globenewswire.com/).
 
 In the U.S., companies are registered with the authorities in the state they call home. You can search for businesses registered in California [here](https://businesssearch.sos.ca.gov/). Find out more about available information [here.](http://www.sos.ca.gov/business-programs/business-entities/information-requests/) You can order basic documents about companies' registration [using this form](http://bpd.cdn.sos.ca.gov/pdf/be-records-requests.pdf).
 
