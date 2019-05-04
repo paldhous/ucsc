@@ -10,31 +10,28 @@ As a private citizen, the extent to which you wish to take advantage of these pr
 
 People are the weak points in many organization's digital security, because they can be tricked into doing things that are insecure. That's why so many hackers launch "phishing" attacks, which are intended either to get people to enter their username and password into a fake login screen, or to download files infected with malware. Email is the most popular method, because sender addresses are so easy to fake, or [spoof](https://en.wikipedia.org/wiki/Email_spoofing). But such attacks can come by other communication methods.
 
-Phising can be disastrous for newsrooms, as in 2013, when the [AP's Twitter account was hijacked](http://www.bloomberg.com/news/articles/2013-04-23/dow-jones-drops-recovers-after-false-report-on-ap-twitter-page) in phishing scam, and used to post a false message about an attack on the White House.
+Phising can be disastrous for newsrooms, as in 2013, when the [AP's Twitter account was hijacked](https://www.bloomberg.com/news/articles/2013-04-23/dow-jones-drops-recovers-after-false-report-on-ap-twitter-page) in phishing scam, and used to post a false message about an attack on the White House.
 
 So don't be the person that compromises your news organization's digital security! Responsible websites should never ask you for your login details, so don't follow a link and type them into a web form. Also be very careful about downloading and opening attachments -- even Word documents can contain embedded scripts that can hijack your computer, and remember that an email that seems to have comes from a colleague's address may be from someone else.
-
-To safely view attachments, use the Preview option in Gmail, rather than downloading:
-
-![](img/privacy_security_1.jpg)
-
 
 ### Passwords and passphrases
 
 Most people are terrible at setting passwords, using common words or easily-guessed numbers. But even if you don't use `password` or `123456` you aren't safe. Password-guessing software can try millions of combinations per second (probably trillions, in the case of the NSA). So even "strong" passwords, employing hard-to-remember combinations of letters, numbers and special characters, are relatively easy to crack.
 
-Make sure to use a different password for each service you use, so that a breach of one doesn't compromise other accounts. That creates a problem, however, because nobody can remember dozens of complex passwords. So use a password manager such as [1Password](https://1password.com/) or [Lastpass](https://lastpass.com/) to generate and remember them for you. Protect your password manager account with a passphrase, consisting of a string of randomly-selected words.
+Make sure to use a different password for each service you use, so that a breach of one doesn't compromise other accounts. That creates a problem, however, because nobody can remember dozens of complex passwords. So use a password manager such as [1Password](https://1password.com/) or [Lastpass](https://lastpass.com/) to generate and remember them for you. 1Password recently launched a [free service for journalists](https://1password.com/for-journalism/), including a "Travel Mode" to deactivate when crossing international borders (when your devices could be seized).
+
+Protect your password manager account with a passphrase, consisting of a string of randomly-selected words.
 
 If the words you pick are genuinely random, passphrases are much more secure than passwords, because they offer many more combinations. They are also easier for you to remember. (Indeed, they're the opposite of traditional "strong" passwords, which perversely are hard for people to remember but easy for machines to guess.) As is often the case, [XKCD](https://xkcd.com/936/) is a source of wisdom:
 
 ![](http://imgs.xkcd.com/comics/password_strength.png)
 
-[This article](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/) explains how to create a strong passphrase. Using the method explained here, a five-word passphrase would require an average of 14 quintillion attempts to crack -- that's 14 followed by 18 zeroes, which would challenge even the NSA.
+[This article](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/) explains how to create a strong passphrase using a method called Diceware. Using the method explained here, a five-word passphrase would require an average of 14 quintillion attempts to crack -- that's 14 followed by 18 zeroes, which would challenge even the NSA. [Here](https://diceware.dmuth.org/) is a convenient Diceware passphrase generator.
 
 
 ### Encrypt your hard drives (internal and external)
 
-If your laptop is stolen or lost, a login password or passphrase offers little protection for your files and other information: A hard drive can simply be removed and booted on another machine. So you should routinely encrypt your hard drives. [This post](https://support.apple.com/en-us/HT204837) explains how to encrypt a hard drive on the Mac, using FileVault; [this post](https://www.howtogeek.com/234826/how-to-enable-full-disk-encryption-on-windows-10/) explains the equivalent procedure on Windows, using BitLocker (included in Professional or Enterprise versions, but not Home version), or Veracrypt. (Do pay attention to the instructions on ensuring that you don't get locked out of the drive!)
+If your laptop is stolen or lost, a login password or passphrase offers little protection for your files and other information: A hard drive can simply be removed and booted on another machine. So you should routinely encrypt your hard drives. [This post](https://support.apple.com/en-us/HT204837) explains how to encrypt a hard drive on the Mac, using FileVault; [this post](https://www.howtogeek.com/234826/how-to-enable-full-disk-encryption-on-windows-10/) explains the equivalent procedure on Windows, using BitLocker (included in Professional, Enterprise, or Education versions, but not Home version), or Veracrypt. (Do pay attention to the instructions on ensuring that you don't get locked out of the drive!)
 
 Once you have set up disk encyrption, your operating system automatically encrypts any data saved to the encrypted disk. To anyone without the password/key, the data on the disk will be gibberish.
 
@@ -42,14 +39,14 @@ Protect your encrypted drives with strong passwords (for instance a 100-digit pa
 
 
 ### Remove files from your computer
-Deleting files does not destroy them, so to remove traces you need to overwrite them multiple times. [Eraser](http://eraser.heidi.ie/) will do that on Windows; see [this article](http://www.macworld.com/article/1166104/security/how-to-securely-delete-files.html) for how to securely delete files on the Mac.
+Deleting files does not destroy them, so to remove traces you need to overwrite them multiple times. [Eraser](https://eraser.heidi.ie/) will do that on Windows; see [this article](https://www.macworld.com/article/1166104/security/how-to-securely-delete-files.html) for how to securely delete files on the Mac. I use [CleanMyMac](https://macpaw.com/cleanmymac), which as well as deleting junk from my hard drive has a file "shredder."
 
 
 ### Use two-factor authentication for web services, especially for email
 
-A web-based email account is an Achilles heel for security. If it is breached, an attacker can change your other passwords at will. So when using webmail, make sure to use two-factor authentication, which requires both a password and anpther. Set up two-factor authentication for your GMail/Google account [here](https://www.google.com/landing/2step/).
+A web-based email account is an Achilles heel for security, because that's where password reset instructions will be sent. If it is breached, an attacker can change your other passwords at will. So when using webmail, make sure to use two-factor authentication, which requires both a password and another means of authentication. Set up two-factor authentication for your GMail/Google account [here](https://www.google.com/landing/2step/).
 
-There are two main ways of delivering the second code: Via a text message sent to your phone, or using an authentication app. It is possible for [text messages to be hijacked](https://www.wired.com/2016/06/hey-stop-using-texts-two-factor-authentication/), so nowadays secuity experts recommend using an app such as [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US) or [Duo](https://guide.duo.com/third-party-accounts).
+There are two main ways of delivering the second code: Via a text message sent to your phone, or using an authentication app. It is possible for [text messages to be hijacked](https://www.wired.com/2016/06/hey-stop-using-texts-two-factor-authentication/), so nowadays security experts recommend using an app such as [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US) or [Duo](https://guide.duo.com/third-party-accounts).
 
 Take advantage of two-factor authentication for web services wherever it is available.
 
@@ -57,7 +54,7 @@ Take advantage of two-factor authentication for web services wherever it is avai
 
 Backing up your files is vital, and these backups should be secure. When backing up to an external hard drive, make sure that this drive is encrypted and protected by a secure password or passphrase.
 
-I would also strongly recommend backing up files to a remote encrypted server. I use [SpiderOak One](https://spideroak.com/personal/spideroak-one). As well as allowing you to back up your files, it creates a folder called SpiderOak Hive that will sync files and folders dropped into it across multiple devices. This folder similar to Dropbox, except the files are encrypted on SpiderOak's servers. It allows you to work securely on the same files across multiple devices. Importantly, SpiderOak cannot break the encryption on your files, either those backed up or synced through the Hive folder. Prices depend on how much storage you require.
+I would also strongly recommend backing up files to a remote encrypted server. I use [SpiderOak One](https://spideroak.com/one/). As well as allowing you to back up your files, it creates a folder called SpiderOak Hive that will sync files and folders dropped into it across multiple devices. This folder similar to Dropbox, except the files are encrypted on SpiderOak's servers. It allows you to work securely on the same files across multiple devices. Importantly, SpiderOak cannot break the encryption on your files, either those backed up or synced through the Hive folder. Prices depend on how much storage you require.
 
 
 ### Let's not get paranoid: Consider the threat
@@ -87,11 +84,11 @@ Websites can also deposit tracking “[cookies](https://en.wikipedia.org/wiki/HT
 
 Note that the "private" browsing options in web browsers are not really private -- all they do is block cookies, and prevent your activity being stored in your browser's history.
 
-For some investigations, you may want to explore a particular website without revealing your identity. For this, you can use an anonymous proxy server such as [AnonyMouse](http://anonymouse.org/anonwww.html) or [Guardster](http://www.guardster.com/subscription/proxy_free.php). 
+For some investigations, you may want to explore a particular website without revealing your identity. For this, you can use an anonymous proxy server such as [ProxySite](https://www.proxysite.com/) or [kproxy](https://www.kproxy.com/).
 
 For a more systematic approach to anonymous web browsing, consider using the [Tor](https://www.torproject.org/) browser or a Virtual Private Network (VPN).
 
-As [this article](https://thetinhat.com/tutorials/darknets/tor-vpn.html) explains, Tor and VPNs are rather different. 
+As [this article](https://thetinhat.com/tutorials/darknets/tor-vpn.html) explains, Tor and VPNs are rather different.
 
 Tor, which is based on Firefox, encrypts your data and connects you to one server in its network, which then bounces it on to two more servers before you are connected to the site you are browsing. Crucially, the second and third links in the chain only know the previous link, so your identity remains hidden.
 
@@ -103,7 +100,7 @@ If you subscribe to a VPN, your connection is encrypted and sent to the provider
 
 VPNs are much faster than Tor, but the provider can see all of your traffic -- so your anonymity ultimately lies in its hands. Will it hand over your browsing information if asked by a government agency? Read providers' privacy policies, but be aware that they may change, or not be followed under all circumstances.
 
-I use [NordVPN](https://nordvpn.com/) and [Private Internet Access](https://www.privateinternetaccess.com/), which are both relatively inexpensive and offer connections via servers in multiple countries across the world.
+[NordVPN](https://nordvpn.com/) and [Private Internet Access](https://www.privateinternetaccess.com/) are both relatively inexpensive and offer connections via servers in multiple countries across the world.
 
 In general, VPNs are a good option for relatively low-threat situations where you require a fast connection. For example, it is a good idea to use a VPN when using an insecure connection, such as airport or coffee-shop wifi. If you really *need* to remain anonymous, however, Tor is your best option.
 
@@ -129,11 +126,11 @@ We will set up Signal in class. I recommend that you use it as much as possible.
 
 [WhatsApp](https://www.whatsapp.com/) now [includes encryption](https://blog.whatsapp.com/10000618/end-to-end-encryption) as standard, although see [here](https://www.schneier.com/blog/archives/2017/01/whatsapp_securi.html) for discussion of a potential vulnerability. [Here](https://www.whatsapp.com/faq/en/general/28030015) are some details on WhatsApp encryption.
 
-I choose not to use WhatsApp regularly because of its ownership by Facebook, whose policies on privacy and data harvesting have long disturbed me. (Google also harvests large amounts of data, but I find its products to be much more useful, so I'm willing to make that bargain.)
+I choose not to use WhatsApp regularly because of its ownership by Facebook, which has policies on privacy and data harvesting have long disturbed me. (Google also harvests large amounts of data, but I find its products to be much more useful, so I'm willing to make that bargain.)
 
 #### Email
 
-Unencrypted email is an extremely insecure means of communication. You should think of emails as electronic postcards that can be read by anyone who intercepts them as they travel over the internet. 
+Unencrypted email is an extremely insecure means of communication. You should think of emails as electronic postcards that can be read by anyone who intercepts them as they travel over the internet.
 
 You can encrypt your emails using public key encryption, which depends upon a “keypair,” two unique strings of randomly generated numbers and letters, which are linked together by a mathematical algorithm. You have two keys, one public, one private.
 
@@ -155,12 +152,12 @@ For secure video conferencing, use [Jitsi Meet](https://meet.jit.si/), which wor
 
 ### Remember: Cellphones are personal tracking devices
 
-GPS-enabled phones are personal tracking devices, and may not be fully powered off even if switched off. If you are using a cellphone to communicate with a confidential source, you may want to use a prepaid cellphone, paid for with cash. Switch off and remove the battery when not in use. Don't take your cellphone to meetings with confidential sources!
+GPS-enabled phones are personal tracking devices, and may not be fully powered off even if switched off. If you are using a cellphone to communicate with a confidential source, you may want to use a prepaid cellphone, paid for with cash. Switch off and remove the battery when not in use. Don't take your cellphone to meetings with sources whose identity must remain confidential.
 
 #### Hiding your phone number
 
 - *67 blocks caller ID
-- You can spoof caller ID with [SpoofCard](http://www.spoofcard.com/).
+- You can spoof caller ID with [SpoofCard](https://www.spoofcard.com/).
 
 ### Basic e-sleuthing
 
@@ -174,14 +171,12 @@ Note that emails sent from Gmail's webmail interface will always locate to Googl
 
 #### Who is behind this website?
 
-[Whois](https://www.easywhois.com/) [searches](http://whois.domaintools.com/) provide information on the underlying IP address and registration information, from a url.
-
-Use [this search](http://domainhistory.net/)to explore a site's Whois history, as registrations for a domain may change over time.
+[Whois](https://www.easywhois.com/)[searches](http://whois.domaintools.com/) provide information on the underlying IP address and registration information, from a url. However, as a reaction to European Union data privacy rules, Whois information is [increasingly being redacted](https://umbrella.cisco.com/blog/2018/05/31/gdpr-and-whois/), and many security researchers argue that it is now all but useless.
 
 
 #### What other websites are hosted at the same IP address?
 
-This [search](http://reverseip.domaintools.com/) will perform reverse IP lookups, listing other websites hosted at the same IP address. That may be useful in investigations in which you are trying to identify constellations of websites operated by the same source -- however, bear in mind that it doesn't reveal much if your target is using a large commercial webhosting provider.
+This [search](https://reverseip.domaintools.com/) will perform reverse IP lookups, listing other websites hosted at the same IP address. That may be useful in investigations in which you are trying to identify constellations of websites operated by the same source -- however, bear in mind that it doesn't reveal much if your target is using a large commercial webhosting provider.
 
 #### What is the history of this website?
 
@@ -195,16 +190,19 @@ As we’ve already noted: Websites are likely to change if their owners realize 
 
 ### Researching people
 
-Searching for information on individual people can be difficult, without access to a commercial research tool such as [Accurint](http://www.accurint.com/), or TransUnion's [TLOxp](https://tloxp.tlo.com/). I can show you how TLOxp works in class.
+Searching for information on individual people can be difficult, without access to a commercial research tool such as [LexisNexis Public Records](https://www.lexisnexis.com/en-us/products/public-records.page), or TransUnion's [TLOxp](https://tloxp.tlo.com/).
 
-In my experience, most online search sites that offer background checks, contact information, and so on, are more effective at parting you from your money than providing good information.
+I used LexisNexis Public Records extensively to research living people for [this article](https://www.buzzfeednews.com/article/peteraldhous/golden-state-killer-dna-experiment-genetic-genealogy) on identifying my colleagues using genetic geneaology. [BeenVerified](https://www.beenverified.com/) may be an affordable alternative if you don't work for a newsroom with access to LexisNexis or TLOxp.
 
-If you don't have access to these resources, it helps to think about official agencies to which individuals must report information. [Who Is John Doe](http://www.reporter.org/desktop/tips/johndoe.htm), a site put together by investigative reporter [Duff Wilson](http://www.journalism.columbia.edu/profile/395-duff-wilson/10), provides a very useful guide to potential sources of information. [Here](http://www.peoplesearchpro.com/journalism/people/) is another site that provides links to various people-searching resources.
+In my experience, most free online search sites that offer background checks, contact information, and so on, are not worth using.
 
-Nowadays, I regularly use LinkedIn to find sources, especially when I need to reach people who work or who have worked for particular organizations, and to contact sources who keep their emails and phone numbers out of the public domain. [LinkedIn Premium](https://premium.linkedin.com/) is very useful for finding and communicating with these people. TIf you are a professional journalist (so you may have to wait until you're out in the world of employment!) you can ask to join the [LinkedIn for Journalists](https://www.linkedin.com/groups/3753151/profile) group. You should then get an invitation to attend a webinar, and once you've done that you'll be granted a free premium account. It offers some improved search features, but the main benefit is InMail, which allows you to send messages to people who are not in your contacts on LinkedIn.
+It also helps to think about official agencies to which individuals must report information. [Who Is John Doe](http://www.reporter.org/desktop/tips/johndoe.htm), a site put together by investigative reporter Duff Wilson, provides a guide to potential sources of information.
 
-For regular folks, Facebook is an incredibly useful resource, for finding people, and connections between them.
+Nowadays, I regularly use LinkedIn to find sources, especially when I need to reach people who work or who have worked for particular organizations, and to contact sources who keep their emails and phone numbers out of the public domain. [LinkedIn Premium](https://premium.linkedin.com/) is very useful for finding and communicating with these people. If you are a professional journalist (so you may have to wait until you're out in the world of employment!) you can ask to join the [LinkedIn for Journalists](https://www.linkedin.com/groups/3753151/profile) group. You should then get an invitation to attend a webinar, and once you've done that you'll be granted a free premium account. It offers some improved search features, but the main benefit is InMail, which allows you to send messages to people who are not in your contacts on LinkedIn.
 
+Facebook is an incredibly useful resource for finding people and connections between them. [IntelTechniques](https://inteltechniques.com/menu.html) is a very useful site with tools for researching individuals and their connections on Facebook and other social networks. We'll explore it in class.
+
+As a journalist, remember that you can be researched in the same way. Be especially careful with your personal [Facebook privacy settings](https://www.facebook.com/settings?tab=privacy). I would recommend hiding your friend list from public view, and limiting access to your posts to friends only. You may want to set up a separate account for professional purposes to highlight your work, and enable the Follow feature for that, see [more](https://www.facebook.com/notes/journalists-on-facebook/best-practices-for-journalists-on-facebook/593586440653374/).
 
 
 ### Further reading
