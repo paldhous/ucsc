@@ -14,9 +14,9 @@
 
 7. A medical reporter working for a local paper is searching on the Internet for a story about the mental health of high school students, and stumbles across hundreds of confidential student psychological reports that have been uploaded by a local school psychologist, presumably without realizing that they would be visible to a search engine. The reports contain the names and birth dates of individual students; some detail suicide attempts, admissions of drug abuse and other sensitive personal information.
 
-8. A reporter who has written on claims that cellphones can cause brain cancer and other health problems is asked to serve on a committee that will advise a national government on this issue.
+8. A journalist who has edited a series of articles on claims that cellphones can cause brain cancer and other health problems is asked to serve on a committee that will advise a national government on this issue.
 
-9. If we get time: What are the ethical issues involved in [this project](https://io9.gizmodo.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)?
+9. What are the ethical issues involved in [this project](https://io9.gizmodo.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)?
 
 
 ### Resources
@@ -27,7 +27,7 @@ Here are the two leading journalism ethics codes:
 
 - [Associated Press Media Editors](https://www.apme.com/page/EthicsStatement?)
 
-Remember that these are codes rather than hard-and-fast rules. They won't tell you what to do, but they will help you make decisions that balance benefit and harm for the public good. Also remember that rule of thumb: What would reasonable people think, if my conduct in reporting this story was covered by another reporter?
+Remember that these are codes rather than hard-and-fast rules. They won't tell you what to do, but they will help you make decisions that balance benefit and harm for the public good. Also remember this rule of thumb: What would reasonable people think, if my conduct in reporting this story was covered by another reporter?
 
 SPJ also has more case studies [here](https://www.spj.org/ethicscasestudies.asp), and operates a [hotline](https://www.spj.org/ethicshotline.asp) if you need ethics advice.
 
