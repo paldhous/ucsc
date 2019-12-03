@@ -1,7 +1,8 @@
 ### Assignment
 
 - You will each file FOIA/State public records request(s) with the goal of obtaining records that can be used for your reporting in our class in the Spring Quarter.
-- Draft your request using the [iFOIA](https://www.ifoia.org/) letter generator for federal requests, or that National Freedom of Information Coalition [templates](https://www.nfoic.org/organizations/state-sample-foia-request-letters) for state records requests.
+- By Friday Dec 10, email me with an outline of the records you'd like to request, and how they may help report a story.
+- Draft your request using the [iFOIA](https://www.ifoia.org/) letter generator for federal requests, or the National Freedom of Information Coalition [templates](https://www.nfoic.org/organizations/state-sample-foia-request-letters) for state records requests.
 - If using iFOIA, don't file your request immediately. Instead, when you get to this pop-up, `Download Word Doc`:
 ![](img/foia_1.jpg)
 - Then select `Follow-up>Delete Request`.
