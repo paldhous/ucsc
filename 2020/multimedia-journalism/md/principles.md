@@ -464,7 +464,7 @@ Think carefully about how much chart furniture you really need, and make sure th
 
 [Here](https://www.nytimes.com/interactive/2014/07/25/upshot/100000003019150.embedded.html) is a nice example of a graphic that minimizes chart junk, and maximizes data-ink. Notice how the Y axis doesn't need to be drawn, and the gridlines are an absence of ink, consisting of white lines passing through the columns. (I also used this device in my bar chart of Pfizer payments to doctors, above.) Contrast these examples with the proliferation of chart junk in the earlier misleading Fox News column chart.
 
-Simple annotations and spot-color highlights can be particularly useful to emphasize your story, as shown in the following scatter plots, used here to show the relationship between the median salaries paid to women and men for the same jobs in 2015. In this case there is no suggestion of causation; here the scatter plot format is being used to display two distributions simultaneously -- see the chart types thought-starter.
+Simple annotations and spot-color highlights can be particularly useful to emphasize your story, as shown in the following scatter plots, used here to show the relationship between the median salaries paid to women and men for the same jobs in 2018. In this case there is no suggestion of causation; here the scatter plot format is being used to display two distributions simultaneously -- see the chart types thought-starter.
 
 It is clear from the first, unlabeled plot, that male and female salaries for the same job are strongly correlated, as we would expect, but that relationship is not very interesting. Notice also how I have used transparency to help distinguish overlapping individual points.
 
@@ -472,7 +472,7 @@ It is clear from the first, unlabeled plot, that male and female salaries for th
 
 (Source: Peter Aldhous, from [U.S. Bureau of Labor Statistics](https://www.bls.gov/cps/cpsaat39.htm) data)
 
-What we are interested in here is whether men and women are compensated similarly for doing the same jobs. The story in the data starts to emerge if you add a line of equal pay, with a slope of 1 (note that this isn't a trend line fitted to the data). Here I have also highlighted the job in which women in 2015 enjoyed a the biggest pay gap over men:
+What we are interested in here is whether men and women are compensated similarly for doing the same jobs. The story in the data starts to emerge if you add a line of equal pay, with a slope of 1 (note that this isn't a trend line fitted to the data). Here I have also highlighted the job in which women in 2018 enjoyed a the biggest pay gap over men:
 
 ![](./img/salaries2.png)
 
@@ -499,7 +499,8 @@ Crticis pointed out on Twitter that the data had been scaled by the radius of ea
 ![](./img/principles_28.jpg)
 
 (Source: [The Guardian](https://www.theguardian.com/football/ng-interactive/2019/jun/28/revealed-the-731003-gender-pay-gap-in-us-world-cup-bonuses))
-Many software packages (Microsoft Excel is a notable culprit) allow users to create charts with 3-D effects. Some graphic designers produce customized charts with similar aesthetics. The problem is that that it is very hard to read the data values from 3-D representations, as [this example](https://magazine.good.is/infographics/infographic-the-20-most-charitable-countries-in-the-world#open), from *Good* magazine, illustrates.
+
+Some software packages allow users to create charts with 3-D effects and some graphic designers produce customized charts with similar aesthetics. The problem is that that it is very hard to read the data values from 3-D representations, as [this example](https://magazine.good.is/infographics/infographic-the-20-most-charitable-countries-in-the-world#open), from *Good* magazine, illustrates.
 
 A good rule of thumb for data visualization is that trying to represent three dimensions on a two dimensional printed or web page is almost always one dimension too many.
 
