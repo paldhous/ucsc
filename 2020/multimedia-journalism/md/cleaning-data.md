@@ -6,7 +6,7 @@ In this class, we will consider how to recognize and clean “dirty” data.
 
 Download the data for this session from [here](data/cleaning-data.zip), unzip the folder and place it on your desktop. It contains the following files:
 
-- `gdp_percap.csv` [World Bank data](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD) on Gross Domestic Product (GDP) per capita for nations and groups of nations, from 1990 to 2016, in current international dollars, corrected for purchasing power in different territories.
+- `gdp_percap.csv` [World Bank data](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD) on Gross Domestic Product (GDP) per capita for nations and groups of nations, from 1990 to 2018, in current international dollars, corrected for purchasing power in different territories.
 
 - `ucb_stanford_2014.csv` Data on federal government grants to UC Berkeley and Stanford University in 2014, downloaded from [USASpending.gov](https://www.usaspending.gov/).
 
@@ -20,9 +20,9 @@ The variables are:
 - `Country Name` Yellow
 - `Country Code` Green
 - `Year` Blue
--  `High-Tech Exports` Pink
+- `High-Tech Exports` Pink
 
-While this "wide" data format makes the spreadsheet easier for people to scan, most software for data analysis and visualization wants the data in a neat "long" format, with one variable in each column, like this:
+While this "wide" data format makes the spreadsheet easier for people to scan, most software for data analysis and visualization wants the data in a tidy "long" format, with one variable in each column, like this:
 
 ![](./img/cleaning_data_2.jpg)
 
@@ -202,17 +202,6 @@ From the dropdown menu for `Recipient`, select `Text filter` and type `Berkeley`
 
 To delete records based on a text filter, set the filter and then select `Edit rows>Remove all matching rows` from the `All` columns dropdown.
 
-### Standardize names with Mr People
-
-For processing names from a string of text into a standardized format with multiple fields, you may wish to experiment with **[Mr People](http://mrpeople.ericson.net/)**, a web app made by Matt Ericson of *The New York Times*.
-
-![](./img/cleaning_data_18.jpg)
-
-(Source: [Mr People](http://mrpeople.ericson.net/))
-
-It takes a simple list of names and turns them into separate fields for title, first name, last name, middle name and suffix.
-
-Mr People can save you time, but it is not infallible -- it may give errors with Spanish family names, for instance, or if people have multiple titles or suffixes, such as “MD, PhD.” So always check the results before moving on to further analysis and visualization.
 
 ### Correct for inflation (and cost of living)
 

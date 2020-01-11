@@ -13,10 +13,10 @@ Download the data for this session from [here](data/basic-charts.zip), unzip the
  - `food_stamps` Average number of people participating in the Supplemental Nutrition Assistance Program, in millions, from the [US Department of Agriculture](https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap).
  - `poverty` Estimated number of people in poverty, in millions, from the [US Census Bureau](https://census.gov/content/dam/Census/library/publications/2017/demo/P60-259.pdf).
 
-- `nations_2016.csv` Data from the [World Bank Indicators](https://data.worldbank.org/indicator/?tab=all) portal. Contains the following fields:
+- `nations_2017.csv` Data from the [World Bank Indicators](https://data.worldbank.org/indicator/?tab=all) portal. Contains the following fields:
  -  `iso2c` `iso3c` Two- and three-letter [codes](https://www.nationsonline.org/oneworld/country_code_list.htm) for each country, assigned by the [International Organization for Standardization](https://www.iso.org/standard/63545.html).
  - `country` Country name.
- - `year` 2016 for this data.
+ - `year` 2017 for this data.
  - `gdp_percap` [Gross Domestic Product per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD) in current international dollars, corrected for purchasing power in different territories.
  - `life_expect` [Life expectancy at birth](https://data.worldbank.org/indicator/SP.DYN.LE00.IN), in years.
  - `population` Estimated [total population](https://data.worldbank.org/indicator/SP.POP.TOTL) at mid-year, including all residents apart from refugees.
@@ -36,7 +36,7 @@ You should now see a screen like this:
 
 ### Make a bar chart showing number of people enrolled in food stamps program over time
 
-Having logged in to Plotly, click on the `New` or `+Create` buttons and select `Chart`. 
+Having logged in to Plotly, click on the `New` or `+ Create` buttons and select `Chart` to see this screen: 
 
 ![](./img/basic_charts_3.jpg)
 
@@ -60,25 +60,27 @@ Select `Bar` and map `year` onto the X axis and `food_stamps` onto the `Y` to cr
 
 You can build charts with multiple layers, for example here adding a dot-and-line to show the number of people living in poverty, by adding additional `Traces`. But we will proceed with a simple column chart.
 
-So far we have been working in the `Structure` section of the main left-hand menu, under `Traces`. This also contains a `Subplots` option, to create multiple charts from different `Traces` within the same panel; and a `Transforms` option, which allows you to `Filter`, `Aggregate` or `Sort` the data for a `Trace` (see the section on basic operations with data from the first class). `Split` will group the data by a categorical variable.
+So far we have been working in the `Structure` section of the main left-hand menu, under the `Traces` tab. This also contains a `Subplots` tab, to create multiple charts from different `Traces` within the same panel; and a `Transforms` tab, which allows you to `Filter`, `Aggregate` (summarize) or `Sort` the data for a `Trace` (see the section on basic operations with data from the first class). `Split` will group the data by a categorical variable.
 
 Having made a basic chart, you can customize it by choosing an overall `Theme`, and then opening up the options in the `Style` section of the menu. We will keep the default `Theme`.
 
-In the `Style` Menu, `General` contains an option to change the size of the chart. I recommend keeping it set to `Auto`, as this allows the chart to be responsive, altering its size to fit the available space when embedded into a web page. This section also allows you to add a plot title, and to customize the font faces and size, and to customize the tooltips. If you don't wish your chart to have tooltips, select `Disable` under `Hover>Mode`. We will leave change the `Text>Typeface` to 	`Arial`, which should display in all browsers when we later download as a web page.
+In the `Style` menu, `General` contains an option to change the size of the chart. I recommend keeping it set to `Auto`, as this allows the chart to be responsive, altering its size to fit the available space when embedded into a web page. This section also allows you to add a plot title, and to customize the font faces and size, and to customize the tooltips. If you don't wish your chart to have tooltips, select `Disable` under `Hover>Mode`. We will change the `Text>Typeface` to `Arial`, which should display in all browsers when we later download as a web page.
 
-The available options to customize `Traces`.  depend on the chart type. Common options include  customizing color and opacity. For bar or columns charts you can also change bar widths and the padding around them. We will simply change the default blue color to a bright red, using the HEX value `FF0000`:
+The available options to customize in the `Traces` tab depend on the chart type. Common options include  customizing color and opacity. For bar or column charts you can also change bar widths and the padding around them. We will simply change the default blue color to a bright red, using the HEX value `FF0000`:
 
 ![](./img/basic_charts_8.jpg)
 
-`Axes` contains options for customizing the `X` and `Y` axes. It contains options to set the `Range` of each axis, to show or hide grid and zero lines under `Lines`, and to customize `Tick Labels` and `Tick Markers`. `Range Slider` adds a control to adjust the range shown on the X axis, which can be useful to zoom in on the details for very long time series.  You will usually want to adjust the axis `Titles`; Here, edit the Y axis title to `Participants (millions)`.
+The `Axes` tab contains options for customizing the `X` and `Y` axes. It contains options to set the `Range` of each axis, to show or hide grid and zero lines under `Lines`, and to customize `Tick Labels` and `Tick Markers`. `Range Slider` adds a control to adjust the range shown on the X axis, which can be useful to zoom in on the details for very long time series.  You will usually want to adjust the axis `Titles`; Here, edit the Y axis title to `Participants (millions)`.
 
 ![](./img/basic_charts_9.jpg)
 
-`Legend` allows you to customize the legend for charts that need them, superfluous here.
+The `Legend` tab allows you to customize the color legend for charts that need them, superfluous here.
 
-`Annotation` allows you to annotate the chart in various ways. Click the `+ Annotation` button to see the options. You can add subtitles or captions, or label individual data points; `Automatically Positioned Labels` will label data points with their values.
+The `Annotate` menu allows you to annotate the chart in various ways. 
 
-`Shapes` provides options to add reference lines or bands to your chart; use in combination with `Annotation` as required for chart annotation. (If you need to add a trend line to a scatter plot, use `Curve Fitting` under `Analysis`.)
+`Text` allows you to add text annotations.
+
+`Shapes` provides options to add reference lines or bands to your chart; use in combination with `Text` as required for chart annotation. (If you need to add a trend line to a scatter plot, use `Curve Fitting` under the `Analyze` menu.)
 
 `Images` allows you to add images, such as an organization's logo, to a chart.
 
@@ -88,7 +90,7 @@ Having finished customizing your chart, hit the `Save` button, then save both `P
 
 ### Export and share the chart
 
-Having saved your chart, select `Export` to save it as a PNG image, setting the desired height and width in pixels:
+Having saved your chart, select the `Image` tab under the  `Export` export to save it as a PNG image, setting the desired height and width in pixels:
 
 ![](./img/basic_charts_11.jpg)
 
@@ -103,7 +105,7 @@ Copy the embed code, then open the `test.html` file in [Sublime Text](https://ww
 ```Javascript
   <div class="container">
 
-<iframe width="100%" height="500" frameborder="0" scrolling="no" src="https://plot.ly/~paldhous/319.embed"></iframe>
+<iframe width="100%" height="500" frameborder="0" scrolling="no" src="https://plot.ly/~paldhous/328.embed"></iframe>
 
   </div> <!-- /.container -->
 ```
@@ -126,12 +128,12 @@ Place the downloaded file in your working folder for this class and rename it as
 **Before:**
 
 ```Javascript
- config: {"mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A", "linkText": "Export to plot.ly", "showLink": true}
+ config: {"showLink": true, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
 ```
 
 **After:**
 ```Javascript
- config: {"mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A", "linkText": "Export to plot.ly", "showLink": false, "displayModeBar": false}
+config: {"showLink": false, "displayModeBar": false, "linkText": "Export to plot.ly", "mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A"}
 ```
 Now open `test.html` once more and edit the iframe to embed the downloaded web page:
 
@@ -153,7 +155,7 @@ Click your browswer's back arrow to return to your account's home page:
 
 ![](./img/basic_charts_15.jpg)
 
-Now hover over the grid with the food stamps data, and click on the `Edit` button to start making a new chart from the same data.
+Now hover over the grid with the food stamps data, and click on `Open in: Editor` to start making a new chart from the same data.
 
 This time, select `Line` for the first `Trace`, and  put `food_stamps` on the `Y` axis and `year` on the `X`:
 
@@ -163,9 +165,9 @@ Now click the `+ Trace` button to add a second line, and edit so that `poverty` 
 
 ![](./img/basic_charts_17.jpg)
 
-Change the `Typeface` to Arial as before under `General`.
+Change the `Typeface` to Arial as before under the `General` in the `Style` menu.
 
-Under `Traces` in the `Style` section, select the `By Type` tab check `Points`. (With multiple traces, you can also use the `Individually` tab to customize them one at a time.) Once you add points to a line chart, Poltly should automatically adjust the `Y` axis to start at zero and add a zero line.
+Under `Traces` in the `Style` menu, select the `By Type` tab check `Points`. (With multiple traces, you can also use the `Individually` tab to customize them one at a time.) Once you add points to a line chart, Plotly should automatically adjust the `Y` axis to start at zero.
 
 By default, Plotly has chosen a qualitative palette for `categorical scales`; you can use the `Individually` tab to customize the color of each trace individually if you wish. Here I have chosen blue and orange, at opposite sides of the color wheel, and also labelled each `Trace`:
 
@@ -182,35 +184,39 @@ Select `Legend`, and adjust its `Positioning`, `Orientation` and `Trace Order` a
 
 Save the chart and then export/share as before.
 
-### Make a bubble chart showing the relationship between GDP per capita and life expectancy for the world's nations in 2016
+### Make a bubble chart showing the relationship between GDP per capita and life expectancy for the world's nations in 2017
 
-Click your browswer's back arrow to return to your account's home page, then select `Create>Chart` to open a new blank grid. Import the `nations_2016.csv` file:
+Click your browser's back arrow to return to your account's home page, then select `Create>Chart` to open a new blank grid. Import the `nations_2017.csv` file:
 
-![](./img/basic_charts_22.jpg)
+![](./img/basic_charts_21.jpg)
 
 Add a `Trace` the default `Scatter` plot and map `gdp_percap` onto the `X` axis and `life_expect` onto the `Y`:
 
+![](./img/basic_charts_22.jpg)
+
+To color the circles by region, select `Transforms` under the `Structure` menu, click `+ Transform`, select `Split`, and split by `region` to color the countries by their region.
+
 ![](./img/basic_charts_23.jpg)
 
-To color the circles by region, select `Transforms`, click `+ Transform`. Select `Split`, and split by `region` to color the countries by their region.
+Under `General` in the `Style` menu, set the `Typeface` to `Arial`.
+
+In the `Style` menu under `Traces`, select the `By Type` tab, click on the color palette under `Points` and select `Set2`, which is a ColorBrewer palette.
 
 ![](./img/basic_charts_24.jpg)
 
-Under `General`, set the `Typeface` to `Arial`.
-
-In the `Style` section under `Traces`, select the `By Type` tab, click on the color palette under `Points` and select `Set2`, which is a ColorBrewer palette.
+Scroll further down to select `Variable` under `Size` and in the `Choose data` box select `Population` to size the circles by the countries' populations.
 
 ![](./img/basic_charts_25.jpg)
 
-Scroll further down to select `Variable` under `Size` and in the `Choose data` box select `Population` to size the circles by the countries' populations.
+Scroll further down to select `country` under `Text` and check `Text` under `Hover/Tooltip Text` so that the tooltip shows country names, as well as the values on the `X` and `Y` axes.
 
 ![](./img/basic_charts_26.jpg)
 
-Scroll further down to select `country` under `Text` and check `Text` under `Hover/Tiooltip Text` so that the tooltip shows country names, as well as the values on the `X` and `Y` axes.
+Under `Axes`, edit the axis titles, and to mimic the appearance of the chart we saw in the Gapminder video switch the `Axis Type` to `Log` for the `X` axis under `Range`. For the `X` axis, also add a `Prefix` of `$` under `Tick Labels`:
 
 ![](./img/basic_charts_27.jpg)
 
-Under `Axes`, edit the axis titles, and to mimic the appearance of the chart we saw in the Gapminder video switch the `Axis Type` to `Log` for the `X` axis under `Range`. For the `X` axis, also add a `Prefix` of `$` under `Tick Labels`:
+Under `Legend` adjust the orientation and position of the legend:
 
 ![](./img/basic_charts_28.jpg)
 
