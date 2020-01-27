@@ -22,7 +22,7 @@ We will use [Open Refine](https://openrefine.org/) to process and clean “dirty
 - #### Jan 15, 10.30am: [Basic charts with Plotly](basic-charts.html)
  We'll use the [Plotly](https://plot.ly/online-chart-maker/) web app to make a variety of static and interactive charts.
 
- - **Assignment:** Progress report on your data visualization project. Share your data, and any preliminary charts. Detail any obstacles. **Due Fri Feb 8 at 8pm.**
+ - **Assignment:** Progress report on your data visualization project. Share your data, and any preliminary charts. Detail any obstacles. **Due Sat Feb 8 at 8pm.**
 
 
 - #### Feb 5, 8.30am: [Processing data with R](data-processing-r.html)
@@ -31,7 +31,7 @@ Introduction to [R](https://www.r-project.org/), [R Studio](https://www.rstudio.
 - #### Feb 5, 10.30am: [Static charts with R](static-charts-r.html)
 Making charts with the [ggplot2](https://ggplot2.tidyverse.org/) R package.
 
- - **Assignment:** Practice exercises with [dplyr](https://dplyr.tidyverse.org/) and ggplot. **Due Fri Feb 22 at 8pm.**
+ - **Assignment:** Practice exercises with [dplyr](https://dplyr.tidyverse.org/) and ggplot. **Due Sat Feb 22 at 8pm.**
  
 
 - #### Feb 26, 8.30am: [Interactive charts with R](interactive-charts-r.html)
