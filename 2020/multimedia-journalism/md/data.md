@@ -38,13 +38,13 @@ Contains the following files:
  - `gdp_percap` [Gross Domestic Product per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD) in current international dollars, corrected for purchasing power in different territories.
  - `life_expect` [Life expectancy at birth](https://data.worldbank.org/indicator/SP.DYN.LE00.IN), in years.
  - `population` Estimated [total population](https://data.worldbank.org/indicator/SP.POP.TOTL) at mid-year, including all residents apart from refugees.
- - `birth_rate` [Live births during the year per 1,000 people](https://data.worldbank.org/indicator/SP.DYN.CBRT.IN), based on mid-year population estimate.
- - `neonat_mortal_rate` [Neonatal mortality rate](https://data.worldbank.org/indicator/SH.DYN.NMRT): babies dying before reaching 28 days of age, per 1,000 live births in a given year.
  - `region` `income` World Bank [regions and income groups](https://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS), explained [here](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519).
 
-- `nations2.csv` Again from the World Bank Indicators portal. Contains the following fields:
- - `iso3c` `year` As above.
- - `co2_percap` [Carbon dioxide emissions per capita](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC) metric tonnes.
+- `co2.csv` From the [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions). Contains the following variables:
+ - `iso3c` Three-letter code for each country.
+ - `country` Country name.
+ - `year`
+ - `emissions` Carbon dioxide emissions, in millions of tonnes.
 
 - `kindergarten.csv` Data from the [California Department of Public Health](https://www.shotsforschool.org/k-12/reporting-data/), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2014. Contains the following variables:
   - `district` School district.
@@ -56,6 +56,7 @@ Contains the following files:
   - `start_year` Year of entry (for the 2014-2015 school year, for example, this would be 2014).
 
 - `kindergarten_2015.csv` As above, but data from 2015 only.
+
 
 ### [Static charts with R](data/static-charts-r.zip)
 

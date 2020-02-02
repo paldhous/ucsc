@@ -1,28 +1,18 @@
 # Processing data with R
 
-### Introducing R and RStudio Cloud
+### Introducing R and RStudio
 
 In today's class we will work with **[R](http://www.r-project.org/)**, which is a very powerful tool, designed by statisticians for data analysis. Described on its website as "free software environment for statistical computing and graphics," R is a programming language that opens a world of possibilities for making graphics and analyzing and processing data. Indeed, just about anything you may want to do with data can be done with R, from web scraping to making interactive graphics.
 
-Our main goal for today's class is to get used to processing and analyzing data using the **[dplyr](https://dplyr.tidyverse.org/)** R package.
+Our main goal for this class is to get used to processing and analyzing data using the **[dplyr](https://dplyr.tidyverse.org/)** R package.
 
-We will work in **[RStudio Cloud](https://rstudio.cloud/)**, a web-based "integrated development environment," or IDE, for R that provides a user-friendly interface.
+**[RStudio](https://www.rstudio.com/)** is an "integrated development environment," or IDE, for R that provides a user-friendly interface.
 
-You should already have received an invitation to a shared UCSC SciCom workspace in RStudio Cloud.
-
-When you login, you should see a page like this:
+Launch RStudio, and the screen should look like this:
 
 ![](./img/data_processing_r_1.jpg)
 
-### Make a project for your work in the UCSC workspace
-
-In the panel at left, select the `UCSC` workspace and then click the `New Project` button. give it your name, in the format `firstname-lastname`, with no spaces, so that I know where to look for everyone's work.
-
-Close down the panel at left, and your screen should now look like this:
-
-![](./img/data_processing_r_2.jpg)
-
-The main panel to the left is the R Console. It shows the version of R you are running, here `3.5.2`.
+The main panel to the left is the R Console. It shows the version of R you are running, here `3.6.2`.
 
 Type valid R code into here, hit `return`, and it will be run. See what happens if you run:
 
@@ -42,13 +32,13 @@ Download the data for this session from [here](data/data-processing-r.zip). You 
  - `gdp_percap` [Gross Domestic Product per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD) in current international dollars, corrected for purchasing power in different territories.
  - `life_expect` [Life expectancy at birth](https://data.worldbank.org/indicator/SP.DYN.LE00.IN), in years.
  - `population` Estimated [total population](https://data.worldbank.org/indicator/SP.POP.TOTL) at mid-year, including all residents apart from refugees.
- - `birth_rate` [Live births during the year per 1,000 people](https://data.worldbank.org/indicator/SP.DYN.CBRT.IN), based on mid-year population estimate.
- - `neonat_mortal_rate` [Neonatal mortality rate](https://data.worldbank.org/indicator/SH.DYN.NMRT): babies dying before reaching 28 days of age, per 1,000 live births in a given year.
  - `region` `income` World Bank [regions and income groups](https://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS), explained [here](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519).
 
-- `nations2.csv` Again from the World Bank Indicators portal. Contains the following fields:
- - `iso3c` `year` As above.
- - `co2_percap` [Carbon dioxide emissions per capita](https://data.worldbank.org/indicator/EN.ATM.CO2E.PC) metric tonnes.
+- `co2.csv` From the [Global Carbon Atlas](http://www.globalcarbonatlas.org/en/CO2-emissions). Contains the following variables:
+ - `iso3c` Three-letter code for each country.
+ - `country` Country name.
+ - `year`
+ - `emissions` Carbon dioxide emissions, in millions of tonnes.
 
 - `kindergarten.csv` Data from the [California Department of Public Health](https://www.shotsforschool.org/k-12/reporting-data/), documenting enrollment and the number of children with complete immunizations at entry into kindergartens in California from 2001 to 2014. Contains the following variables:
   - `district` School district.
@@ -64,23 +54,36 @@ Download the data for this session from [here](data/data-processing-r.zip). You 
 
 ### Reproducibility: Save your scripts
 
-Data journalism should ideally be fully documented and reproducible. R makes this easy, as every operation performed can be saved in a script, and repeated by running that script. Click on the ![](./img/data_processing_r_3.jpg) icon at top left and select `R Script`. A new panel should now open:
+Data journalism should ideally be fully documented and reproducible. R makes this easy, as every operation performed can be saved in a script, and repeated by running that script. Click on the ![](./img/data_processing_r_2.jpg) icon at top left and select `R Script`. A new panel should now open:
 
-![](./img/data_processing_r_4.jpg)
+![](./img/data_processing_r_3.jpg)
 
-Any code we type in here can be run in the console. Hitting `Run` will run the line of code on which the cursor is sitting. To run multiple lines of code, highlight them and click `Run`.
+Any code you type in here can be run in the console. Hitting `Run` will run the line of code on which the cursor is sitting. To run multiple lines of code, highlight them and click `Run`.
 
 Click on the save/disk icon in the script panel and save the blank script to the file on your desktop with the data for this week, calling it `data_processing.R`.
 
 ### Set your working directory
 
-In RStudio Cloud, your working directory is automatically the directory for the project in which you are working. But it's good practice, if you are later going to work with RStudio Desktop on your own computer, to get into the habit of setting the working directory to the folder into which you have saved your script and the data with which you are going to work. To set the working directory to the folder containing your script, select from the top menu `Session>Set Working Directory>To Source File Location`.
+Now you can set the working directory to this folder by selecting from the top menu `Session>Set Working Directory>To Source File Location`. (Doing so means you can load the files in this directory without having to refer to the full path for their location, and anything you save will be written to this folder.)
 
-Notice how the code below appears in the console:
+Notice how this code appears in the console:
 
 ```R
-setwd("/cloud/project")
+setwd("~/Desktop/data_processing_r")
 ```
+
+When working in RStudio, you can add the following line to the top of your script to automatically set your working directory to the folder containing the script:
+
+```R
+# set working directory to the folder containing this script
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+```
+
+So add this code to the top of your script now.
+
+### Comment your code
+
+Anything that appears on a line after `#` will be treated as a comment, and will be ignored when the code is run. Use this to explain what the codes does. Get into the habit of commenting your code: Don't trust yourself to remember!
 
 ### Save your data
 
@@ -89,19 +92,26 @@ The panel at top right has three tabs, the first showing the `Environment`, or a
 Click on the save/disk icon in the `Environment` panel to save and call the file `data_processing.RData`. You should see the following code appear in the Console:
 
 ```r
-save.image("/cloud/project/data_processing.RData")
+save.image("~/Desktop/data_processing_r/data_processing.RData")
 ```
-Copy this code into your script, placing it at the end, with a comment, explaining what it does:
+Copy the code below into your script, placing it at the end, with a comment, explaining what it does:
 
 ```r
 # save session data
-save.image("/cloud/project/data_processing.RData")```
-Now if you run your entire script, the last action will be to save the data in your environment.
+save.image("data_processing.RData")```
 
+You don't need to define the full path to save the data file because you already have set the working directory to this location. Now if you run your entire script, the last action will be to save the data in your environment.
 
-### Comment your code
+From now on, add code to your script **between** the two lines we have added so far.
 
-Anything that appears on a line after `#` will be treated as a comment, and will be ignored when the code is run. Use this to explain what the codes does. Get into the habit of commenting your code: Don't trust yourself to remember!
+From the top menu, select `RStudio>Preferences`, and change `Save workspace to .RData on exit` to `Never`:
+
+![](./img/data_processing_r_4.jpg)
+
+This change in your settings will ensure that the contents of your environment are not saved into a generic file that will load each time you open RStudio.
+
+Each time you shut down RStudio, also make sure to close your script(s) and any data files that you have open to view. If you don't, they will reopen the next time you launch RStudio.
+
 
 ### Some R code basics
 
@@ -135,14 +145,14 @@ In the code above, `is.na`, `c`, `setwd`, `print`, and so on are **functions**. 
 
 ### Install and load R packages
 
-Much of the power of R comes from the thousands of "packages" written by its community of open source contributors. These are optimized for specific statistical, graphical or data-processing tasks. To see what packages are available in the basic distribution of R, select the `Packages` tab in the panel at bottom right. To find packages for particular tasks, try searching Google using appropriate keywords and the phrase "R package."
+Much of the power of R comes from the thousands of "packages" written by its community of contributors. These are optimized for specific statistical, graphical, or data-processing tasks. To see what packages are available in the basic distribution of R, select the `Packages` tab in the panel at bottom right. To find packages for particular tasks, try searching Google using appropriate keywords and the phrase "R package."
 
 In this class, we will work with two incredibly useful packages developed by [Hadley Wickham](http://hadley.nz/), chief scientist at RStudio:
 
 - **[readr](https://readr.tidyverse.org/)** Reads and writes CSV and other text files.
 - **[dplyr](https://dplyr.tidyverse.org/)** Processes and analyzes data, using the operations we discussed in the first class.
 
-These and several other useful packages have been combined into a super-package called the **[tidyverse](https://www.tidyverse.org/)**.
+These and several other useful packages have been combined into a super-package called the **[tidyverse](https://www.tidyverse.org/)**, which have a common underlying grammar.
 
 To install a package, click on the `Install` icon in the `Packages` tab, type its name into the dialog box, and make sure that `Install dependencies` is checked, as some packages will only run correctly if other packages are also installed. Click `Install` and all of the required packages should install:
 
@@ -170,28 +180,21 @@ At this point, and at regular intervals, save your script, by clicking the save/
 
 #### Load data
 
-Under the `Files` tab at bottom-right, select `Upload` and click `Choose File` to navigate to zipped folder `data-processing-r.zip`:
-
-![](./img/data_processing_r_6.jpg)
-
-You can load data into the current R session by selecting `Import Dataset>From Text File...` in the `Environment` tab. Click `OK` to upload the data, which should load into your project.
-
 You can load data into R using `Import Dataset` in the `Environment` tab. However, we will use the `read_csv` function from the **readr** package. Copy the following code into your script and `Run`:
 
 ```r
 # load nations data
-nations <- read_csv("data-processing-r/nations.csv")
-nations2 <- read_csv("data-processing-r/nations2.csv")
+nations <- read_csv("nations.csv")
 
 ```
 
-Notice that the `Environment` now contains two objects.
+Notice that the `Environment` now contains ab object called `nations`.
 
 If your enviroment is in the `List` view (look at top right), use the drop-down menu to switch to the `Grid` view.
 
 The two objects will be of type `spec_tbl_df`, a variety of the standard R object for holding tables of data, known as a **data frame**:
 
-![](./img/data_processing_r_7.jpg)
+![](./img/data_processing_r_6.jpg)
 
 The `Value` for each data frame details the number of columns, and the number of rows, or observations, in the data.
 
@@ -211,23 +214,21 @@ glimpse(nations)
 This should give the following output in the R Console:
 
 ```JSON
-Observations: 5,697
-Variables: 11
-$ iso2c              <chr> "AD", "AD", "AD", "AD", "AD", "AD", "AD", "AD",…
-$ iso3c              <chr> "AND", "AND", "AND", "AND", "AND", "AND", "AND"…
-$ country            <chr> "Andorra", "Andorra", "Andorra", "Andorra", "An…
-$ year               <dbl> 2007, 2011, 2013, 2008, 1992, 2006, 2009, 2010,…
-$ gdp_percap         <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ life_expect        <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ population         <dbl> 82683, 83751, 80788, 83861, 58888, 80991, 84462…
-$ birth_rate         <dbl> 10.1, NA, NA, 10.4, 12.1, 10.6, 9.9, 9.8, 10.9,…
-$ neonat_mortal_rate <dbl> 1.5, 1.3, 1.2, 1.4, 3.6, 1.6, 1.4, 1.3, 3.1, 3.…
-$ region             <chr> "Europe & Central Asia", "Europe & Central Asia…
-$ income             <chr> "High income", "High income", "High income", "H…```
+Observations: 6,048
+Variables: 9
+$ iso2c       <chr> "AD", "AD", "AD", "AD", "AD", "AD", "AD", "AD",…
+$ iso3c       <chr> "AND", "AND", "AND", "AND", "AND", "AND", "AND"…
+$ country     <chr> "Andorra", "Andorra", "Andorra", "Andorra", "An…
+$ year        <dbl> 1990, 1995, 1996, 1997, 1998, 1999, 2000, 2001,…
+$ gdp_percap  <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ life_expect <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ population  <dbl> 54509, 63850, 64360, 64327, 64142, 64370, 65390…
+$ region      <chr> "Europe & Central Asia", "Europe & Central Asia…
+$ income      <chr> "High income", "High income", "High income", "H…```
 
 `chr` means "character," or a string of text (which can be treated as a categorical variable); `int` means an integer or whole number; `dbl` means a number that can contain decimal fractions; `dttm` means a date-time variable.
 
-If you run into any trouble importing data with **readr**, you may need to specify the data types for some columns -- in particular for date and time. [This link](https://github.com/hadley/readr/blob/master/vignettes/column-types.Rmd) explains how to set data types for individual variables when importing data with **readr**.
+If you run into any trouble importing data with **readr**, you may need to specify the data types for some columns -- in particular for date and time. [This link](https://readr.tidyverse.org/articles/readr.html) explains how to set data types for individual variables when importing data with **readr**.
 
 To specify an individual column use the name of the data frame and the column name, separated by `$`. Type this into your script and run:
 
@@ -240,7 +241,7 @@ The output will be the first 1,000 values for that column.
 If you need to change the data type for any column, use the following functions:
 
 - `as.character` converts to a text string.
-- `as.numeric` converts to a number that can include decimal fractions.
+- `as.double` converts to a number that can include decimal fractions.
 - `as.factor` converts to a categorical variable.
 - `as.integer` converts to an integer.
 - `as.Date` converts to a date.
@@ -258,20 +259,17 @@ glimpse(nations)
 Notice that the data type for `population` has now changed:
 
 ```JSON
-Observations: 5,697
-Variables: 11
-$ iso2c              <chr> "AD", "AD", "AD", "AD", "AD", "AD", "AD", "AD",…
-$ iso3c              <chr> "AND", "AND", "AND", "AND", "AND", "AND", "AND"…
-$ country            <chr> "Andorra", "Andorra", "Andorra", "Andorra", "An…
-$ year               <dbl> 2007, 2011, 2013, 2008, 1992, 2006, 2009, 2010,…
-$ gdp_percap         <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ life_expect        <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
-$ population         <int> 82683, 83751, 80788, 83861, 58888, 80991, 84462…
-$ birth_rate         <dbl> 10.1, NA, NA, 10.4, 12.1, 10.6, 9.9, 9.8, 10.9,…
-$ neonat_mortal_rate <dbl> 1.5, 1.3, 1.2, 1.4, 3.6, 1.6, 1.4, 1.3, 3.1, 3.…
-$ region             <chr> "Europe & Central Asia", "Europe & Central Asia…
-$ income             <chr> "High income", "High income", "High income", "H…
-> ```
+Observations: 6,048
+Variables: 9
+$ iso2c       <chr> "AD", "AD", "AD", "AD", "AD", "AD", "AD", "AD",…
+$ iso3c       <chr> "AND", "AND", "AND", "AND", "AND", "AND", "AND"…
+$ country     <chr> "Andorra", "Andorra", "Andorra", "Andorra", "An…
+$ year        <dbl> 1990, 1995, 1996, 1997, 1998, 1999, 2000, 2001,…
+$ gdp_percap  <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ life_expect <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ population  <int> 54509, 63850, 64360, 64327, 64142, 64370, 65390…
+$ region      <chr> "Europe & Central Asia", "Europe & Central Asia…
+$ income      <chr> "High income", "High income", "High income", "H…> ```
 
 The `summary` function will run a quick statistical summary of a data frame, calculating mean, median and quartile values for continuous variables:
 
@@ -282,31 +280,27 @@ summary(nations)
 Here is the console output:
 
 ```JSON
-    iso2c              iso3c             country               year     
- Length:5697        Length:5697        Length:5697        Min.   :1990  
- Class :character   Class :character   Class :character   1st Qu.:1996  
- Mode  :character   Mode  :character   Mode  :character   Median :2003  
-                                                          Mean   :2003  
-                                                          3rd Qu.:2010  
-                                                          Max.   :2016  
-                                                                        
-   gdp_percap      life_expect      population          birth_rate   
- Min.   :   242   Min.   :27.61   Min.   :9.003e+03   Min.   : 6.90  
- 1st Qu.:  2338   1st Qu.:62.06   1st Qu.:7.457e+05   1st Qu.:13.23  
- Median :  6844   Median :70.70   Median :5.379e+06   Median :21.45  
- Mean   : 13530   Mean   :68.19   Mean   :3.001e+07   Mean   :23.90  
- 3rd Qu.: 18154   3rd Qu.:75.39   3rd Qu.:1.799e+07   3rd Qu.:33.57  
- Max.   :140037   Max.   :85.42   Max.   :1.379e+09   Max.   :55.56  
- NA's   :779      NA's   :429     NA's   :16          NA's   :312    
- neonat_mortal_rate    region             income         
- Min.   : 0.60      Length:5697        Length:5697       
- 1st Qu.: 6.00      Class :character   Class :character  
- Median :14.50      Mode  :character   Mode  :character  
- Mean   :18.92                                           
- 3rd Qu.:28.70                                           
- Max.   :75.00                                           
- NA's   :567   
-```
+   iso2c              iso3c             country         
+ Length:6048        Length:6048        Length:6048       
+ Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character  
+                                                         
+                                                         
+                                                         
+                                                         
+      year        gdp_percap      life_expect      population       
+ Min.   :1990   Min.   :   301   Min.   :26.17   Min.   :8.913e+03  
+ 1st Qu.:1997   1st Qu.:  2579   1st Qu.:62.29   1st Qu.:6.075e+05  
+ Median :2004   Median :  7313   Median :70.76   Median :5.300e+06  
+ Mean   :2004   Mean   : 14343   Mean   :68.36   Mean   :2.958e+07  
+ 3rd Qu.:2010   3rd Qu.: 19817   3rd Qu.:75.58   3rd Qu.:1.797e+07  
+ Max.   :2017   Max.   :139962   Max.   :85.42   Max.   :1.386e+09  
+                NA's   :855      NA's   :496     NA's   :17         
+    region             income         
+ Length:6048        Length:6048       
+ Class :character   Class :character  
+ Mode  :character   Mode  :character  
+     ```
 
 ### Process and analyze data with dplyr
 
@@ -339,7 +333,7 @@ Here are some of the most useful functions in **dplyr**:
 - `bind_rows` Append one data data frame to another, combining data from columns with the same name.
 - `unique` remove duplicate rows.
 
-There are also various functions to **join** data, which we will explore below.
+There are also various functions to **join** data, which we will explore later.
 
 These functions can be chained together using the "pipe" operator `%>%`, which makes the output of one line of code the input for the next. This allows you to run through a series of operations in a logical order. I find it helpful to think of `%>%` as meaning "then."
 
@@ -347,21 +341,21 @@ These functions can be chained together using the "pipe" operator `%>%`, which m
 
 Now we will **filter** and **sort** the data in specific ways. For each of the following examples, copy the code that follows into your script, and view the results. Notice how we create new objects to hold the processed data.
 
-##### Filter the data for 2016 only
+##### Filter the data for 2017 only
 
 ```r
-# filter data for 2016 only, and select columns for country, life expectancy, income group, and region
+# filter data for 2017 only, and select columns for country, life expectancy, income group, and region
 longevity <- nations %>%
-  filter(year == 2016 & !is.na(life_expect)) %>%
+  filter(year == 2017 & !is.na(life_expect)) %>%
   select(country, life_expect, income, region)
 ```
-In this code, we created a new object called `longevity` from `nations` and then (`%>%`) filtered it for just the data for 2016 and to include only non-null values. Then we selected just four variables from the 11 in the original data frame. There should be data returned for 195 countries.
+This creates a new object called `longevity` from `nations` and then (`%>%`) filters it for just the data for 2017 and to include only non-null values. Then the code selects just four variables from the nine in the original data frame. There should be data returned for 198 countries.
 
 Here are the first few records in the new object:
 
-![](./img/data_processing_r_8.jpg)
+![](./img/data_processing_r_7.jpg)
 
-##### Find the ten high-income countries with the shortest life expectancy in 2016
+##### Find the ten high-income countries with the shortest life expectancy in 2017
 
 ```r
 # find the ten high-income countries with the shortest life expectancy
@@ -371,14 +365,14 @@ high_income_short_life <- longevity %>%
   head(10)
 ```
 
-![](./img/data_processing_r_9.jpg)
+![](./img/data_processing_r_8.jpg)
 
 This code takes the previous `longevity` object, filters it for countries in the high income group only, then sorts the data, using `arrange` (the default is ascending order). Finally it uses `head(10)` to return the first ten countries in the sorted data.
 
 ##### Find countries in North America or Europe & Central Asia with a life expectancy in 2016 of between 75 and 80.
 
 ```R
-# find countries in North America or Europe & Central Asia with a life expectancy in 2016 of 75 - 80
+# find countries in North America or Europe & Central Asia with a life expectancy in 2017 of 75 - 80
 eur_na_75_80 <- longevity %>%
   filter(life_expect > 75 & life_expect < 80 & (region == "Europe & Central Asia" | region == "North America")) %>%
   arrange(desc(life_expect))
@@ -386,13 +380,13 @@ eur_na_75_80 <- longevity %>%
 
 This should be the result:
 
-![](./img/data_processing_r_10.jpg)
+![](./img/data_processing_r_9.jpg)
 
-Whereas in the initial filter of the data to create the `longevity` data frame we used `&` to return data meeting both criteria, this time we also used `|` to include data meeting either criteria. `&` and `|` are equivalent to `AND` and `OR` in Boolean logic. Notice how the `|` part of the filter is wrapped in parentheses. Look at what happens if you remove them, and work out what is going on.
+In the initial filter of the data to create the `longevity` data frame we used `&` to return data meeting both criteria. This time we also used `|` to include data meeting either criteria. `&` and `|` are equivalent to `AND` and `OR` in Boolean logic. Notice how the `|` part of the filter is wrapped in parentheses. Look at what happens if you remove them, and work out what is going on.
 
 **==Note:==** When combining `&` and `|` in more complex filters, use parentheses to determine which parts of the evaluation should be carried out first.
 
-##### Find the 20 countries with the longest life expectancy in 2016, plus the United States with its rank, if it lies outside the top 20
+##### Find the 20 countries with the longest life expectancy in 2017, plus the United States with its rank, if it lies outside the top 20
 
 ```r
 # find the 20 countries with the longest life expectancies, 
@@ -402,21 +396,19 @@ long_life <- longevity %>%
   arrange(rank_le) %>%
   filter(rank_le <= 20 | country == "United States")
 ```
-This should be the result, showing the United States to rank a lowly 42nd:
+This should be the result, showing the United States to rank a lowly 46th:
 
-![](./img/data_processing_r_11.jpg)
+![](./img/data_processing_r_10.jpg)
 
-Here we started by creating a new variable in the data called `rank_le`, using the `mutate` function from dplyr and the `rank` function (https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/rank) from base R.
-
-Finally we filtered the data for the top 20 countries, plus the United States.
+This codes starts by creating a new variable in the data called `rank_le`, using the `mutate` function from dplyr and the `rank` function (https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/rank) from base R. It ends by filtering the data for the top 20 countries, plus the United States.
 
 Notice also in this code that a single `=` is used to change or create values, while `==` is used to test whether a value is equal to something.
 
-This code produces exactly the same result, Make sure you understand why:
+This code produces exactly the same result. Make sure you understand why:
 
 ```R
 long_life <- nations %>%
-  filter(year == 2016 & !is.na(life_expect)) %>%
+  filter(year == 2017 & !is.na(life_expect)) %>%
   select(country, life_expect, income, region) %>%
   mutate(rank_le = rank(desc(life_expect))) %>%
   arrange(rank_le) %>%
@@ -435,7 +427,7 @@ long_life <- longevity %>%
 
 This should be the result:
 
-![](./img/data_processing_r_12.jpg)
+![](./img/data_processing_r_11.jpg)
 
 This code demonstrates some simple pattern matching on text, using the function `grepl("pattern_a|pattern_b", x)`, which searches variable `x` for values containing any of a list of text values. This is useful for fuzzy text matching. Notice how searching for `Russia` returns `Russian Federation`, which is the country's full name. (`!grepl` will return text strings that *don't* contain the specified pattern.)
 
@@ -478,7 +470,7 @@ longevity_summary <- nations %>%
 
 This should be the first few rows in the data:
 
-![](./img/data_processing_r_13.jpg)
+![](./img/data_processing_r_12.jpg)
 
 This code introduces the functions `group_by` and `summarize`. The entire `summarize` function could be written on one line, but I have started a new line after each summary statistic for clarity.
 
@@ -496,7 +488,7 @@ gdp_regions <- nations %>%
 ```
 This should be the first few rows in the data:
 
-![](./img/data_processing_r_14.jpg)
+![](./img/data_processing_r_13.jpg)
 
 We could also write `10^12` (10 raised to the power of 12) instead of `1000000000000` in this example.
 
@@ -504,7 +496,7 @@ Notice that variables created within a `mutate` function can be immediately used
 
 Here the `group_by` function groups on two variables, `region` and `year`.
 
-Notice that the `sum` function used to add up the GDP values across countries within each region and year includes the argument `na.rm = TRUE`, to remove the `NA` values before running the calculation. See what happens if you don't include this. Previously this wasn't necessary because I had started by filtering out the `NA`s.
+Notice that the `sum` function used to add up the GDP values across countries within each region and year includes the argument `na.rm = TRUE`, to remove the `NA` values before running the calculation. See what happens if you don't include this. Previously this wasn't necessary because we had started by filtering out the `NA`s.
 
 **==Note:==** Get into the habit of including `na.rm = TRUE` in your summary functions, to avoid problems caused by null values!
 
@@ -523,40 +515,39 @@ There are also a number of **join** functions in **dplyr** to combine data from 
 - `semi_join` filters the first-mentioned table to include only values that have matches in the second table.
 - `anti_join` filters the first-mentioned table to include only values that have no matches in the second table.
 
-[Here is a useful reference](https://stat545-ubc.github.io/bit001_dplyr-cheatsheet.html) for managing joins with **dplyr**.
+[Here is a useful reference](https://stat545.com/join-cheatsheet.html) for managing joins with **dplyr**.
 
-This code will join `nations2` to `nations`
-
-```r
-# join nations to nations2
-nations <- inner_join(nations, nations2)
-```
-
-See what happens if you use `left_join` or `right_join`.
-
-By default, **dplyr** looks for variables with matching names, here `iso3c` and `year`, and joins on those. But you can also specify exactly how a join should be made, like this:
+This code will load the carbon dioxide emissions data and join to the nations data.
 
 ```r
-# join nations to nations2
-nations <- inner_join(nations, nations2, by = c("iso3c" = "iso3c", "year" = "year"))
+# load co2 emissions data
+co2 <- read_csv("co2.csv")
+
+# join nations to co2
+nations2 <- inner_join(nations, co2, by = c("iso3c" = "iso3c", "year" = "year"))
 ```
+See what happens if you use `left_join` or `right_join` instead of inner join. Here we specified exactly how the join should be made with the code starting with `by`.
+
+If you don't specificy the columns to join on, **dplyr** looks for variables with matching names, here `iso3c`, `country`, and `year`, and joins on those. What happens if you run the following code, and why?
+
+```r
+# join nations to co2
+nations3 <- inner_join(nations, co2)
+```
+
 ##### Calculate total carbon dioxide emissions by region and year
 
 In the joined data frame, we can now calculate the total carbon dioxide emissions for each country and each year, and then add up the totals by region over the years:
 
 ```r
-# total carbon dioxide, in gigatonnes, by region, over time
-co2_regions <- nations %>%
-  filter(year <= 2014) %>%
-  mutate(co2 = co2_percap * population / 10^9) %>%
+# total carbon dioxide emissions, in gigatonnes, by region, over time
+co2_regions_year <- nations %>%
   group_by(region, year) %>%
   summarize(total_co2 = sum(co2, na.rm = TRUE))
 ```
 Here are the first few rows in the data:
 
-![](./img/data_processing_r_15.jpg)
-
-The carbon dioxide emissions data ends in 2014, so first we filtered the data to remove the subsequent two years, before creating a new variable for total emissions from the per capita value, dividing by a billion, or 10 to the power of nine, to get the result in billions of tonnes (gigatonnes). Finally we grouped and summarized by year and region.
+![](./img/data_processing_r_14.jpg)
 
 ### Load California kindergarten immunization data
 
@@ -565,27 +556,19 @@ Now we'll work with the California immunization data.
 ```r
 # load data
 immun <- read_csv("kindergarten.csv",  col_types = list(
-  county = col_character(),
-  district = col_character(),
-  sch_code = col_character(),
-  pub_priv = col_character(),
-  school = col_character(),
+  .default = col_character(),
   enrollment = col_integer(),
   complete  = col_integer(),
   start_year = col_integer()))
 
 immun_2015 <- read_csv("kindergarten_2015.csv",  col_types = list(
-  county = col_character(),
-  district = col_character(),
-  sch_code = col_character(),
-  pub_priv = col_character(),
-  school = col_character(),
+  .default = col_character(),
   enrollment = col_integer(),
   complete  = col_integer(),
   start_year = col_integer()))
 ```
 
-We need to append the data for 2015 to the older data. So this code specifies the data type for each variable, to be sure that there won't be any mismatches in data type that would cause an error in the next step.
+We need to append the data for 2015 to the older data. This code specifies the data type for each variable, to be sure that there won't be any mismatches in data type that would cause an error in the next step. We used `.default` to set the default data type for any other columns not specifically defined.
 
 #### Append the 2015 data to the older data using `bind_rows`
 
@@ -612,7 +595,7 @@ immun_year <- immun %>%
 ```
 This should be the result:
 
-![](./img/data_processing_r_16.jpg)
+![](./img/data_processing_r_15.jpg)
 
 Notice how the `round(x,n)` function is used to round values for `x`, here the percentage incomplete calculation, to `n` decimal places, here 2. Using negative numbers for `n` will round to tens (-1), hundreds (-2), and so on.
 
@@ -626,7 +609,7 @@ immun_counties_year <- immun %>%
 ```
 Here are the first few rows of the data that should be returned:
 
-![](./img/data_processing_r_17.jpg)
+![](./img/data_processing_r_16.jpg)
 
 Now we can identify the five largest counties with the largest enrollment over the years, and use a join to filter the data by counties for just these five:
 
@@ -642,19 +625,19 @@ top5 <- immun %>%
 # proportion incomplete, top 5 counties by enrollment, by year
 immun_top5_year <- semi_join(immun_counties_year, top5)
 ```
+
 Notice the use of `semi_join` to filter the data for just the five counties with the largest kindergarten enrollment.
 
-### Exporting files from RStudio Cloud
+Here are the first few rows of that data:
 
-Check the files you want to export in the `Files` tab at bottom right. Then select `More>Export` and at the dialog box click `Download`. This will export the files you have selected to your local machine.
+![](./img/data_processing_r_17.jpg)
 
-### Clean up and close your RStudio Cloud session
 
-Before you exit RStudio Cloud, save and close your script, save the data in your Environment, and close any data files you have open in `View`. Click the broom icon in the environment to clear the objects in memory. Finally, in the Console, type `Ctrl-L` to clear the console.
+### Clean up and close your RStudio session
+
+Before you exit RStudio, save and close your script, save the data in your Environment, and close any data files you have open in `View`. Finally, in the Console, type `Ctrl-L` to clear the console.
 
 ### Further reading
-
-**[Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)**
 
 **[RStudio Data Wrangling Cheet Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)**
 Also introduces the [**tidyr**](https://blog.rstudio.org/2014/07/22/introducing-tidyr/) package, which can manage wide-to-long transformations, and text-to-columns splits, among other data manipulations.
@@ -662,6 +645,5 @@ Also introduces the [**tidyr**](https://blog.rstudio.org/2014/07/22/introducing-
 **[Stack Overflow](https://stackoverflow.com/)**
 For any work involving code, this question-and-answer site is a great resource for when you get stuck, to see how others have solved similar problems. Search the site, or [browse R questions](https://stackoverflow.com/questions/tagged/r)
 
-**RStudio Cloud Resources**
-The `Learn` section in the RStudio Cloud panel at left has `Primers`, `Cheat Sheets`, and other resources.
+
 
