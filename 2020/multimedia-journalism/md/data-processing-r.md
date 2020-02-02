@@ -20,7 +20,7 @@ Type valid R code into here, hit `return`, and it will be run. See what happens 
 print("Hello World!")
 ```
 
-### The data we will use today
+### The data we will use
 
 Download the data for this session from [here](data/data-processing-r.zip). You do not need to unzip. It contains the following files:
 
@@ -589,8 +589,8 @@ From this, we can calculate the percentage of children who did not have the comp
 # percentage incomplete, entire state, by year
 immun_year <- immun %>%
   group_by(start_year) %>%
-  summarize(enrolled = sum(enrollment, na.rm=TRUE),
-            completed = sum(complete, na.rm=TRUE)) %>%
+  summarize(enrolled = sum(enrollment, na.rm = TRUE),
+            completed = sum(complete, na.rm = TRUE)) %>%
   mutate(pc_incomplete = round(((enrolled-completed)/enrolled*100),2))
 ```
 This should be the result:
@@ -636,6 +636,25 @@ Here are the first few rows of that data:
 ### Clean up and close your RStudio session
 
 Before you exit RStudio, save and close your script, save the data in your Environment, and close any data files you have open in `View`. Finally, in the Console, type `Ctrl-L` to clear the console.
+
+### Keep R and RStudio up to date
+
+From time to time, check [here](https://www.r-project.org/) to see if you have the latest version of R. If you don't, close RStudio and download the latest version of R and install. RStudio will automatically find this version when you open it once more.
+
+When R moves to a major new version, for example from `3.6` to `3.7`, it creates a new folder for your packages for that version, which will not include the packages you installed previously. The code below will reinstall your packages for the new version. (The number in the file path should reflect the *old* version from which you are upgrading.)
+
+```r
+# update installed packages for new R version
+package_df <- as.data.frame(installed.packages("/Library/Frameworks/R.framework/Versions/3.6/Resources/library"))
+
+package_list <- as.character(package_df$Package)
+
+install.packages(package_list)
+```
+
+You do not need to do this when updating to a new minor version, for example from `3.6.2` to `3.6.3`.
+
+Finally, from time to time check you have the latest verion of RStudio by selecting `Help>Check for Updates` from the top menu. If you do not have the latest version you will be given an option to quit and download the last version.
 
 ### Further reading
 
