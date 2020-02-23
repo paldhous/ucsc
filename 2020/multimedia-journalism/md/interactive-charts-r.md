@@ -22,7 +22,7 @@ Download the data for this session from [here](data/interactive-charts-r.zip), u
 
 ### Setting up
 
-Launch RStudio Cloud, upload the zipped data to your project in the `UCSC` workspace, and save a new R script as `interactive-charts.R`.
+Launch RStudio, create a new RScript, and set the working directory to the downloaded data folder. Save a new R script as `interactive-charts.R`.
 
 ### Make ggplot2 charts into interactive Plotly charts
 
@@ -43,7 +43,7 @@ Now we will remake the dot-and-line food stamps chart in **ggplot2**, and turn i
 
 ```R
 # load data
-food_stamps <- read_csv("interactive-charts-r/food_stamps.csv")
+food_stamps <- read_csv("food_stamps.csv")
 
 # dot-and-line chart
 food_stamps_chart <- ggplot(food_stamps, aes(x = year, y = participants)) +
@@ -65,7 +65,7 @@ food_stamps_interactive <- ggplotly(food_stamps_chart)
 print(food_stamps_interactive)
 ```
 
-<iframe width="100%" height="450" frameborder="0" scrolling="no" src="food_stamps_dot_line1.html"></iframe>
+<iframe width="100%" height="450" frameborder="0" scrolling="no" src="food-stamps-dot-line1.html"></iframe>
 
 The default interactive chart has some controls that appear at top right when you hover over the chart. The default tooltip also doesn't specify that the numbers for participants are in millions, and does not display anything for the costs variable, because it is not included in the chart.
 
@@ -107,7 +107,7 @@ This code creates a custom tooltip inside the **ggplot2** aesthetic mapping (`ae
 
 When writing a custom tooltip, we also need to include `group = 1` in the `aes` mapping.
 
-The code in the final `layout` function styles the tooltip, using a white background and changing the font family to be consistent with the rest of the chart. See [here](https://plot.ly/r/#layout-options) for more Plotly chart layout options.
+The code in the final `layout` function styles the tooltip, using a white background and changing the font family to be consistent with the rest of the chart.
 
 We can now save the chart as a standalone web page by selecting `Export>Save as Web Page...` from the `Viewer` tab menu.
 
@@ -126,7 +126,7 @@ Open the `test.html` file in Sublime Text. Insert the code into the page and edi
 ```
 This should be the result:
 
-<iframe width="100%" height="450" frameborder="0" scrolling="no" src="food_stamps_dot_line2.html"></iframe>
+<iframe width="100%" height="450" frameborder="0" scrolling="no" src="food-stamps-dot-line2.html"></iframe>
 
 #### Make interactive versions of the disease and democracy scatterplot
 
@@ -158,7 +158,7 @@ print(disease_democ_interactive)
 ```
 This should be the result:
 
-<iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease_democ1.html"></iframe>
+<iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease-democ1.html"></iframe>
 
 The following code creates a version of this chart with a qualitative ColorBrewer palette for the points, to color them by the World Bank income group.
 
@@ -195,7 +195,7 @@ Here's the static version:
 
 And here's the interactive:
 
-<iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease_democ2.html"></iframe>
+<iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease-democ2.html"></iframe>
 
 Notice that the `scale_color_brewer` code that ordered the items in the legend in the static **ggplot** chart was not inherited by the interactive **plotly** version.
 
@@ -215,7 +215,7 @@ This converts `income_group` into a categorical variable, or `factor`, and then 
 
 Running the chart code as before will now fix the order of the items in the legend in the interactive chart.
 
-<iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease_democ3.html"></iframe>
+<iframe width="100%" height="450" frameborder="0" scrolling="no" src="disease-democ3.html"></iframe>
 
 
 #### Make an interactive version of the California kindergarten immunization heatmap
@@ -265,7 +265,7 @@ print(immun_counties_year_chart_interactive)
 
 This should be the result:
 
-<iframe width="100%" height="750" frameborder="0" scrolling="no" src="immun_heatmap.html"></iframe>
+<iframe width="100%" height="750" frameborder="0" scrolling="no" src="immun-heatmap.html"></iframe>
 
 
 ### Practice making other interactive charts
@@ -278,14 +278,16 @@ In class, as time allows, we'll use **plotly** to create interactive versions of
 
 ### Make a map of seismic risk and earthquakes using Leaflet
 
-[Leaflet](https://leafletjs.com/) is the most widely-used JavaScript library for making interactive online maps. It can be used from R with the [**leaflet**](https://rstudio.github.io/leaflet/) package, another part of the **htmlwidgets** framework. So we need to install and load that, together with a package called **[rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf)**, which makes it possible to load shapefiles and other geodata into R.
+[Leaflet](https://leafletjs.com/) is the most widely-used JavaScript library for making interactive online maps. It can be used from R with the [**leaflet**](https://rstudio.github.io/leaflet/) package, another part of the **htmlwidgets** framework. So we need to install and load that. We will also install and load packages called **[sf](https://r-spatial.github.io/sf/index.html)** and **[rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf)**, which make it possible to load shapefiles and other geodata into R.
 
 ```R
-# install and load leaflet and rdgal
+# install and load leaflet, rdgal, and sf
 install.packages("leaflet")
 install.packages("rgdal")
+install.packages("sf")
 library(leaflet)
 library(rgdal)
+library(sf)
 ```
 
 First let's see how to make a basic Leaflet map, centered on Santa Cruz:
@@ -323,11 +325,11 @@ Now load the data we need to make the earthquakes map, starting with the `seismi
 
 ```R
 # load seismic risk shapefile
-seismic <- readOGR("seismic", "seismic")
+seismic <- st_read("seismic/seismic.shp")
 ```
-The two mentions of `seismic` refer to the folder and the shapefile within it, respectively.
 
-You should now have in your environment an object called `seismic` which is a `SpatialPolygonsDataFrame`.
+
+You should now have in your environment an `sf` object called `seismic`. `sf` objects are essentially data frames with an extra `geometry` variable containing the geometry of how they appear on a map.
 
 We can also load data on earthquakes, directly from the US Geological Survey earthquakes API, described in the notes for the class on finding and downloading data:
 
@@ -348,27 +350,18 @@ summary(seismic)
 This should be returned in the R Console:
 
 ```R
-Object of class SpatialPolygonsDataFrame
-Coordinates:
-      min       max
-x -124.71 -66.98701
-y   24.60  49.36968
-Is projected: FALSE 
-proj4string :
-[+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0]
-Data attributes:
-   ValueRange
- < 1    : 3  
- 1 - 2  :12  
- 10 - 12: 2  
- 2 - 5  : 8  
- 5 - 10 : 4  
+   ValueRange          geometry 
+ < 1    : 3   MULTIPOLYGON :29  
+ 1 - 2  :12   epsg:4326    : 0  
+ 10 - 12: 2   +proj=long...: 0  
+ 2 - 5  : 8                     
+ 5 - 10 : 4   
 ```
 The data defining the annual risk of a damaging earthquake is in the variable `ValueRange`. But the categories of this binned variable are not in the right order. To correct that, we should convert the variable from text to a `factor`, or categorical variable, with its `levels` in the right order.
 
 ```R
 # convert to factor/categorical variable
-seismic@data <- seismic@data %>%
+seismic <- seismic %>%
   mutate(ValueRange = factor(ValueRange, levels = c("< 1","1 - 2","2 - 5","5 - 10", "10 - 12")))
 
 # view summary of seismic_risk data
@@ -378,24 +371,13 @@ summary(seismic)
 Now the categories should be in the correct order:
 
 ```R
-Object of class SpatialPolygonsDataFrame
-Coordinates:
-      min       max
-x -124.71 -66.98701
-y   24.60  49.36968
-Is projected: FALSE 
-proj4string :
-[+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0]
-Data attributes:
-   ValueRange
- < 1    : 3  
- 1 - 2  :12  
- 2 - 5  : 8  
- 5 - 10 : 4  
- 10 - 12: 2 
+   ValueRange          geometry 
+ < 1    : 3   MULTIPOLYGON :29  
+ 1 - 2  :12   epsg:4326    : 0  
+ 2 - 5  : 8   +proj=long...: 0  
+ 5 - 10 : 4                     
+ 10 - 12: 2
 ```
-
-Notice that to run **dplyr** code to `mutate`
 
 Next we will load the seismic risk data into a leaflet map:
 
@@ -429,8 +411,8 @@ seismic_map %>%
     weight = 0.2,
     fillColor ="#ffffff",
     fillOpacity = 0.5,
-    popup = paste0("<strong>Magnitude: </strong>", quakes$mag, "</br>",
-                   "<strong>Date: </strong>", format(as.Date(quakes$time), "%b %d, %Y"))
+    popup = paste0("<b>Magnitude: </b>", quakes$mag, "</br>",
+                   "<b>Date: </b>", format(as.Date(quakes$time), "%b %d, %Y"))
   ) %>%
   # add legend
   addLegend(
@@ -449,17 +431,15 @@ The function `colorFactor` assigns a named ColorBrewer palette to a categorical 
 
 The function `addPolygons` adds polygons to the map: `stroke = FALSE` gives them no outline; `fillOpacity = 0.7` makes them slightly transparent; `color = ~pal(ValueRange))` uses the palette to color the polygons according to values in the `ValueRange` data.
 
-(To see how to set up a color palette for a continuous variable, see [this class](https://paldhous.github.io/ucb/2016/dataviz/week13.html).)
-
 `smoothFactor` controls the extent to which the polygons are simplified. See what happens to the map if you replace `0.1` with `10`. Simplified polygons will load more quickly, but there's a trade-off with the appearance of the map. Choose an appropriate value for your maps through trial and error.
 
 `addCircles` adds circles to the map, using the `quakes` data; `color` sets the color for their outlines, while `weight` sets the thickness of these lines; `fillColor` and `fillOpacity` style the circles' interiors.
 
-The size of the circles is set by `radius = sqrt(quakes$mag^10)*30`. Here `30` is simply a scaling factor for all of the circles, set by trial and error to give a reasonable appearance on the map. The size of the circles is set from the variable `mag` in the quakes data, which is their magnitude. We have raised 10 to the power of these magnitude values: As we discussed previously, this is a quirk of working with earthquake magnitudes, which are on a logarithmic scale, so that a magnitude difference of 1 corresponds to a 10-fold difference in earth movement, as recorded on a seismogram.
+The size of the circles is set by `radius = sqrt(quakes$mag^10)*30`. Here `30` is simply a scaling factor for all of the circles, set by trial and error to give a reasonable appearance on the map. The size of the circles is set from the variable `mag` in the quakes data, which is their magnitude. We have raised 10 to the power of these magnitude values. This is a quirk of working with earthquake magnitudes, which are on a logarithmic scale, so that a magnitude difference of 1 corresponds to a 10-fold difference in earth movement, as recorded on a seismogram.
 
 When scaling circles to make a Leaflet map, use the values from the data, but always take their square roots, using the `sqrt` function. This is important, to ensure that the circles are scaled correctly, by area, rather than by radius. The code sets the diameter (or twice the radius) of the circles, so the `sqrt` is necessary to correct for the squaring of these values in the equation for the area of a circle: `Area = π * r^2`.
 
-`popup` is used to define the HTML code the appears in the popup that appears when any quake is clicked or tapped. The code above again uses `paste0` to concatenate a series of elements, separated by commas, that will write the HTML. They include the `mag` and `time` values from the quakes data, the latter being formatted as an easy-to-read date using R's `format` function for dates. See [here](https://www.statmethods.net/input/dates.html) for more on formatting dates in R.
+`popup` is used to define the HTML code the appears in the popup that appears when any quake is clicked or tapped. The code above again uses `paste0` to concatenate a series of elements, separated by commas, that will write the HTML. They include the `mag` and `time` values from the quakes data, the latter being formatted as an easy-to-read date using R's `format` function for dates. See [here](https://www.stat.berkeley.edu/~s133/dates.html) for more on formatting dates in R.
 
 I hope these examples illustrate the potential of **htmlwidgets**. There are many more which we have not covered. Understanding how the code for each will take some time. But if you follow the documentation, the results can be impressive.
 
@@ -474,7 +454,7 @@ A more extensive collection of htmlwidgets
 [Plotly with ggplot2](https://plot.ly/ggplot2/)
 
 [Plotly for R](https://plot.ly/r/)
-Look here for more options to customize your charts, including [layout options](https://plot.ly/r/#layout-options) like formatting tooltips. Note, you can also make charts directly in R without going through ggplot2.
+Look here for more options to customize your charts, including layout options Note, you can also make Plotly charts directly in R without going through ggplot2.
 
 
 

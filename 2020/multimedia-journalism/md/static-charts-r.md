@@ -518,7 +518,7 @@ Make the following charts from the California kindergarten immunization data. Fo
 
  - Save the code to make these charts in the same R script you used in class today.
 
-**Due: Fri Feb 21 at 8pm.**
+**Due: Sat Feb 22 at 8pm.**
 
 This will be a challenging exercise, requiring you to draw on code examples from the past two classes. Start early, and contact me for help if you get stuck!
 
