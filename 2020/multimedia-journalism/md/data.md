@@ -86,8 +86,8 @@ Contains the following files:
 
 ### [Animation: GIFs and videos from R](data/animations-r.zip)
 
-- `nations.csv` Data from the World Bank Indicators portal, as used in week 3 and subsequently.
-- `warming.csv` [National Oceanic and Atmospheric Administration data](https://www.ncdc.noaa.gov/cag/global/time-series/globe/land_ocean/ytd/12/1880-2017.csv) on the annual average global temperature, from 1880 to 2017.
+- `nations.csv` Data from the World Bank Indicators portal, as used previously.
+- `warming.csv` [National Oceanic and Atmospheric Administration data](https://www.ncdc.noaa.gov/cag/global/time-series/globe/land_ocean/ytd/12/1880-2019.csv) on the annual average global temperature, from 1880 to 2019.
   - `year`
   - `value` Average global temperature, compared to average from 1900-2000.
 - `simulations.csv` Data from NASA simulations of historical temperatures, estimating the effect of natural and human influences on climate, processed from the [raw data](https://www.bloomberg.com/graphics/2015-whats-warming-the-world/data/forcings.csv) used for this [piece from Bloomberg News](https://www.bloomberg.com/graphics/2015-whats-warming-the-world/). Contains the following variables:
