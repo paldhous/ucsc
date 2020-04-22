@@ -28,7 +28,7 @@ The hate crimes story required a more complex approach. This is what I came up w
 
 - Send public records requests for 2016 incident reports for the crime of "aggravated assault" to these cities. These are assaults that involve an attempt to inflict injury or a threat of violence with a deadly weapon. I chose this offense to focus on serious violent crimes that are reasonably commonplace, for which each of my cities reported dozens to more than 1,000 incidents per year, according to data collected under the FBI's [Uniform Crime Reporting](https://www.fbi.gov/services/cjis/ucr) program.
 
-- For the records returned, which came from 10 cities (some failed to provide records; others made prohibitive demands on costs to search and duplicate the records), manually classify for possible hate crimes, with reference to the FBI's [hate crime reporting guidelines ](https://ucr.fbi.gov/hate-crime-data-collection-guidelines-and-training-manual.pdf). This inevitably involved subjective judgements. So  I got three academic experts, including a former FBI agent who used to run the agency's hate crime reporting program, to review the reports I had flagged as possible hate crimes. That led to the story being built around 15 incidents, recorded by six police departments, that my experts all agreed should each at least have been flagged as a possible hate crime and subjected to further scrutiny.
+- For the records returned, which came from 10 cities (some failed to provide records; others made prohibitive demands on costs to search and duplicate the records), manually classify for possible hate crimes, with reference to the FBI's [hate crime reporting guidelines ](https://ucr.fbi.gov/hate-crime-data-collection-guidelines-and-training-manual.pdf). This inevitably involved subjective judgements. So I got three academic experts, including a former FBI agent who used to run the agency's hate crime reporting program, to review the reports I had flagged as possible hate crimes. That led to the story being built around 15 incidents, recorded by six police departments, that my experts all agreed should each at least have been flagged as a possible hate crime and subjected to further scrutiny.
 
 (I was being charged search and duplication fees for these requests, so the methodology was designed to be feasible within a budget that had been set for the project.)
 
@@ -40,12 +40,12 @@ The key to automating or partially automating an analysis of documents is to mak
 
 [DocumentCloud](https://www.documentcloud.org/) (see below) performs OCR automatically when you upload documents, using the Open Source OCR tool [Tesseract](https://github.com/tesseract-ocr/tesseract). However, in my experience, its accuracy can be poor unless the quality of the scan is very good.
 
-[Adobe Acrobat Pro](https://acrobat.adobe.com/us/en/acrobat/acrobat-pro.html) will also perform OCR on scanned PDFs, and I used it to OCR the documents for the spy planes stories. In my experience, the most accurate OCR software on poor-quality scans is Abbyy FineReader, avalable for [Windows](https://www.abbyy.com/en-us/finereader/) or [MacOS](https://www.abbyy.com/en-us/finereader/pro-for-mac/). It currently costs around $200 on Windows and $120 for the Mac. (If you need high-quality OCR for your reporting project, let me know and I can run them through Abby FineReader!)
+[Adobe Acrobat Pro](https://acrobat.adobe.com/us/en/acrobat/acrobat-pro.html) will also perform OCR on scanned PDFs, and I used it to OCR the documents for the spy planes stories. In my experience, the most accurate OCR software on poor-quality scans is Abbyy FineReader, avalable for [Windows](https://www.abbyy.com/en-us/finereader/) or [MacOS](https://www.abbyy.com/en-us/finereader/pro-for-mac/). It currently costs around $200 on Windows and $120 for the Mac. (If you need high-quality OCR for a reporting project, let me know and I can run them through Abby FineReader!)
 
 
 ### Show your work with DocumentCloud
 
-[**DocumentCloud**](https://www.documentcloud.org/) is the independent nonprofit organization behind a web app that allows [news organizations](https://www.documentcloud.org/contributors) to publish, embed, annotate and redact the documents underlying their reporting. Read more about its history and goals [here](https://www.documentcloud.org/about).
+[**DocumentCloud**](https://www.documentcloud.org/) allows [news organizations](https://www.documentcloud.org/contributors) to publish, embed, annotate and redact the documents underlying their reporting. Read more about its history and goals [here](https://www.documentcloud.org/about).
 
 You have each been set up with indivisual accounts under the UCSC SciCom DocumentCloud account. You've been given the [status of freelancer](https://www.documentcloud.org/help/accounts), which means you can upload, annotate, and edit your own documents. As an administrator, I can see any of your documents, and manage your individual accounts.
 
@@ -73,17 +73,17 @@ It may take a little while for your documents to be fully processed. Once they a
 
 #### Look at recognized entities and timelines
 
-DocumentCloud automatically runs documents through [Thomson Reuters Open Calais](http://www.opencalais.com/), which can flag people, places and organizations mentioned in a document.
+DocumentCloud automatically runs documents through natural language processing software that can flag people, places and organizations mentioned in a document.
 
 Select the first document, then select `Analyze>View Entities`:
 
 ![](img/documents_6.jpg)
 
-This should be the result:
+You should see a screen like this:
 
 ![](img/documents_7.jpg)
 
-Open Calais is not infallible -- "Added Table" seems unlikely to be a person. But you can now hover over the gray bars to see the context in which each recognized entity is mentioned:
+Document Cloud's autimated "entity extraction" is not infallible -- "Bunsen" refers to a piece of equipment rather than a person. But you can now hover over the gray bars to see the context in which each recognized entity is mentioned:
 
 ![](img/documents_8.jpg)
 
@@ -117,7 +117,7 @@ To redact text from a document, select `Redact Document` from the right-hand pan
 
 DocumentCloud's redactions are reliable and secure -- which is not always the case if you try and redact in a PDF viewer. I've obtained a document that was supposedly redacted, and all that had happened was a black rectangle had been placed over the text, which I could still copy and paste into another document.
 
-Redacting documents can be important to protect individual's identity. For [this story](https://www.buzzfeednews.com/article/peteraldhous/david-sweatt-vanderbilt-sexual-assault-allegation) on allegations that a prominent nweuroscientist had drugged and raped a graduate student, I [added further redactions](https://www.documentcloud.org/documents/5025937-Stadum-Notes-and-Correspondence.html#document/p1/a464132) beyond those made by Oregon Health and Sciences University to protect the identity of the victim.
+Redacting documents can be important to protect individual's identity. For [this story](https://www.buzzfeednews.com/article/peteraldhous/david-sweatt-vanderbilt-sexual-assault-allegation) on allegations that a prominent neuroscientist had drugged and raped a graduate student, I [added further redactions](https://www.documentcloud.org/documents/5025937-Stadum-Notes-and-Correspondence.html#document/p1/a464132) beyond those made by Oregon Health and Sciences University to protect the identity of the victim.
 
 #### Control access to your documents
 
@@ -141,9 +141,9 @@ You can also embed single pages and annotations in a similar way.
 
 ### Systematically analyze documents with Overview
 
-Overview is a project originally developed by data journalist [Jonathan Stray](http://jonathanstray.com/me).
+Overview is a project originally developed by the data journalist [Jonathan Stray](http://jonathanstray.com/me).
 
-Login to Overview and select `Import from DocumentCloud`. Att the next screen enter your DocumentCloud login details. You should now see your DocumentCloud projects, available for import:
+Login to Overview and select `Import from DocumentCloud`. At the next screen enter your DocumentCloud login details. You should now see your DocumentCloud projects, available for import:
 
 ![](img/documents_17.jpg)
 
@@ -151,7 +151,7 @@ Import, selecting `One file is one doucument`. When complete, the screen should 
 
 ![](img/documents_18.jpg)
 
-Overview can build a tree of folders grouping documents that are similar in their charactersitic word use. Click on `Tree` to activate this feature.
+Overview can build a tree of folders grouping documents that are similar in their characteristic word use. Click on `Tree` to activate this feature.
 
 In practice, I've found Overview most useful to search and tag documents by the inclusion of key words and phrases. Use the search box to find documents containing that text, and then click `Tags` to create a tag to mark them as containing this term:
 
@@ -168,7 +168,7 @@ You can export the text from your documents from Overview. Clock on the hamburge
 
 ### Turn text into data, then analyze for word usage, sentiment, and more
 
-Once you have documents turned into text, you can also quantitatively analyze the usage of specific words or phrases, count words and syllables (and calculate a document's linguistic complexity), and analyze the overall sentiments of the words used. I've done this for text including [tweets from Donald Trump and all members of Congress](https://www.buzzfeednews.com/article/peteraldhous/trump-twitter-wars), and for presidential [State of the Union addresses](https://www.buzzfeednews.com/article/peteraldhous/trump-state-of-the-union-words). If you want to do this sort of text analysis, I [have a tutorial](https://paldhous.github.io/NICAR/2019/r-text-analysis.html) on using R packages including [tidytext](https://cran.r-project.org/web/packages/tidytext/tidytext.pdf) for text mining, which builds from the work we've done previously in the tidyverse.
+Once you have documents turned into text, you can also quantitatively analyze the usage of specific words or phrases, count words and syllables (and calculate a document's linguistic complexity), and analyze the overall sentiments of the words used. I've done this for text including [tweets from Donald Trump and all members of Congress](https://www.buzzfeednews.com/article/peteraldhous/trump-twitter-wars), and for presidential [State of the Union addresses](https://www.buzzfeednews.com/article/peteraldhous/trump-state-of-the-union-words). If you want to do this sort of text analysis, I [have a tutorial](https://paldhous.github.io/NICAR/2020/r-text-analysis.html) on using R packages including [tidytext](https://cran.r-project.org/web/packages/tidytext/tidytext.pdf) for text mining, which builds from the work we've done previously in the tidyverse.
 
 
 ### Further reading

@@ -17,7 +17,7 @@ Discuss the investigative reports you selected, studying the methods employed.
 - #### April 15: [Backgrounding nonprofits and companies](nonprofits-companies.html)
 Guidestar and ProPublica’s Nonprofit Explorer for researching non-profits; Securities and Exchange Commission filings, Sqoop, and other tools for researching companies.
 
-- #### April 22: [Interviewing data and documents](interviewing-data-documents.html)
+- #### April 22: Interviewing [data](interview-data.html) and [documents](documents.html)
 Data: We’ll use R and the tidyverse, which you worked with last quarter, to ask questions of data and find story leads.
 Documents: Many investigations depend on systematically analyzing masses of documents. We’ll discuss examples, and explore two tools to help you work with large document sets: DocumentCloud and Overview.
 
