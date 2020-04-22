@@ -42,10 +42,10 @@ Download the data for these classes from [here](data/interview-data.zip), unzip 
 
 <!-- -->
 
-* `npi_license.csv` Crosswalk file to join NPI identifiers to state license numbers, processed from the download available [here](https://www.nber.org/data/npi-state-license-crosswalk.html) to include license numbers potentially matching California doctors. This will provide one way of joining the precription data to the medical board disciplinary data. As we shall see, problems with the data mean that it is not infallible. Contains the following variables:
+* `npi_license.csv` Crosswalk file to join NPI identifiers to state license numbers, processed from the download available [here](https://www.nber.org/data/npi-state-license-crosswalk.html) to include license numbers potentially matching California doctors. This will provide one way of joining the prescription data to the medical board disciplinary data. As we shall see, problems with the data mean that it is not infallible. Contains the following variables:
     + `npi` National Provider Identifier, as described above.
     + `plicnum` State license number, from the original file.
-    + `license` Processed from `pclicnum` to conform to the format of California medical license numbers.
+    + `pclicstate` `CA` for all these records.
 
 ### Some words of caution, before we start
 
@@ -239,7 +239,7 @@ Previously we used the **dplyr** `mutate` function to modify an existing variabl
 Now we can calculate the number of license revocations for doctors based in California by year:
 
 ```{r}
-# license revokations for doctors based in California, by year
+# license revocations for doctors based in California, by year
 revoked_ca_year <- ca_discipline %>%
   filter(action_type == "Revoked" 
          & state == "CA") %>%
@@ -287,8 +287,6 @@ datatable(actions_year_month, extensions = "Responsive")
 
 <br>
 
-Notice that the `group_by` and `arrange` functions **group** and **sort** the data, respectively, by two variables, separated by commas.
-
 ### Load and examine the Medicare opioid prescription data
 
 Now we will work with the larger data on doctors in California prescribing opioids under Medicare Part D, learn how to **join** data in different data frames, and make some simple charts to help make sense of your data.
@@ -313,7 +311,7 @@ provider_summary <- ca_opioids %>%
            nppes_provider_city,
            specialty_description) %>%
   summarize(prescriptions = sum(total_claim_count, na.rm = TRUE),
-            cost = sum(total_drug_cost), na.rm = TRUE) %>%
+            cost = sum(total_drug_cost, na.rm = TRUE)) %>%
   mutate(cost_per_prescription = cost/prescriptions) %>%
   arrange(desc(prescriptions))
 
@@ -406,7 +404,7 @@ ggplotly(scatterplot, tooltip = "text") %>%
 
 In this code, we mapped the number of `prescriptions` to the X axis and their total `cost` to the Y or vertical axis. We then used `geom_point` to add the points, and made them partially transparent using `alpha = 0.3` (0 would be completely transparent; 1 would be completely opaque). `labels = dollar` formatted the Y axis so the numbers were shown in dollars.
 
-Remember the words of caution: There may be some story leads here, but we would have to find out more about each doctor's practise and patients to determine whether outliers in terms of prescriptions and costs are justified.
+Remember the words of caution: There may be some story leads here, but we would have to find out more about each doctor's practice and patients to determine whether outliers in terms of prescriptions and costs are justified.
 
 ### Join data to find doctors who prescribed opioids who have also been subject to disciplinary actions.
 
@@ -422,20 +420,18 @@ First we will join these two files to one another:
 ```{r}
 # join those two data frames
 ca_discipline_npi <- left_join(ca_discipline, npi_license, by = c("license" = "plicnum"))
-```
 
-By default, **dplyr** will join by any variables with matching names, but you can also specify the variables on which to join. So this will achieve the same result:
-
-```{r}
-# join those two data frames
-ca_discipline_npi <- left_join(ca_discipline, npi_license, by = c("license" = "plicnum"))
+test <- ca_discipline_npi %>%
+  group_by(license) %>%
+  summarize(npis = n_distinct(npi)) %>%
+  arrange(-npis)
 
 datatable(ca_discipline_npi, extensions = "Responsive")
 ```
 
 <br>
 
-The data returned reveals some of the limitations of the `npi_license` data. Some of the doctors have not been joined to an `npi` code, while others appear to have more than one `npi` code (this is why there are 11,363 rows in the joined data, and only 7,651 in the `ca_discipline` data).
+The data returned reveals some of the limitations of the `npi_license` data. Some of the doctors have not been joined to an `npi` code. Others have been joined to multiple `npi` codes.
 
 Having made this join, we can now join to the `provider_summary` data:
 
@@ -449,11 +445,11 @@ datatable(provider_summary_actions,  extensions = "Responsive")
 
 <br>
 
-Individual doctors may appear multiple times in the data if they have more than one disciplinary action on their file, because a join will be made to each individual action. And given the issues with the NPI data, you would need to check the identity of the doctor at both the [NPI lookup](https://npiregistry.cms.hhs.gov/) and [California professional licensing](https://www.breeze.ca.gov/) sites.
+Individual doctors may appear multiple times in the data if they have more than one disciplinary action on their file, because a join will be made to each individual action. And given the issues with the NPI data, you would need to check the identity of the doctor at both the [NPI lookup](https://npiregistry.cms.hhs.gov/) and [California professional licensing](https://www.breeze.ca.gov/) sites to confirm that a genuine match has been made.
 
-We can search for the disciplinary records and look at public documents at the latter.
+You can also search for the disciplinary records and look at public documents at the latter site.
 
-Naga Thota, near the top of this list, surrendered his California medical license on March 22, 2017. [This public document](https://www2.mbc.ca.gov/BreezePDL/document.aspx?path=%5cDIDOCS%5c20170315%5cDMRAAAFC8%5c&did=AAAFC170315180454982.DID) reveals that he was charged with prescribing excessive quantities of opioids to an addicted patient with whom he also engaged in a sexual relationship. In addition to disciplinary action from the Medical Board of California, he faced a criminal investigation by the federal Drug Enforcement Adminstration. In March 2017 [sentenced to two years](https://www.sandiegouniontribune.com/news/courts/sd-me-thota-sentencing-20170306-story.html), he was sentenced to two years in a federal prison.
+Naga Thota, near the top of this list, surrendered his California medical license on March 22, 2017. [This public document](https://www2.mbc.ca.gov/BreezePDL/document.aspx?path=%5cDIDOCS%5c20170315%5cDMRAAAFC8%5c&did=AAAFC170315180454982.DID) reveals that he was charged with prescribing excessive quantities of opioids to an addicted patient with whom he also engaged in a sexual relationship. In addition to disciplinary action from the Medical Board of California, he faced a criminal investigation by the federal Drug Enforcement Adminstration. In March 2017, Thota was [sentenced to two years](https://www.sandiegouniontribune.com/news/courts/sd-me-thota-sentencing-20170306-story.html) to two years in a federal prison.
 
 The prescriptions data reveal that, prior to his conviction and the loss of his medical license, Thota was also one of the largest prescribers of opioids in the state of California.
 
