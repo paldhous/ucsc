@@ -41,7 +41,7 @@ for (f in files) {
 write_csv(medicare,"ca_medicare_opioids.csv",na="")
 
 # npi state license crosswalk
-npi_license <- read_csv("statelic.csv") %>%
+npi_license <- read_csv("/Users/peteraldhous/Dropbox/ucb-dataj/2018/raw-data/week5&6/nber/sstatelic.csv") %>%
   filter(plicstate == "CA")
 
 write_csv(npi_license, "npi_license.csv", na="")

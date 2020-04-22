@@ -353,7 +353,7 @@ library(plotly)
 
 It's always a good idea to look at the distribution of any quantitative variable.
 
-```{r}
+```{r eval=FALSE}
 ggplot(provider_summary, aes(x = prescriptions)) +
   geom_histogram(binwidth = 50) +
   theme_minimal() +
@@ -362,9 +362,11 @@ ggplot(provider_summary, aes(x = prescriptions)) +
   scale_y_continuous(labels = comma)
 ```
 
-This code first stated that the `provider_summary` data would be used for the chart in the `ggplot` function, then specificied that values for the number of prescriptions should be mapped to the X, or horizontal axis. We didn't need to specify a variable for the Y axis for a histogram, because that is automatically a count of the number of records (here the number of doctors) in each bin.
+![](img/histogram.png)
 
-The code customizes the width of the bins, to 50 prescriptions, changes the X axis range between 0 and 3,000, and uses `labels` from the **scales** package to plot numbers with comma separators for thousands. As we learned last quarter, `theme_minimal` is one of the built-in themes in **ggplot2**, which gives a basic chart with grid lines on a white background.
+This code first stated that the `provider_summary` data would be used for the chart in the `ggplot` function, then specificied that values for the number of prescriptions should be mapped to the X, or horizontal axis. We didn't need to specify a variable for the Y axis for a histogram, because that is automatically a count of the number of records (here the number of medical providers) in each bin.
+
+The code customizes the width of the bins, to 50 prescriptions, changes the X axis range between 0 and 3,000 so we don't plot outliers with many more prescriptions than this, and uses `labels` from the **scales** package to plot numbers with comma separators for thousands. As we learned last quarter, `theme_minimal` is one of the built-in themes in **ggplot2**, which gives a basic chart with grid lines on a white background.
 
 This is a very skewed distribution. Viewing this, we would conclude that the mean would not be a good summary statistic for this data; if we want to compare any doctor's prescriptions of opioids to that for a "typical" doctor, it would be better to compare to the median number of prescriptions. So let's calculate that number:
 
@@ -378,7 +380,7 @@ Scatterplots are good for seeing how one variable relates to one another, and al
 
 This is a good case for making a chart interactive, so we can hover over each point to find out who any provider is. (However, on this web page I have only included an image of the static chart.)
 
-```{r}
+```{r eval=FALSE}
 #### Make a scatterplot of prescriptions and costs data
 scatterplot <- ggplot(provider_summary, aes(x = prescriptions, 
                                             y = cost,
@@ -393,6 +395,8 @@ scatterplot <- ggplot(provider_summary, aes(x = prescriptions,
 
 plot(scatterplot)
 ```
+
+![](img/scatterplot.png)
 
 ```{r eval=FALSE}
 # make interactive version with tooltip
@@ -445,9 +449,9 @@ datatable(provider_summary_actions,  extensions = "Responsive")
 
 <br>
 
-Individual doctors may appear multiple times in the data if they have more than one disciplinary action on their file, because a join will be made to each individual action.
+Individual doctors may appear multiple times in the data if they have more than one disciplinary action on their file, because a join will be made to each individual action. And given the issues with the NPI data, you would need to check the identity of the doctor at both the [NPI lookup](https://npiregistry.cms.hhs.gov/) and [California professional licensing](https://www.breeze.ca.gov/) sites.
 
-We can search for the disciplinary records and look at public documents at [this site](https://www.breeze.ca.gov/).
+We can search for the disciplinary records and look at public documents at the latter.
 
 Naga Thota, near the top of this list, surrendered his California medical license on March 22, 2017. [This public document](https://www2.mbc.ca.gov/BreezePDL/document.aspx?path=%5cDIDOCS%5c20170315%5cDMRAAAFC8%5c&did=AAAFC170315180454982.DID) reveals that he was charged with prescribing excessive quantities of opioids to an addicted patient with whom he also engaged in a sexual relationship. In addition to disciplinary action from the Medical Board of California, he faced a criminal investigation by the federal Drug Enforcement Adminstration. In March 2017 [sentenced to two years](https://www.sandiegouniontribune.com/news/courts/sd-me-thota-sentencing-20170306-story.html), he was sentenced to two years in a federal prison.
 
