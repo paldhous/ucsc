@@ -421,11 +421,6 @@ First we will join these two files to one another:
 # join those two data frames
 ca_discipline_npi <- left_join(ca_discipline, npi_license, by = c("license" = "plicnum"))
 
-test <- ca_discipline_npi %>%
-  group_by(license) %>%
-  summarize(npis = n_distinct(npi)) %>%
-  arrange(-npis)
-
 datatable(ca_discipline_npi, extensions = "Responsive")
 ```
 
