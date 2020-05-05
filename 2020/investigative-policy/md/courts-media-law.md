@@ -76,9 +76,9 @@ Once you find the docket for any state or local case, it will be structured simi
 
 #### The First Amendment
 
-The First Amendment to the US Consitution prevents the government from making laws that abridge freedom of speech and the freedom of the press. As such, it is a cornerstone of journalistic expression. It is the basis of landmark Supreme Court rulings that restrict the ability of public officials to [sue for defamation](https://supreme.justia.com/cases/federal/us/376/254/), and restrict the ability of the government to [censor information from publication](https://supreme.justia.com/cases/federal/us/403/713/), known as prior restraint.
+The First Amendment to the US Constitution prevents the government from making laws that abridge freedom of speech and the freedom of the press. As such, it is a cornerstone of journalistic expression. It is the basis of landmark Supreme Court rulings that restrict the ability of public officials to [sue for defamation](https://supreme.justia.com/cases/federal/us/376/254/), and restrict the ability of the government to [censor information from publication](https://supreme.justia.com/cases/federal/us/403/713/), known as prior restraint.
 
-The First Amendment does not grant complete freedom to journalists to write whatever they want, or to use any material without regard to copyright. And of course, remember that First Amendment protections don't apply outside the United States. That's increasingly important, given that publication on the Internet means that your work may be considered as having been published in any jurisdiction from which it can be accessed.
+The First Amendment does not grant complete freedom to journalists to write whatever they want, or to use any material without regard to copyright. And of course, remember that First Amendment protections don't apply outside the United States. Publication on the Internet means that your work may be considered as having been published in any jurisdiction from which it can be accessed.
 
 
 #### Copyright
@@ -89,7 +89,7 @@ Breaching copyright can cause serious problems and is why publications should al
 
 In general, courts have found that embedding a photo or video from another site does not breach copyright. A New York federal judge [recently ruled](https://arstechnica.com/tech-policy/2020/04/judge-smacks-down-copyright-suit-over-instagram-embedding/), for instance, that it's OK to embed a photojournalist's work from their Instagram account. Many photojournalists are now locking down their accounts as a result.
 
-The doctrine of "fair use" allows for limited use of copyrighted material without the author's permission. News reporting, criticism, and comment, can claim fair use. In general, the smaller the proportion of the copyrighted work used, the better the argument for fair use. The use should not descrease the market for the original work, so quoting the entirety of a poem, for example, is unlikely to be seen as fair. Fair use is also more likely to be granted is the work is imformational, rather than a creative work of fiction.
+The doctrine of "fair use" allows for limited use of copyrighted material without the author's permission. News reporting, criticism, and comment, can claim fair use. In general, the smaller the proportion of the copyrighted work used, the better the argument for fair use. The use should not descrease the market for the original work, so quoting the entirety of a poem, for example, is unlikely to be seen as fair. Fair use is also more likely to be granted is the work is informational, rather than a creative work of fiction.
 
 Copyright eventually expires but the terms are long: 70 years after the death of the author for many works. [This page](https://copyright.cornell.edu/publicdomain) will help you judge whether copyright has expired on an old work.
 
@@ -97,7 +97,7 @@ Many government agencies, [such as NASA](https://www.nasa.gov/multimedia/guideli
 
 #### Defamation
 
-Defamation means a statement that causes an injury to someone's reputation. In some jusridictions, there is a distinction between libel, which covers written statements, and slander, for spoken statements.
+Defamation means a statement that causes an injury to someone's reputation. In some jurisdictions, there is a distinction between libel, which covers written statements, and slander, for spoken statements.
 
 Repeating a defamatory statement, for example in a quote, renders you and your publication potentially liable, as well as the person who made the statement.
 
@@ -109,15 +109,15 @@ While a publication should always seek specific legal advice before publishing a
 
 - **Opinion** The idea here is that opinions cannot, by their nature, be proven true or false and therefore cannot be defamatory. Judging what is a statement of alleged fact and what is a statement of opinion is inherently difficult and involves an element of subjective judgement. Different jurisdictions differ on how they interpret what is covered by opinion.
 
-- **Fair comment/criticism** Everyone has the right to comment on matters of public concern. Providing this is done fairly these comments are not libelous. Again, judging what is "fair" involves a degree of subjective judgement.
+- **Fair comment/criticism** Everyone has the right to comment on matters of public concern. If this is done fairly these comments are not libelous. Again, judging what is "fair" involves a degree of subjective judgement.
 
 - **Fair report** Fair and accurate reports of public proceedings, including court cases and legislative procedings, cannot be libelous. This is more straightforward, and means that you are generally on safe ground reporting from court documents, including civil and criminal complaints, or on potentially defamatory statements made in a legislative chamber such as the US Congress.
 
-- **Neutral reportage** This privilege is supposed to protect fair, true, and impartial accounts of any newsworthy events from libel suits. It is reconized in California, but not in all US states. To claim this privilege, you would want to be able to show that you published any denials of potentially defamatory statements, or made strenuous attempts to obtain comment from the individual concerned.
+- **Neutral reportage** This privilege is supposed to protect fair, true, and impartial accounts of any newsworthy events from libel suits. It is recognized in California, but not in all US states. To claim this privilege, you would want to be able to show that you published any denials of potentially defamatory statements, or made strenuous attempts to obtain comment from the individual concerned.
 
 ##### Defenses
 
-- **Not capable of defamatory meaning** Statements accusing people of breaking the law or otherwise engaging in morally repugnant behavior are generally understood to be potentially defamatory. But is it defamatory to accuse someone of drunkeness, being a communist, or using political clout? Different jurisdictions and courts have taken different views on statements like this.
+- **Not capable of defamatory meaning** Statements accusing people of breaking the law or otherwise engaging in morally repugnant behavior are generally understood to be potentially defamatory. But is it defamatory to accuse someone of drunkenness, being a communist, or using political clout? Different jurisdictions and courts have taken different views on statements like this.
 
 - **Truth** In the US, paintiffs have to prove that defamatory statement was false. But in some jurisdictions, including Canada, the burden of proof that a statement was true falls on the defendant.
 
