@@ -29,14 +29,13 @@ Federal and state court records, civil versus criminal cases, and more.
 Libel, defamation, copyright: what are they and how to avoid unnecessary risk. Dealing with complaints from sources to avoid escalation and minimize potential liability.
 
 - #### May 13: [Ethics in journalism (with guest Anil Ananthaswamy)](journalism-ethics.html)
-Federal and state court records, civil versus criminal cases, and more.
-Libel, defamation, copyright: what are they and how to avoid unnecessary risk. Dealing with complaints from sources to avoid escalation and minimize potential liability.
+Case studies in journalistic ethics. What would you have done? We'll also discuss journalism ethics codes, and circumstances the codes don't prepare you for.
 
 - #### May 20: [Scientists Behaving Badly](scientific-midsconduct.html)
 Reporting on scientific misconduct, research ethics, sexual harassment, and other bad behavior by scientists.
 
 - #### May 27: [Guest lecture: Ben Welsh](ben-welsh.html)
-Ben Welsh, Los Angeles Times data desk editor, will explain how the LA Times integrates data journalism into the newsroom and will discuss examples of his team’s work.
+Ben Welsh, Los Angeles Times data desk editor, will discuss the thinking behind the LA Times COVID-19 tracker.
 
 - #### Jun 4: [Guest lecture: Martha Mendoza](martha-mendoza.html)
 Martha will discuss her team’s reporting on [Seafood From Slaves](https://www.ap.org/explore/seafood-from-slaves/), including methods to track international supply chains and the use of satellite imagery in reporting.
