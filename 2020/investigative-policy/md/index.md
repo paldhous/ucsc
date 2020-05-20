@@ -31,7 +31,7 @@ Libel, defamation, copyright: what are they and how to avoid unnecessary risk. D
 - #### May 13: [Ethics in journalism (with guest Anil Ananthaswamy)](journalism-ethics.html)
 Case studies in journalistic ethics. What would you have done? We'll also discuss journalism ethics codes, and circumstances the codes don't prepare you for.
 
-- #### May 20: [Scientists Behaving Badly](scientific-midsconduct.html)
+- #### May 20: [Scientists Behaving Badly](scientific-misconduct.html)
 Reporting on scientific misconduct, research ethics, sexual harassment, and other bad behavior by scientists.
 
 - #### May 27: [Guest lecture: Ben Welsh](ben-welsh.html)
