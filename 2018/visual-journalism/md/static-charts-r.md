@@ -376,7 +376,7 @@ food_stamps_chart +
 
 ### Other useful packages to use with ggplot2
 
-The **[ggplot2 extensions](http://www.ggplot2-exts.org/)** page documents a series of packges that extend the capabilities of ggplot2. See the [gallery](http://www.ggplot2-exts.org/gallery/).
+The **[ggplot2 extensions](https://exts.ggplot2.tidyverse.org/)** page documents a series of packges that extend the capabilities of ggplot2. See the [gallery](https://exts.ggplot2.tidyverse.org/).
 
 The **[scales](https://cran.r-project.org/web/packages/scales/scales.pdf)** package allows you to format axes to display as  numbers as currency, decimal fractions as percentages, or so that large numbers use commas as thousands separators.
 

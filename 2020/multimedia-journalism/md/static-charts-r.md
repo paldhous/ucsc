@@ -403,7 +403,7 @@ The coordinates for the legend are given as a list: The first number sets the ho
 
 ### Other useful packages to use with ggplot2
 
-The [ggplot2 extensions](https://www.ggplot2-exts.org/) page documents a series of packges that extend the capabilities of ggplot2. See the [gallery](https://www.ggplot2-exts.org/gallery/).
+The [ggplot2 extensions](https://exts.ggplot2.tidyverse.org/) page documents a series of packges that extend the capabilities of ggplot2. See the [gallery](https://exts.ggplot2.tidyverse.org/gallery/).
 
 The **[scales](https://cran.r-project.org/web/packages/scales/scales.pdf)** package allows you to format axes to display as currency, as percentages, or so that large numbers use commas as thousands separators.
 
